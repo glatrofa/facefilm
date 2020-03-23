@@ -1,2 +1,3 @@
 # facefilm
-Alessandro  stato qui.
+Alessandro era qui.
+Giuseppe è qui.
