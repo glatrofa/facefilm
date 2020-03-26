@@ -13,9 +13,11 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 $response = array();
 if($rowsNumber != 0){
     $response[0] = array('nome_utente' => $row["nome_utente"], 'email' => $row["email"]);  
+    echo "Login effettuato";
 }
 else{
     $response[0] = array('nome_utente' => null, 'email' => null);
+    echo "Utente non presente";
 }
 $json_data = json_encode($response);
 echo $json_data;
