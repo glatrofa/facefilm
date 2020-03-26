@@ -6,7 +6,7 @@ $username = mysqli_real_escape_string($connection, $_POST["nome_utente"]);
 $password = mysqli_real_escape_string($connection, $_POST["password"]);
 
 
-$query = "SELECT nome_utente, email FROM utenti WHERE nome_utente = '".$username."' AND password = '".$password_criptata."'";
+$query = "SELECT nome_utente, email FROM utenti WHERE nome_utente = '".$username."' AND password = '".$password."'";
 $result = mysqli_query($connection, $query) or die("Access failed");
 $rowsNumber = mysqli_num_rows($result);
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
