@@ -1,6 +1,6 @@
 <?php
 
-include 'db-info.php';
+include 'db-connection';
 
 $username = mysqli_real_escape_string($connection, $_POST["nome_utente"]);
 $password = mysqli_real_escape_string($connection, $_POST["password"]);
