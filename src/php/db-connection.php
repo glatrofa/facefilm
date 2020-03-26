@@ -1,6 +1,6 @@
 <?php
 
-$dbPassword = "root";
+$dbPassword = "";
 $dbUserName = "root";
 $dbServer = "localhost";
 $dbName = "awwa";
