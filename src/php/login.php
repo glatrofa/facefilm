@@ -1,7 +1,7 @@
 <?php
 
 include 'db-connection';
-
+//ciao
 $username = mysqli_real_escape_string($connection, $_POST["nome_utente"]);
 $password = mysqli_real_escape_string($connection, $_POST["password"]);
 $password_criptata = md5($password);
