@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mar 26, 2020 alle 18:00
+-- Creato il: Mar 26, 2020 alle 18:05
 -- Versione del server: 5.7.17
 -- Versione PHP: 5.6.30
 
@@ -37,6 +37,14 @@ CREATE TABLE `utenti` (
   `nome_utente` varchar(15) NOT NULL,
   `password` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `utenti`
+--
+
+INSERT INTO `utenti` (`nome`, `cognome`, `data_nascita`, `paese`, `email`, `nome_utente`, `password`) VALUES
+('', '', '', '', '', '', ''),
+('vito', 'difonzo', '04/04/1998', 'italia', 'ciao@gmail.com', 'vituc', 'Ciao.98');
 
 --
 -- Indici per le tabelle scaricate
