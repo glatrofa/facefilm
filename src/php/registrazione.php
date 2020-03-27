@@ -1,6 +1,9 @@
 <?php
 
 include 'db-connection.php';
+
+$query=("INSERT INTO 'utenti' ('nome' ,'cognome' ,'data_nascita' ,'nazione' ,'email' ,'nome_utente' ,'password') VALUES ('vito','difonzo','12','12','323','323','giti)");
+$result = mysqli_query($connection, $query) or die("Access failed");
 /*
 $nome = mysqli_real_escape_string($connection, $_POST["nome"]);
 $cognome = mysqli_real_escape_string($connection, $_POST["cognome"]);
@@ -40,7 +43,5 @@ mysql_query("SELECT * FROM $utenti WHERE email = '$email'");
 //mysql_query("INSERT INTO "$utenti" (nome,cognome,data_nascita,nazione,email,username,password) VALUES ('$nome','$cognome','$data_nascita','$nazione','$email','$username','$password')";
 */
 
-$query("INSERT INTO utenti (nome ,cognome ,data_nascita ,nazione ,email ,nome_utente ,password) VALUES ('vito','difonzo','12','12','323','323','giti','ciao')");
-$result = mysqli_query($connection, $query) or die("Access failed");
 
 ?>
