@@ -5,7 +5,7 @@ include 'db-connection.php';
 $nome = mysqli_real_escape_string($connection, $_POST["nome"]);
 $cognome = mysqli_real_escape_string($connection, $_POST["cognome"]);
 $data_nascita = mysqli_real_escape_string($connection, $_POST["data_nascita"]);
-$nazione = mysqli_real_escape_string($connection, $_POST["nazione"]);
+//$nazione = mysqli_real_escape_string($connection, $_POST["nazione"]);
 $email = mysqli_real_escape_string($connection, $_POST["email"]);
 $username = mysqli_real_escape_string($connection, $_POST["nome_utente"]);
 $password = mysqli_real_escape_string($connection, $_POST["password"]);
