@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="../css/stile_signup.css">
+<!doctype  html>
+<html lang="it">
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Sign up</title>
 </head>
+<<<<<<< HEAD
 <body>
 
 <h2>Registrati!</h2>
@@ -291,8 +295,71 @@
     <button type="button" class="cancelbtn">Cancel</button>
   </div>
 </form>
+=======
+>>>>>>> 17cefaea40b7f7add16b1a015c99c3af213dd6f7
 
+<body>
+    <header>
+        <h1 class="text-white">awwa</h1>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Registrati</h2>
+            <form id="form" action="../php/registrazione.php.php" method="POST">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Nome </span>
+                    </div>
+                    <input type="text" id="nome" name="nome" maxlength="50" required class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Cognome </span>
+                    </div>
+                    <input type="text" id= "cognome" name="cognome" maxlength="50" required class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data di nascita </span>
+                    </div>
+                    <input type="date" id="data" name="data" maxlength="50" required class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Paese </span>
+                    </div>
+                    <select class="form-control" id="paese">
+                      <option>Default select</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Email </span>
+                    </div>
+                    <input type="text" id="email" name="email" maxlength="50" required class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Nome utente </span>
+                      </div>
+                      <input type="text" id="username" name="username" maxlength="50" required class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Password </span>
+                      </div>
+                      <input type="password" id="password" name="password" maxlength="50" required class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="button">
+                      <input type="submit" value="Registrati" class="btn btn-primary">                
+                      <input type="reset" value="Cancella" class="btn btn-primary">    
+                  </div>                                                         
+            </form>            
+        </div>
+    </main>
+    <footer>
+        <small>footer</small>
+    </footer>
 </body>
-
 
 </html>

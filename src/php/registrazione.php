@@ -1,7 +1,7 @@
 <?php
 
 include 'db-connection.php';
-
+/*
 $nome = mysqli_real_escape_string($connection, $_POST["nome"]);
 $cognome = mysqli_real_escape_string($connection, $_POST["cognome"]);
 $data_nascita = mysqli_real_escape_string($connection, $_POST["data_nascita"]);
@@ -10,6 +10,7 @@ $email = mysqli_real_escape_string($connection, $_POST["email"]);
 $username = mysqli_real_escape_string($connection, $_POST["username"]);
 $password = mysqli_real_escape_string($connection, $_POST["password"]);
 
+/*
 $query = "SELECT * FROM utenti " .
           "WHERE username = '$username' " .
           "OR email = '$email' ";
@@ -36,7 +37,10 @@ if (mysql_num_rows($result) != 0)
  }
 
 mysql_query("SELECT * FROM $utenti WHERE email = '$email'");
-mysql_query("INSERT INTO "$utenti" (nome,cognome,data_nascita,nazione,email,username,password) VALUES ('$nome','$cognome','$data_nascita','$nazione','$email','$username','$password')";
+//mysql_query("INSERT INTO "$utenti" (nome,cognome,data_nascita,nazione,email,username,password) VALUES ('$nome','$cognome','$data_nascita','$nazione','$email','$username','$password')";
+*/
 
+$query("INSERT INTO utenti (nome ,cognome ,data_nascita ,nazione ,email ,nome_utente ,password) VALUES ('vito','difonzo','12','12','323','323','giti','ciao')");
+$result = mysqli_query($connection, $query) or die("Access failed");
 
 ?>
