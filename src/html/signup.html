@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="../css/stile_signup.css">
+
+</head>
+<body>
+
+<h2>Registrati!</h2>
+
+<form action="/action_page.php" method="post">
+  <div class="imgcontainer">
+    <img src="" alt="Logo" class="">
+  </div>
+
+  <div class="container">
+    <label for="username"><b>Nome</b></label>
+    <input type="text" id="nome" placeholder="Nome" name="username" maxlength="50" required>
+
+    <label for="cognome"><b>Cognome</b></label>
+    <input  type="text" id= "cognome" placeholder="Cognome" name="cognome" maxlength="50" required>
+
+    <label for="dataNascita"><b>Data di nascita</b></label>
+    <input type="date" id="data_nascita" placeholder="" name="dataNascita" maxlength="10" required><br>
+
+    <label for="paese"><b>Paese</b></label>
+    <input type="text" id="paese" placeholder="Italia" name="paese" maxlength="30" required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="email" id="email" placeholder="prova@example.com" name="email" maxlength="50" required><br>
+
+    <label for="username"><b>Nome utente</b></label>
+    <input type="text" id="username" placeholder="Nome utente" name="username" maxlength="15" required>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" id="password" placeholder="Inserisci password" name="password" maxlength="20" required>
+
+        
+    <button type="submit" id="Registrazione">Registrati</button>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+  </div>
+</form>
+
+</body>
+
+
+</html>
