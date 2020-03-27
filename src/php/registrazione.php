@@ -36,7 +36,7 @@ if (mysql_num_rows($result) != 0)
  }
 
 mysql_query("SELECT * FROM $utenti WHERE email = '$email'");
-mysql_query("INSERT INTO "$utenti" (nome,cognome,data_nascita,nazione,email,username,password) VALUES ('$nome','$cognome','$data_nascita','$nazione','$email','$username','$password')";
+//mysql_query("INSERT INTO "$utenti" (nome,cognome,data_nascita,nazione,email,username,password) VALUES ('$nome','$cognome','$data_nascita','$nazione','$email','$username','$password')";
 
-
+mysql_query("INSERT INTO "$utenti" (nome,cognome,data_nascita,nazione,email,username,password) VALUES ('vito','difonzo','12','12','323','323','$323')";
 ?>
