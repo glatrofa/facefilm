@@ -256,5 +256,5 @@ var options = '';
 for (var i = 0; i < countryList.length; i++) {
    options += '<option value="' + countryList[i]+ '">' + countryList[i] + '</option>';
 }
-document.getElementById("paese").innerHTML += options;
+document.getElementById("nazione").innerHTML += options;
 }
