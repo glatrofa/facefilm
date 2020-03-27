@@ -1,4 +1,5 @@
-const countryList = new Array(
+document.onload = function(){
+    const countryList = [
 	"Afghanistan",
 	"Albania",
 	"Algeria",
@@ -248,11 +249,12 @@ const countryList = new Array(
 	"Zambia",
 	"Zimbabwe",
 	"Åland Islands"
-); 
-   
+]; 
+
 var options = '';
 
 for (var i = 0; i < countryList.length; i++) {
    options += '<option value="' + countryList[i]+ '">' + countryList[i] + '</option>';
 }
 document.getElementById("paese").innerHTML += options;
+}
