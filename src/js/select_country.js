@@ -1,5 +1,5 @@
-document.onload = function(){
-    const countryList = [
+window.onload = function(){
+    var countryList = [
 	"Afghanistan",
 	"Albania",
 	"Algeria",
@@ -248,13 +248,16 @@ document.onload = function(){
 	"Yemen",
 	"Zambia",
 	"Zimbabwe",
-	"Åland Islands"
-]; 
+	"Åland Islands"]; 
 
 var options = '';
 
 for (var i = 0; i < countryList.length; i++) {
-   options += '<option value="' + countryList[i]+ '">' + countryList[i] + '</option>';
+   options += '<option value="' + countryList[i] + '"';
+   if(countryList[i]=="Italy"){
+	   options += " selected";
+   }
+   options += '>' + countryList[i] + '</option>';
 }
 document.getElementById("nazione").innerHTML += options;
 }
