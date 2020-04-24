@@ -1,0 +1,60 @@
+html,
+body {
+  height: 100%;
+  /*box-sizing: border-box;*/
+}
+
+h1,
+small {
+  color: white;
+}
+
+header {
+  height: 10%;
+  padding: 10px;
+  /*background: #1abc9c;*/
+  background: #ff9900;
+}
+
+main {
+  /*height: calc(100% - 100px);*/
+  height: 85%;
+  overflow: hidden;
+  background-image: url(../../Tv-vintage.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+main .form-container {
+  width: 50%;
+  margin: 70px auto;
+  padding: 10px 25px;
+  background-color: #FFF;
+  border: 3px solid #ff9800; 
+  border-radius: 20px;
+  /*height: 100%;*/
+  /*background: #ecf0f1;*/
+  /*background: #ffc947;*/
+  /*background: #c66900;*/
+}
+
+.form-container h2 {
+  color: #ff9800;
+  padding: 15px 0;
+  /*border: 1px solid black;*/
+}
+
+footer {
+  /*background: #1abc9c;*/
+  background: #ff9800;
+  height: 5%;
+  text-align: center;
+  line-height: 40px;
+}
+
+.button-container {
+  margin: 1em;  
+  padding: 1em;
+  text-align: center;
+}

@@ -1,0 +1,47 @@
+<!doctype  html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="text-white">AWWA</h1>
+    </header>
+    <main>
+        <div class="form-container">
+            <h2>Accedi</h2>
+            <form id="form" action="../php/login.php" method="POST">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Nome utente</span>
+                    </div>
+                    <input type="text" id="username" name="username" maxlength="15" required class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Nome Utente">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+                    </div>
+                    <input type="password" id="password" name="password" maxlength="20" required class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Password">
+                </div>
+                <div class="button-container">
+                    <input type="submit" value="Accedi" class="btn btn-primary">                
+                    <input type="reset" value="Cancella" class="btn btn-primary">    
+                </div>
+                <div class="button-container">
+                    <button onclick="location.href = './signup.html'" class="btn btn-primary">Registrati</button>
+                </div>                                                            
+            </form>            
+        </div>
+    </main>
+    <footer>
+        <small>&copy; AWWA</small>
+    </footer>
+</body>
+
+</html>
