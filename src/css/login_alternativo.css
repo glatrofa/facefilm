@@ -1,68 +1,66 @@
 html,
 body {
   height: 100%;
+  font-size: 16px;
   box-sizing: border-box;
 }
 
-h1,
+body * {border: 1px solid red !important;}
+
+h1.text-white,
 small {
   color: white;
+  position: relative;
+  top: 0px;
 }
 
+
+
 header {
-  height: 10%;
+  height: 60px;
   min-height: 40px;
   padding: 5px 10px;
-  /*background: #1abc9c;*/
-  background: #ff9900;
+  background: #e5af05;
 }
 
 main {
-  /*height: calc(100% - 100px);*/
-  height: 85%;
-  overflow: visible;
-  
-}
-
-main .background-container {
   box-sizing: border-box;
-  width: 50%;
-  height: 100%;
   background-image: url(../../Tv-vintage.jpg);
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: repeat;
-  position: relative;
-  float: right;
+  height: calc(100% - 100px);
+  overflow: scroll;
 }
 
 main .form-container {
   box-sizing: border-box;
   width: 50%;
-  height: 100%;
-  padding: 5px 15px;
-  background-color: #FFF;
-  border: 3px solid #ff9800; 
-  /*background: #ecf0f1;*/
-  /*background: #ffc947;*/
-  /*background: #c66900;*/
-  position: relative;
-  float: left;
+  padding: 15px;
+  margin: 4rem auto;
+  background-color: rgba(255,255,255,0.7);
+  /*border: 3px solid #ff9800;*/ 
 }
 
-.form-container h2 {
-  color: #ff9800;
+@media only screen and (max-width:400px){
+  main .form-container {
+    width: 90%;
+  }
+}
+
+main .form-container h2 {
+  color: #e5af05;
   padding: 15px 0;
-  text-align: center;
-  /*border: 1px solid black;*/
+  font-weight: bold;
 }
 
 footer {
-  /*background: #1abc9c;*/
-  background: #ff9800;
-  height: 5%;
+  background: #e5af05;
+  height: 40px;
   text-align: center;
-  line-height: 40px;
+  line-height: 1.5;
+  position: relative;
+  bottom: 0;
 }
 
 .button-container { 
@@ -72,4 +70,9 @@ footer {
 
 .button-container .btn-primary{   
   margin: 0.5em;
+}
+
+.btn.btn-primary {
+  background-color: #e5af05;
+  font-weight: bold;
 }
