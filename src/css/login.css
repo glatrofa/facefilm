@@ -1,6 +1,6 @@
 html,
 body {
-  height: 100%;
+  height: 100%;  
 }
 
 h1,
@@ -12,22 +12,27 @@ header {
   height: 60px;
   padding: 5px;
   /*background: #1abc9c;*/
-  background: #ff9800;
+  /* background: #ff9800; */
+  background: #e5af05;
 }
 main {
   height: calc(100% - 100px);
+  background: #d0d0d0;
 }
 
 .container {
   height: 100%;
   /*background: #ecf0f1;*/
-  background: #ffc947;
+  /* background: #ffc947; */
+  /* background: #d0d0d0; */
   /*background: #c66900;*/
+  background: white;
 }
 
 footer {
   /*background: #1abc9c;*/
-  background: #ff9800;
+  /* background: #ff9800; */
+  background: #e5af05;
   height: 40px;
   text-align: center;
   line-height: 40px;
