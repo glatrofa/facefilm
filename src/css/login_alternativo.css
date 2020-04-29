@@ -1,0 +1,92 @@
+html,
+body {
+  font-size: 16px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+/* Linea di codice utile per il debug
+body * {border: 1px solid red !important;} */
+
+h1.text-white,
+small {
+  color: white;
+  font-family: "Nunito", sans-serif;  
+}
+
+header {
+  height: 60px;
+  min-height: 40px;
+  padding: 5px 10px;
+  background: #e5af05;
+  font-family: "Nunito", sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+}
+
+
+main {
+  box-sizing: border-box;
+  background-image: url(../../Tv-vintage.jpg);
+  background-position: top;
+  background-size: contain;
+  background-repeat: repeat;
+  height: 100%;
+  padding-top: 70px; 
+  overflow: scroll;
+  position: relative;
+  top: 0;
+}
+
+main .form-container {
+  box-sizing: border-box;
+  width: 50%;
+  padding: 15px;
+  margin: 4rem auto;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 3px solid #e5af05;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width:400px){
+  main .form-container {
+    width: 90%;
+  }
+}
+
+main .form-container h2 {
+  color: #e5af05;
+  padding: 15px 0;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+}
+footer {
+  background: #e5af05;
+  height: 30px;
+  text-align: center;
+  line-height: 1.5;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.button-container { 
+  padding: 0.5em;
+  text-align: center;
+}
+
+.button-container .btn-primary{   
+  margin: 0.5em;
+}
+
+.btn.btn-primary {
+  background-color: #e5af05;
+  font-weight: bold;
+  font-family: "Nunito", sans-serif;
+}
