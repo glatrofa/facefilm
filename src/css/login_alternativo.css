@@ -10,7 +10,7 @@ body {
 }
 
 /* Linea di codice utile per il debug */
-/*body * {border: 1px solid red !important;}*/
+body * {border: 1px solid red !important;}
 
 h1.text-white,
 small {
@@ -30,6 +30,12 @@ header {
   width: 100%;
   top: 0;
   z-index: 2;
+}
+
+#logo {
+  height: 60px;
+  width: auto;
+  margin-top: -5px;
 }
 
 main .form-container {

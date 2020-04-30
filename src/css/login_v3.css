@@ -1,0 +1,25 @@
+/*DEBUGGING*/
+/*body * {border: 1px solid red !important;}*/
+
+.container-fluid {
+    background-image: url(../img/Tv-vintage_resized.jpg), url(../img/Tv-vintage.jpg);
+    background-position: top;
+    /*background-size: cover;*/
+    background-repeat: repeat;
+}
+
+#logo {
+    opacity: 0.9;
+}
+
+.form-container {
+    border: 3px solid #e5af05;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    height: 100vh;
+}
+
+.footer {
+      background-color: #e5af05;
+      width: 100%;
+}
