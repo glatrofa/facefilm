@@ -71,17 +71,23 @@ footer {
   z-index: 2;
 }
 
-.button-container { 
-  padding: 0.5em;
+.button {
+  padding: 1em;
   text-align: center;
 }
 
-.button-container .btn-primary{   
-  margin: 0.5em;
+/* Stile dei bottoni */
+.btn.btn-outline-form {
+color: white;
+background-color: #e5af05;
+border-color: #e5af05;
 }
 
-.btn.btn-primary {
-  background-color: #e5af05;
-  font-weight: bold;
-  font-family: "Nunito", sans-serif;
+/* Contorno agli input */
+.form-control:focus {
+color: #495057;
+background-color: #fff;
+border-color: #e5af05;
+outline: 0;
+box-shadow: 0 0 0 0.2rem rgb(255, 224, 122);
 }

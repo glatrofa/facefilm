@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="../css/login_alternativo.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/login_alternativo.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,800;1,900&display=swap" rel="stylesheet">    
     <title>Login</title>
 </head>
@@ -17,26 +17,31 @@
     <main>
         <div class="form-container">
             <h2>Accedi</h2>
-            <form id="form" action="../php/login.php" method="POST">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="inputGroup-sizing-default">Nome utente</span>
+            <form>
+                <div class="d-flex justify-content-center">
+                    <div class="form-group col-sm-5">
+                        <!-- <label for="email">Email</label> -->
+                        <input type="email" class="form-control" id="email" placeholder="email">
                     </div>
-                    <input type="text" id="username" name="username" maxlength="15" required class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
                 </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+                <div class="d-flex justify-content-center">
+                    <div class="form-group col-sm-5">
+                        <!-- <label for="password">Password</label> -->
+                        <input type="password" class="form-control" id="password" placeholder="password">
                     </div>
-                    <input type="password" id="password" name="password" maxlength="20" required class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
                 </div>
-                <div class="button-container">
-                    <input type="submit" value="Accedi" class="btn btn-primary">                
-                    <input type="reset" value="Cancella" class="btn btn-primary">    
+                <div class="d-flex justify-content-center">
+                    <div class="button">
+                        <!-- class="btn btn-outline-form-second" / btn btn-outline-form -->
+                        <input type="submit" value="Accedi" class="btn btn-outline-form">                
+                        <input type="reset" value="Cancella" class="btn btn-outline-form">    
+                    </div>                    
                 </div>
-                <div class="button-container">
-                    <button onclick="location.href = './signup.html'" class="btn btn-primary">Registrati</button>
-                </div>                                                            
+                <div class="d-flex justify-content-center">
+                    <div class="button">
+                        <button onclick="location.href = './signup.html'" class="btn btn-outline-form">Registrati</button>
+                    </div>  
+                </div>
             </form>            
         </div>
         <div class="background-container"></div>
