@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
     <title>Login</title>
 </head>
 
@@ -16,6 +16,7 @@
     <main>
         <div class="container">
             <h2>Accedi</h2>
+            <!--
             <form id="form" action="../php/login.php" method="POST">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
@@ -30,13 +31,27 @@
                     <input type="password" id="password" name="password" maxlength="20" required class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
                 </div>
                 <div class="button">
-                    <input type="submit" value="Accedi" class="btn btn-primary">                
-                    <input type="reset" value="Cancella" class="btn btn-primary">    
+                    <input type="submit" value="Accedi" class="btn btn-outline-form">                
+                    <input type="reset" value="Cancella" class="btn btn-outline-form-second">    
                 </div>
                 <div class="button">
                     <button onclick="location.href = './signup.html'" class="btn btn-primary">Registrati</button>
                 </div>                                                            
-            </form>            
+            </form>      
+        -->
+            
+            <form>
+                <div class="form-group">
+                    <!-- <label for="email">Email</label> -->
+                    <input type="email" class="form-control" id="email" placeholder="email">
+                </div>
+                <div class="form-group">
+                    <!-- <label for="password">Password</label> -->
+                    <input type="password" class="form-control" id="password" placeholder="password">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            
         </div>
     </main>
     <footer>
