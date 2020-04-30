@@ -1,0 +1,53 @@
+body {
+    background-color: #eeeeee;
+}
+
+.h7 {
+    font-size: 0.8rem;
+}
+
+.gedf-wrapper {
+    margin-top: 0.97rem;
+}
+
+@media (min-width: 992px) {
+    .gedf-main {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    .gedf-card {
+        margin-bottom: 2.77rem;
+    }
+}
+
+/**Reset Bootstrap*/
+.dropdown-toggle::after {
+    content: none;
+    display: none;
+}
+/* Personalizzazioni */
+
+footer {
+    background: #e5af05;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+/* Stile per il distanziamento dei bottoni */
+.button {
+    padding: 1em;
+    text-align: center;
+}
+
+/* Stile dei bottoni */
+.btn.btn-outline-form {
+  color: white;
+  background-color: #e5af05;
+  border-color: #e5af05;
+}
+
+.awwa-navbar {
+    background-color: #e5af05;
+    text-color: white;
+}
