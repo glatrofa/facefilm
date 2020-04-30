@@ -25,3 +25,7 @@ body {
     content: none;
     display: none;
 }
+
+.fa.fa-comment {
+    color: #e5af05;
+}
