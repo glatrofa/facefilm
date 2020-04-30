@@ -14,46 +14,36 @@
 
 <body>
     <main>
-    <nav class="navbar navbar-light bg-white">
-        <a href="#" class="navbar-brand">AWWA</a>
-        <form class="form-inline">
-            <div class="input-group">
-                <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-primary" type="button" id="button-addon2">
-                        <i class="fa fa-search"></i>
-                    </button>
+        <nav class="navbar navbar-expand-md awwa-navbar">
+            <a class="navbar-brand text-white">AWWA</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-item nav-link text-white active" href="./home.html">Home<span class="sr-only">(current)</span></a>
+                  <a class="nav-item nav-link text-white" href="#">Cerca pagine</a>
+                  <a class="nav-item nav-link text-white" href="#">Cerca post</a>
+                  <a class="nav-item nav-link text-white" href="#">Profilo</a>
                 </div>
-            </div>
-        </form>
-    </nav>
-
+              </div>
+        </nav>
 
     <div class="container-fluid gedf-wrapper">
         <div class="row">
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
-                        <div class="h5">@LeeCross</div>
-                        <div class="h7 text-muted">Fullname : Miracles Lee Cross</div>
-                        <div class="h7">Developer of web applications, JavaScript, PHP, Java, Python, Ruby, Java, Node.js,
-                            etc.
+                        <div class="h4">Classifica</div>
+                        <div class="h6">
+                            <p>Prima</p>
+                            <p>Seconda</p>
+                            <p>Terza</p>
                         </div>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="h6 text-muted">Followers</div>
-                            <div class="h5">5.2342</div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="h6 text-muted">Following</div>
-                            <div class="h5">6758</div>
-                        </li>
-                        <li class="list-group-item">Vestibulum at eros</li>
-                    </ul>
+                    </div>                    
                 </div>
             </div>
-            <div class="col-md-6 gedf-main">
+            <div class="col-md-9 gedf-main">
 
                 <!--- \\\\\\\Post-->
                 <div class="card gedf-card">
@@ -64,11 +54,13 @@
                                     Pubblica un post
                                 </a>
                             </li>
+                            <!--
                             <li class="nav-item">
                                 <a class="nav-link" id="search-tab" data-toggle="tab" href="#images" role="tab" aria-controls="images" aria-selected="false">
                                     Cerca post
                                 </a>
                             </li>
+                            -->
                         </ul>
                     </div>
                     <div class="card-body">
@@ -78,9 +70,10 @@
                                     <p>
                                         qui andrà la selezione di serie, stagione ed episodio con menu a dropdown, con il link si andrà alla pagina di creazione post.
                                     </p>
-                                    <button>Pubblica</button>
+                                    <button class="btn btn-outline-form">Pubblica</button>
                                 </div>
                             </div>
+                            <!--
                             <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
                                 <div class="form-group">
                                     <div class="custom-file">
@@ -91,6 +84,7 @@
                                     </div>
                                 </div>
                             </div>
+                            -->
                         </div>
                         <!--
                         <div class="btn-toolbar justify-content-between">
@@ -112,8 +106,7 @@
                         -->
                     </div>
                 </div>
-                <!-- Post /////-->
-                <br>
+                <!-- Post /////-->                
                 <!--- \\\\\\\Post-->
                 <div class="card gedf-card">
                     <div class="card-header">
@@ -124,7 +117,6 @@
                                 </div>
                                 <div class="ml-2">
                                     <div class="h5 m-0">Nome utente</div>
-                                    <div class="h7 text-muted">Utente/admin</div>
                                 </div>
                             </div>
                             <div>
@@ -133,10 +125,8 @@
                                         <i class="fa fa-ellipsis-h"></i>
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
-                                        <div class="h6 dropdown-header">Configuration</div>
-                                        <a class="dropdown-item" href="#">Save</a>
-                                        <a class="dropdown-item" href="#">Hide</a>
-                                        <a class="dropdown-item" href="#">Report</a>
+                                        <div class="h6 dropdown-header">Opzioni</div>
+                                        <a class="dropdown-item" href="#">Segnala</a>
                                     </div>
                                 </div>
                             </div>
@@ -145,57 +135,39 @@
                     </div>
                     <div class="card-body">
                         <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> ieri alle circa meno quasi</div>
-                        <a class="card-link" href="#">
+                        <a class="card-link">
                             <h5 class="card-title">
                                 Titolo
                             </h5>
                         </a>
-
                         <p class="card-text">
                             Testo del post
                         </p>
                         <div>
-                            <span class="badge badge-primary">Narcos</span>
-                            <span class="badge badge-primary">S 1</span>
-                            <span class="badge badge-primary">Ep 10</span>
+                            <span class="badge badge-primary btn btn-outline-form">Narcos</span>
+                            <span class="badge badge-primary btn btn-outline-form">S 1</span>
+                            <span class="badge badge-primary btn btn-outline-form">Ep 10</span>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>
-                        <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
-                        <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+                        <a href="#" class="card-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M8.834.066C7.494-.087 6.5 1.048 6.5 2.25v.5c0 1.329-.647 2.124-1.318 2.614-.328.24-.66.403-.918.508A1.75 1.75 0 002.75 5h-1A1.75 1.75 0 000 6.75v7.5C0 15.216.784 16 1.75 16h1a1.75 1.75 0 001.662-1.201c.525.075 1.067.229 1.725.415.152.043.31.088.475.133 1.154.32 2.54.653 4.388.653 1.706 0 2.97-.153 3.722-1.14.353-.463.537-1.042.668-1.672.118-.56.208-1.243.313-2.033l.04-.306c.25-1.869.265-3.318-.188-4.316a2.418 2.418 0 00-1.137-1.2C13.924 5.085 13.353 5 12.75 5h-1.422l.015-.113c.07-.518.157-1.17.157-1.637 0-.922-.151-1.719-.656-2.3-.51-.589-1.247-.797-2.01-.884zM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.922.922 0 00-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.861 5.861 0 01-1.567.81V13.3zM2.75 6.5a.25.25 0 01.25.25v7.5a.25.25 0 01-.25.25h-1a.25.25 0 01-.25-.25v-7.5a.25.25 0 01.25-.25h1z"></path></svg> Mi piace</a>
+                        <a href="#" class="card-link"><i class="fa fa-gittip"></i> Non mi piace</a>
+                        <a href="#" class="card-link"><i class="fa fa-comment"></i> Commenta</a>                    
                     </div>
                 </div>
                 <!-- Post /////-->
-
-            </div>
-            <div class="col-md-3">
-                <div class="card gedf-card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
-                    </div>
-                </div>
-                <div class="card gedf-card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                card's content.</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </div>
-            </div>
+            </div>            
         </div>
     </div>
     </main>
     <footer>
-        <small>&copy; AWWA</small>
+        <small>
+            <a>&copy; AWWA</a>
+            <a> - </a>
+            <a href="#">Chi siamo</a>
+            <a> - </a>
+            <a href="#">Contattaci</a>
+        </small>
     </footer>
 </body>
 
