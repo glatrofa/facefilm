@@ -39,23 +39,20 @@ footer {
   line-height: 40px;
 }
 
+/* Stile per il distanziamento dei bottoni */
 .button {
     padding: 1em;
     text-align: center;
 }
 
+/* Stile dei bottoni */
 .btn.btn-outline-form {
-  color: #e5af05;
-  background-color: white;
-  border-color: #e5af05;
-}
-
-.btn.btn-outline-form-second {
   color: white;
   background-color: #e5af05;
   border-color: #e5af05;
 }
 
+/* Contorno agli input */
 .form-control:focus {
   color: #495057;
   background-color: #fff;
