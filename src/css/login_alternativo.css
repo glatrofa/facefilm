@@ -6,8 +6,8 @@ body {
   width: 100%;
 }
 
-/* Linea di codice utile per il debug
-body * {border: 1px solid red !important;} */
+/* Linea di codice utile per il debug */
+/*body * {border: 1px solid red !important;}*/
 
 h1.text-white,
 small {
@@ -33,14 +33,15 @@ header {
 main {
   box-sizing: border-box;
   background-image: url(../../Tv-vintage.jpg);
-  background-position: top;
-  background-size: contain;
+  background-position: center;
+  background-size: cover;
   background-repeat: repeat;
   height: 100%;
   padding-top: 70px; 
   overflow: scroll;
   position: relative;
-  top: 0;
+  top: 60px;
+  bottom: -30px;
 }
 
 main .form-container {
