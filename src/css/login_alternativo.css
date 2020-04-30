@@ -1,9 +1,10 @@
-html,
 body {
   font-size: 16px;
   box-sizing: border-box;
-  height: 100%;
-  width: 100%;
+  background-image: url(../../Tv-vintage.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* Linea di codice utile per il debug */
@@ -23,32 +24,25 @@ header {
   font-family: "Nunito", sans-serif;
   font-style: italic;
   font-weight: 900;
-  position: fixed;
+  position: sticky;
   width: 100%;
   top: 0;
   z-index: 2;
 }
 
 
-main {
-  box-sizing: border-box;
-  background-image: url(../../Tv-vintage.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: repeat;
+/*main {
   height: 100%;
-  padding-top: 70px; 
+  padding: 70px 0; 
   overflow: scroll;
   position: relative;
-  top: 60px;
-  bottom: -30px;
-}
+} */
 
 main .form-container {
   box-sizing: border-box;
   width: 50%;
-  padding: 15px;
-  margin: 4rem auto;
+  padding: 20px;
+  margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.7);
   border: 3px solid #e5af05;
   border-radius: 10px;
