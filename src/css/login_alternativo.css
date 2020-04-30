@@ -1,10 +1,16 @@
 body {
+  height: 100%;
+  width: 100%;
   font-size: 16px;
   box-sizing: border-box;
-  background-image: url(../../Tv-vintage.jpg);
+  background-image: url(../img/Tv-vintage.jpg);
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 850px) {
+  body {background-repeat: repeat}
 }
 
 /* Linea di codice utile per il debug */
@@ -30,14 +36,6 @@ header {
   z-index: 2;
 }
 
-
-/*main {
-  height: 100%;
-  padding: 70px 0; 
-  overflow: scroll;
-  position: relative;
-} */
-
 main .form-container {
   box-sizing: border-box;
   width: 50%;
@@ -46,6 +44,8 @@ main .form-container {
   background-color: rgba(255, 255, 255, 0.7);
   border: 3px solid #e5af05;
   border-radius: 10px;
+  margin-top: 70px;
+  margin-bottom: 40px;
 }
 
 @media only screen and (max-width:400px){
