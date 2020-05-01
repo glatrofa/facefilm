@@ -1,14 +1,16 @@
 body {
+  height: 100%;
+  width: 100%;
   font-size: 16px;
   box-sizing: border-box;
-  background-image: url(../../Tv-vintage.jpg);
+  background-image: url(../img/Tv-vintage.jpg);
   background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-size: contain;
+  background-repeat: repeat;
 }
 
 /* Linea di codice utile per il debug */
-/*body * {border: 1px solid red !important;}*/
+body * {border: 1px solid red !important;}
 
 h1.text-white,
 small {
@@ -30,13 +32,11 @@ header {
   z-index: 2;
 }
 
-
-/*main {
-  height: 100%;
-  padding: 70px 0; 
-  overflow: scroll;
-  position: relative;
-} */
+#logo {
+  height: 60px;
+  width: auto;
+  margin-top: -5px;
+}
 
 main .form-container {
   box-sizing: border-box;
@@ -46,6 +46,8 @@ main .form-container {
   background-color: rgba(255, 255, 255, 0.7);
   border: 3px solid #e5af05;
   border-radius: 10px;
+  margin-top: 70px;
+  margin-bottom: 40px;
 }
 
 @media only screen and (max-width:400px){
