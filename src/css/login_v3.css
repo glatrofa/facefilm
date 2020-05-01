@@ -1,25 +1,62 @@
+:root {
+    --awwa-primary: #e5af05;
+    --awwa-secondary: #00008b;
+}
+
+.awwa-primary {
+    color: var(--awwa-primary);
+}
+
 /*DEBUGGING*/
 /*body * {border: 1px solid red !important;}*/
 
+body, .container-fluid {
+    min-height: 100vh;
+}
+
 .container-fluid {
-    background-image: url(../img/Tv-vintage_resized.jpg), url(../img/Tv-vintage.jpg);
+    /*Viene caricata la prima immagine (la seconda è di fallback), che essendo ridimensionata e più piccola
+    permette la ripetizione automatica fino a riempire tutto il container*/
+    background-image: url(../img/Tv-vintage_resized.jpg), url(../img/Tv-vintage.jpg); 
     background-position: top;
-    /*background-size: cover;*/
     background-repeat: repeat;
 }
 
 #logo {
-    opacity: 1;
+    max-width: 600px;
 }
 
 .form-container {
-    border: 3px solid #e5af05;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.8);
-    height: 100vh;
+    border: 5px solid #e5af05;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* l'ultimo valore è opacità */
+    height: 50%;
 }
 
 .footer {
-      background-color: #e5af05;
-      width: 100%;
+    background-color: #e5af05;
+    width: 100%;
+    opacity: 0.8;
+}
+
+/* Stile per il distanziamento dei bottoni */
+.button {
+    padding: 1em;
+    text-align: center;
+}
+
+/* Stile dei bottoni */
+.btn.btn-outline-form {
+  color: white;
+  background-color: #e5af05;
+  border-color: #e5af05;
+}
+
+/* Contorno agli input */
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #e5af05;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgb(255, 224, 122);
 }
