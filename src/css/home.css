@@ -6,6 +6,7 @@
 
 body {
     background-color: #eeeeee;
+    background-image: url(../img/bg-pattern/pattern.jpg);
 }
 
 .h7 {
@@ -53,14 +54,17 @@ footer {
   border-color: var(--awwa-primary);
 }
 
+/* Sfondo navbar */
 .navbar-bg-gold {
     background-color: var(--awwa-primary);
 }
 
+/* Testo color nero */
 .text-black {
     color: black;
 }
 
+/* Testo color oro */
 .text-gold {
     color: var(--awwa-primary);
 }
