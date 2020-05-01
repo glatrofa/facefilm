@@ -80,22 +80,7 @@ footer {
 
 /* Modifica colori link */
 
-  /* unvisited link */
-  a.post:link {
-    color: var(--awwa-primary);
-  }
-  
-  /* visited link */
-  a.post:visited {
-    color: var(--awwa-secondary);
-  }
-  
   /* mouse over link */
   a.post:hover {
-    color: var(--awwa-secondary);
-  }
-  
-  /* selected link */
-  a.post:active {
     color: var(--awwa-secondary);
   }
