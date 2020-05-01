@@ -5,8 +5,15 @@
 }
 
 body {
-    background-color: #eeeeee;
+    background-color: #eeeeee;    
+}
+
+body.main {
     background-image: url(../img/bg-pattern/pattern.jpg);
+}
+
+body.tv {
+    background-image: url(../img/Tv-vintage.jpg);
 }
 
 .h7 {
