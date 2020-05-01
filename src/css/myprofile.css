@@ -17,7 +17,7 @@ body.tv {
 }
 
 .h7 {
-    font-size: 0.8rem; /*da togliere?*/
+    font-size: 0.8rem; /*da togliere? */
 }
 
 .gedf-wrapper {
@@ -42,16 +42,15 @@ body.tv {
 
 /*-- Personalizzazioni --*/
 
-.navbar-toggler-icon {
-    color: white !important;
-}
-
 footer {
     background: var(--awwa-primary);
-    height: 40px;
+    /* height: 40px; */
     text-align: center;
     line-height: 40px;
-    /* position: fixed; */
+    position: fixed;
+    height: 45px;
+    bottom: 0;
+    width: 100%;
 }
 
 /* Stile per il distanziamento dei bottoni */
@@ -61,7 +60,7 @@ footer {
 }
 
 /* Stile dei bottoni */
-.btn.btn-outline-form {
+.btn.gold-style {
   color: white;
   background-color: var(--awwa-primary);
   border-color: var(--awwa-primary);
@@ -82,24 +81,22 @@ footer {
     color: var(--awwa-primary);
 }
 
-/* Modifica colori link */
+/* mouse over link */
+a.post:hover {
+    color: var(--awwa-secondary);
+}
 
-  /* unvisited link */
-  a.post:link {
-    color: var(--awwa-primary);
+  @media (min-width: 992px) {
+    .container div {
+      width: 33%;
+    }
+    .container div:last-child {
+      width: 100%;
+    }
   }
   
-  /* visited link */
-  a.post:visited {
-    color: var(--awwa-secondary);
-  }
-  
-  /* mouse over link */
-  a.post:hover {
-    color: var(--awwa-secondary);
-  }
-  
-  /* selected link */
-  a.post:active {
-    color: var(--awwa-secondary);
-  }
+  @media (min-width: 1200px) {
+    .container div:last-child {
+      width: 33%;
+    }
+  }  
