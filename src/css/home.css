@@ -47,14 +47,17 @@ footer {
   border-color: #e5af05;
 }
 
+/* Sfondo navbar */
 .navbar-bg-gold {
     background-color: #e5af05;
 }
 
+/* Testo color nero */
 .text-black {
     color: black;
 }
 
+/* Testo color oro */
 .text-gold {
     color: #e5af05;
 }
