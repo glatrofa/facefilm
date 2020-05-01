@@ -47,6 +47,14 @@ footer {
   border-color: #e5af05;
 }
 
-.awwa-navbar {
+.navbar-bg-gold {
     background-color: #e5af05;
+}
+
+.text-black {
+    color: black;
+}
+
+.text-gold {
+    color: #e5af05;
 }
