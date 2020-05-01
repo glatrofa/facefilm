@@ -17,7 +17,7 @@ body.tv {
 }
 
 .h7 {
-    font-size: 0.8rem;
+    font-size: 0.8rem; /*da togliere?*/
 }
 
 .gedf-wrapper {
@@ -39,13 +39,15 @@ body.tv {
     content: none;
     display: none;
 }
-/* Personalizzazioni */
+
+/*-- Personalizzazioni --*/
 
 footer {
     background: var(--awwa-primary);
     height: 40px;
     text-align: center;
     line-height: 40px;
+    /* position: fixed; */
 }
 
 /* Stile per il distanziamento dei bottoni */
@@ -75,3 +77,10 @@ footer {
 .text-gold {
     color: var(--awwa-primary);
 }
+
+/* Modifica colori link */
+
+  /* mouse over link */
+  a.post:hover {
+    color: var(--awwa-secondary);
+  }
