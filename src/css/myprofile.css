@@ -42,6 +42,10 @@ body.tv {
 
 /*-- Personalizzazioni --*/
 
+.navbar-toggler-icon {
+    color: white !important;
+}
+
 footer {
     background: var(--awwa-primary);
     height: 40px;
