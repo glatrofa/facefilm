@@ -1,3 +1,9 @@
+/* Definizione colori primario e secondario del sito*/
+:root {
+    --awwa-primary: #e5af05;
+    --awwa-secondary: #00008b;
+}
+
 body {
     background-color: #eeeeee;
 }
@@ -28,7 +34,7 @@ body {
 /* Personalizzazioni */
 
 footer {
-    background: #e5af05;
+    background: var(--awwa-primary);
     height: 40px;
     text-align: center;
     line-height: 40px;
@@ -43,12 +49,12 @@ footer {
 /* Stile dei bottoni */
 .btn.btn-outline-form {
   color: white;
-  background-color: #e5af05;
-  border-color: #e5af05;
+  background-color: var(--awwa-primary);
+  border-color: var(--awwa-primary);
 }
 
 .navbar-bg-gold {
-    background-color: #e5af05;
+    background-color: var(--awwa-primary);
 }
 
 .text-black {
@@ -56,5 +62,5 @@ footer {
 }
 
 .text-gold {
-    color: #e5af05;
+    color: var(--awwa-primary);
 }
