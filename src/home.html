@@ -7,6 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="./js/home.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">        
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">    
     <link rel="stylesheet" href="./css/home.css" type="text/css">
@@ -19,19 +20,19 @@
             <a class="navbar-brand text-white">AWWA</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                  <a class="nav-item nav-link text-white active" href="./home.html">Home<span class="sr-only">(current)</span></a>
-                  <a class="nav-item nav-link text-white" href="#">Cerca pagine</a>
-                  <a class="nav-item nav-link text-white" href="#">Cerca post</a>
-                  <a class="nav-item nav-link text-white" href="#">Profilo</a>
+                    <a class="nav-item nav-link text-white active" href="./home.html">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link text-white" href="#">Cerca pagine</a>
+                    <a class="nav-item nav-link text-white" href="#">Cerca post</a>
+                    <a class="nav-item nav-link text-white" href="#">Profilo</a>
                 </div>
-              </div>
+            </div>
         </nav> 
         <!--  -->          
         <!-- Pagina principale -->
-        <div class="container-fluid gedf-wrapper">
+        <div class="container-fluid gedf-wrapper bordo">
             <!-- Riga principale -->
             <div class="row">
                 <!-- Classifica -->
@@ -123,12 +124,11 @@
                         <!-- Fine visualizza post -->
                         <!-- Azioni possibili sul post -->
                         <div class="card-footer">
-                            <a href="#" class="card-link text-gold"><i class="fa fa-thumbs-up"></i> Mi piace</a>
-                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M8.834.066C7.494-.087 6.5 1.048 6.5 2.25v.5c0 1.329-.647 2.124-1.318 2.614-.328.24-.66.403-.918.508A1.75 1.75 0 002.75 5h-1A1.75 1.75 0 000 6.75v7.5C0 15.216.784 16 1.75 16h1a1.75 1.75 0 001.662-1.201c.525.075 1.067.229 1.725.415.152.043.31.088.475.133 1.154.32 2.54.653 4.388.653 1.706 0 2.97-.153 3.722-1.14.353-.463.537-1.042.668-1.672.118-.56.208-1.243.313-2.033l.04-.306c.25-1.869.265-3.318-.188-4.316a2.418 2.418 0 00-1.137-1.2C13.924 5.085 13.353 5 12.75 5h-1.422l.015-.113c.07-.518.157-1.17.157-1.637 0-.922-.151-1.719-.656-2.3-.51-.589-1.247-.797-2.01-.884zM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.922.922 0 00-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.861 5.861 0 01-1.567.81V13.3zM2.75 6.5a.25.25 0 01.25.25v7.5a.25.25 0 01-.25.25h-1a.25.25 0 01-.25-.25v-7.5a.25.25 0 01.25-.25h1z"></path></svg> -->
-                            <a href="#" class="card-link text-gold"><i class="fa fa-thumbs-down"></i> Non mi piace</a>
-                            <a href="#" class="card-link text-gold"><i class="fa fa-comment"></i> Commenta</a>                    
+                            <a href="#" class="card-link text-gold post" data-toggle="modal" data-target="#modal-like"><i class="fa fa-thumbs-up"></i> Mi piace</a>
+                            <a href="#" class="card-link text-gold post" data-toggle="modal" data-target="#modal-dislike"><i class="fa fa-thumbs-down"></i> Non mi piace</a>
+                            <a href="#" class="card-link text-gold post"><i class="fa fa-comment"></i> Commenta</a>                    
                         </div>
-                        <!-- Fine azioni del post -->
+                        <!-- Fine azioni del post -->                        
                     </div>
                     <!-- Fine sezione principale -->
                 </div>     
@@ -137,16 +137,43 @@
             <!-- Fine riga -->
         </div>
         <!-- Fine pagina principale -->
+        <!-- Modal per avviso utente -->
+        <!-- Modal per le azioni dei post-->
+        <div class="modal fade" id="modal-like" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Mi piace aggiunto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modal-dislike" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Non mi piace aggiunto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  -->
     </main>
 
     <!-- Footer -->
     <footer>
-        <small>
+        <small class="text-white">
             <a>&copy; AWWA</a>
             <a> - </a>
-            <a href="#">Chi siamo</a>
+            <a class="text-white" href="#">Chi siamo</a>
             <a> - </a>
-            <a href="#">Contattaci</a>
+            <a class="text-white" href="#">Contattaci</a>
         </small>
     </footer>
     <!--  -->
