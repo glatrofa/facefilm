@@ -10,26 +10,26 @@
 /*DEBUGGING*/
 /*body * {border: 1px solid red !important;}*/
 
-body, .container-fluid{
+body, .container-fluid {
     min-height: 100vh;
 }
 
 .container-fluid {
-    background-image: url(../img/Tv-vintage_resized.jpg), url(../img/Tv-vintage.jpg);
+    /*Viene caricata la prima immagine (la seconda è di fallback), che essendo ridimensionata e più piccola
+    permette la ripetizione automatica fino a riempire tutto il container*/
+    background-image: url(../img/Tv-vintage_resized.jpg), url(../img/Tv-vintage.jpg); 
     background-position: top;
-    /*background-size: cover;*/
     background-repeat: repeat;
 }
 
 #logo {
-    width: 120%;
-    height: auto;    
+    max-width: 600px;
 }
 
 .form-container {
     border: 5px solid #e5af05;
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.8); /* l'ultimo valore è opacità */
     height: 50%;
 }
 
