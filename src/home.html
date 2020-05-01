@@ -124,9 +124,9 @@
                         <!-- Fine visualizza post -->
                         <!-- Azioni possibili sul post -->
                         <div class="card-footer">
-                            <a href="#" class="card-link text-gold post" data-toggle="modal" data-target="#modal-like"><i class="fa fa-thumbs-up"></i> Mi piace</a>
-                            <a href="#" class="card-link text-gold post" data-toggle="modal" data-target="#modal-dislike"><i class="fa fa-thumbs-down"></i> Non mi piace</a>
-                            <a href="#" class="card-link text-gold post"><i class="fa fa-comment"></i> Commenta</a>                    
+                            <a class="card-link text-gold" id="link-like" href="javascript:modalLikeCLick();"><i class="fa fa-thumbs-up"></i> Mi piace</a>
+                            <a class="card-link text-gold" id="link-dislike" href="javascript:modalDislikeCLick();"><i class="fa fa-thumbs-down"></i> Non mi piace</a>
+                            <a class="card-link text-gold" id="link-comment"><i class="fa fa-comment"></i> Commenta</a>                    
                         </div>
                         <!-- Fine azioni del post -->                        
                     </div>
@@ -151,11 +151,35 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="modal-like-removed" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Mi piace rimosso</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="modal fade" id="modal-dislike" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Non mi piace aggiunto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modal-dislike-removed" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Non mi piace rimosso</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
