@@ -1,9 +1,23 @@
+/* Definizione colori primario e secondario del sito*/
+:root {
+    --awwa-primary: #e5af05;
+    --awwa-secondary: #00008b;
+}
+
 body {
-    background-color: #eeeeee;
+    background-color: #eeeeee;    
+}
+
+body.main {
+    background-image: url(../img/bg-pattern/pattern.jpg);
+}
+
+body.tv {
+    background-image: url(../img/Tv-vintage.jpg);
 }
 
 .h7 {
-    font-size: 0.8rem;
+    font-size: 0.8rem; /*da togliere?*/
 }
 
 .gedf-wrapper {
@@ -25,13 +39,15 @@ body {
     content: none;
     display: none;
 }
-/* Personalizzazioni */
+
+/*-- Personalizzazioni --*/
 
 footer {
-    background: #e5af05;
+    background: var(--awwa-primary);
     height: 40px;
     text-align: center;
     line-height: 40px;
+    /* position: fixed; */
 }
 
 /* Stile per il distanziamento dei bottoni */
@@ -43,11 +59,43 @@ footer {
 /* Stile dei bottoni */
 .btn.btn-outline-form {
   color: white;
-  background-color: #e5af05;
-  border-color: #e5af05;
+  background-color: var(--awwa-primary);
+  border-color: var(--awwa-primary);
 }
 
-.awwa-navbar {
-    background-color: #e5af05;
-    text-color: white;
+/* Sfondo navbar */
+.navbar-bg-gold {
+    background-color: var(--awwa-primary);
 }
+
+/* Testo color nero */
+.text-black {
+    color: black;
+}
+
+/* Testo color oro */
+.text-gold {
+    color: var(--awwa-primary);
+}
+
+/* Modifica colori link */
+
+  /* unvisited link */
+  a.post:link {
+    color: var(--awwa-primary);
+  }
+  
+  /* visited link */
+  a.post:visited {
+    color: var(--awwa-secondary);
+  }
+  
+  /* mouse over link */
+  a.post:hover {
+    color: var(--awwa-secondary);
+  }
+  
+  /* selected link */
+  a.post:active {
+    color: var(--awwa-secondary);
+  }
