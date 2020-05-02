@@ -4,18 +4,77 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="../css/login.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/login_v3.css">
     <script src="..\js\select_country.js"></script>
     <title>Sign up</title>
 </head>
 
 <body>
-    <header>
-        <h1 class="text-white">awwa</h1>
-    </header>
     <main>
-        <div class="container">
+        <div class="container-fluid">
+            <div class="row no-gutters">
+                <div class="col-xs-12 col-lg-7 text-center" id="logo-container">
+                    <img src="../img/logo/logo2_transparent.png" alt="Logo" id="logo" class="img img-fluid">
+                </div>
+                <div class="col-xs-12 col-lg-5 mt-n4 mt-lg-0 mb-5 mb-lg-0 text-center align-self-center">
+                    <div class="form-container py-5">
+                        <h2 class="font-weight-bold awwa-primary mb-3">Registrati</h2>
+                        <form id="form" action="../php/registrazione.php" method="POST">
+                            <div class="d-flex justify-content-center">
+                                <div class="form-group col-11 col-lg-9">
+                                    <input type="text" class="form-control" id="nome" placeholder="Nome" maxlength="50" aria-required="true">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="form-group col-11 col-lg-9">
+                                    <input type="text" class="form-control" id="cognome" placeholder="Cognome" maxlength="50" aria-required="true">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="form-group col-11 col-lg-9">
+                                    <input type="date" class="form-control" id="data_nascita" placeholder="Data di nascita" aria-required="true">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="form-group col-11 col-lg-9">
+                                    <select class="form-control" id="nazione" aria-required="true"></select>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="form-group col-11 col-lg-9">
+                                    <input type="email" class="form-control" id="email" placeholder="Email" maxlength="50" aria-required="true">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="form-group col-11 col-lg-9">
+                                    <input type="text" class="form-control" id="nome_utente" placeholder="Nome utente" maxlength="50" aria-required="true">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="form-group col-11 col-lg-9">
+                                    <input type="password" class="form-control" id="email" placeholder="Password" maxlength="50" aria-required="true">
+                                </div>
+                            </div>
+                            <div class="row justify-content-center mb-3">
+                                <div class="col-auto">
+                                    <button onclick="" class="btn btn-outline-form">Registrati</button>
+                                </div>
+                                <div class="col-auto">
+                                    <button onclick="" class="btn btn-outline-form">Svuota</button>    
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex justify-content-center">
+                                <div class="button">
+                                    <button onclick="location.href = './login_v3.html'" class="btn btn-outline-form">Accedi</button>
+                                </div>  
+                            </div>
+                        </form>            
+                    </div>
+                </div>
+            </div>
+            <!--
             <h2>Registrati</h2>
             <form id="form" action="../php/registrazione.php" method="POST">
                 <div class="input-group mb-3">
@@ -67,7 +126,8 @@
                       <input type="submit" value="Registrati" class="btn btn-primary">                
                       <input type="reset" value="Cancella" class="btn btn-primary">    
                   </div>                                                         
-            </form>            
+            </form>
+            -->            
         </div>
     </main>
     <footer>
