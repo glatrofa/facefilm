@@ -12,6 +12,7 @@
 
 body, .container-fluid {
     min-height: 100vh;
+    min-width: 100wh;
 }
 
 .container-fluid {
@@ -26,7 +27,7 @@ body, .container-fluid {
     max-width: 600px;
 }
 
-.form-container {
+.form {
     border: 5px solid #e5af05;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.8); /* l'ultimo valore è opacità */
@@ -39,6 +40,10 @@ body, .container-fluid {
     opacity: 0.8;
 }
 
+footer:hover {
+    opacity: 1;
+}
+
 /* Stile per il distanziamento dei bottoni */
 .button {
     padding: 1em;
@@ -46,11 +51,17 @@ body, .container-fluid {
 }
 
 /* Stile dei bottoni */
-.btn.btn-outline-form {
+.btn.btn-form-primary {
   color: white;
   background-color: #e5af05;
-  border-color: #e5af05;
+  border-color: white;
 }
+
+.btn.btn-form-secondary {
+    color: #e5af05;
+    background-color: white;
+    border-color: #e5af05;
+  }
 
 /* Contorno agli input */
 .form-control:focus {
