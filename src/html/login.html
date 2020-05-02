@@ -4,9 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../css/login.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,800;1,900&display=swap" rel="stylesheet">    
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/f2d1c1774e.js" crossorigin="anonymous"></script>
+    <script src="../js/login.js" type="module"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">        
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">    
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/login.css" type="text/css">            
     <title>Login</title>
 </head>
 
@@ -20,7 +27,7 @@
                 <div class="col-xs-12 col-lg-6 mt-n4 mt-lg-0 mb-5 mb-lg-0 text-center align-self-center">
                     <div class="form py-5">
                         <h2 class="font-weight-bold awwa-primary mb-3">Accedi</h2>
-                        <form id="login-form">
+                        <form id="form-login">
                             <div class="d-flex justify-content-center">
                                 <div class="form-group col-11 col-lg-9">
                                     <input type="email" class="form-control" id="email" placeholder="Email" required>
@@ -38,15 +45,15 @@
                                 <div class="col-2">
                                     <button type="reset" class="btn btn-form-secondary">Svuota</button>    
                                 </div>
-                            </div>                            
-                            <div class="row justify-content-center">
-                                <div class="col-12 text-center">
-                                    <div class="button">
-                                        <button onclick="location.href = './signup.html'" class="btn btn-form-primary">Registrati</button>
-                                    </div>  
-                                </div>
-                            </div>
+                            </div>                                                        
                         </form>            
+                        <div class="row justify-content-center">
+                            <div class="col-12 text-center">
+                                <div class="button">
+                                    <button onclick="location.href = './signup.html'" class="btn btn-form-primary">Registrati</button>
+                                </div>  
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
