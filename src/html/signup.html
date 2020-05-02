@@ -14,46 +14,71 @@
     <main>
         <div class="container-fluid">
             <div class="row no-gutters">
-                <div class="col-xs-12 col-lg-7 text-center" id="logo-container">
+                <div class="col-xs-12 col-lg-6 text-center" id="logo-container">
                     <img src="../img/logo/logo2_transparent.png" alt="Logo" id="logo" class="img img-fluid">
                 </div>
-                <div class="col-xs-12 col-lg-5 mt-n4 mt-lg-0 mb-5 mb-lg-0 text-center align-self-center">
-                    <div class="form py-5">
-                        <h2 class="font-weight-bold awwa-primary mb-3">Registrati</h2>
-                        <form id="form" action="../php/registrazione.php" method="POST">
+                <div class="col-xs-12 col-lg-6 mt-n4 mt-lg-0 mb-5 mb-lg-0 text-center align-self-center">
+                    <form class="form py-5 my-5" id="form" action="../php/registrazione.php" method="POST">
+                        <!-- Il form è tratto come un container con le sue row e col -->
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <h2 class="font-weight-bold awwa-primary mb-5">Registrati</h2>
+                            </div>
+                            <div class="row justify-content-around mb-3">
+                                <input class="form-control col-5" type="text" id="nome" placeholder="Nome" maxlength="50" aria-required="true" required>
+                                <input class="form-control col-5" type="text" id="cognome" placeholder="Cognome" maxlength="50" aria-required="true" required>
+                            </div>
+                            <div class="row justify-content-around mb-3">
+                                <input class="form-control col-5" type="date" id="data_nascita" placeholder="Data di nascita" aria-required="true" required>
+                                <select class="form-control col-5" id="nazione" aria-required="true" required></select>
+                            </div>
+                            <hr>
+                            <div class="row justify-content-center mb-3">
+                                <input class="form-control col-8" type="text" id="nome_utente" placeholder="Nome utente" maxlength="50" aria-required="true" required>
+                            </div>
+                            <div class="row justify-content-center mb-3">
+                                <input class="form-control col-8" type="email" id="email" placeholder="Email" maxlength="50" aria-required="true" required>
+                            </div>
+                            <div class="row justify-content-center">
+                                <input class="form-control col-8" type="password" id="password" placeholder="Password" maxlength="50" aria-required="true" required>
+                            </div>
+                        </div>
+                    </form>
+                        <!-- Fine container del form-->
+                        <!--<form>
                             <div class="d-flex justify-content-center">
                                 <div class="form-group col-11 col-lg-9">
-                                    <input type="text" class="form-control" id="nome" placeholder="Nome" maxlength="50" aria-required="true">
+                                    <input type="text" class="form-control" id="nome" placeholder="Nome" maxlength="50" aria-required="true" required>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center">
                                 <div class="form-group col-11 col-lg-9">
-                                    <input type="text" class="form-control" id="cognome" placeholder="Cognome" maxlength="50" aria-required="true">
+                                    <input type="text" class="form-control" id="cognome" placeholder="Cognome" maxlength="50" aria-required="true" required>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center">
                                 <div class="form-group col-11 col-lg-9">
-                                    <input type="date" class="form-control" id="data_nascita" placeholder="Data di nascita" aria-required="true">
+                                    <input type="date" class="form-control" id="data_nascita" placeholder="Data di nascita" aria-required="true" required>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="form-group col-11 col-lg-auto">
+                                    <select class="form-control" id="nazione" aria-required="true" required></select>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center">
                                 <div class="form-group col-11 col-lg-9">
-                                    <select class="form-control" id="nazione" aria-required="true"></select>
+                                    <input type="email" class="form-control" id="email" placeholder="Email" maxlength="50" aria-required="true" required>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center">
                                 <div class="form-group col-11 col-lg-9">
-                                    <input type="email" class="form-control" id="email" placeholder="Email" maxlength="50" aria-required="true">
+                                    <input type="text" class="form-control" id="nome_utente" placeholder="Nome utente" maxlength="50" aria-required="true" required>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center">
                                 <div class="form-group col-11 col-lg-9">
-                                    <input type="text" class="form-control" id="nome_utente" placeholder="Nome utente" maxlength="50" aria-required="true">
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-center">
-                                <div class="form-group col-11 col-lg-9">
-                                    <input type="password" class="form-control" id="email" placeholder="Password" maxlength="50" aria-required="true">
+                                    <input type="password" class="form-control" id="password" placeholder="Password" maxlength="50" aria-required="true" required>
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-3">
@@ -70,10 +95,11 @@
                                     <button onclick="location.href = './login_v3.html'" class="btn btn-form-primary">Accedi</button>
                                 </div>  
                             </div>
-                        </form>            
-                    </div>
+                        </form>
+                        -->           
                 </div>
             </div>
+        </div>
             <!--
             <h2>Registrati</h2>
             <form id="form" action="../php/registrazione.php" method="POST">
@@ -133,8 +159,8 @@
     <footer class="footer fixed-bottom mt-xs-5 mt-lg-0">
         <div class="row no-gutters text-center">
             <div class="col-12"><small class="font-weight-bold text-white">&copy; AWWA</small></div>
-            <div class="col-6"><a class="link font-weight-bold text-white" href="#">Chi siamo</a></div>
-            <div class="col-6"><a class="link font-weight-bold text-white" href="#" >Contattaci</a></div>                    
+            <div class="col-6"><a class="link stretched-link font-weight-bold text-white" href="#">Chi siamo</a></div>
+            <div class="col-6"><a class="link stretched-link font-weight-bold text-white" href="#" >Contattaci</a></div>                    
         </div>
     </footer>
 </body>
