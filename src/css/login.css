@@ -7,6 +7,18 @@
     color: var(--awwa-primary);
 }
 
+.awwa-secondary {
+    color: var(--awwa-secondary);
+}
+
+.bg-awwa-primary {
+    background-color: var(--awwa-primary);
+}
+
+.bg-awwa-secondary {
+    background-color: var(--awwa-secondary);
+}
+
 /*DEBUGGING*/
 /*body * {border: 1px solid red !important;}*/
 
