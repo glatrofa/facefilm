@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mar 26, 2020 alle 18:05
+-- Creato il: Mag 01, 2020 alle 21:24
 -- Versione del server: 5.7.17
 -- Versione PHP: 5.6.30
 
@@ -21,6 +21,34 @@ SET time_zone = "+00:00";
 --
 -- Database: `awwa`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `commento`
+--
+
+CREATE TABLE `commento` (
+  `id` int(11) NOT NULL,
+  `id_utente` varchar(50) NOT NULL,
+  `id_post` int(11) NOT NULL,
+  `testo` varchar(2000) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `post`
+--
+
+CREATE TABLE `post` (
+  `id` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `data` varchar(20) NOT NULL,
+  `titolo` varchar(20) NOT NULL,
+  `testo` varchar(5000) NOT NULL,
+  `id_commento` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -51,12 +79,39 @@ INSERT INTO `utenti` (`nome`, `cognome`, `data_nascita`, `paese`, `email`, `nome
 --
 
 --
+-- Indici per le tabelle `commento`
+--
+ALTER TABLE `commento`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indici per le tabelle `post`
+--
+ALTER TABLE `post`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `secondaria` (`email`);
+
+--
 -- Indici per le tabelle `utenti`
 --
 ALTER TABLE `utenti`
   ADD PRIMARY KEY (`email`),
   ADD UNIQUE KEY `unico` (`nome_utente`);
-COMMIT;
+
+--
+-- AUTO_INCREMENT per le tabelle scaricate
+--
+
+--
+-- AUTO_INCREMENT per la tabella `commento`
+--
+ALTER TABLE `commento`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT per la tabella `post`
+--
+ALTER TABLE `post`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
