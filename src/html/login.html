@@ -4,44 +4,63 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/login.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,800;1,900&display=swap" rel="stylesheet">    
     <title>Login</title>
 </head>
 
 <body>
-    <header>
-        <h1 class="text-white">header</h1>
-    </header>
     <main>
-        <div class="container">
-            <h2>Accedi</h2>
-            <form id="form" action="../php/login.php" method="POST">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="inputGroup-sizing-default">Nome utente: </span>
+        <div class="container-fluid">
+            <div class="row no-gutters">
+                <div class="col-xs-12 col-lg-6 text-center" id="logo-container">
+                    <img src="../img/logo/logo2_transparent.png" alt="Logo" id="logo" class="img img-fluid">
+                </div>
+                <div class="col-xs-12 col-lg-6 mt-n4 mt-lg-0 mb-5 mb-lg-0 text-center align-self-center">
+                    <div class="form py-5">
+                        <h2 class="font-weight-bold awwa-primary mb-3">Accedi</h2>
+                        <form id="login-form">
+                            <div class="d-flex justify-content-center">
+                                <div class="form-group col-11 col-lg-9">
+                                    <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="form-group col-11 col-lg-9">
+                                    <input type="password" class="form-control" id="password" placeholder="Password" required>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center mb-3">
+                                <div class="col-2">
+                                    <button type="submit" class="btn btn-form-primary">Accedi</button>
+                                </div>
+                                <div class="col-2">
+                                    <button type="reset" class="btn btn-form-secondary">Svuota</button>    
+                                </div>
+                            </div>                            
+                            <div class="row justify-content-center">
+                                <div class="col-12 text-center">
+                                    <span>Non hai ancora un account?</span>
+                                    <div class="button d-inline-block">
+                                        <a class="link btn-form-primary" href="./signup.html">Registrati</a>
+                                    </div>  
+                                </div>
+                            </div>
+                        </form>            
                     </div>
-                    <input type="text" id="username" name="username" maxlength="15" required class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
                 </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="inputGroup-sizing-default">Password: </span>
-                    </div>
-                    <input type="password" id="password" name="password" maxlength="20" required class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <footer class="footer fixed-bottom mt-xs-5 mt-lg-0">
+                <div class="row no-gutters text-center">
+                    <div class="col-12"><small class="font-weight-bold text-white">&copy; AWWA</small></div>
+                    <div class="col-6"><a class="link stretched-link font-weight-bold text-white" href="./chi-siamo.html">Chi siamo</a></div>
+                    <div class="col-6"><a class="link stretched-link font-weight-bold text-white" href="./contattaci.html" >Contattaci</a></div>                    
                 </div>
-                <div class="button">
-                    <input type="submit" value="Accedi" class="btn btn-primary">                
-                    <input type="reset" value="Cancella" class="btn btn-primary">    
-                </div>
-                <div class="button">
-                    <button onclick="location.href = './signup.html'" class="btn btn-primary">Registrati</button>
-                </div>                                                            
-            </form>            
+            </footer>
         </div>
     </main>
-    <footer>
-        <small>footer</small>
-    </footer>
+    
 </body>
 
 </html>
