@@ -1,45 +1,47 @@
-html,
-body {
-  height: 100%;  
+:root {
+    --awwa-primary: #e5af05;
+    --awwa-secondary: #00008b;
 }
 
-h1,
-small {
-  color: white;
+.awwa-primary {
+    color: var(--awwa-primary);
 }
 
-header {
-  height: 60px;
-  padding: 5px;
-  /*background: #1abc9c;*/
-  /* background: #ff9800; */
-  background: #e5af05;
+/*DEBUGGING*/
+/*body * {border: 1px solid red !important;}*/
+
+body, .container-fluid {
+    min-height: 100vh;
+    min-width: 100wh;
 }
 
-main {
-  height: calc(100% - 100px);
-  /* background: #d0d0d0; */
-  background: #eeeeee;
+.container-fluid {
+    /*Viene caricata la prima immagine (la seconda è di fallback), che essendo ridimensionata e più piccola
+    permette la ripetizione automatica fino a riempire tutto il container*/
+    background-image: url(../img/Tv-vintage_resized.jpg), url(../img/Tv-vintage.jpg); 
+    background-position: top;
+    background-repeat: repeat;
 }
 
-.container {
-  height: 100%;
-  /*background: #ecf0f1;*/
-  /* background: #ffc947; */
-  /* background: #d0d0d0; */
-  /*background: #c66900;*/
-  background: white;
+#logo {
+    max-width: 600px;
 }
 
-footer {
-  background: #e5af05;
-  /* height: 40px; */
-  text-align: center;
-  line-height: 40px;
-  position: fixed;
-  height: 45px;
-  bottom: 0;
-  width: 100%;
+.form {
+    border: 5px solid #e5af05;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* l'ultimo valore è opacità */
+    height: 50%;
+}
+
+.footer {
+    background-color: #e5af05;
+    width: 100%;
+    opacity: 0.8;
+}
+
+footer:hover {
+    opacity: 1;
 }
 
 /* Stile per il distanziamento dei bottoni */
@@ -49,11 +51,17 @@ footer {
 }
 
 /* Stile dei bottoni */
-.btn.gold-style {
+.btn.btn-form-primary {
   color: white;
   background-color: #e5af05;
-  border-color: #e5af05;
+  border-color: white;
 }
+
+.btn.btn-form-secondary {
+    color: #e5af05;
+    background-color: white;
+    border-color: #e5af05;
+  }
 
 /* Contorno agli input */
 .form-control:focus {
