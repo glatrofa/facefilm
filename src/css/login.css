@@ -73,7 +73,13 @@ footer:hover {
     color: #e5af05;
     background-color: white;
     border-color: #e5af05;
-  }
+}
+
+#link-to-signup {
+    background-color: white;
+    border: 2px solid var(--awwa-primary);
+    color: var(--awwa-primary);
+}
 
 /* Contorno agli input */
 .form-control:focus {
