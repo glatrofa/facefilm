@@ -15,9 +15,7 @@ $(function login() {
               if(data[1] != null)
                 //console.log(checkID(data[1]));
                 checkID(data[1])
-              setTimeout(function () {
-                window.location.href = '../home.html';
-              }, 10);
+              window.location.href = '../home.html';
             }
             else{
               if(data[0].email == 1){
