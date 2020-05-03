@@ -1,4 +1,4 @@
-import { checkID } from './sessionID.js';
+import { checkID } from './autenticazione.js';
 
 $(function login() {
     $('#form-login').on('submit', function (e) {
@@ -11,15 +11,13 @@ $(function login() {
         dataType: 'json',
         success: function (data) {            
             if(data[0].email != null && data[0].email != 1){  
-              console.log('SUCCESS '+data[0].email+' '+data[0].nome_utente+' '+data[1]);
-              if(data[1] != null){
-                console.log(checkID(data[1]));
-              }
-              /*
+              //console.log('SUCCESS '+data[0].email+' '+data[0].nome_utente+' '+data[1]);
+              if(data[1] != null)
+                //console.log(checkID(data[1]));
+                checkID(data[1])
               setTimeout(function () {
                 window.location.href = '../home.html';
-              }, 0);
-              */
+              }, 10);
             }
             else{
               if(data[0].email == 1){
