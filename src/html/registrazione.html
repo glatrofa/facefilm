@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-xs-12 col-lg-6 mt-n4 mt-lg-0 mb-5 mb-lg-0 text-center align-self-center">
                     <div class="form pt-5 pb-1">
-                        <form action="../php/registrazione.php" method="POST">
+                        <form id="form-registrazione">
                             <div class="row justify-content-around mb-3">
                                 <input class="form-control col-5" type="text" id="nome" name="nome" placeholder="Nome" maxlength="50" aria-required="true" required>
                                 <input class="form-control col-5" type="text" id="cognome" name="cognome" placeholder="Cognome" maxlength="50" aria-required="true" required>
@@ -64,6 +64,27 @@
                                 <a href="./login.html" class="ml-3 h6 awwa-secondary" id="signupLink">Accedi</a>
                             </div>  
                     </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="modal-registrazione-email" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Registrazione effettuata</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Grazie per esserti registrato</p>
+                            <br>
+                            <p>Puoi procedere al login.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="location.href='./login.html';">Vai a login</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          </div>
                     </div>
                 </div>
             </div>
