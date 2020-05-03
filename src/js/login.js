@@ -7,9 +7,9 @@ $(function showUserInfo() {
         crossOrigin: true,
         data: $(this).serialize(),
         dataType: 'json',
-        success: function (data) {
-            //console.log('SUCCESS '+data[0].email+' '+data[0].nome_utente);
-            if(data[0].email != null){  
+        success: function (data) {            
+            if(data[0].email != null && data[0].email != 1){  
+              console.log('SUCCESS '+data[0].email+' '+data[0].nome_utente);
               /*            
               setTimeout(function () {
                 window.location.href = ".";
@@ -17,7 +17,12 @@ $(function showUserInfo() {
               */
             }
             else{
-              $('#modal-login').modal('show');
+              if(data[0].email == 1){
+                $('#modal-login').modal('show');
+              }
+              else{
+                $('#modal-login-null').modal('show');
+              } 
             }          
         },
         error: function (data) {

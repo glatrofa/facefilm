@@ -15,7 +15,14 @@ if($rowsNumber != 0){
     $response[0] = array('nome_utente' => $row["nome_utente"], 'email' => $row["email"]);  
 }
 else{
-    $response[0] = array('email' => null);
+    $queryEmailPresente = "SELECT email FROM utenti WHERE email = '".$email."'";
+    $resultEmailPresente = mysqli_query($connection, $queryEmailPresente) or die("Access failed");
+    if(mysqli_num_rows($resultEmailPresente) != 0){
+        $response[0] = array('email' => 1);
+    }
+    else{
+        $response[0] = array('email' => null);
+    }
 }
 
 $jsonData = json_encode($response);
