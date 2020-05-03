@@ -7,24 +7,27 @@ $(function showUserInfo() {
         crossOrigin: true,
         data: $(this).serialize(),
         dataType: 'json',
-        success: function (data) {
-            console.log(data);
-            /*
-            if(data[0].username != null && data[0].email != null){
-              let string = '<div class="alert alert-success" role="alert">'+'<h5>Login done!</h5>'+'Username: '+ data[0].username +'<br>Email: '+ data[0].email+'</div>';
-              document.getElementById('user-info').innerHTML = string;
-            }
-            else{
-              let string = '<div class="alert alert-warning" role="alert">'+'<h5>Incorrect credentials!</h5>'+'<p>You will be redirected in 2 seconds...</p></div>';
-              document.getElementById('user-info').innerHTML = string;
+        success: function (data) {            
+            if(data[0].email != null && data[0].email != 1){  
+              console.log('SUCCESS '+data[0].email+' '+data[0].nome_utente);
+              /*            
               setTimeout(function () {
                 window.location.href = ".";
-              }, 2000);
-            }     
-            */          
+              }, 0);
+              */
+            }
+            else{
+              if(data[0].email == 1){
+                $('#modal-login').modal('show');
+              }
+              else{
+                $('#modal-login-null').modal('show');
+              } 
+            }          
         },
         error: function (data) {
-          console.log(data);
+          //console.log('ERROR '+data[0]);
+          $('#modal-login-error').modal('show');
           /*
           alert('Error');
           let string = '<div class="alert alert-danger" role="alert">'+'<h3>An error has occurred</h3>'+'</div>';
