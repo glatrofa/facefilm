@@ -18,7 +18,7 @@ if($rowsNumber != 0){
 else{
     $response[0] = array('nome_utente' => null, 'email' => null);
 }
-$json_data = json_encode($response);
-echo $json_data;
+$jsonData = json_encode($response);
+echo $jsonData;
 
 ?>
