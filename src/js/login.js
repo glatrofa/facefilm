@@ -8,7 +8,7 @@ $(function showUserInfo() {
         data: $(this).serialize(),
         dataType: 'json',
         success: function (data) {
-            console.log(data);
+            console.log('success'+data);
             /*
             if(data[0].username != null && data[0].email != null){
               let string = '<div class="alert alert-success" role="alert">'+'<h5>Login done!</h5>'+'Username: '+ data[0].username +'<br>Email: '+ data[0].email+'</div>';
@@ -24,7 +24,7 @@ $(function showUserInfo() {
             */          
         },
         error: function (data) {
-          console.log(data);
+          console.log('error'+data);
           /*
           alert('Error');
           let string = '<div class="alert alert-danger" role="alert">'+'<h3>An error has occurred</h3>'+'</div>';
