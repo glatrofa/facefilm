@@ -21,9 +21,7 @@ else{
     $response[1] = 'NO login';
 }
 */
-$response = array();
-$response[0] = $email;
-$response[1] = $passwordCriptata;
+$responde = array('email' => $email, 'password' => $password, 'pc' => $passwordCriptata);  
 $jsonData = json_encode($response);
 echo $jsonData;
 
