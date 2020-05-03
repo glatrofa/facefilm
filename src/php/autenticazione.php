@@ -1,5 +1,11 @@
 <?php
 
+if(session_id() != "")
+    echo session_id();
+else
+    echo null;    
+
+    /*
 function creaToken() {
     $time = time();
     return md5($time);
@@ -20,7 +26,7 @@ function confrontaToken($email, $token){
     }
 }
 
-/*
+
 function creaCookie($email) {
     $token = creaToken();
     // crea un cookie della durata di 1 giorno (86400 * 30) o 1 ora (3600)
