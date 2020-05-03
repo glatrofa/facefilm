@@ -7,7 +7,8 @@ $(function signup() {
         crossOrigin: true,
         data: $(this).serialize(),
         dataType: 'json',
-        success: function () {
+        success: function (data) {
+          console.log(data[0]);
           switch (data[0]) {
             case 0:
               alert('Registrazione avvenuta con successo.');
@@ -24,6 +25,7 @@ $(function signup() {
           }          
         },
         error: function () {
+          console.log(data[0]);
           $('#modal-registrazione-error').modal('show');
         }
       });
