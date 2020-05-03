@@ -3,7 +3,7 @@
 if(session_id() != "")
     echo session_id();
 else
-    echo null;    
+    echo null;
 
     /*
 function creaToken() {
