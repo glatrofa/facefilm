@@ -18,43 +18,44 @@
                     <img src="../img/logo/logo2_transparent.png" alt="Logo" id="logo" class="img img-fluid">
                 </div>
                 <div class="col-xs-12 col-lg-6 mt-n4 mt-lg-0 mb-5 mb-lg-0 text-center align-self-center">
-                    <div class="form">
-                        <form class="py-5 my-5" id="form" action="../php/registrazione.php" method="POST">
-                            <div class="row justify-content-center">
-                                <h2 class="font-weight-bold awwa-primary mb-5">Registrati</h2>
-                            </div>
+                    <div class="form pt-5 pb-1">
+                        <form id="form" action="../php/registrazione.php" method="POST">
                             <div class="row justify-content-around mb-3">
                                 <input class="form-control col-5" type="text" id="nome" placeholder="Nome" maxlength="50" aria-required="true" required>
                                 <input class="form-control col-5" type="text" id="cognome" placeholder="Cognome" maxlength="50" aria-required="true" required>
                             </div>
                             <div class="row justify-content-around mb-3">
-                                <input class="form-control col-5" type="date" id="data_nascita" placeholder="Data di nascita" aria-required="true" required>
+                                <input class="form-control col-5" type="date" id="data_nascita" aria-required="true" required>
                                 <select class="form-control col-5" id="nazione" aria-required="true" required></select>
                             </div>
                             <hr>
                             <div class="row justify-content-center mb-3">
-                                <input class="form-control col-8" type="text" id="nome_utente" placeholder="Nome utente" maxlength="50" aria-required="true" required>
+                                <input class="form-control col-8" type="text" id="nome_utente" placeholder="Username" maxlength="50" aria-required="true" required>
                             </div>
                             <div class="row justify-content-center mb-3">
                                 <input class="form-control col-8" type="email" id="email" placeholder="Email" maxlength="50" aria-required="true" required>
                             </div>
-                            <div class="row justify-content-center">
+                            <div class="row justify-content-center mb-3">
                                 <input class="form-control col-8" type="password" id="password" placeholder="Password" maxlength="50" aria-required="true" required>
                             </div>
                             <div class="row justify-content-center mb-3">
+                                <small class="col-8 text-left text-danger font-weight-bold">Tutti i campi sono obbligatori *</small>
+                            </div>
+                            <div class="row justify-content-center align-items-center">
                                 <div class="col-auto">
-                                    <button onclick="" class="btn btn-form-primary">Registrati</button>
+                                    <button onclick="" class="btn btn-form-primary py-2 px-4">Registrati</button>
                                 </div>
                                 <div class="col-auto">
                                     <button onclick="" class="btn btn-form-secondary">Svuota</button>    
                                 </div>
                             </div>
                         </form>
+                        <div class="d-flex justify-content-center mt-5 align-items-center">
+                            <small class="awwa-secondary">Hai gi&agrave; un account?</small>
+                            <div class="d-inline-block">
+                                <a href="./login.html" class="ml-3 h6 awwa-secondary" id="signupLink">Accedi</a>
+                            </div>  
                     </div>
-                    <div class="d-flex justify-content-center">
-                        <div class="button">
-                            <button onclick="location.href = './login_v3.html'" class="btn btn-form-primary">Accedi</button>
-                        </div>  
                     </div>
                 </div>
             </div>
