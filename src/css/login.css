@@ -78,7 +78,8 @@ footer:hover {
 #link-to-signup {
     background-color: white;
     border: 2px solid var(--awwa-primary);
-    color: var(--awwa-primary);
+    color: var(--awwa-primary.);
+    
 }
 
 /* Contorno agli input */
