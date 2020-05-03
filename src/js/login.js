@@ -8,7 +8,7 @@ $(function showUserInfo() {
         data: $(this).serialize(),
         dataType: 'json',
         success: function (data) {
-            console.log('SUCCESS '+data[0]);
+            console.log('SUCCESS '+data[0].email+' '+data[0].nome_utente);
             /*
             if(data[0].username != null && data[0].email != null){
               let string = '<div class="alert alert-success" role="alert">'+'<h5>Login done!</h5>'+'Username: '+ data[0].username +'<br>Email: '+ data[0].email+'</div>';
