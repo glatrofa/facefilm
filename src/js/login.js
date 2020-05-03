@@ -28,21 +28,10 @@ $(function showUserInfo() {
         error: function (data) {
           //console.log('ERROR '+data[0]);
           $('#modal-login-error').modal('show');
-          /*
-          alert('Error');
-          let string = '<div class="alert alert-danger" role="alert">'+'<h3>An error has occurred</h3>'+'</div>';
-          document.getElementById('user-info').innerHTML = string;
-          */
         }
       });
     });
 });
 
-/*
-$(function c() {
-    $('#form-login').on('submit', function a() {
-        alert('ciao');
-        console.log('ciao');
-    });
-});
-*/
+// dichiarare come stringhe i modal html
+// document.getElementById('modal-login').innerHTML = modalLoginString;
