@@ -4,8 +4,7 @@
 <?php
 include 'autenticazione.php';
 $email = "test@test.it";
-$token = creaToken();
-setcookie($email, $token, time() + 3600, "../");
+creaCookie($email);
 echo $_COOKIE[$email];
 echo "sotto cookie";
 /*
