@@ -10,11 +10,7 @@ $email = mysqli_real_escape_string($connection, $_POST["email"]);
 $nome_utente = mysqli_real_escape_string($connection, $_POST["nome_utente"]);
 $password = mysqli_real_escape_string($connection, $_POST["password"]);
 $password_criptata = md5($password);
-/*
-$query = "INSERT INTO utenti (nome, cognome, data_nascita, nazione, email, nome_utente, password)"
-        ."VALUES ('$nome', '$cognome' , '$data_nascita', '$nazione', '$email', '$username', '$password_criptata')";
-$result = mysqli_query($connection, $query) or die(mysqli_error($connection));
-*/
+
 $query = "SELECT email FROM utenti WHERE email = '".$email."'";
 $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
 $nrighe_email = mysqli_num_rows($result);
