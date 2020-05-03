@@ -7,6 +7,7 @@ $email = "test@test.it";
 $token = creaToken();
 setcookie($email, $token, time() + 3600, "../");
 echo $_COOKIE[$email];
+echo "sotto cookie";
 /*
 $key = creaCookie($email);
 echo $key;
