@@ -6,7 +6,7 @@ include 'db-connection.php';
 $email = mysqli_real_escape_string($connection, $_POST["email"]);
 $password = mysqli_real_escape_string($connection, $_POST["password"]);
 $passwordCriptata = md5($password);
-
+/*
 $query = "SELECT nome_utente, email FROM utenti WHERE email = '".$email."' AND password = '".$passwordCriptata."'";
 $result = mysqli_query($connection, $query) or die("Access failed");
 $rowsNumber = mysqli_num_rows($result);
@@ -20,6 +20,10 @@ else{
     $response[0] = array('nome_utente' => null, 'email' => null);
     $response[1] = 'NO login';
 }
+*/
+$response = array();
+$response[0] = $email;
+$response[1] = $passwordCriptata;
 $jsonData = json_encode($response);
 echo $jsonData;
 
