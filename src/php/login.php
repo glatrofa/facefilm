@@ -10,11 +10,12 @@ $query = "SELECT nome_utente, email FROM utenti WHERE email = '".$email."' AND p
 $result = mysqli_query($connection, $query) or die("Access failed");
 $rowsNumber = mysqli_num_rows($result);
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+$response = array();
 if($rowsNumber != 0){
-    $response = array('nome_utente' => $row["nome_utente"], 'email' => $row["email"]);  
+    $response[0] = array('nome_utente' => $row["nome_utente"], 'email' => $row["email"]);  
 }
 else{
-    $response = array('nome_utente' => null, 'email' => null);
+    $response[0] = array('nome_utente' => null, 'email' => null);
 }
 
 $jsonData = json_encode($response);
