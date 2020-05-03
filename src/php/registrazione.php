@@ -1,6 +1,6 @@
 <?php
 
-include 'db-connection.php';
+include './connessioneDatabase.php';
 
 $nome = mysqli_real_escape_string($connection, $_POST["nome"]);
 $cognome = mysqli_real_escape_string($connection, $_POST["cognome"]);
