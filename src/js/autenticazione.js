@@ -20,6 +20,9 @@ function logged() {
                 console.log('data null');
                 window.location.href = 'http://awwa.sytes.net/html/login.html';                
             }
+            else{
+                checkID(data);
+            }
         },
         error: function () {
             console.log('ajax error');
