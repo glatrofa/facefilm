@@ -14,10 +14,10 @@ $(function signup() {
               $('#modal-registrazione-success').modal('show');
               break;
             case 1:
-              $('#modal-registrazione-username').modal('show');
+              $('#modal-registrazione-email').modal('show');              
               break;
             case 2:
-              $('#modal-registrazione-email').modal('show');
+              $('#modal-registrazione-username').modal('show');
               break;
             default:
               $('#modal-registrazione-error').modal('show');
