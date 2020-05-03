@@ -1,6 +1,12 @@
+import { logged } from './autenticazione.js';
+
+// verifica che l'utente abbia effettuato l'accesso
+window.onpaint = logged();
+
 const colorPrimary = '#e5af05';
 const colorSecondary = '#00008b';
 
+// classe per feedback grafici dopo l'interazioni con i post
 class modalLike {
     constructor() {
         this.clicked = false;
