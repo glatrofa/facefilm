@@ -1,6 +1,7 @@
 <?php
 
-include 'db-connection.php';
+include './connessioneDatabase.php';
+include './autenticazione.php';
 
 session_start();
 
@@ -15,7 +16,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 $response = array();
 if($rowsNumber != 0){
     $response[0] = array('nome_utente' => $row["nome_utente"], 'email' => $row["email"]);  
-    $_SESSION[$row["nome_utente"]] = true;
+    $response[1] = registraToken($row["email"]);
 }
 else{
     $queryEmailPresente = "SELECT email FROM utenti WHERE email = '".$email."'";
