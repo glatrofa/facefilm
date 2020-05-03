@@ -9,7 +9,7 @@ $password = mysqli_real_escape_string($connection, $_POST["password"]);
 $passwordCriptata = md5($password);
 
 $query = "SELECT nome_utente, email FROM utenti WHERE email = '".$email."' AND password = '".$passwordCriptata."'";
-$result = mysqli_query($connection, $query) or die("Access failed");
+$result = mysqli_query($connection, $query) or die(mysqli_error($connection));
 $rowsNumber = mysqli_num_rows($result);
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 $response = array();
@@ -19,7 +19,7 @@ if($rowsNumber != 0){
 }
 else{
     $queryEmailPresente = "SELECT email FROM utenti WHERE email = '".$email."'";
-    $resultEmailPresente = mysqli_query($connection, $queryEmailPresente) or die("Access failed");
+    $resultEmailPresente = mysqli_query($connection, $queryEmailPresente) or die(mysqli_error($connection));
     if(mysqli_num_rows($resultEmailPresente) != 0){
         $response[0] = array('email' => 1);
     }

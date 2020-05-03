@@ -11,6 +11,6 @@ $subject = $_POST['subject'];
 $content="From: $name \n Email: $email \n Message: $message";
 $recipient = "g.latrofa3@studenti.poliba.it";
 $mailheader = "From: $email \r\n";
-mail($recipient, $subject, $content, $mailheader) or die("Error!");
+mail($recipient, $subject, $content, $mailheader) or die(mysqli_error($connection));
 echo "Email sent!";
 ?>
