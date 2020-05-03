@@ -20,56 +20,49 @@
 <body>
     <main>
         <div class="container-fluid">
-            <div class="row no-gutters">
+            <div class="row no-gutters justify-content-around align-items-center">
                 <div class="col-xs-12 col-lg-6 text-center" id="logo-container">
                     <img src="../img/logo/logo2_transparent.png" alt="Logo" id="logo" class="img img-fluid">
                 </div>
-                <div class="col-xs-12 col-lg-6 mt-n4 mt-lg-0 mb-5 mb-lg-0 text-center align-self-center">
-                    <div class="form pt-5 pb-1">
-                        <h2 class="font-weight-bold awwa-primary mb-3">Accedi</h2>
+                <div class="col-xs-12 col-lg-6 mt-lg-0 mb-5 mb-lg-0 text-center align-self-center justify-content-center">
+                    <div class="form w-75 mx-auto pt-5 pb-1">
+                        <!--<h2 class="font-weight-bold awwa-primary mb-3">Accedi</h2>-->
                         <form id="form-login">
                             <div class="row justify-content-center">
-                                <div class="form-group col-10 col-lg-8">
+                                <div class="form-group col-7 col-lg-9">
                                     <input type="email" class="form-control" id="email" placeholder="Email" required>
                                 </div>
                             </div>
                             <div class="row justify-content-center">
-                                <div class="form-group col-10 col-lg-8">
+                                <div class="form-group col-7 col-lg-9">
                                     <input type="password" class="form-control" id="password" placeholder="Password" required>
                                 </div>
                             </div>
-                            <div class="row justify-content-center mb-3">
-                                <div class="col-2">
-                                    <button type="submit" class="btn btn-form-primary">Accedi</button>
+                            <div class="row justify-content-center align-items-center mb-3">
+                                <div class="col-auto">
+                                    <button type="submit" class="btn btn-form-primary py-2 px-4"><span class="font-weight-bolder"></span> Accedi</button>
                                 </div>
-                                <div class="col-2">
+                                <div class="col-auto">
                                     <button type="reset" class="btn btn-form-secondary">Svuota</button>    
                                 </div>
                             </div>                            
-                            <div class="row justify-content-center mt-5">
-                                <div class="col-6 text-center badge-pill" id="link-to-signup">
-                                    <span>Non hai ancora un account?</span>
-                                    <div class="button d-inline-block">
-                                        <a class="link" href="./signup.html">Registrati</a>
-                                    </div>  
-                                </div>
-                            </div>
                         </form>            
-                        <div class="row justify-content-center">
+                        <div class="row mt-5 justify-content-center">
                             <div class="col-12 text-center">
-                                <div class="button">
-                                    <button onclick="location.href = './signup.html'" class="link d-inline-block">Registrati</button>
+                                <small class="awwa-secondary">Non hai ancora un account?</small>
+                                <div class="d-inline-block">
+                                    <a href="./signup.html" class="ml-3 h6 awwa-secondary" id="signupLink">Registrati</a>
                                 </div>  
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <footer class="footer fixed-bottom mt-xs-5 mt-lg-0">
+            <footer class="footer bg-awwa-primary fixed-bottom mt-xs-5 mt-lg-0">
                 <div class="row no-gutters text-center">
                     <div class="col-12"><small class="font-weight-bold text-white">&copy; AWWA</small></div>
-                    <div class="col-6"><a class="link stretched-link font-weight-bold text-white" href="./chi-siamo.html">Chi siamo</a></div>
-                    <div class="col-6"><a class="link stretched-link font-weight-bold text-white" href="./contattaci.html" >Contattaci</a></div>                    
+                    <div class="col-6"><a class="font-weight-bold text-white" href="./chi-siamo.html">Chi siamo</a></div>
+                    <div class="col-6"><a class="font-weight-bold text-white" href="./contattaci.html" >Contattaci</a></div>                    
                 </div>
             </footer>
         </div>

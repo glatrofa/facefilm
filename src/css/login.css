@@ -1,6 +1,6 @@
 :root {
     --awwa-primary: #e5af05;
-    --awwa-secondary: #00008b;
+    --awwa-secondary: rgb(23, 60, 104);
 }
 
 .awwa-primary {
@@ -40,14 +40,13 @@ body, .container-fluid {
 }
 
 .form {
-    border: 5px solid #e5af05;
+    border: 5px solid var(--awwa-primary);
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* l'ultimo valore è opacità */
+    background-color: rgba(255, 255, 255, 0.9); /* l'ultimo valore è opacità */
     height: 50%;
 }
 
 .footer {
-    background-color: #e5af05;
     width: 100%;
     opacity: 0.8;
 }
@@ -56,37 +55,38 @@ footer:hover {
     opacity: 1;
 }
 
-/* Stile per il distanziamento dei bottoni */
-.button {
-    padding: 1em;
-    text-align: center;
-}
-
 /* Stile dei bottoni */
 .btn.btn-form-primary {
   color: white;
-  background-color: #e5af05;
+  background-color: var(--awwa-primary);
   border-color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
 }
 
 .btn.btn-form-secondary {
-    color: #e5af05;
+    color: var(--awwa-secondary);
     background-color: white;
-    border-color: #e5af05;
+    border-color: var(--awwa-secondary);
 }
 
-#link-to-signup {
-    background-color: white;
-    border: 2px solid var(--awwa-primary);
-    color: var(--awwa-primary.);
-    
+.btn.btn-form-primary:hover {
+    border-color: var(--awwa-secondary);
+}
+
+.btn.btn-form-secondary:hover {
+    border-color: var(--awwa-primary);
+}
+
+a#signupLink:hover {
+    color: var(--awwa-primary);
 }
 
 /* Contorno agli input */
 .form-control:focus {
   color: #495057;
   background-color: #fff;
-  border-color: #e5af05;
+  border-color: var(--awwa-secondary);
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgb(255, 224, 122);
+  box-shadow: 0 0 0 0.05rem var(--awwa-secondary);
 }
