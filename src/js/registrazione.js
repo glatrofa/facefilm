@@ -11,8 +11,7 @@ $(function signup() {
           console.log(data[0]);
           switch (data[0]) {
             case 0:
-              alert('Registrazione avvenuta con successo.');
-              window.location.href = '../home.html';
+              $('#modal-registrazione-success').modal('show');
               break;
             case 1:
               $('#modal-registrazione-username').modal('show');
