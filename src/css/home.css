@@ -4,6 +4,19 @@
     --awwa-secondary: #00008b;
 }
 
+/* Personalizzazione scrollbar */
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--awwa-secondary);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--awwa-primary);
+}
+
 body {
     background-color: #eeeeee;    
 }
