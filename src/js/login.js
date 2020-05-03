@@ -9,10 +9,12 @@ $(function showUserInfo() {
         dataType: 'json',
         success: function (data) {
             //console.log('SUCCESS '+data[0].email+' '+data[0].nome_utente);
-            if(data[0].email != null){              
+            if(data[0].email != null){  
+              /*            
               setTimeout(function () {
                 window.location.href = ".";
               }, 0);
+              */
             }
             else{
               $('#modal-login').modal('show');
