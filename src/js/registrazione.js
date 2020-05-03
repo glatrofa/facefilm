@@ -1,5 +1,5 @@
 $(function signup() {
-    $('#form-signup').on('submit', function (e) {
+    $('#form-registrazione').on('submit', function (e) {
       e.preventDefault();
       $.ajax({
         type: 'POST',
@@ -8,8 +8,20 @@ $(function signup() {
         data: $(this).serialize(),
         dataType: 'json',
         success: function () {
-          alert('Registrazione avvenuta con successo.');
-          window.location.href = '../home.html';
+          switch (data[0]) {
+            case 0:
+              alert('Registrazione avvenuta con successo.');
+              window.location.href = '../home.html';
+              break;
+            case 1:
+              $('#modal-registrazione-username').modal('show');
+              break;
+            case 2:
+              $('#modal-registrazione-email').modal('show');
+              break;
+            default:
+              $('#modal-registrazione-error').modal('show');
+          }          
         },
         error: function () {
           $('#modal-registrazione-error').modal('show');
