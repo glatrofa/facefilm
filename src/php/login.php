@@ -12,10 +12,13 @@ $rowsNumber = mysqli_num_rows($result);
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 $response = array();
 if($rowsNumber != 0){
-    $response[0] = array('nome_utente' => $row["nome_utente"], 'email' => $row["email"]);  
+    //$response[0] = array('nome_utente' => $row["nome_utente"], 'email' => $row["email"]);  
+    $response[0] = $row["nome_utente"];
+    $response[1] = $row["email"];   
 }
 else{
-    $response[0] = array('nome_utente' => null, 'email' => null);
+    //$response[0] = array('nome_utente' => null, 'email' => null);
+    $response[0] = null;
 }
 
 $jsonData = json_encode($response);
