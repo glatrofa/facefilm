@@ -1,7 +1,8 @@
 import { logged } from './autenticazione.js';
 
 // verifica che l'utente abbia effettuato l'accesso
-window.onpaint = logged();
+//window.onpaint = logged();
+window.onload = logged();
 
 const colorPrimary = '#e5af05';
 const colorSecondary = '#00008b';
