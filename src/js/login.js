@@ -9,7 +9,7 @@ $(function showUserInfo() {
         dataType: 'json',
         success: function (data) {            
             if(data[0].email != null && data[0].email != 1){  
-              console.log('SUCCESS '+data[0].email+' '+data[0].nome_utente+' '+data[1]);
+              console.log('SUCCESS '+data[0].email+' '+data[0].nome_utente+' '+data[1]+''+data[2]);
               document.cookie = 'token='+data[1]+'; domain=awwa.sytes.net';
               console.log('cookie: '+document.cookie);
               /*
