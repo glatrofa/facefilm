@@ -1,4 +1,4 @@
-import { checkID } from './sessionID';
+import { checkID } from './sessionID.js';
 
 $(function login() {
     $('#form-login').on('submit', function (e) {
