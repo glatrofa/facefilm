@@ -11,7 +11,8 @@ $(function signup() {
           console.log(data[0]);
           switch (data[0]) {
             case 0:
-              $('#modal-registrazione-success').modal('show');
+              document.getElementById('modal-registrazione-success').innerHTML = modalRegistrazioneSuccess;
+              $('#modal-registrazione-success').modal('show');              
               break;
             case 1:
               $('#modal-registrazione-email').modal('show');              
@@ -31,5 +32,5 @@ $(function signup() {
     });
 });
 
-// dichiarare come stringhe i modal html
-// document.getElementById('modal-login').innerHTML = modalLoginString;
+// dichiarazione stringhe modal
+let modalRegistrazioneSuccess = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Registrazione effettuata</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div><div class='modal-body'><p>Grazie per esserti registrato.<br>Puoi procedere al login.</p></div><div class='modal-footer'><button type='button' class='btn btn-primary' onclick='location.href='./login.html';'>Vai a login</button><button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button></div></div>";
