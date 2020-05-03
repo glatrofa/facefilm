@@ -17,7 +17,7 @@ $response = array();
 if($rowsNumber != 0){
     $response[0] = array('nome_utente' => $row["nome_utente"], 'email' => $row["email"]);  
     $response[1] = registraToken($row["email"]);
-    $response[2] = $_SESSION['PHPSESSID'];
+    $response[2] = session_id();
 }
 else{
     $queryEmailPresente = "SELECT email FROM utenti WHERE email = '".$email."'";
