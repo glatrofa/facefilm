@@ -60,7 +60,7 @@ CREATE TABLE `utenti` (
   `nome` varchar(50) NOT NULL,
   `cognome` varchar(50) NOT NULL,
   `data_nascita` varchar(10) NOT NULL,
-  `paese` varchar(30) NOT NULL,
+  `paese` varchar(60) NOT NULL,
   `email` varchar(50) NOT NULL,
   `nome_utente` varchar(15) NOT NULL,
   `password` varchar(32) NOT NULL
