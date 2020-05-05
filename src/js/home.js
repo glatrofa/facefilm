@@ -1,8 +1,8 @@
-import { logged } from './autenticazione.js';
+import { Logged } from './autenticazione.js';
 
 // verifica che l'utente abbia effettuato l'accesso
 //window.onpaint = logged();
-window.onload = logged();
+window.onload = Logged();
 
 const colorPrimary = '#e5af05';
 const colorSecondary = '#00008b';
@@ -13,7 +13,7 @@ class modalLike {
         this.clicked = false;
     }
 
-    static click() {
+    static Click() {
         if(!this.clicked){
             $('#modal-like').modal('show');
             document.getElementById('post-like').style.color = colorSecondary;
@@ -31,7 +31,7 @@ class modalDislike {
         this.clicked = false;
     }
 
-    static click() {
+    static Click() {
         if (!this.clicked){
             $('#modal-dislike').modal('show');
             document.getElementById('post-dislike').style.color = colorSecondary;
