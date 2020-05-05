@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/f2d1c1774e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!--Section: Contact v.2-->
+    <section class="mb-4">
+
+        <!--Section heading-->
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Contattaci</h2>
+        <!--Section description-->
+        <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+            a matter of hours to help you.</p>
+        <div class="container">
+            <div class="row">
+                <!--Grid column-->
+                <div class="col-md-9 mb-5 mb-md-0">
+                    <form id="contact-form" name="contact-form" action="../php/contattaci.php" method="POST">
+                        <!--Grid row-->
+                        <div class="row">
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <div class="md-form mb-3">
+                                    <label for="name" class="">Il tuo nome</label>
+                                    <input type="text" id="name" name="name" class="form-control">
+                                </div>
+                            </div>
+                            <!-- /Grid column -->
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <div class="md-form mb-3">
+                                    <label for="email" class="">La tua email</label>
+                                    <input type="text" id="email" name="email" class="form-control">
+                                </div>
+                            </div>
+                            <!-- /Grid column -->
+
+                        </div>
+                        <!-- /Grid row -->
+                        <!--Grid row-->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="md-form mb-3">
+                                    <label for="subject" class="">Oggetto</label>
+                                    <input type="text" id="subject" name="subject" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Grid row -->
+                        <!--Grid row-->
+                        <div class="row">
+                            <!--Grid column-->
+                            <div class="col-md-12">
+                                <div class="md-form mb-3">
+                                    <label for="message">Messaggio</label>
+                                    <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                                </div>
+                            </div>
+                            <!-- /Grid column -->
+                        </div>
+                        <!-- /Grid row -->
+                    </form>
+
+                    <div class="text-center">
+                        <button class="btn btn-primary text-white" onclick="document.getElementById('contact-form').submit();">Send</button>
+                    </div>
+                    <div class="text-center">
+                        <a class="btn btn-primary" href="mailto:a.difonzo2@studenti.poliba.it">Send with <strong>mailto:</strong>in href</a>
+                    </div>
+                    <div class="status"></div>
+                </div>
+                <!-- /Grid column -->
+
+                <!--Grid column-->
+                <div class="col-md-3 text-center">
+                    <ul class="list-unstyled mb-0">
+                        <li><i class="fas fa-envelope mt-4 fa-2x" style="color:blue !important;"></i>
+                            <p>g.latrofa3@studenti.poliba.it</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /Grid column -->
+            </div>
+            <!-- /Main row -->
+        </div>
+        <!-- End of container -->
+    </section>
+    <!--Section: Contact v.2-->
+    <!-- Footer -->
+    <footer>
+        <small class="text-white">
+            <a>&copy; AWWA</a>
+            <a> - </a>
+            <a class="text-white" href="#">Chi siamo</a>
+            <a> - </a>
+            <a class="text-white" href="#">Contattaci</a>
+        </small>
+    </footer>
+        
+</body>
+
