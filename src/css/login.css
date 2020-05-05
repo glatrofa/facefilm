@@ -28,8 +28,8 @@ body, .container-fluid {
 }
 
 .container-fluid {
-    /*Viene caricata la prima immagine (la seconda è di fallback), che essendo ridimensionata e più piccola
-    permette la ripetizione automatica fino a riempire tutto il container*/
+    /*Viene caricata un'immagine che essendo di dimensioni piuttosto inferiori a quelle
+    del container permette la ripetizione automatica fino a riempire tutto il container*/
     background-image: url(../img/Tv-vintage_resized.jpg), url(../img/Tv-vintage.jpg); 
     background-position: top;
     background-repeat: repeat;
@@ -64,6 +64,10 @@ footer:hover {
   font-size: 1.3rem;
 }
 
+.btn.btn-form-primary:hover, .btn.btn-form-secondary:hover {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)!important;    
+}
+
 .btn.btn-form-secondary {
     color: var(--awwa-secondary);
     background-color: white;
@@ -72,10 +76,12 @@ footer:hover {
 
 .btn.btn-form-primary:hover {
     border-color: var(--awwa-secondary);
+    color: var(--awwa-secondary);
 }
 
 .btn.btn-form-secondary:hover {
     border-color: var(--awwa-primary);
+    color: var(--awwa-primary);
 }
 
 a#signupLink:hover {
