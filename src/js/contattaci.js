@@ -14,13 +14,13 @@ $(function Contattaci() {
                 $('#modal-contattaci-success').modal('show');             
             }
             else {
-                document.getElementById('modal-contattaci-error').innerHTML = modalContattaciFail;
+                document.getElementById('modal-contattaci-error').innerHTML = modalContattaciError;
                 $('#modal-contattaci-error').modal('show');
             }         
         },
         error: function (data) {
             console.log(data);
-            document.getElementById('modal-contattaci-error').innerHTML = modalContattaciFail;
+            document.getElementById('modal-contattaci-error').innerHTML = modalContattaciError;
             $('#modal-contattaci-error').modal('show');
         }
       });
