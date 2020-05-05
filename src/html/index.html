@@ -11,7 +11,8 @@
 </head>
 <body>
     <h1>Using TheMovieDB.org API v3</h1>
-    <p><img src="https://image.tmdb.org/t/p/w185/l1yltvzILaZcx2jYvc5sEMkM7Eh.jpg" alt="Jaws"/></p>
+    <p><img id="poster" alt="Jaws"/></p>
+    <div><p id="secure_base_url"></p></div>
     <div id="output">
         <!-- output will go here -->
     </div>
@@ -42,6 +43,7 @@
             })
             .then((data)=>{ /* 'data' è tutto l'oggetto JSON restituito dall'API */
                 baseImageURL = data.images.secure_base_url; /* secure usa l'https */
+                document.getElementById('secure_base_url').innerHTML = baseImageURL;
                 configData = data.images;
                 console.log('config:', data); /* tutto l'oggetto JSON viene stampato nella console */
                 console.log('il file config è stato prelevato');
@@ -59,7 +61,7 @@
             .then((data)=>{
                 document.getElementById('output').innerHTML = JSON.stringify(data, null, 4);
                 //qui si può lavorare ulteriormente con l'array di results ottenuto; nella riga sopra viene banalmente stampato nel documento HTML
-                
+                document.getElementById('poster').src = baseImageURL.concat('w185', data.results[0].poster_path);
             })
         }
         
