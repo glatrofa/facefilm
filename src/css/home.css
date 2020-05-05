@@ -99,6 +99,7 @@ a.post:hover {
     color: var(--awwa-secondary);
 }
 
+/* forse non servono a niente
 @media (min-width: 992px) {
     .container div {
         width: 33%;
@@ -113,3 +114,4 @@ a.post:hover {
         width: 33%;
     }
 }  
+*/

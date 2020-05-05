@@ -91,6 +91,7 @@ a#signupLink:hover {
   box-shadow: 0 0 0 0.05rem var(--awwa-secondary);
 }
 
+/* forse non servono a niente
 @media (min-width: 992px) {
     .container div {
         width: 33%;
@@ -105,3 +106,4 @@ a#signupLink:hover {
         width: 33%;
     }
 }  
+*/
