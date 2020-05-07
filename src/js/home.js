@@ -63,7 +63,7 @@ function VisualizzaClassifica() {
             do{
                 classifica += '<li><a href='+'#?'+out.results[i].id+'>'+out.results[i].original_name+'</a></li>';                
                 i ++;
-            }while (i <= 4);
+            }while (i <= 9);
             document.getElementById('classifica_serie').innerHTML = classifica;
             /*
             let results = [];
