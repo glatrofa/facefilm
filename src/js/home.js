@@ -1,10 +1,5 @@
 import { Logged } from './autenticazione.js';
 
-// richiama funzioni non appena il documento è caricato
-$(document).ready(function() {
-    VisualizzaClassifica();
-});
-
 // verifica che l'utente abbia effettuato l'accesso
 //window.onpaint = logged();
 window.onload = Logged();
@@ -12,8 +7,13 @@ window.onload = Logged();
 const colorPrimary = '#e5af05';
 const colorSecondary = '#00008b';
 
+// richiama funzioni non appena il documento è caricato
+$(document).ready(function() {
+    VisualizzaClassifica();
+});
+
 // classe per feedback grafici dopo l'interazioni con i post
-class modalLike {
+class ModalLike {
     constructor() {
         this.clicked = false;
     }
@@ -31,7 +31,7 @@ class modalLike {
     }
 }
 
-class modalDislike {
+class ModalDislike {
     constructor() {
         this.clicked = false;
     }
