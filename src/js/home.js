@@ -18,7 +18,7 @@ class ModalLike {
         this.clicked = false;
     }
 
-    static Click() {
+    static click() {
         if(!this.clicked){
             $('#modal-like').modal('show');
             document.getElementById('post-like').style.color = colorSecondary;
