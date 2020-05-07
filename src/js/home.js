@@ -1,5 +1,10 @@
 import { Logged } from './autenticazione.js';
 
+// richiama funzioni non appena il documento è caricato
+$(document).ready(function() {
+    VisualizzaClassifica();
+});
+
 // verifica che l'utente abbia effettuato l'accesso
 //window.onpaint = logged();
 window.onload = Logged();
@@ -44,34 +49,14 @@ class modalDislike {
     }
 }
 
-/*
-let modalLikeClicked = false;
-let modalDislikeClicked = false;
-
-function modalLikeCLick() {
-    if (!modalLikeClicked){
-        $('#modal-like').modal('show');
-        document.getElementById('link-like').style.color = colorSecondary;
-        modalLikeClicked = true;
-    }        
-    else{
-        $('#modal-like-removed').modal('show');
-        document.getElementById('link-like').style.color = colorPrimary;
-        modalLikeClicked = false;
-    }
+// visualizza le 5 serie più popolari su tmdb
+function VisualizzaClassifica() {
+    let api = 'd278f4116f977c4c40da51f004832a5a';
+    let url = 'https://api.themoviedb.org/3/tv/popular?api_key=${api}&language=it&page=1';
+    fetch(url)
+        .then(res => res.json())
+        .then((out) => {
+            console.log('Checkout this JSON! ', out)
+        })
+        .catch(err => { throw err });
 }
-
-function modalDislikeCLick() {
-    if (!modalDislikeClicked){
-        $('#modal-dislike').modal('show');
-        document.getElementById('link-dislike').style.color = colorSecondary;
-        modalDislikeClicked = true;
-    }        
-    else{
-        $('#modal-dislike-removed').modal('show');
-        document.getElementById('link-dislike').style.color = colorPrimary;
-        modalDislikeClicked = false;
-    }
-}
-
-*/
