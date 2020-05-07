@@ -58,7 +58,7 @@ function VisualizzaClassifica() {
         .then((out) => {
             console.log('Checkout this JSON! ', out)
             let i = 0;
-            console.log('nome1 '+out[0].original_name);
+            console.log('nome1 '+out.results[0].original_name);
             /*
             do{
 
