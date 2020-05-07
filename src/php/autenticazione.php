@@ -1,7 +1,5 @@
 <?php
 
-header('Access-Control-Allow-Origin: *'); // risolve l'errore "Cross-Origin Read Blocking (CORB)"
-
 if(session_id() != "")
     echo session_id();
 else
