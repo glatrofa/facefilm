@@ -57,13 +57,12 @@ function VisualizzaClassifica() {
         .then(res => res.json())
         .then((out) => {
             console.log('Checkout this JSON! ', out)
-            let i = 0;
-            console.log('nome1 '+out.results[0].original_name);
-            /*
+            //console.log('nome1 '+out.results[0].original_name);
+            let i = 0;            
             do{
-
+                let string = '<li><a href='+'#?'+out.results[i].id+'>'+out.results[i].original_name+'</a></li>';
+                document.getElementById('classifica_serie').innerHTML = string;
             }while (i <= 4);
-            */
             /*
             let results = [];
             out.array.forEach(element => {
