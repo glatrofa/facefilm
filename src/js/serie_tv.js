@@ -10,7 +10,6 @@ $('#cerca_serie_bottone').click(function CercaSerie() {
 
 // ricerca nel db tutte le serie comprendenti nel nome i caratteri inseriti nel form
 $('#cerca_serie').keyup(function CercaNomeSerie() {
-    //$('#target').html($(this).val());
     let api = 'd278f4116f977c4c40da51f004832a5a';
     let url = 'https://api.themoviedb.org/3/search/tv?api_key='+api+'&language=it&page=1&query='+$(this).val()+'&include_adult=true';
     fetch(url)
@@ -20,6 +19,7 @@ $('#cerca_serie').keyup(function CercaNomeSerie() {
             console.log('dimensione '+out.results.length);
             let i = 0;            
             let lista = '';
+            // ritornano al massimo 20 risultato per volta
             while (out.results.length >= 1 && i < out.results.length) {
                 lista += '<option value='+out.results[i].id+'>'+out.results[i].name+'</option>';
                 i ++;
