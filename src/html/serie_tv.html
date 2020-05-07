@@ -9,12 +9,12 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/f2d1c1774e.js" crossorigin="anonymous"></script>
-    <script src="./js/serie_tv.js" type="module"></script>
+    <script src="../js/serie_tv.js" type="module"></script>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">        
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">    
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/home.css" type="text/css">
-    <!--Favicon--><link href="./img/favicon/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="../css/home.css" type="text/css">
+    <!--Favicon--><link href="../img/favicon/favicon.ico" rel="shortcut icon">
 </head>
 
 <body class="main">
@@ -27,10 +27,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link text-white active" href="./home.html">Home<span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link text-white" href="">Cerca serie tv</a>
+                    <a class="nav-item nav-link text-white" href="./home.html">Home</a>
+                    <a class="nav-item nav-link text-white active" href="./serie_tv.html">Cerca serie tv</a>
                     <a class="nav-item nav-link text-white" href="#">Cerca post</a>
-                    <a class="nav-item nav-link text-white" href="./html/myprofile.html">Profilo</a>
+                    <a class="nav-item nav-link text-white" href="./profilo.html">Profilo</a>
                 </div>
             </div>
         </nav> 
@@ -40,9 +40,32 @@
             <!-- Riga principale -->
             <div class="row">
                 <!-- Classifica -->
-                <div class="col-md-3">                    
-                </div>
+                <div class="col-md">
+                    <p>Cerca serie tv</p>
+                    <form></form> <!-- aggiustare il form -->
+                        <div class="row justify-content-center">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                            <input class="form-control form-control-sm ml-3 w-75" type="text" id="cerca_serie" placeholder="Cerca per nome">
+                        </div>
+                        <div class="row justify-content-center">
+                            <label for="mostra_nome_serie">Cerca la serie:</label>
+                            <select id="mostra_nome_serie">
+                                <option value="null"> --- </option>
+                            </select>
+                        </div>                        
+                    </form>           
+                    <!-- bottone fuori dal form altrimenti refresha solo la pagina -->         
+                    <button id="cerca_serie_bottone">Vai alla pagina</button>
+                </div>                
                 <!--  -->
+            <!--  -->
+            <!--  riga con classifiche -->
+            <div class="row">
+                <div class="col-md">
+                    <p>qui andranno le classifiche</p> <!-- aggiustare la disposizione -->
+                    <p>ale nel caso predisponi una riga sotto la ricerca con due colonne, ci metto le 10 più votate su tmdb e le 10 più popolari</p>
+                </div>
+            </div>
     </main>
 
     <!-- Footer -->
