@@ -1,5 +1,6 @@
 <?php
 
+header('Access-Control-Allow-Origin: *'); // risolve l'errore "Cross-Origin Read Blocking (CORB)"
 
 $dbPassword = "Dtr1m0n%ci";
 $dbUserName = "giuseppe";

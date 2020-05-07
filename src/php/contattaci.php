@@ -1,5 +1,6 @@
 <?php
 
+header('Access-Control-Allow-Origin: *'); // risolve l'errore "Cross-Origin Read Blocking (CORB)"
 include './connessioneDatabase.php';
 
 $nome = mysqli_real_escape_string($connection, $_POST["nome"]);
