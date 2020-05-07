@@ -84,6 +84,11 @@ footer {
     background-color: var(--awwa-primary);
 }
 
+/* grassetto per pagina corrente in navbar */
+.active {
+    font-weight: bold;
+}
+
 /* Testo color nero */
 .text-black {
     color: black;
