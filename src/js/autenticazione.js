@@ -3,7 +3,9 @@ function CheckID(id) {
     if(document.cookie.split(';').some((item) => item.includes('PHPSESSID='+id+'')))
         return true;
     else{
-        window.location.href = 'http://awwa.sytes.net/html/login.html';
+        // aggiunto altro href per consentire lo sviluppo con live server in locale facendo richieste solo php al server
+        //window.location.href = 'http://awwa.sytes.net/html/login.html';
+        window.location.href = './html/login.html';
         return false;
     }
 }
@@ -18,7 +20,8 @@ function Logged() {
         success: function (data) {            
             if(data == null){
                 console.log('data null');
-                window.location.href = 'http://awwa.sytes.net/html/login.html';                
+                //window.location.href = 'http://awwa.sytes.net/html/login.html';        
+                window.location.href = './html/login.html';        
             }
             else{
                 CheckID(data);
@@ -26,7 +29,8 @@ function Logged() {
         },
         error: function () {
             console.log('ajax error');
-            window.location.href = 'http://awwa.sytes.net/html/login.html';            
+            //window.location.href = 'http://awwa.sytes.net/html/login.html';            
+            window.location.href = './html/login.html';
         }
       });
 }
