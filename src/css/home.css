@@ -89,6 +89,15 @@ footer {
     font-weight: bold;
 }
 
+/* Contorno agli input */
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: var(--awwa-primary);
+    outline: 0;
+    box-shadow: 0 0 0 0.05rem var(--awwa-primary);
+  }
+
 /* Testo color nero */
 .text-black {
     color: black;
