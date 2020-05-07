@@ -59,11 +59,12 @@ function VisualizzaClassifica() {
             console.log('Checkout this JSON! ', out)
             //console.log('nome1 '+out.results[0].original_name);
             let i = 0;            
+            let classifica = '';
             do{
-                let string = '<li><a href='+'#?'+out.results[i].id+'>'+out.results[i].original_name+'</a></li>';
-                document.getElementById('classifica_serie').innerHTML = string;
+                classifica += '<li><a href='+'#?'+out.results[i].id+'>'+out.results[i].original_name+'</a></li>';                
                 i ++;
             }while (i <= 4);
+            document.getElementById('classifica_serie').innerHTML = classifica;
             /*
             let results = [];
             out.array.forEach(element => {
