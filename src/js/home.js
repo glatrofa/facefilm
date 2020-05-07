@@ -52,7 +52,7 @@ class modalDislike {
 // visualizza le 5 serie più popolari su tmdb
 function VisualizzaClassifica() {
     let api = 'd278f4116f977c4c40da51f004832a5a';
-    let url = 'https://api.themoviedb.org/3/tv/popular?api_key=${api}&language=it&page=1';
+    let url = 'https://api.themoviedb.org/3/tv/popular?api_key='+api+'&language=it&page=1';
     fetch(url)
         .then(res => res.json())
         .then((out) => {
