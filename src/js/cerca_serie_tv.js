@@ -5,7 +5,8 @@ import { Logged } from './autenticazione.js';
 
 // effettua il redirect sulla pagina della serie selezionata
 $('#cerca_serie_bottone').click(function CercaSerie() {
-    console.log('serie selezionata '+$('#mostra_nome_serie :selected').val());
+    //console.log('serie selezionata '+$('#mostra_nome_serie :selected').val());
+    window.location.href = './cerca_serie_tv.html/?id='+$('#mostra_nome_serie :selected').val()+'';
 });
 
 // ricerca nel db tutte le serie comprendenti nel nome i caratteri inseriti nel form
