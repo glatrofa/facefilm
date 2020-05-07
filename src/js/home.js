@@ -57,11 +57,25 @@ function VisualizzaClassifica() {
         .then(res => res.json())
         .then((out) => {
             console.log('Checkout this JSON! ', out)
+            let i = 0;
+            console.log('nome1 '+out[0].original_name);
+            /*
+            do{
+
+            }while (i <= 4);
+            */
+            /*
             let results = [];
+            out.array.forEach(element => {
+                
+            });
+            */
+            /*
             out.forEach(function (value, i) {
                results[i] = {'nome':value.original_name, 'popolarita':value.popularity};
             });
             console.log('results: ', resuls);
+            */
         })
         .catch(err => { throw err });
 }
