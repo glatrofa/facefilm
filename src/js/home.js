@@ -17,7 +17,7 @@ $(document).ready(function() {
 });
 
 // funzione per la selezione o deselezione del mi piace di un post
-$(function controllaMiPiace() {
+function controllaMiPiace() {
     $('#post_like').click(function () {
         if(!modalLikeClicked) {
             $('#modal_like').modal('show');
@@ -30,10 +30,10 @@ $(function controllaMiPiace() {
             modalLikeClicked = false;
         }
     });
-});
+}
 
 // funzione per la selezione o deselezione del non mi piace di un post
-$(function controllaNonMiPiace() {
+function controllaNonMiPiace() {
     $('#post_dislike').click(function () {
         if(!modalDislikeClicked) {
             $('#modal_dislike').modal('show');
@@ -46,7 +46,7 @@ $(function controllaNonMiPiace() {
             modalDislikeClicked = false;
         }
     });
-});
+}
 
 // visualizza le 5 serie più popolari su tmdb
 function visualizzaClassifica() {
