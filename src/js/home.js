@@ -171,10 +171,10 @@ $(function login() {
         data: $(this).serialize(),
         dataType: 'json',
         success: function (data) {            
-            console.log('SUCCESS '+data[0]);
+            console.log('SUCCESS '+data);
         },
         error: function (data) {
-          console.log('ERROR '+data[0]);
+          console.log('ERROR '+data);
         }
       });
     });
