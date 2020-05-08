@@ -18,7 +18,7 @@ $(document).ready(function() {
 
 // funzione per la selezione o deselezione del mi piace di un post
 function controllaMiPiace() {
-    $('#post_like').click(function () {
+    //$('#post_like').click(function () {
         if(!modalLikeClicked) {
             $('#modal_like').modal('show');
             document.getElementById('post_like').style.color = colorPrimary;
@@ -29,12 +29,12 @@ function controllaMiPiace() {
             document.getElementById('post_like').style.color = colorSecondary;
             modalLikeClicked = false;
         }
-    });
+    //});
 }
 
 // funzione per la selezione o deselezione del non mi piace di un post
 function controllaNonMiPiace() {
-    $('#post_dislike').click(function () {
+    //$('#post_dislike').click(function () {
         if(!modalDislikeClicked) {
             $('#modal_dislike').modal('show');
             document.getElementById('post_dislike').style.color = colorPrimary;
@@ -45,7 +45,7 @@ function controllaNonMiPiace() {
             document.getElementById('post_dislike').style.color = colorSecondary;
             modalDislikeClicked = false;
         }
-    });
+    //});
 }
 
 // visualizza le 5 serie più popolari su tmdb
