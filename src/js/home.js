@@ -2,7 +2,6 @@ import { logged } from './autenticazione.js';
 import {APIKEY} from './key.js';
 
 // verifica che l'utente abbia effettuato l'accesso
-//window.onpaint = logged();
 //window.onload = logged();
 
 const colorPrimary = '#e5af05';
