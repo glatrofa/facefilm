@@ -7,13 +7,8 @@ $idSerie = mysqli_real_escape_string($connection, $_POST["idSerie"]);
 $numeroStagione = mysqli_real_escape_string($connection, $_POST["numeroStagione"]);
 $numeroEpisodio = mysqli_real_escape_string($connection, $_POST["numeroEpisodio"]);
 $testo = mysqli_real_escape_string($connection, $_POST["testo"]);
-//$data = mysqli_real_escape_string($connection, $_POST["data"]);
 $titolo = mysqli_real_escape_string($connection, $_POST["titolo"]);
 $email = $_SESSION["email"];
-//echo $idSerie;
-//echo $numeroStagione;
-//echo $numeroEpisodio;
-//echo $postTesto;
 
 // lock tabelle
 $queryL = "LOCK TABLES post WRITE";
@@ -29,10 +24,7 @@ $response = array();
 $queryU = "UNLOCK TABLES";
 mysqli_query($connection, $queryU) or die (mysqli_error($connection));
 
-
 // ritorno dati al client
-//$response = array();
-//$response[0] = $idSerie.' '.$numeroStagione.' '.$numeroEpisodio.' '.$testo.' '.$data.' '.$titolo.' '.$email;
 $jsonData = json_encode($response);
 echo $jsonData;
 
