@@ -174,15 +174,15 @@ $(function login() {
             numeroStagione: document.getElementById('post_stagione').value,
             numeroEpisodio: document.getElementById('post_episodio').value,
             testo: document.getElementById('post_testo').value,
-            data: Date.now(),
+            //data: Date.now(),
             titolo: document.getElementById('post_titolo').value,
         },
         dataType: 'json',
         success: function (data) {            
             console.log('SUCCESS '+data);
-            var dataPubblicazione = Date.parse(data[2]);
+            //var dataPubblicazione = Date.parse(data[2]);
             //console.log('data '+data[2].getDate()+'/'+data[2].getMonth()+'/'+data[2].getFullYear()+' ora '+data[2].getHours+':'+data[2].getMinutes()+':'+data[2].getSeconds());
-            console.log(' data '+dataPubblicazione.toDateString());
+            //console.log(' data '+dataPubblicazione.toDateString());
         },
         error: function (data) {
           console.log('ERROR '+data);
