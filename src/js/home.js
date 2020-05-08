@@ -176,11 +176,11 @@ $(function login() {
             testo: document.getElementById('post_testo').value,
             data: Date.now(),
             titolo: document.getElementById('post_titolo').value,
-
         },
         dataType: 'json',
         success: function (data) {            
             console.log('SUCCESS '+data);
+            console.log('data '+data[2].getDate()+'/'+data[2].getMonth()+'/'+data[2].getFullYear()+' ora '+data[2].getHours+':'+data[2].getMinutes()+':'+data[2].getSeconds());
         },
         error: function (data) {
           console.log('ERROR '+data);

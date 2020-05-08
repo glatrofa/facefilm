@@ -42,7 +42,9 @@ else{
 }
 */
 // ritorno dati al client
-$response = $idSerie.' '.$numeroStagione.' '.$numeroEpisodio.' '.$testo.' '.$data.' '.$titolo.' '.$email;
+$response = array();
+$response[0] = $idSerie.' '.$numeroStagione.' '.$numeroEpisodio.' '.$testo.' '.$data.' '.$titolo.' '.$email;
+$response[1] = $data;
 $jsonData = json_encode($response);
 echo $jsonData;
 
