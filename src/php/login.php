@@ -20,6 +20,8 @@ if($rowsNumber != 0){
     // login con successo
     $response[0] = array('nome_utente' => $row["nome_utente"], 'email' => $row["email"]);  
     $response[1] = session_id();
+    // aggiunge l'email come parametro della sessione
+    $_SESSION["email"] = $row["email"];
 }
 else{
     $queryEmailPresente = "SELECT email FROM utenti WHERE email = '".$email."'";

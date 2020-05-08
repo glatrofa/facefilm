@@ -6,6 +6,8 @@ window.onload = logged();
 
 const colorPrimary = '#e5af05';
 const colorSecondary = '#00008b';
+const modalPostPubblicazioneSuccess = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Post pubblicato</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div></div>";
+const modalPostPubblicazioneError = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Errore pubblicazione post</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div><div class='modal-body'><p>Ci scusiamo per il disagio.<br>Se il problema persiste utilizza il form contattaci per segnalare l'accaduto.<br>Grazie.</p></div><div class='modal-footer'><button type='button' class='btn btn-primary' onclick='redirectFormContatti()'>Vai al form contatti</button><button type='button' class='btn btn-secondary' data-dismiss='modal'>Chiudi</button></div></div>";
 let modalLikeClicked = false;
 let modalDislikeClicked = false;
 
@@ -19,12 +21,12 @@ $(function controllaMiPiace() {
     $('#post_like').click(function () {
         if(!modalLikeClicked) {
             $('#modal_like').modal('show');
-            document.getElementById('post_like').style.color = colorPrimary;
+            document.getElementById('post_like').style.color = colorSecondary;
             modalLikeClicked = true;
         }
         else {
             $('#modal_like_removed').modal('show');
-            document.getElementById('post_like').style.color = colorSecondary;
+            document.getElementById('post_like').style.color = colorPrimary;
             modalLikeClicked = false;
         }
     });
@@ -35,55 +37,16 @@ $(function controllaNonMiPiace() {
     $('#post_dislike').click(function () {
         if(!modalDislikeClicked) {
             $('#modal_dislike').modal('show');
-            document.getElementById('post_dislike').style.color = colorPrimary;
+            document.getElementById('post_dislike').style.color = colorSecondary;
             modalDislikeClicked = true;
         }
         else {
             $('#modal_dislike_removed').modal('show');
-            document.getElementById('post_dislike').style.color = colorSecondary;
+            document.getElementById('post_dislike').style.color = colorPrimary;
             modalDislikeClicked = false;
         }
     });
 });
-
-/*
-// classe per feedback grafici dopo l'interazioni con i post
-let ModalLike = class ModalLike {
-    constructor() {
-        this.clicked = false;
-    }
-
-    static click() {
-        if(!this.clicked){
-            $('#modal-like').modal('show');
-            document.getElementById('post-like').style.color = colorSecondary;
-            this.clicked = true;
-        }else{
-            $('#modal-like-removed').modal('show');
-            document.getElementById('post-like').style.color = colorPrimary;
-            this.clicked = false;
-        }
-    }
-}
-
-let ModalDislike = class ModalDislike {
-    constructor() {
-        this.clicked = false;
-    }
-
-    static click() {
-        if (!this.clicked){
-            $('#modal-dislike').modal('show');
-            document.getElementById('post-dislike').style.color = colorSecondary;
-            this.clicked = true;
-        }else{
-            $('#modal-dislike-removed').modal('show');
-            document.getElementById('post-dislike').style.color = colorPrimary;
-            this.clicked = false;
-        }
-    }
-}
-*/
 
 // visualizza le 5 serie più popolari su tmdb
 function visualizzaClassifica() {
@@ -137,9 +100,6 @@ $(function visualizzaSerie() {
                 document.getElementById('post_serie').innerHTML = listaSerie;
             })
             .catch(err => { throw err });
-        //let idSerie = $('#post_serie :selected').val();
-        //visualizzaStagioni(api, idSerie);
-        //$('#post_serie').change(visualizzaStagioni());
     });
 });
 
@@ -201,3 +161,44 @@ $(function visualizzaEpisodi() {
             .catch(err => { throw err });
     });    
 });
+
+// pubblica il post
+$(function login() {
+    $('#form_post').on('submit', function (e) {
+      e.preventDefault();
+      $.ajax({
+        type: 'POST',
+        url: './php/pubblica_post.php',
+        crossOrigin: true,
+        data: {
+            idSerie: document.getElementById('post_serie').value,
+            numeroStagione: document.getElementById('post_stagione').value,
+            numeroEpisodio: document.getElementById('post_episodio').value,
+            testo: document.getElementById('post_testo').value,
+            titolo: document.getElementById('post_titolo').value,
+        },
+        dataType: 'json',
+        success: function (data) {            
+            console.log('SUCCESS '+data);
+            if(data) {
+                document.getElementById('modal_post_pubblicazione_success').innerHTML = modalPostPubblicazioneSuccess;
+                $('#modal_post_pubblicazione_success').modal('show');
+            }
+            else {
+                document.getElementById('modal_post_pubblicazione_error').innerHTML = modalPostPubblicazioneError;
+                $('#modal_post_pubblicazione_error').modal('show');
+            }
+        },
+        error: function (data) {
+            console.log('ERROR '+data);
+            document.getElementById('modal_post_pubblicazione_error').innerHTML = modalPostPubblicazioneError;
+            $('#modal_post_pubblicazione_error').modal('show');
+        }
+      });
+    });
+});
+
+// reindirizza al form contatti
+function redirectFormContatti() {
+    location.href = './contattaci.html';
+}
