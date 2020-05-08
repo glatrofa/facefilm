@@ -35,10 +35,6 @@ body, .container-fluid {
     background-repeat: repeat;
 }
 
-#logo {
-    max-width: 600px;
-}
-
 .form {
     border: 5px solid var(--awwa-primary);
     border-radius: 20px;
