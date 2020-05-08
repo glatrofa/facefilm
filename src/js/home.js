@@ -2,7 +2,7 @@ import { logged } from './autenticazione.js';
 import {APIKEY} from './key.js';
 
 // verifica che l'utente abbia effettuato l'accesso
-//window.onload = logged();
+window.onload = logged();
 
 const colorPrimary = '#e5af05';
 const colorSecondary = '#00008b';
@@ -27,7 +27,6 @@ $(function controllaMiPiace() {
             modalLikeClicked = false;
         }
     });
-
 });
 
 $(function controllaNonMiPiace() {
@@ -43,7 +42,6 @@ $(function controllaNonMiPiace() {
             modalDislikeClicked = false;
         }
     });
-
 });
 
 /*
