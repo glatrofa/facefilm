@@ -1,18 +1,18 @@
-import { Logged } from './autenticazione.js';
+import { logged } from './autenticazione.js';
 import {APIKEY} from './key.js';
 
 
 // verifica che l'utente abbia effettuato l'accesso
-//window.onload = Logged();
+//window.onload = logged();
 
 // richiama funzioni non appena il documento è caricato
 $(document).ready(function() {
-    StampaInformazioniSerie();
+    stampaInformazioniSerie();
 });
 
-function StampaInformazioniSerie() {
+function stampaInformazioniSerie() {
     // https://developers.themoviedb.org/3/tv/get-tv-details
-    let id = GetParameterByName('id');
+    let id = getParameterByName('id');
     //console.log(id);
     let url = 'https://api.themoviedb.org/3/tv/'+id+'?api_key='+ APIKEY +'&language=it';
     fetch(url)
@@ -39,14 +39,14 @@ function StampaInformazioniSerie() {
             }   
             document.getElementById('registi').innerHTML = registi;
             // visualizza attori
-            VisualizzaAttori(id, APIKEY);
-            VisualizzaStagioni(id, APIKEY, data.number_of_seasons);
-            VisualizzaEpisodi(id, APIKEY);
+            visualizzaAttori(id, APIKEY);
+            visualizzaStagioni(id, APIKEY, data.number_of_seasons);
+            visualizzaEpisodi(id, APIKEY);
         })
         .catch(err => { throw err });
 }
 
-function VisualizzaAttori(id, APIKEY) {
+function visualizzaAttori(id, APIKEY) {
     // https://developers.themoviedb.org/3/tv/get-tv-credits
     let url = 'https://api.themoviedb.org/3/tv/'+id+'/credits?api_key='+APIKEY+'&language=it';
     fetch(url)
@@ -65,15 +65,15 @@ function VisualizzaAttori(id, APIKEY) {
         .catch(err => { throw err });
 }
 
-function VisualizzaStagioni(id, APIKEY, numeroStagioni) {
+function visualizzaStagioni(id, APIKEY, numeroStagioni) {
     // https://developers.themoviedb.org/3/tv-seasons/get-tv-season-details
 }
 
-function VisualizzaEpisodi(id, APIKEY) {
+function visualizzaEpisodi(id, APIKEY) {
     // https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-details
 }
 
-function GetParameterByName(name, url) {
+function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, '\\$&');
     var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),

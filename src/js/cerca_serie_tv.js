@@ -1,20 +1,20 @@
-import { Logged } from './autenticazione.js';
+import { logged } from './autenticazione.js';
 import {APIKEY} from './key.js';
 import {baseImageURL} from './indirizzo_base_img.js';
 
 console.log(baseImageURL);
 
 // verifica che l'utente abbia effettuato l'accesso
-//window.onload = Logged();
+//window.onload = logged();
 
 // effettua il redirect sulla pagina della serie selezionata
-$('#cerca_serie_bottone').click(function CercaSerie() {
+$('#cerca_serie_bottone').click(function cercaSerie() {
     //console.log('serie selezionata '+$('#mostra_nome_serie :selected').val());
     window.location.href = './serie_tv.html?id='+$('#mostra_nome_serie :selected').val()+'';
 });
 
 // ricerca nel db tutte le serie comprendenti nel nome i caratteri inseriti nel form
-$('#cerca_serie').keyup(function CercaNomeSerie() {
+$('#cerca_serie').keyup(function cercaNomeSerie() {
     let url = 'https://api.themoviedb.org/3/search/tv?api_key='+ APIKEY +'&language=it&page=1&query='+$(this).val()+'&include_adult=true';
     fetch(url)
         .then(res => res.json())

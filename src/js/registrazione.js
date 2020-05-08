@@ -1,4 +1,4 @@
-$(function Registrazione() {
+$(function registrazione() {
     $('#form-registrazione').on('submit', function (e) {
       e.preventDefault();
       $.ajax({
@@ -32,9 +32,9 @@ $(function Registrazione() {
     });
 });
 
-function RedirectRegistrazioneSuccess() {
+function redirectRegistrazioneSuccess() {
   location.href='./login.html';
 }
 
 // dichiarazione stringhe modal
-let modalRegistrazioneSuccess = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Registrazione effettuata</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div><div class='modal-body'><p>Grazie per esserti registrato.<br>Puoi procedere al login.</p></div><div class='modal-footer'><button type='button' class='btn btn-primary' onclick='RedirectRegistrazioneSuccess()'>Vai a login</button><button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button></div></div>";
+let modalRegistrazioneSuccess = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Registrazione effettuata</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div><div class='modal-body'><p>Grazie per esserti registrato.<br>Puoi procedere al login.</p></div><div class='modal-footer'><button type='button' class='btn btn-primary' onclick='redirectRegistrazioneSuccess()'>Vai a login</button><button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button></div></div>";

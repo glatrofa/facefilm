@@ -1,16 +1,16 @@
-import { Logged } from './autenticazione.js';
+import { logged } from './autenticazione.js';
 import {APIKEY} from './key.js';
 
 // verifica che l'utente abbia effettuato l'accesso
 //window.onpaint = logged();
-//window.onload = Logged();
+//window.onload = logged();
 
 const colorPrimary = '#e5af05';
 const colorSecondary = '#00008b';
 
 // richiama funzioni non appena il documento è caricato
 $(document).ready(function() {
-    VisualizzaClassifica();
+    visualizzaClassifica();
 });
 
 // classe per feedback grafici dopo l'interazioni con i post
@@ -37,7 +37,7 @@ class ModalDislike {
         this.clicked = false;
     }
 
-    static Click() {
+    static click() {
         if (!this.clicked){
             $('#modal-dislike').modal('show');
             document.getElementById('post-dislike').style.color = colorSecondary;
@@ -51,7 +51,7 @@ class ModalDislike {
 }
 
 // visualizza le 5 serie più popolari su tmdb
-function VisualizzaClassifica() {
+function visualizzaClassifica() {
     let url = 'https://api.themoviedb.org/3/tv/popular?api_key='+ APIKEY +'&language=it&page=1';
     fetch(url)
         .then(res => res.json())
@@ -82,8 +82,8 @@ function VisualizzaClassifica() {
 }
 
 // ricerca nel db tutte le serie comprendenti nel nome i caratteri inseriti nel form
-$(function VisualizzaSerie() {
-    $('#cerca_serie').keyup(function CercaNomeSerie() {
+$(function visualizzaSerie() {
+    $('#cerca_serie').keyup(function cercaNomeSerie() {
         let url = 'https://api.themoviedb.org/3/search/tv?api_key='+ APIKEY +'&language=it&page=1&query='+$(this).val()+'&include_adult=true';
         fetch(url)
             .then(res => res.json())
@@ -103,12 +103,12 @@ $(function VisualizzaSerie() {
             })
             .catch(err => { throw err });
         //let idSerie = $('#post_serie :selected').val();
-        //VisualizzaStagioni(api, idSerie);
-        //$('#post_serie').change(VisualizzaStagioni());
+        //visualizzaStagioni(api, idSerie);
+        //$('#post_serie').change(visualizzaStagioni());
     });
 });
 
-$(function VisualizzaStagioni() {
+$(function visualizzaStagioni() {
     $('#post_serie').change( function() {        
         let idSerie = $('#post_serie :selected').val();
         let url = 'https://api.themoviedb.org/3/tv/'+idSerie+'?api_key='+ APIKEY +'&language=it';
@@ -138,7 +138,7 @@ $(function VisualizzaStagioni() {
     });
 });
 
-$(function VisualizzaEpisodi() {
+$(function visualizzaEpisodi() {
     $('#post_stagione').change( function() {
         let idSerie = $('#post_serie :selected').val();
         let numeroStagione = $('#post_stagione :selected').val();

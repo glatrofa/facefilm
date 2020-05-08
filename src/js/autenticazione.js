@@ -1,5 +1,5 @@
 // controlla id parametro con l'id del cookie PHPSESSID
-function CheckID(id) {
+function checkID(id) {
     if(document.cookie.split(';').some((item) => item.includes('PHPSESSID='+id+'')))
         return true;
     else{
@@ -9,7 +9,7 @@ function CheckID(id) {
 }
 
 // verifica che l'utente abbia effettuato l'accesso
-function Logged() {
+function logged() {
     $.ajax({
         type: 'POST',
         url: 'http://awwa.sytes.net/php/autenticazione.php',
@@ -21,7 +21,7 @@ function Logged() {
                 window.location.href = 'http://awwa.sytes.net/html/login.html';
             }
             else{
-                CheckID(data);
+                checkID(data);
             }
         },
         error: function () {
@@ -31,4 +31,4 @@ function Logged() {
       });
 }
 
-export { CheckID, Logged };
+export { checkID, logged };
