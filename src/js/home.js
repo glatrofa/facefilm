@@ -180,7 +180,9 @@ $(function login() {
         dataType: 'json',
         success: function (data) {            
             console.log('SUCCESS '+data);
-            console.log('data '+data[2].getDate()+'/'+data[2].getMonth()+'/'+data[2].getFullYear()+' ora '+data[2].getHours+':'+data[2].getMinutes()+':'+data[2].getSeconds());
+            let data = Date.parse(data[2]);
+            //console.log('data '+data[2].getDate()+'/'+data[2].getMonth()+'/'+data[2].getFullYear()+' ora '+data[2].getHours+':'+data[2].getMinutes()+':'+data[2].getSeconds());
+            console.log(' data '+data);
         },
         error: function (data) {
           console.log('ERROR '+data);
