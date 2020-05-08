@@ -13,6 +13,7 @@
     <h1>Using TheMovieDB.org API v3</h1>
     <p><img id="poster" alt="Jaws"/></p>
     <div><p id="secure_base_url"></p></div>
+    <div><p id="config_data"></p></div>
     <div id="output">
         <!-- output will go here -->
     </div>
@@ -45,6 +46,7 @@
                 baseImageURL = data.images.secure_base_url; /* secure usa l'https */
                 document.getElementById('secure_base_url').innerHTML = baseImageURL;
                 configData = data.images;
+                document.getElementById('config_data').innerHTML = JSON.stringify(configData.poster_sizes);
                 console.log('config:', data); /* tutto l'oggetto JSON viene stampato nella console */
                 console.log('il file config è stato prelevato');
                 runSearch('jaws')

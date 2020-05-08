@@ -9,9 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>    
     <script src="https://kit.fontawesome.com/f2d1c1774e.js" crossorigin="anonymous"></script>
     <script src="../js/cerca_serie_tv.js" type="module"></script>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">        
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">    
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">    
     <link rel="stylesheet" href="../css/home.css" type="text/css">
     <!--Favicon--><link href="../img/favicon/favicon.ico" rel="shortcut icon">
     <title>Cerca serie tv</title>
@@ -36,7 +34,7 @@
         </nav> 
         <!--  -->          
         <!-- Pagina principale -->
-        <div class="container-fluid gedf-wrapper bordo"> <!--Che minchia è bordo??-->
+        <div class="container-fluid pt-3 pb-5">
             <!-- Riga principale -->
             <div class="row">
                 <!-- cerca serie tv -->
@@ -59,24 +57,14 @@
                     <div class="row">
                         <button id="cerca_serie_bottone">Vai alla pagina</button>
                     </div>
-                    <div class="row">
-                        <div class="card-deck" id="risultati_ricerca">
-                            <div class="card shadow">
-                                <img class="card-img-top" src="" alt="Poster">
-                                <div class="card-body">
-                                    <div class="card-title">Titolo serie</div>
-                                    <p>qui ci potrebbe stare una breve descrizione della serie, magari quella fornita dall'API ma in versione ridotta</p>
-                                </div>
-                                <div class="card-footer"><span class="text-muted">Data pubblicazione</span></div>
+                    <div class="row justify-content-center" id="risultati_ricerca">
+                        <div class="card col-5 col-lg-3 px-0 mx-3 mb-3 shadow">
+                            <img class="card-img-top" src="" alt="Poster">
+                            <div class="card-body">
+                                <div class="card-title">Titolo serie</div>
+                                <p>qui ci potrebbe stare una breve descrizione della serie, magari quella fornita dall'API ma in versione ridotta</p>
                             </div>
-                            <div class="card shadow">
-                                <img class="card-img-top" src="" alt="Poster">
-                                <div class="card-body">
-                                    <div class="card-title">Titolo serie</div>
-                                    <p>qui ci potrebbe stare una breve descrizione della serie, magari quella fornita dall'API ma in versione ridotta</p>
-                                </div>
-                                <div class="card-footer"><span class="text-muted">Data pubblicazione</span></div>
-                            </div>
+                            <div class="card-footer"><span class="text-muted">Data pubblicazione</span></div>
                         </div>
                     </div>
 

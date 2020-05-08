@@ -4,6 +4,9 @@
     --awwa-secondary: #00008b;
 }
 
+/*DEBUGGING*/
+/*body * {border: 1px solid red !important;}*/
+
 /* Personalizzazione scrollbar */
 body::-webkit-scrollbar {
     width: 0.25rem;
