@@ -34,7 +34,7 @@ $(function registrazione() {
 });
 
 function redirectRegistrazioneSuccess() {
-  location.href='./login.html';
+  location.href = './login.html';
 }
 
 // dichiarazione stringhe modal
