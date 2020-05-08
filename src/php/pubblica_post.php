@@ -7,7 +7,10 @@ $idSerie = mysqli_real_escape_string($connection, $_POST["post_serie"]);
 $numeroStagione = mysqli_real_escape_string($connection, $_POST["post_stagione"]);
 $numeroEpisodio = mysqli_real_escape_string($connection, $_POST["post_episodio"]);
 $postTesto = mysqli_real_escape_string($connection, $_POST["post_testo"]);
-$
+echo $idSerie;
+echo $numeroStagione;
+echo $numeroEpisodio;
+echo $postTesto;
 /*
 // esecuzione query
 $query = "SELECT nome_utente, email FROM utenti WHERE email = '".$email."' AND password = '".$passwordCriptata."'";
@@ -36,8 +39,8 @@ else{
 }
 */
 // ritorno dati al client
-$response = array('idSerie' => $idSerie, 'numeroStagione' => $numeroStagione, 'numeroEpisodio' => $numeroEpisodio, 'postTesto' => $postTesto);  
-$jsonData = json_encode($response);
-echo $jsonData;
+//$response = array('idSerie' => $idSerie, 'numeroStagione' => $numeroStagione, 'numeroEpisodio' => $numeroEpisodio, 'postTesto' => $postTesto);  
+//$jsonData = json_encode($response);
+//echo $jsonData;
 
 ?>
