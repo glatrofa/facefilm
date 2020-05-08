@@ -19,7 +19,7 @@ $(document).ready(function() {
 // funzione per la selezione o deselezione del mi piace di un post
 $(function controllaMiPiace() {
     $('#post_like').click(function () {
-        if(!modalLikeClicked) {
+        if(modalLikeClicked) {
             $('#modal_like').modal('show');
             document.getElementById('post_like').style.color = colorPrimary;
             modalLikeClicked = true;
@@ -35,7 +35,7 @@ $(function controllaMiPiace() {
 // funzione per la selezione o deselezione del non mi piace di un post
 $(function controllaNonMiPiace() {
     $('#post_dislike').click(function () {
-        if(!modalDislikeClicked) {
+        if(modalDislikeClicked) {
             $('#modal_dislike').modal('show');
             document.getElementById('post_dislike').style.color = colorPrimary;
             modalDislikeClicked = true;
