@@ -1,5 +1,6 @@
 <?php
 
+// ritorno dell'id sessione
 if(session_id() != "")
     echo session_id();
 else
