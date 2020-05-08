@@ -1,7 +1,7 @@
 import {APIKEY} from './key.js';
 
 
-let baseImageURL = function getUrlBaseImmagini() {
+let getBaseImageURL = function() {
             const baseURL = 'https://api.themoviedb.org/3/';
             let url = "".concat(baseURL, 'configuration?api_key=', APIKEY); /* con questo URL otteniamo il file di configurazione */
             fetch(url)
@@ -16,6 +16,6 @@ let baseImageURL = function getUrlBaseImmagini() {
             .catch(function(err){
                 alert(err);
             });
-        }
+        };
 
-export {baseImageURL};
+export {getBaseImageURL};
