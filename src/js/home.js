@@ -14,6 +14,7 @@ $(document).ready(function() {
     visualizzaClassifica();
 });
 
+// funzione per la selezione o deselezione del mi piace di un post
 $(function controllaMiPiace() {
     $('#post_like').click(function () {
         if(!modalLikeClicked) {
@@ -29,6 +30,7 @@ $(function controllaMiPiace() {
     });
 });
 
+// funzione per la selezione o deselezione del non mi piace di un post
 $(function controllaNonMiPiace() {
     $('#post_dislike').click(function () {
         if(!modalDislikeClicked) {
@@ -89,7 +91,7 @@ function visualizzaClassifica() {
     fetch(url)
         .then(res => res.json())
         .then((out) => {
-            console.log('Checkout this JSON! ', out)
+            console.log('Checkout this JSON! ', out);
             //console.log('nome1 '+out.results[0].original_name);
             let i = 0;            
             let classifica = '';
@@ -141,6 +143,7 @@ $(function visualizzaSerie() {
     });
 });
 
+// visualizza le stagioni della serie selezionata
 $(function visualizzaStagioni() {
     $('#post_serie').change( function() {        
         let idSerie = $('#post_serie :selected').val();
@@ -171,6 +174,7 @@ $(function visualizzaStagioni() {
     });
 });
 
+// visualizza gli episodi della stagione selezionata
 $(function visualizzaEpisodi() {
     $('#post_stagione').change( function() {
         let idSerie = $('#post_serie :selected').val();
