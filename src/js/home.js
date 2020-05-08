@@ -1,4 +1,5 @@
 import { Logged } from './autenticazione.js';
+import {APIKEY} from './key.js';
 
 // verifica che l'utente abbia effettuato l'accesso
 //window.onpaint = logged();
@@ -51,8 +52,7 @@ class ModalDislike {
 
 // visualizza le 5 serie più popolari su tmdb
 function VisualizzaClassifica() {
-    let api = 'd278f4116f977c4c40da51f004832a5a';
-    let url = 'https://api.themoviedb.org/3/tv/popular?api_key='+api+'&language=it&page=1';
+    let url = 'https://api.themoviedb.org/3/tv/popular?api_key='+ APIKEY +'&language=it&page=1';
     fetch(url)
         .then(res => res.json())
         .then((out) => {
@@ -84,8 +84,7 @@ function VisualizzaClassifica() {
 // ricerca nel db tutte le serie comprendenti nel nome i caratteri inseriti nel form
 $(function VisualizzaSerie() {
     $('#cerca_serie').keyup(function CercaNomeSerie() {
-        let api = 'd278f4116f977c4c40da51f004832a5a';
-        let url = 'https://api.themoviedb.org/3/search/tv?api_key='+api+'&language=it&page=1&query='+$(this).val()+'&include_adult=true';
+        let url = 'https://api.themoviedb.org/3/search/tv?api_key='+ APIKEY +'&language=it&page=1&query='+$(this).val()+'&include_adult=true';
         fetch(url)
             .then(res => res.json())
             .then((data) => {
@@ -111,9 +110,8 @@ $(function VisualizzaSerie() {
 
 $(function VisualizzaStagioni() {
     $('#post_serie').change( function() {        
-        let api = 'd278f4116f977c4c40da51f004832a5a';
         let idSerie = $('#post_serie :selected').val();
-        let url = 'https://api.themoviedb.org/3/tv/'+idSerie+'?api_key='+api+'&language=it';
+        let url = 'https://api.themoviedb.org/3/tv/'+idSerie+'?api_key='+ APIKEY +'&language=it';
         fetch(url)
             .then(res => res.json())
             .then((data) => {
@@ -142,10 +140,9 @@ $(function VisualizzaStagioni() {
 
 $(function VisualizzaEpisodi() {
     $('#post_stagione').change( function() {
-        let api = 'd278f4116f977c4c40da51f004832a5a';
         let idSerie = $('#post_serie :selected').val();
         let numeroStagione = $('#post_stagione :selected').val();
-        let url = 'https://api.themoviedb.org/3/tv/'+idSerie+'/season/'+numeroStagione+'?api_key='+api+'&language=it';
+        let url = 'https://api.themoviedb.org/3/tv/'+idSerie+'/season/'+numeroStagione+'?api_key='+ APIKEY +'&language=it';
         fetch(url)
             .then(res => res.json())
             .then((data) => {

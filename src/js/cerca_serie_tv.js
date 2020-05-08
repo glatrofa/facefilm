@@ -1,4 +1,5 @@
 import { Logged } from './autenticazione.js';
+import {APIKEY} from './key.js';
 
 // verifica che l'utente abbia effettuato l'accesso
 //window.onload = Logged();
@@ -11,13 +12,12 @@ $('#cerca_serie_bottone').click(function CercaSerie() {
 
 // ricerca nel db tutte le serie comprendenti nel nome i caratteri inseriti nel form
 $('#cerca_serie').keyup(function CercaNomeSerie() {
-    let api = 'd278f4116f977c4c40da51f004832a5a';
-    let url = 'https://api.themoviedb.org/3/search/tv?api_key='+api+'&language=it&page=1&query='+$(this).val()+'&include_adult=true';
+    let url = 'https://api.themoviedb.org/3/search/tv?api_key='+ APIKEY +'&language=it&page=1&query='+$(this).val()+'&include_adult=true';
     fetch(url)
         .then(res => res.json())
         .then((data) => {
-            console.log('Checkout this JSON! ', data);
-            console.log('dimensione '+data.results.length);
+            //console.log('Checkout this JSON! ', data);
+            //console.log('dimensione '+data.results.length);
             let i = 0;            
             let lista = '';
             // ritornano al massimo 20 risultato per volta

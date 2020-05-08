@@ -1,4 +1,6 @@
 import { Logged } from './autenticazione.js';
+import {APIKEY} from './key.js';
+
 
 // verifica che l'utente abbia effettuato l'accesso
 //window.onload = Logged();
@@ -12,8 +14,7 @@ function StampaInformazioniSerie() {
     // https://developers.themoviedb.org/3/tv/get-tv-details
     let id = GetParameterByName('id');
     //console.log(id);
-    let api = 'd278f4116f977c4c40da51f004832a5a';
-    let url = 'https://api.themoviedb.org/3/tv/'+id+'?api_key='+api+'&language=it';
+    let url = 'https://api.themoviedb.org/3/tv/'+id+'?api_key='+ APIKEY +'&language=it';
     fetch(url)
         .then(res => res.json())
         .then((data) => {
@@ -38,16 +39,16 @@ function StampaInformazioniSerie() {
             }   
             document.getElementById('registi').innerHTML = registi;
             // visualizza attori
-            VisualizzaAttori(id, api);
-            VisualizzaStagioni(id, api, data.number_of_seasons);
-            ViusalizzaEpisodi(id, api);
+            VisualizzaAttori(id, APIKEY);
+            VisualizzaStagioni(id, APIKEY, data.number_of_seasons);
+            VisualizzaEpisodi(id, APIKEY);
         })
         .catch(err => { throw err });
 }
 
-function VisualizzaAttori(id, api) {
+function VisualizzaAttori(id, APIKEY) {
     // https://developers.themoviedb.org/3/tv/get-tv-credits
-    let url = 'https://api.themoviedb.org/3/tv/'+id+'/credits?api_key='+api+'&language=it';
+    let url = 'https://api.themoviedb.org/3/tv/'+id+'/credits?api_key='+APIKEY+'&language=it';
     fetch(url)
         .then(res => res.json())
         .then((data) => {
@@ -64,11 +65,11 @@ function VisualizzaAttori(id, api) {
         .catch(err => { throw err });
 }
 
-function VisualizzaStagioni(id, api, numeroStagioni) {
+function VisualizzaStagioni(id, APIKEY, numeroStagioni) {
     // https://developers.themoviedb.org/3/tv-seasons/get-tv-season-details
 }
 
-function ViusalizzaEpisodi(id, api) {
+function VisualizzaEpisodi(id, APIKEY) {
     // https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-details
 }
 
