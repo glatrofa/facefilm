@@ -66,26 +66,28 @@
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
                                     <div class="form-group">
-                                        <div class="row justify-content-center">
-                                            <i class="fas fa-search" aria-hidden="true"></i>
-                                            <input class="form-control form-control-sm ml-3 w-75" type="text" id="cerca_serie" placeholder="Inserisci il nome della serie">
-                                        </div>
-                                        <label for="post_serie">Serie:</label>
-                                        <select id="post_serie">
-                                            <option value="null"> --- </option>
-                                        </select>
-                                        <label for="post_stagione">Seleziona la stagione:</label>
-                                        <select id="post_stagione">
-                                            <option value="null"> --- </option>
-                                        </select>
-                                        <label for="post_episodio">Seleziona l'episodio:</label>
-                                        <select id="post_episodio">
-                                            <option value="null"> --- </option>
-                                        </select>
-                                        <br>
-                                        <textarea type="text" class="form-control md-textarea" id="messaggio" name="messaggio" rows="3" placeholder="Sto guardando..." maxlength="8000" required></textarea>
-                                        <br>
-                                        <button class="btn gold-style">Pubblica</button>
+                                        <form id="form_post">
+                                            <div class="row justify-content-center">
+                                                <i class="fas fa-search" aria-hidden="true"></i>
+                                                <input class="form-control form-control-sm ml-3 w-75" type="text" id="cerca_serie" placeholder="Inserisci il nome della serie">
+                                            </div>
+                                            <label for="post_serie">Serie:</label>
+                                            <select id="post_serie" name="post_serie">
+                                                <option value="null"> --- </option>
+                                            </select>
+                                            <label for="post_stagione">Seleziona la stagione:</label>
+                                            <select id="post_stagione" name="post_stagione">
+                                                <option value="null"> --- </option>
+                                            </select>
+                                            <label for="post_episodio">Seleziona l'episodio:</label>
+                                            <select id="post_episodio" name="post_episodio">
+                                                <option value="null"> --- </option>
+                                            </select>
+                                            <br>
+                                            <textarea type="text" class="form-control md-textarea" id="post_testo" name="post_testo" rows="3" placeholder="Sto guardando..." maxlength="8000" required></textarea>
+                                            <br>
+                                            <button type="submit" class="btn gold-style" id="post_pubblica">Pubblica</button>
+                                        </form>
                                     </div>
                                 </div>                    
                             </div>

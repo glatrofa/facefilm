@@ -46,45 +46,6 @@ $(function controllaNonMiPiace() {
     });
 });
 
-/*
-// classe per feedback grafici dopo l'interazioni con i post
-let ModalLike = class ModalLike {
-    constructor() {
-        this.clicked = false;
-    }
-
-    static click() {
-        if(!this.clicked){
-            $('#modal-like').modal('show');
-            document.getElementById('post-like').style.color = colorSecondary;
-            this.clicked = true;
-        }else{
-            $('#modal-like-removed').modal('show');
-            document.getElementById('post-like').style.color = colorPrimary;
-            this.clicked = false;
-        }
-    }
-}
-
-let ModalDislike = class ModalDislike {
-    constructor() {
-        this.clicked = false;
-    }
-
-    static click() {
-        if (!this.clicked){
-            $('#modal-dislike').modal('show');
-            document.getElementById('post-dislike').style.color = colorSecondary;
-            this.clicked = true;
-        }else{
-            $('#modal-dislike-removed').modal('show');
-            document.getElementById('post-dislike').style.color = colorPrimary;
-            this.clicked = false;
-        }
-    }
-}
-*/
-
 // visualizza le 5 serie più popolari su tmdb
 function visualizzaClassifica() {
     let url = 'https://api.themoviedb.org/3/tv/popular?api_key='+ APIKEY +'&language=it&page=1';
@@ -137,9 +98,6 @@ $(function visualizzaSerie() {
                 document.getElementById('post_serie').innerHTML = listaSerie;
             })
             .catch(err => { throw err });
-        //let idSerie = $('#post_serie :selected').val();
-        //visualizzaStagioni(api, idSerie);
-        //$('#post_serie').change(visualizzaStagioni());
     });
 });
 
@@ -200,4 +158,24 @@ $(function visualizzaEpisodi() {
             })
             .catch(err => { throw err });
     });    
+});
+
+// pubblica il post
+$(function login() {
+    $('#form_post').on('submit', function (e) {
+      e.preventDefault();
+      $.ajax({
+        type: 'POST',
+        url: './php/pubblica_post.php',
+        crossOrigin: true,
+        data: $(this).serialize(),
+        dataType: 'json',
+        success: function (data) {            
+            console.log('SUCCESS '+data[0]);
+        },
+        error: function (data) {
+          console.log('ERROR '+data[0]);
+        }
+      });
+    });
 });
