@@ -18,12 +18,12 @@ $(document).ready(function() {
 $(function controllaMiPiace() {
     $('#post_like').click(function () {
         if(!modalLikeClicked) {
-            $('#modal-like').modal('show');
+            $('#modal_like').modal('show');
             document.getElementById('post_like').style.color = colorPrimary;
             modalLikeClicked = true;
         }
         else {
-            $('#modal-like-removed').modal('show');
+            $('#modal_like_removed').modal('show');
             document.getElementById('post_like').style.color = colorSecondary;
             modalLikeClicked = false;
         }
@@ -34,12 +34,12 @@ $(function controllaMiPiace() {
 $(function controllaNonMiPiace() {
     $('#post_dislike').click(function () {
         if(!modalDislikeClicked) {
-            $('#modal-dislike').modal('show');
+            $('#modal_dislike').modal('show');
             document.getElementById('post_dislike').style.color = colorPrimary;
             modalDislikeClicked = true;
         }
         else {
-            $('#modal-dislike-removed').modal('show');
+            $('#modal_dislike_removed').modal('show');
             document.getElementById('post_dislike').style.color = colorSecondary;
             modalDislikeClicked = false;
         }
