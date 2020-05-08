@@ -8,8 +8,8 @@ const colorPrimary = '#e5af05';
 const colorSecondary = '#00008b';
 const modalPostPubblicazioneSuccess = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Post pubblicato</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div></div>";
 const modalPostPubblicazioneError = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Errore pubblicazione post</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div><div class='modal-body'><p>Ci scusiamo per il disagio.<br>Se il problema persiste utilizza il form contattaci per segnalare l'accaduto.<br>Grazie.</p></div><div class='modal-footer'><button type='button' class='btn btn-primary' onclick='redirectFormContatti()'>Vai al form contatti</button><button type='button' class='btn btn-secondary' data-dismiss='modal'>Chiudi</button></div></div>";
-let modalLikeClicked = true;
-let modalDislikeClicked = true;
+let modalLikeClicked = false;
+let modalDislikeClicked = false;
 
 // richiama funzioni non appena il documento è caricato
 $(document).ready(function() {
@@ -19,7 +19,7 @@ $(document).ready(function() {
 // funzione per la selezione o deselezione del mi piace di un post
 $(function controllaMiPiace() {
     $('#post_like').click(function () {
-        if(modalLikeClicked) {
+        if(!modalLikeClicked) {
             $('#modal_like').modal('show');
             document.getElementById('post_like').style.color = colorSecondary;
             modalLikeClicked = true;
@@ -35,7 +35,7 @@ $(function controllaMiPiace() {
 // funzione per la selezione o deselezione del non mi piace di un post
 $(function controllaNonMiPiace() {
     $('#post_dislike').click(function () {
-        if(modalDislikeClicked) {
+        if(!modalDislikeClicked) {
             $('#modal_dislike').modal('show');
             document.getElementById('post_dislike').style.color = colorSecondary;
             modalDislikeClicked = true;
