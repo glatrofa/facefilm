@@ -6,14 +6,49 @@ import {APIKEY} from './key.js';
 
 const colorPrimary = '#e5af05';
 const colorSecondary = '#00008b';
+let modalLikeClicked = false;
+let modalDislikeClicked = false;
 
 // richiama funzioni non appena il documento è caricato
 $(document).ready(function() {
     visualizzaClassifica();
 });
 
+$(function controllaMiPiace() {
+    $('#post_like').click(function () {
+        if(!modalLikeClicked) {
+            $('#modal_like').modal('show');
+            document.getElementById('post_like').style.color = colorPrimary;
+            modalLikeClicked = true;
+        }
+        else {
+            $('#modal_like_removed').modal('show');
+            document.getElementById('post_like').style.color = colorSecondary;
+            modalLikeClicked = false;
+        }
+    });
+
+});
+
+$(function controllaNonMiPiace() {
+    $('#post_dislike').click(function () {
+        if(!modalDislikeClicked) {
+            $('#modal_dislike').modal('show');
+            document.getElementById('post_dislike').style.color = colorPrimary;
+            modalDislikeClicked = true;
+        }
+        else {
+            $('#modal_dislike_removed').modal('show');
+            document.getElementById('post_dislike').style.color = colorSecondary;
+            modalDislikeClicked = false;
+        }
+    });
+
+});
+
+/*
 // classe per feedback grafici dopo l'interazioni con i post
-class ModalLike {
+let ModalLike = class ModalLike {
     constructor() {
         this.clicked = false;
     }
@@ -31,7 +66,7 @@ class ModalLike {
     }
 }
 
-class ModalDislike {
+let ModalDislike = class ModalDislike {
     constructor() {
         this.clicked = false;
     }
@@ -48,6 +83,7 @@ class ModalDislike {
         }
     }
 }
+*/
 
 // visualizza le 5 serie più popolari su tmdb
 function visualizzaClassifica() {
