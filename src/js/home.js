@@ -180,7 +180,7 @@ $(function login() {
         dataType: 'json',
         success: function (data) {            
             console.log('SUCCESS '+data);
-            if(data == null) {
+            if(data) {
                 document.getElementById('modal_post_pubblicazione_success').innerHTML = modalPostPubblicazioneSuccess;
                 $('#modal_post_pubblicazione_success').modal('show');
             }
