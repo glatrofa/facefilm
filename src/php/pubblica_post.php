@@ -2,6 +2,9 @@
 
 include './connessioneDatabase.php';
 
+// avvio sessione
+session_start();
+
 // definizione variabili dal post
 $idSerie = mysqli_real_escape_string($connection, $_POST["idSerie"]);
 $numeroStagione = mysqli_real_escape_string($connection, $_POST["numeroStagione"]);
