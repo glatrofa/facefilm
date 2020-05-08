@@ -168,7 +168,16 @@ $(function login() {
         type: 'POST',
         url: './php/pubblica_post.php',
         crossOrigin: true,
-        data: $(this).serialize(),
+        //data: $(this).serialize(),
+        data: {
+            idSerie: document.getElementById('post_serie').value,
+            numeroStagione: document.getElementById('post_stagione').value,
+            numeroEpisodio: document.getElementById('post_episodio').value,
+            testo: document.getElementById('post_testo').value,
+            data: Date.now(),
+            titolo: document.getElementById('post_titolo').value,
+
+        },
         dataType: 'json',
         success: function (data) {            
             console.log('SUCCESS '+data);

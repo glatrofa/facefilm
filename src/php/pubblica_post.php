@@ -3,10 +3,13 @@
 include './connessioneDatabase.php';
 
 // definizione variabili dal post
-$idSerie = mysqli_real_escape_string($connection, $_POST["post_serie"]);
-$numeroStagione = mysqli_real_escape_string($connection, $_POST["post_stagione"]);
-$numeroEpisodio = mysqli_real_escape_string($connection, $_POST["post_episodio"]);
-$postTesto = mysqli_real_escape_string($connection, $_POST["post_testo"]);
+$idSerie = mysqli_real_escape_string($connection, $_POST["idSerie"]);
+$numeroStagione = mysqli_real_escape_string($connection, $_POST["numeroStagione"]);
+$numeroEpisodio = mysqli_real_escape_string($connection, $_POST["numeroEpisodio"]);
+$testo = mysqli_real_escape_string($connection, $_POST["testo"]);
+$data = mysqli_real_escape_string($connection, $_POST["data"]);
+$titolo = mysqli_real_escape_string($connection, $_POST["titolo"]);
+$email = $_SESSION["email"];
 //echo $idSerie;
 //echo $numeroStagione;
 //echo $numeroEpisodio;
@@ -39,7 +42,7 @@ else{
 }
 */
 // ritorno dati al client
-$response = $idSerie.' '.$numeroStagione.' '.$numeroEpisodio.' '.$postTesto;
+$response = $idSerie.' '.$numeroStagione.' '.$numeroEpisodio.' '.$testo.' '.$data.' '.$titolo.' '.$email;
 $jsonData = json_encode($response);
 echo $jsonData;
 
