@@ -1,5 +1,8 @@
 import { Logged } from './autenticazione.js';
 import {APIKEY} from './key.js';
+import {baseImageURL} from './indirizzo_base_img.js';
+
+console.log(baseImageURL);
 
 // verifica che l'utente abbia effettuato l'accesso
 //window.onload = Logged();
@@ -30,4 +33,30 @@ $('#cerca_serie').keyup(function CercaNomeSerie() {
             document.getElementById('mostra_nome_serie').innerHTML = lista;
         })
         .catch(err => { throw err });
+});
+
+// quando viene premuto il bottone 'Cerca', mostra le serie corrispondenti alla keyword
+// in una serie di card
+$('#mostra_poster').click(function cercaPoster() {
+    let url2 = 'https://api.themoviedb.org/3/search/tv?api_key=' + APIKEY + '&language=it&page=1&query=' + $('#cerca_serie').val()
+    const image_base_url = 
+    //console.log(url2);
+    fetch(url2)
+    .then(res => res.json())
+    .then((data) => {
+        let cards = '';
+        if (data.results.lenght) {
+            data.results.forEach(element => {
+                card = '<div class="card shadow">' +
+                                '<img class="card-img-top" src="' + element + '" alt="Poster">' +
+                                '<div class="card-body">' +
+                                    '<div class="card-title">Titolo serie</div>' +
+                                    '<p>qui ci potrebbe stare una breve descrizione della serie, magari quella fornita da API ma in versione ridotta</p>' +
+                                '</div>' +
+                                '<div class="card-footer"><span class="text-muted">Data pubblicazione</span></div>'+
+                        '</div>';
+            });
+        }
+    })
+    
 });
