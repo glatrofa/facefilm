@@ -1,3 +1,4 @@
+// funzione per il post dei dati della registrazione
 $(function registrazione() {
     $('#form-registrazione').on('submit', function (e) {
       e.preventDefault();

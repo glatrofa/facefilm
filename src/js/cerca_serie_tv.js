@@ -3,7 +3,7 @@ import {APIKEY} from './key.js';
 import {getBaseImageURL} from './indirizzo_base_img.js';
 
 // verifica che l'utente abbia effettuato l'accesso
-//window.onload = logged();
+window.onload = logged();
 
 // richiama funzioni non appena il documento è caricato
 $(document).ready(function() {
