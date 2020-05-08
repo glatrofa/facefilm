@@ -21,12 +21,12 @@ $(function controllaMiPiace() {
     $('#post_like').click(function () {
         if(modalLikeClicked) {
             $('#modal_like').modal('show');
-            document.getElementById('post_like').style.color = colorPrimary;
+            document.getElementById('post_like').style.color = colorSecondary;
             modalLikeClicked = true;
         }
         else {
             $('#modal_like_removed').modal('show');
-            document.getElementById('post_like').style.color = colorSecondary;
+            document.getElementById('post_like').style.color = colorPrimary;
             modalLikeClicked = false;
         }
     });
@@ -37,12 +37,12 @@ $(function controllaNonMiPiace() {
     $('#post_dislike').click(function () {
         if(modalDislikeClicked) {
             $('#modal_dislike').modal('show');
-            document.getElementById('post_dislike').style.color = colorPrimary;
+            document.getElementById('post_dislike').style.color = colorSecondary;
             modalDislikeClicked = true;
         }
         else {
             $('#modal_dislike_removed').modal('show');
-            document.getElementById('post_dislike').style.color = colorSecondary;
+            document.getElementById('post_dislike').style.color = colorPrimary;
             modalDislikeClicked = false;
         }
     });
