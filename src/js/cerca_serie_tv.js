@@ -1,6 +1,7 @@
 import { logged } from './autenticazione.js';
 import {APIKEY} from './key.js';
 import {getBaseImageURL} from './indirizzo_base_img.js';
+console.log(getBaseImageURL());
 
 // verifica che l'utente abbia effettuato l'accesso
 window.onload = logged();
@@ -39,10 +40,9 @@ $('#cerca_serie').keyup(function cercaNomeSerie() {
 });
 
 // quando viene premuto il bottone 'Cerca', mostra le serie corrispondenti alla keyword
-// in una serie di card, DA FINIRE, VADO A MANGIARE
+// in una serie di card, DA FINIRE
 $('#mostra_poster').click(function cercaPoster() {
     let url2 = 'https://api.themoviedb.org/3/search/tv?api_key=' + APIKEY + '&language=it&page=1&query=' + $('#cerca_serie').val()
-    const image_base_url = 
     //console.log(url2);
     fetch(url2)
     .then(res => res.json())
