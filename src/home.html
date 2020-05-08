@@ -33,7 +33,6 @@
                 </div>
             </div>
         </nav> 
-        <!--  -->          
         <!-- Pagina principale -->
         <div class="container-fluid gedf-wrapper">
             <!-- Riga principale -->
@@ -49,9 +48,8 @@
                         </div>                    
                     </div>
                 </div>
-                <!--  -->
-                <!-- Sezione crea post -->
                 <div class="col-md-9 gedf-main">                
+                    <!-- Sezione crea post -->
                     <div class="card gedf-card">
                         <div class="card-header">
                             <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
@@ -93,10 +91,9 @@
                             </div>
                         </div>                
                     </div>     
-                    <!--  -->   
-                    <!-- Sezione principale -->                                
+                    <!-- Sezione post altri utenti -->                                
                     <div class="card gedf-card">
-                        <!-- Sezione pubblica post -->
+                        <!--Header post: immagine profilo, nome utente e opzioni del post-->
                         <div class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="d-flex justify-content-between align-items-center">
@@ -107,7 +104,6 @@
                                         <div class="h5 m-0">Nome utente</div>
                                     </div>
                                 </div>
-                                <!-- Opzioni del post -->
                                 <div>
                                     <div class="dropdown">
                                         <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -119,11 +115,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Fine opzioni del post -->
                             </div>
                         </div>
-                        <!-- Fine sezione pubblica post -->
-                        <!-- Sezione visualizza post -->
+                        <!-- Corpo post: data pubblicazione, titolo, testo e tags -->
                         <div class="card-body">
                             <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> ieri alle circa meno quasi</div>
                             <a class="card-link">
@@ -140,23 +134,20 @@
                                 <span class="badge badge-primary btn gold-style">Ep 10</span>
                             </div>
                         </div>
-                        <!-- Fine visualizza post -->
-                        <!-- Azioni possibili sul post -->
+                        <!-- Footer post (azioni): like, dislike, comment -->
                         <div class="card-footer">
                             <a class="card-link text-gold post" id="post_like" data-toggle="modal"><i class="fa fa-thumbs-up"></i> Mi piace</a>
                             <a class="card-link text-gold post" id="post_dislike" data-toggle="modal"><i class="fa fa-thumbs-down"></i> Non mi piace</a>
                             <a class="card-link text-gold post" id="post_comment" href="./html/login.html"><i class="fa fa-comment"></i> Commenta</a>                    
                         </div>
-                        <!-- Fine azioni del post -->                        
                     </div>
-                    <!-- Fine sezione principale -->
+                    <!-- Fine sezione altri post -->
                 </div>     
-                <!-- Fine creazione post -->
+                <!-- Fine colonna dei post (colonna di dx) -->
             </div>
             <!-- Fine riga -->
         </div>
         <!-- Fine pagina principale -->
-        <!-- Modal per avviso utente -->
         <!-- Modal per le azioni dei post-->
         <div class="modal fade" id="modal_like" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
@@ -206,7 +197,6 @@
                 </div>
             </div>
         </div>
-        <!--  -->
     </main>
 
     <!-- Footer -->
@@ -219,8 +209,6 @@
             <a class="text-white" href="#">Contattaci</a>
         </small>
     </footer>
-    <!--  -->
-
 </body>
 
 </html>
