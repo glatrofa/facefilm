@@ -6,8 +6,10 @@ window.onload = logged();
 
 const colorPrimary = '#e5af05';
 const colorSecondary = '#00008b';
-let modalLikeClicked = false;
-let modalDislikeClicked = false;
+const modalPostPubblicazioneSuccess = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Post pubblicato</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div></div>";
+const modalPostPubblicazioneError = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Errore pubblicazione post</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div><div class='modal-body'><p>Ci scusiamo per il disagio.<br>Se il problema persiste utilizza il form contattaci per segnalare l'accaduto.<br>Grazie.</p></div><div class='modal-footer'><button type='button' class='btn btn-primary' onclick='redirectFormContatti()'>Vai al form contatti</button><button type='button' class='btn btn-secondary' data-dismiss='modal'>Chiudi</button></div></div>";
+let modalLikeClicked = true;
+let modalDislikeClicked = true;
 
 // richiama funzioni non appena il documento è caricato
 $(document).ready(function() {
@@ -168,25 +170,35 @@ $(function login() {
         type: 'POST',
         url: './php/pubblica_post.php',
         crossOrigin: true,
-        //data: $(this).serialize(),
         data: {
             idSerie: document.getElementById('post_serie').value,
             numeroStagione: document.getElementById('post_stagione').value,
             numeroEpisodio: document.getElementById('post_episodio').value,
             testo: document.getElementById('post_testo').value,
-            //data: Date.now(),
             titolo: document.getElementById('post_titolo').value,
         },
         dataType: 'json',
         success: function (data) {            
             console.log('SUCCESS '+data);
-            //var dataPubblicazione = Date.parse(data[2]);
-            //console.log('data '+data[2].getDate()+'/'+data[2].getMonth()+'/'+data[2].getFullYear()+' ora '+data[2].getHours+':'+data[2].getMinutes()+':'+data[2].getSeconds());
-            //console.log(' data '+dataPubblicazione.toDateString());
+            if(data == null) {
+                document.getElementById('modal_post_pubblicazione_success').innerHTML = modalPostPubblicazioneSuccess;
+                $('#modal_post_pubblicazione_success').modal('show');
+            }
+            else {
+                document.getElementById('modal_post_pubblicazione_error').innerHTML = modalPostPubblicazioneError;
+                $('#modal_post_pubblicazione_error').modal('show');
+            }
         },
         error: function (data) {
-          console.log('ERROR '+data);
+            console.log('ERROR '+data);
+            document.getElementById('modal_post_pubblicazione_error').innerHTML = modalPostPubblicazioneError;
+            $('#modal_post_pubblicazione_error').modal('show');
         }
       });
     });
 });
+
+// reindirizza al form contatti
+function redirectFormContatti() {
+    location.href = './contattaci.html';
+}
