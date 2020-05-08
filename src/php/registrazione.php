@@ -32,9 +32,9 @@ else if($nrighe_email == 0 && $nrighe_username == 0){
     // lock tabelle
     $queryL = "LOCK TABLES utenti WRITE";
     mysqli_query($connection, $queryL) or die(mysqli_error($connection));
-    //registrazione
+    // registrazione
     $query = "INSERT INTO utenti (nome, cognome, data_nascita, nazione, email, nome_utente, password)"
-        ."VALUES ('$nome', '$cognome' , '$data_nascita', '$nazione', '$email', '$nome_utente', '$password_criptata')";
+        ."VALUES ('$nome', '$cognome', '$data_nascita', '$nazione', '$email', '$nome_utente', '$password_criptata')";
     mysqli_query($connection, $query) or die(mysqli_error($connection));
     // unlock tabelle
     $queryU = "UNLOCK TABLES";
