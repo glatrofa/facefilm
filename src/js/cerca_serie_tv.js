@@ -14,28 +14,6 @@ $('#cerca_serie_bottone').click(function cercaSerie() {
     window.location.href = './serie_tv.html?id='+$('#mostra_nome_serie :selected').val()+'';
 });
 
-// ricerca nel db tutte le serie comprendenti nel nome i caratteri inseriti nel form
-$('#cerca_serie').keyup(function cercaNomeSerie() {
-    let url = 'https://api.themoviedb.org/3/search/tv?api_key='+ APIKEY +'&language=it&page=1&query='+$(this).val()+'&include_adult=true';
-    fetch(url)
-        .then(res => res.json())
-        .then((data) => {
-            //console.log('Checkout this JSON! ', data);
-            //console.log('dimensione '+data.results.length);
-            let i = 0;            
-            let lista = '';
-            // ritornano al massimo 20 risultato per volta
-            while (data.results.length >= 1 && i < data.results.length) {
-                lista += '<option value='+data.results[i].id+'>'+data.results[i].name+'</option>';
-                i ++;
-            }      
-            if (data.results.length == 0)
-                lista = '<option value='+'null'+'> --- </option>';
-            document.getElementById('mostra_nome_serie').innerHTML = lista;
-        })
-        .catch(err => { throw err });
-});
-
 // quando viene premuto il bottone 'Cerca', mostra le serie corrispondenti alla keyword
 // in una serie di card, DA FINIRE
 $('#mostra_poster').click(function cercaPoster() {
@@ -51,7 +29,7 @@ $('#mostra_poster').click(function cercaPoster() {
         if (data.results.length) {
             //per ogni elemento dell'array dei risultati crea una card con poster e descrizione serie, DA FINIRE
             for (var element of data.results) {
-                let cards =  '<div class="card col-5 col-lg-3 px-0 mx-3 mb-3 shadow"' +
+                let cards =  '<div class="card col-5 col-lg-3 px-0 mx-3 mb-3 shadow">' +
                                 '<img class="card-img-top" src="' + baseImageURL.concat('w342', element.poster_path) + '" alt="Poster">' +
                                 '<div class="card-body">' +
                                     '<div class="card-title font-weight-bold">' + element.name + '</div>' +
