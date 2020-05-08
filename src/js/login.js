@@ -1,7 +1,7 @@
 import { checkID } from './autenticazione.js';
 
 $(function login() {
-    $('#form-login').on('submit', function (e) {
+    $('#form_login').on('submit', function (e) {
       e.preventDefault();
       $.ajax({
         type: 'POST',
@@ -19,16 +19,16 @@ $(function login() {
             }
             else{
               if(data[0].email == 1){
-                $('#modal-login').modal('show');
+                $('#modal_login').modal('show');
               }
               else{
-                $('#modal-login-null').modal('show');
+                $('#modal_login_null').modal('show');
               } 
             }          
         },
         error: function (data) {
           //console.log('ERROR '+data[0]);
-          $('#modal-login-error').modal('show');
+          $('#modal_login_error').modal('show');
         }
       });
     });
