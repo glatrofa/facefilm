@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.6.6deb5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Creato il: Mag 01, 2020 alle 21:24
--- Versione del server: 5.7.17
--- Versione PHP: 5.6.30
+-- Host: localhost:3306
+-- Creato il: Mag 08, 2020 alle 15:49
+-- Versione del server: 10.3.22-MariaDB-0+deb10u1
+-- Versione PHP: 7.3.14-1~deb10u1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -32,8 +30,23 @@ CREATE TABLE `commento` (
   `id` int(11) NOT NULL,
   `id_utente` varchar(50) NOT NULL,
   `id_post` int(11) NOT NULL,
-  `testo` varchar(2000) NOT NULL
+  `testo` varchar(5000) NOT NULL,
+  `data` varchar(16) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `messaggi`
+--
+
+CREATE TABLE `messaggi` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `oggetto` varchar(50) NOT NULL,
+  `messaggio` varchar(8000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -44,10 +57,12 @@ CREATE TABLE `commento` (
 CREATE TABLE `post` (
   `id` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `data` varchar(20) NOT NULL,
-  `titolo` varchar(20) NOT NULL,
+  `data` varchar(16) NOT NULL,
+  `titolo` varchar(30) NOT NULL,
   `testo` varchar(5000) NOT NULL,
-  `id_commento` int(11) NOT NULL
+  `id_serie` varchar(8) NOT NULL,
+  `numero_stagione` varchar(2) NOT NULL,
+  `numero_episodio` varchar(2) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -70,9 +85,8 @@ CREATE TABLE `utenti` (
 -- Dump dei dati per la tabella `utenti`
 --
 
-INSERT INTO `utenti` (`nome`, `cognome`, `data_nascita`, `paese`, `email`, `nome_utente`, `password`) VALUES
-('', '', '', '', '', '', ''),
-('vito', 'difonzo', '04/04/1998', 'italia', 'ciao@gmail.com', 'vituc', 'Ciao.98');
+INSERT INTO `utenti` (`nome`, `cognome`, `data_nascita`, `nazione`, `email`, `nome_utente`, `password`) VALUES
+('Giuseppe', 'Latrofa', '1999-01-28', 'Italy', 'g.latrofa3@studenti.poliba.it', 'peppone', '014635095eeeda4945a6c17d0cfb6abb');
 
 --
 -- Indici per le tabelle scaricate
@@ -82,6 +96,14 @@ INSERT INTO `utenti` (`nome`, `cognome`, `data_nascita`, `paese`, `email`, `nome
 -- Indici per le tabelle `commento`
 --
 ALTER TABLE `commento`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_utente` (`id_utente`),
+  ADD KEY `id_post` (`id_post`);
+
+--
+-- Indici per le tabelle `messaggi`
+--
+ALTER TABLE `messaggi`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -89,14 +111,14 @@ ALTER TABLE `commento`
 --
 ALTER TABLE `post`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `secondaria` (`email`);
+  ADD KEY `email` (`email`);
 
 --
 -- Indici per le tabelle `utenti`
 --
 ALTER TABLE `utenti`
   ADD PRIMARY KEY (`email`),
-  ADD UNIQUE KEY `unico` (`nome_utente`);
+  ADD UNIQUE KEY `nome_utente` (`nome_utente`);
 
 --
 -- AUTO_INCREMENT per le tabelle scaricate
@@ -108,11 +130,15 @@ ALTER TABLE `utenti`
 ALTER TABLE `commento`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT per la tabella `messaggi`
+--
+ALTER TABLE `messaggi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT per la tabella `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
