@@ -159,7 +159,7 @@ $(function visualizzaEpisodi() {
             .catch(err => { throw err });
     });    
 });
-
+/*
 // pubblica il post
 $(function login() {
     $('#form_post').on('submit', function (e) {
@@ -179,3 +179,4 @@ $(function login() {
       });
     });
 });
+*/
