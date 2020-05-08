@@ -1,8 +1,6 @@
 import { logged } from './autenticazione.js';
 import {APIKEY} from './key.js';
-import {baseImageURL} from './indirizzo_base_img.js';
-
-console.log(baseImageURL);
+import {getBaseImageURL} from './indirizzo_base_img.js';
 
 // verifica che l'utente abbia effettuato l'accesso
 //window.onload = logged();
@@ -36,7 +34,7 @@ $('#cerca_serie').keyup(function cercaNomeSerie() {
 });
 
 // quando viene premuto il bottone 'Cerca', mostra le serie corrispondenti alla keyword
-// in una serie di card
+// in una serie di card, DA FINIRE, VADO A MANGIARE
 $('#mostra_poster').click(function cercaPoster() {
     let url2 = 'https://api.themoviedb.org/3/search/tv?api_key=' + APIKEY + '&language=it&page=1&query=' + $('#cerca_serie').val()
     const image_base_url = 
@@ -46,9 +44,10 @@ $('#mostra_poster').click(function cercaPoster() {
     .then((data) => {
         let cards = '';
         if (data.results.lenght) {
+            //per ogni elemento dell'array dei risultati crea una card con poster e descrizione serie, DA FINIRE
             data.results.forEach(element => {
                 card = '<div class="card shadow">' +
-                                '<img class="card-img-top" src="' + element + '" alt="Poster">' +
+                                '<img class="card-img-top" src="' + getBaseImageURL().concat('w') + '" alt="Poster">' +
                                 '<div class="card-body">' +
                                     '<div class="card-title">Titolo serie</div>' +
                                     '<p>qui ci potrebbe stare una breve descrizione della serie, magari quella fornita da API ma in versione ridotta</p>' +
