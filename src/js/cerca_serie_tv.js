@@ -5,6 +5,11 @@ import {getBaseImageURL} from './indirizzo_base_img.js';
 // verifica che l'utente abbia effettuato l'accesso
 //window.onload = logged();
 
+// richiama funzioni non appena il documento è caricato
+$(document).ready(function() {
+    visualizzaClassifica();
+});
+
 // effettua il redirect sulla pagina della serie selezionata
 $('#cerca_serie_bottone').click(function cercaSerie() {
     //console.log('serie selezionata '+$('#mostra_nome_serie :selected').val());
@@ -59,3 +64,21 @@ $('#mostra_poster').click(function cercaPoster() {
     })
     
 });
+
+// visualizza le 10 serie più popolari su tmdb
+function visualizzaClassifica() {
+    let url = 'https://api.themoviedb.org/3/discover/tv?api_key='+ APIKEY +'&language=it&sort_by=popularity.desc&page=1&timezone=Europe%2FItaly&include_null_first_air_dates=false';
+    fetch(url)
+        .then(res => res.json())
+        .then((out) => {
+            //console.log('Checkout this JSON! ', out);
+            let i = 0;            
+            let classifica = '';
+            do{
+                classifica += '<li><a href="./serie_tv.html?id='+out.results[i].id+'">'+out.results[i].name+'</a></li>';                
+                i ++;
+            }while (i <= 9);
+            document.getElementById('classifica_serie').innerHTML = classifica;
+        })
+        .catch(err => { throw err });
+}
