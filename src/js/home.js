@@ -22,8 +22,7 @@ let modalDislikeClicked = false;
 
 // richiama funzioni non appena il documento è caricato
 $(document).ready(function() {
-    //visualizzaPost();
-    ottieniDatiPost();
+    visualizzaPost();
     visualizzaClassifica();    
 });
 
@@ -254,15 +253,15 @@ function redirectHome() {
 */
 
 // mostra nella home i post più recenti
-function visualizzaPost(data){
-    //let data = ottieniDatiPost();
+function visualizzaPost(){
+    let data = ottieniDatiPost();
     //console.log('SUCCESS '+data[0]+);
     //console.log('post 1', data[0]);
     //console.log('post 2', data[1]);
     let i;
     //document.getElementById("sezione_post").innerHTML = "";
     // visualizza a schermo tutti i post
-    for (i = 0; i < data.length; i++) {
+    for (i = 1; i <= data[0]; i++) {
         console.log('post '+ i +'', data[i]);
         document.getElementById("sezione_post").innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);
         //document.getElementById("sezione_post").innerHTML += generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);
@@ -279,8 +278,7 @@ function ottieniDatiPost() {
         dataType: 'json',
         success: function (data) {
             console.log('SUCCESS ' + data);
-            //return data;
-            visualizzaPost(data);
+            return data;
         },
         error: function (data) {
             console.log('ERROR ' + data);

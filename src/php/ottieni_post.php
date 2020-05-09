@@ -12,7 +12,8 @@ $rowsNumber = mysqli_num_rows($result);
 //$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 if($rowsNumber != 0){
     // ritorno dei dati
-    $i = 0;
+    $response[0] = $rowsNumber;
+    $i = 1;
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
         $response[$i] = array('nomeUtente' => $row["nome_utente"], 'idPost' => $row["idPost"], 'titolo' => $row["titolo"], 'testo' => $row["testo"], 'idSerie' => $row["id_serie"], 'stagione' => $row["numero_stagione"], 'episodio' => $row["numero_episodio"], 'numeroCommenti' => $row["numeroCommenti"], 'like' => $row["piace"], 'dislike' => $row["dislike"], 'data' => $row["data"]);
         $i ++;
