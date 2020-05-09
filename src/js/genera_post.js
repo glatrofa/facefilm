@@ -32,9 +32,10 @@ function generaHeader(nomeUtente, idPost) {
 function generaBody(data, titolo, testo, idSerie, stagione, episodio) {
     //console.log('tipo data ', typeof(data));
     console.log('vecchia data ', data);
-    data = data.substring(0, data.indexOf('.'));
-    console.log('data fomatatta', data);
-    console.log('nuova data ', new Date(data * 1000));
+    //data = data.substring(0, data.indexOf('.'));
+    //console.log('data fomatatta', data);
+    data = new Date(data * 1000);
+    console.log('nuova data ', data.get);
     let body = '<div class="card-body">' +
                     '<div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> '+ data +'</div>' +
                     '<a class="card-link">' +
