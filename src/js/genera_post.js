@@ -2,7 +2,7 @@ import { APIKEY } from './key.js';
 
 // genera l'header del post
 function generaHeader(nomeUtente, idPost) {
-    let header = '<div class="card-header">' +
+    let header = '<div class="card shadow mb-3"><div class="card-header">' +
                     '<div class="d-flex justify-content-between align-items-center">' +
                         '<div class="d-flex justify-content-between align-items-center">' +
                             '<div class="mr-2">' +
@@ -60,7 +60,7 @@ function generaFooter(numeroLike, numeroDislike, numeroCommenti) {
                     '<a class="card-link text-gold post" id="post_like" data-toggle="modal" href=""><span class="badge badge-primary">'+ numeroLike +'</span> <i class="fa fa-thumbs-up"></i> Mi piace</a>' +
                     '<a class="card-link text-gold post" id="post_dislike" data-toggle="modal" href=""><span class="badge badge-primary">'+ numeroDislike +'</span> <i class="fa fa-thumbs-down"></i> Non mi piace</a>' +
                     '<a class="card-link text-gold post" id="post_comment" data-toggle="modal" href=""><span class="badge badge-primary">'+ numeroCommenti +'</span> <i class="fa fa-comment"></i> Commenta</a>' +
-                '</div><br>';
+                '</div></div>';
     return footer;
 }
 
