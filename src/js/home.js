@@ -253,3 +253,23 @@ function visualizzaPost(){
         }
     });
 }
+
+// comportamento del bottone "Torna su"
+var mybutton = document.getElementById("scroll_to_top");
+
+// Quando l'utente scrolla di un certo numero di pixel, mostra il bottone "Torna su"
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() { 
+  if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// Quando si preme il bottone "Torna su" viene attivata questa funzione
+function tornaSu() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
