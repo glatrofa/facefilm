@@ -277,13 +277,14 @@ function ottieniDatiPost() {
         crossOrigin: true,
         dataType: 'json',
         success: function (data) {
-            console.log('SUCCESS ' + data);
+            //console.log('SUCCESS ' + data);
             let post = [];
             post[0] = data[0];
             let i;
             for (i = 1; i <= data[0]; i++) {            
                 post[i] = data[i];
             }
+            console.log('SUCCESS ' + data);
             return post;
         },
         error: function (data) {
