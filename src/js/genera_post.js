@@ -43,7 +43,7 @@ function generaBody(data, titolo, testo, idSerie, stagione, episodio) {
                     "</a>" +
                     "<p class='card-text'>"+ testo +"</p>" +
                     "<div>" +
-                        "<span class='badge badge-primary btn gold-style' id='nome_serie_'"+ idSerie +"'></span>" +
+                        "<span class='badge badge-primary btn gold-style' id='nome_serie_"+ idSerie +"'></span>" +
                         "<span class='badge badge-primary btn gold-style'>S "+ stagione +"</span>" +
                         "<span class='badge badge-primary btn gold-style'>Ep "+ episodio +"</span>" +
                     "</div>" +
