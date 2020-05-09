@@ -27,7 +27,7 @@ $(document).ready(function() {
 });
 
 $(function aggiornaMiPiace() {
-    $("a").click(function (event) {
+    $("a[name='post_dislike']").click(function (event) {
         alert(event.target.id);
     });
 });
