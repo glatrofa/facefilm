@@ -260,14 +260,14 @@ function visualizzaPost(post){
     //console.log('post 1', data[0]);
     //console.log('post 2', data[1]);
     //let i;
-        //document.getElementById("sezione_post").innerHTML = "" + post;
+    document.getElementById("sezione_post").innerHTML = "" + post;
     // visualizza a schermo tutti i post
     //for (i = 1; i <= data[0]; i++) {
         //console.log('post '+ i +'', data[i]);
         //document.getElementById("sezione_post").innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);
         //document.getElementById("sezione_post").innerHTML += generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);
-        let footer = "<span class='badge badge-pill bg-awwa-primary mr-2'>12</span><a class='card-link awwa-primary post' id='190' name='post_like' data-toggle='modal' href=''><i class='fa fa-diamond'></i> Mi piace </a>";                                                       
-        document.getElementById("sezione_post").innerHTML = footer;
+        //let footer = "<span class='badge badge-pill bg-awwa-primary mr-2'>12</span><a class='card-link awwa-primary post' id='190' name='post_like' data-toggle='modal' href=''><i class='fa fa-diamond'></i> Mi piace </a>";                                                       
+        //document.getElementById("sezione_post").innerHTML = footer;
     //}
 }
 
