@@ -27,7 +27,7 @@ $(function controllaMiPiace() {
             document.getElementById("snackbar_like").className = "show";
             // Add the "show" class to DIV
             // After 3 seconds, remove the show class from DIV
-            setTimeout(function(){ document.getElementById("snackbar_like").replace("show", ""); }, 3000);
+            setTimeout(function(){ document.getElementById("snackbar_like").remove("show"); }, 3000);
         }
         else {
             //$('#modal_like_removed').modal('show');
