@@ -30,25 +30,31 @@ function generaHeader(nomeUtente, idPost) {
 
 // genera il body del post
 function generaBody(data, titolo, testo, idSerie, stagione, episodio) {
+    let body = '<div class="card-body">' +
+                    '<div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> '+ data +'</div>' +
+                    '<a class="card-link">' +
+                        '<h5 class="card-title">'+ titolo +'</h5>' +
+                    '</a>' +
+                    '<p class="card-text">'+ testo +'</p>' +
+                    '<div>' +
+                        '<span class="badge badge-primary btn gold-style">'+ getNomeSerie(idSerie) +'</span>' +
+                        '<span class="badge badge-primary btn gold-style">S '+ stagione +'</span>' +
+                        '<span class="badge badge-primary btn gold-style">Ep '+ episodio +'</span>' +
+                    '</div>' +
+                '</div>';
+    return body;
+    
+}
+
+// ritorna il nome della serie in base all'id della serie presente nel post
+function getNomeSerie(idSerie) {
     let url = 'https://api.themoviedb.org/3/tv/'+ idSerie +'?api_key='+ APIKEY +'&language=it';
     fetch(url)
             .then(res => res.json())
             .then((data) => {
                 //console.log('nome serie', data.name);
                 //nomeSerie = data.name;
-                let body = '<div class="card-body">' +
-                                '<div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> '+ data +'</div>' +
-                                '<a class="card-link">' +
-                                    '<h5 class="card-title">'+ titolo +'</h5>' +
-                                '</a>' +
-                                '<p class="card-text">'+ testo +'</p>' +
-                                '<div>' +
-                                    '<span class="badge badge-primary btn gold-style">'+ data.name +'</span>' +
-                                    '<span class="badge badge-primary btn gold-style">S '+ stagione +'</span>' +
-                                    '<span class="badge badge-primary btn gold-style">Ep '+ episodio +'</span>' +
-                                '</div>' +
-                            '</div>';
-                return body;
+                return data.name;
             })
             .catch(err => { throw err });    
 }
