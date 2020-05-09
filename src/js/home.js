@@ -24,7 +24,7 @@ let modalDislikeClicked = false;
 $(document).ready(function() {
     visualizzaPost();
     visualizzaClassifica();    
-    let s = "<a id='ciao' name='post_like>TEST</a>'";
+    let s = "<a id='ciao' name='post_like'>TEST</a>";
     document.getElementById("test1").innerHTML = s;
 });
 
