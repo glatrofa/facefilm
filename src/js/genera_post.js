@@ -1,5 +1,5 @@
 import { APIKEY } from './key.js';
-
+/*
 // genera l'header del post
 function generaHeader(nomeUtente, idPost) {
     let header = "<div class='card shadow mb-3'><div class='card-header'>" +
@@ -64,15 +64,14 @@ function getNomeSerie(idSerie) {
             })
             .catch(err => { throw err });    
 }
-
+*/
 // genera il footer del post
 function generaFooter(idPost, idSerie, numeroLike, numeroDislike, numeroCommenti) {
     getNomeSerie(idSerie);
     let footer = "<div class='card-footer'>" +
-                    "<span class='badge badge-pill bg-awwa-primary mr-2'>"+ numeroLike +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_like' data-toggle='modal' href=''><i class='fa fa-diamond'></i> Mi piace </a>" +                    
-                    "<a class='card-link awwa-primary post' id='"+ idPost +"' name='post_dislike' data-toggle='modal' href=''><span class='badge badge-primary'>"+ numeroDislike +"</span> <i class='fa fa-poo'></i> Non mi piace</a>" +
-                    "<a class='card-link awwa-primary post' id='"+ idPost +"' name='post_comment' data-toggle='modal' href=''><span class='badge badge-primary'>"+ numeroCommenti +"</span> <i class='fa fa-comment'></i> Commenta</a>" +
-                "</div></div>";
+                    "<span class='badge badge-pill bg-awwa-primary mr-2'>"+ numeroLike +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_like' data-toggle='modal' href=''><i class='fa fa-diamond'></i> Mi piace </a>" +                                                        
+                //"</div></div>";
+                "</div>";
     return footer;
 }
 
