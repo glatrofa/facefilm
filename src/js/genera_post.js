@@ -67,7 +67,7 @@ function getNomeSerie(idSerie) {
 */
 // genera il footer del post
 function generaFooter(idPost, idSerie, numeroLike, numeroDislike, numeroCommenti) {
-    getNomeSerie(idSerie);
+    //getNomeSerie(idSerie);
     let footer = "<div class='card-footer'>" +
                     "<span class='badge badge-pill bg-awwa-primary mr-2'>"+ numeroLike +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_like' data-toggle='modal' href=''><i class='fa fa-diamond'></i> Mi piace </a>" +                                                        
                 //"</div></div>";
