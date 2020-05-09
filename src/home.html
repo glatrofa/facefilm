@@ -139,9 +139,9 @@
                             </div>
                             <!-- Footer post (azioni): like, dislike, comment -->
                             <div class="card-footer">
-                                <a class="card-link text-gold post" id="post_like" data-toggle="modal" href=""><i class="fa fa-thumbs-up"></i> Mi piace <span class="badge badge-pill badge-primary">12</span></a>
-                                <a class="card-link text-gold post" id="post_dislike" data-toggle="modal" href=""><i class="fa fa-thumbs-down"></i> Non mi piace <span class="badge badge-pill badge-primary">5</span></a>
-                                <a class="card-link text-gold post" id="post_comment" data-toggle="modal" href=""><i class="fa fa-comment"></i> Commenta <span class="badge badge-pill badge-primary">0</span></a>                    
+                                <a class="card-link text-gold post" id="post_like" data-toggle="modal" href=""><i class="fa fa-thumbs-up"></i><span class="badge badge-pill badge-primary">12</span> Mi piace </a>
+                                <a class="card-link text-gold post" id="post_dislike" data-toggle="modal" href=""><i class="fa fa-thumbs-down"></i><span class="badge badge-pill badge-primary">5</span> Non mi piace </a>
+                                <a class="card-link text-gold post" id="post_comment" data-toggle="modal" href=""><i class="fa fa-comment"></i><span class="badge badge-pill badge-primary">0</span> Commenta </a>                    
                             </div>
                         </div>
                     </div>
@@ -155,17 +155,11 @@
             <div id="snackbar_like_removed" class="snackbar">Mi piace rimosso</div>
             <div id="snackbar_dislike" class="snackbar">Non mi piace aggiunto</div>
             <div id="snackbar_dislike_removed" class="snackbar">Non mi piace rimosso</div>
+            <div id="snackbar_post_pubblicazione_success" class="snackbar">Post pubblicato</div>
             <!-- Bottone scroll to top -->
             <button onclick="tornaSu()" id="scroll_to_top" title="Torna su">Torna su<i class="fas fa-angle-double-up"></i></button>
         </div>
         <!-- Fine pagina principale -->
-        <!-- snackbar mi piace/non mi piace-->
-        <div id="snackbar_like" class="snackbar">Mi piace aggiunto</div>
-        <div id="snackbar_like_removed" class="snackbar">Mi piace rimosso</div>
-        <div id="snackbar_dislike" class="snackbar">Non mi piace aggiunto</div>
-        <div id="snackbar_dislike_removed" class="snackbar">Non mi piace rimosso</div>
-        <div id="snackbar_post_pubblicazione_success" class="snackbar">Post pubblicato</div>
-        <!--  -->
         <!-- Modal per le azioni dei post-->        
         <div class="modal fade" id="modal_post_pubblicazione_error" tabindex="-1" role="dialog" aria-hidden="true"></div>
         <!--

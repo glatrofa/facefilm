@@ -167,9 +167,9 @@ a.post:hover {
 #scroll_to_top {
     display: none; /* inizialmente non viene mostrato */
     position: fixed;
-    bottom: 20px;
+    bottom: 70px;
     right: 30px;
-    z-index: 1200; /*in modo che non venga overlappato da altri elementi */
+    z-index: 2000; /*in modo che non venga overlappato da altri elementi */
     background-color: var(--awwa-secondary);
     color: white;
     cursor: pointer;
