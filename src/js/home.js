@@ -24,10 +24,10 @@ $(function controllaMiPiace() {
             document.getElementById('post_like').style.color = colorSecondary;
             modalLikeClicked = true;
             // Get the snackbar DIV
-            document.getElementById("snackbar_like").className = "show";
+            document.getElementById("snackbar_like").classList.add("show");
             // Add the "show" class to DIV
             // After 3 seconds, remove the show class from DIV
-            setTimeout(function(){ document.getElementById("snackbar_like").className.replace(/\bshow\b/g, ""); }, 3000);
+            setTimeout(function(){ document.getElementById("snackbar_like").classList.remove("show"); }, 3000);
         }
         else {
             //$('#modal_like_removed').modal('show');
