@@ -26,13 +26,15 @@ $(document).ready(function() {
     visualizzaClassifica();
 });
 
-function aggiornaMiPiace() {
-    alert('mi piace');
-}
+$(function aggiornaMiPiace() {
+    $("a[name='post_like']").click(function (event) {
+        alert(event.target.id);
+    });
+});
 
-function aggiornaNonMiPiace() {
+$(function aggiornaNonMiPiace() {
     alert('non mi piace');
-}
+});
 
 /*
 // funzione per la selezione o deselezione del mi piace di un post
@@ -266,7 +268,7 @@ function visualizzaPost(){
             // visualizza a schermo tutti i post
             for (i = 0; i < data.length; i++) {
                 //console.log('post '+ i +'', data[i]);
-                document.getElementById('sezione_post').innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);
+                document.getElementById('sezione_post').innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);
             }
         },
         error: function (data) {
