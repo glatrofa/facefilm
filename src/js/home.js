@@ -251,9 +251,12 @@ function visualizzaPost(){
             //console.log('SUCCESS '+data[0]+);
             //console.log('post 1', data[0]);
             //console.log('post 2', data[1]);
-            var i;
+            let i;
+            document.getElementById('sezione_post').innerHTML = '';
+            // visualizza a schermo tutti i post
             for (i = 0; i < data.length; i++) {
-                console.log('post '+ i +'', data[i]);
+                //console.log('post '+ i +'', data[i]);
+                document.getElementById('sezione_post').innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].like, data[i].dislike, data[i].numeroCommenti);
             }
         },
         error: function (data) {

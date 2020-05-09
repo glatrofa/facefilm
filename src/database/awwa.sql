@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Creato il: Mag 09, 2020 alle 09:50
+-- Creato il: Mag 09, 2020 alle 11:24
 -- Versione del server: 10.3.22-MariaDB-0+deb10u1
 -- Versione PHP: 7.3.14-1~deb10u1
 
@@ -34,6 +34,14 @@ CREATE TABLE `commenti` (
   `data` timestamp(5) NOT NULL DEFAULT current_timestamp(5)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Dump dei dati per la tabella `commenti`
+--
+
+INSERT INTO `commenti` (`id`, `id_utente`, `id_post`, `testo`, `data`) VALUES
+(1, 'g.latrofa3@studenti.poliba.it', 4, 'bello', '2020-05-09 10:17:13.00000'),
+(2, 'g.latrofa3@studenti.poliba.it', 5, 'non mi piace', '2020-05-09 10:21:36.00000');
+
 -- --------------------------------------------------------
 
 --
@@ -63,16 +71,18 @@ CREATE TABLE `post` (
   `testo` varchar(5000) NOT NULL,
   `id_serie` varchar(8) NOT NULL,
   `numero_stagione` varchar(2) NOT NULL,
-  `numero_episodio` varchar(2) NOT NULL
+  `numero_episodio` varchar(2) NOT NULL,
+  `piace` int(11) NOT NULL DEFAULT 0,
+  `dislike` int(11) NOT NULL DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dump dei dati per la tabella `post`
 --
 
-INSERT INTO `post` (`id`, `email`, `data`, `titolo`, `testo`, `id_serie`, `numero_stagione`, `numero_episodio`) VALUES
-(5, 'g.latrofa3@studenti.poliba.it', '2020-05-08 17:36:52.39811', 'titolo', 'testo', '18347', '5', '13'),
-(4, 'g.latrofa3@studenti.poliba.it', '2020-05-08 17:34:20.78757', 'falena titolo', 'bla bla bla', '4607', '1', '7');
+INSERT INTO `post` (`id`, `email`, `data`, `titolo`, `testo`, `id_serie`, `numero_stagione`, `numero_episodio`, `piace`, `dislike`) VALUES
+(5, 'g.latrofa3@studenti.poliba.it', '2020-05-08 17:36:52.39811', 'titolo', 'testo', '18347', '5', '13', 0, 0),
+(4, 'g.latrofa3@studenti.poliba.it', '2020-05-08 17:34:20.78757', 'falena titolo', 'bla bla bla', '4607', '1', '7', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -159,7 +169,7 @@ ALTER TABLE `utenti`
 -- AUTO_INCREMENT per la tabella `commenti`
 --
 ALTER TABLE `commenti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT per la tabella `messaggi`
 --
