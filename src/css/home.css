@@ -53,20 +53,6 @@ body.tv {
     font-size: 0.8rem; /*da togliere? */
 }
 
-.gedf-wrapper {
-    margin-top: 0.97rem;
-}
-
-@media (min-width: 992px) {
-    .gedf-main {
-        padding-left: 4rem;
-        padding-right: 4rem;
-    }
-    .gedf-card {
-        margin-bottom: 2.77rem;
-    }
-}
-
 /**Reset Bootstrap*/
 .dropdown-toggle::after {
     content: none;
@@ -99,11 +85,6 @@ footer {
   border-color: var(--awwa-primary);
 }
 
-/* Sfondo navbar */
-.navbar-bg-gold {
-    background-color: var(--awwa-primary);
-}
-
 /* grassetto per pagina corrente in navbar */
 .active {
     font-weight: bold;
@@ -129,43 +110,42 @@ a.post:hover {
     min-width: 250px; /* Set a default minimum width */
     margin-left: -125px; /* Divide value of min-width by 2 */
     left: 50%; /* Center the snackbar */
-    background-color: var(--awwa-secondary); /* Black background color */
+    background-color: black; /* Black background color */
     color: #fff; /* White text color */
     text-align: center; /* Centered text */
-    border-radius: 2px; /* Rounded borders */
+    border-radius: 10px; /* Rounded borders */
     padding: 16px; /* Padding */
     position: fixed; /* Sit on top of the screen */
-    bottom: 30px; /* 30px from the bottom */
+    bottom: 50px; /* 30px from the bottom */
     z-index: 1; /* Add a z-index if needed */
 }
   
-/* Show the snackbar when clicking on a button (class added with JavaScript) */
+/* Mostra la snackbar quando si clicca like/dislike (classe aggiunta con JavaScript) */
 .snackbar.show {
-    visibility: visible; /* Show the snackbar */
-    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-    However, delay the fade out process for 2.5 seconds */
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    visibility: visible;
+    /* Aggiunge animazione: impiega 0.5s per il fadein e il fadeout, con un ritardo intermedio di 2s */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2s;
+    animation: fadein 0.5s, fadeout 0.5s 2s;
 }
 
 /* Animations to fade the snackbar in and out */
 @-webkit-keyframes fadein {
     from {bottom: 0; opacity: 0;}
-    to {bottom: 30px; opacity: 1;}
+    to {bottom: 50px; opacity: 1;}
 }
 
 @keyframes fadein {
     from {bottom: 0; opacity: 0;}
-    to {bottom: 30px; opacity: 1;}
+    to {bottom: 50px; opacity: 1;}
 }
 
 @-webkit-keyframes fadeout {
-    from {bottom: 30px; opacity: 1;}
+    from {bottom: 50px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
 }
 
 @keyframes fadeout {
-    from {bottom: 30px; opacity: 1;}
+    from {bottom: 50px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
 }
 /* fine snackbar */
@@ -174,13 +154,16 @@ a.post:hover {
 #scroll_to_top {
     display: none; /* inizialmente non viene mostrato */
     position: fixed;
-    bottom: 10px;
+    bottom: 50px;
     right: 30px;
-    z-index: 2000; /*in modo che non venga overlappato da altri elementi */
+    /*z-index: 2000; /*in modo che non venga overlappato da altri elementi */
     background-color: var(--awwa-secondary);
     color: white;
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    padding: 0;
     cursor: pointer;
-    padding: 10px;
     border-radius: 4px;
   }
   
