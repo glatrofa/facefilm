@@ -25,7 +25,7 @@ function generaHeader(nomeUtente, idPost) {
                         '</div>' +
                     '</div>' +
                 '</div>';
-    return header
+    return header;
 }
 
 // genera il body del post
