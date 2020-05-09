@@ -273,8 +273,8 @@ function visualizzaPost(){
                 //console.log('post '+ i +'', data[i]);
                 //document.getElementById("sezione_post").innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);
                 //document.getElementById("sezione_post").innerHTML += generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);
-                let footer = "<div class='card-footer'>" + "<span class='badge badge-pill bg-awwa-primary mr-2'></span><a class='card-link awwa-primary post' id='12345' name='post_like' data-toggle='modal' href=''><i class='fa fa-diamond'></i> Mi piace </a>" + "</div>";                                                       
-                document.getElementById("sezione_post").innerHTML += footer;
+                let footer = "<div class='card-footer'><span class='badge badge-pill bg-awwa-primary mr-2'></span><a class='card-link awwa-primary post' id='12345' name='post_like' data-toggle='modal' href=''><i class='fa fa-diamond'></i> Mi piace </a></div>";                                                       
+                document.getElementById("sezione_post").innerHTML = footer;
             }
         },
         error: function (data) {
