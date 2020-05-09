@@ -27,9 +27,13 @@ $(document).ready(function() {
     visualizzaClassifica();    
     let s = "<a id='ciao' name='post_like'>" + "TEST" + "</a>";
     document.getElementById("test1").innerHTML = s;
+    cristoNostroSalvatore();
+});
+
+function cristoNostroSalvatore() {
     let footer = "<span class='badge badge-pill bg-awwa-primary mr-2'>12</span><a class='card-link awwa-primary post' id='190' name='post_like' data-toggle='modal' href=''><i class='fa fa-diamond'></i> Mi piace </a>";                                                       
                 document.getElementById("sezione_post").innerHTML = footer;
-});
+}
 
 $(function aggiornaMiPiace() {
     $("a[name='post_like']").click(function (event) {
