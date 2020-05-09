@@ -23,10 +23,12 @@ let modalDislikeClicked = false;
 
 // richiama funzioni non appena il documento è caricato
 $(document).ready(function() {
-    visualizzaPost();
+    //visualizzaPost();
     visualizzaClassifica();    
     let s = "<a id='ciao' name='post_like'>" + "TEST" + "</a>";
     document.getElementById("test1").innerHTML = s;
+    let footer = "<span class='badge badge-pill bg-awwa-primary mr-2'>12</span><a class='card-link awwa-primary post' id='190' name='post_like' data-toggle='modal' href=''><i class='fa fa-diamond'></i> Mi piace </a>";                                                       
+                document.getElementById("sezione_post").innerHTML = footer;
 });
 
 $(function aggiornaMiPiace() {
