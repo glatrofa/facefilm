@@ -23,22 +23,19 @@ $(function controllaMiPiace() {
             //$('#modal_like').modal('show');
             document.getElementById('post_like').style.color = colorSecondary;
             modalLikeClicked = true;
-            // Get the snackbar DIV
+            // aggiunge la classe show alla snackbar
             document.getElementById("snackbar_like").classList.add("show");
-            // Add the "show" class to DIV
-            // After 3 seconds, remove the show class from DIV
+            // dopo 3 secondi, rimuove la classe show dal DIV
             setTimeout(function(){ document.getElementById("snackbar_like").classList.remove("show"); }, 3000);
         }
         else {
             //$('#modal_like_removed').modal('show');
             document.getElementById('post_like').style.color = colorPrimary;
             modalLikeClicked = false;
-            // Get the snackbar DIV
-            let x = document.getElementById("snackbar_like_removed");
-            // Add the "show" class to DIV
-            x.className = "show";
-            // After 3 seconds, remove the show class from DIV
-            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+            // aggiunge la classe show alla snackbar
+            document.getElementById("snackbar_like_removed").classList.add("show");
+            // dopo 3 secondi, rimuove la classe show dal DIV
+            setTimeout(function(){ document.getElementById("snackbar_like_removed").classList.remove("show"); }, 3000);
         }
     });
 });
@@ -50,23 +47,19 @@ $(function controllaNonMiPiace() {
             //$('#modal_dislike').modal('show');
             document.getElementById('post_dislike').style.color = colorSecondary;
             modalDislikeClicked = true;
-            // Get the snackbar DIV
-            let x = document.getElementById("snackbar_dislike");
-            // Add the "show" class to DIV
-            x.className = "show";
-            // After 3 seconds, remove the show class from DIV
-            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+            // aggiunge la classe show alla snackbar
+            document.getElementById("snackbar_dislike").classList.add("show");
+            // dopo 3 secondi, rimuove la classe show dal DIV
+            setTimeout(function(){ document.getElementById("snackbar_dislike").classList.remove("show"); }, 3000);
         }
         else {
             //$('#modal_dislike_removed').modal('show');
             document.getElementById('post_dislike').style.color = colorPrimary;
             modalDislikeClicked = false;
-            // Get the snackbar DIV
-            let x = document.getElementById("snackbar_dislike_removed");
-            // Add the "show" class to DIV
-            x.className = "show";
-            // After 3 seconds, remove the show class from DIV
-            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+            // aggiunge la classe show alla snackbar
+            document.getElementById("snackbar_dislike_removed").classList.add("show");
+            // dopo 3 secondi, rimuove la classe show dal DIV
+            setTimeout(function(){ document.getElementById("snackbar_dislike_removed").classList.remove("show"); }, 3000);            
         }
     });
 });
