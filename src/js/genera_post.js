@@ -42,8 +42,7 @@ function generaBody(data, titolo, testo, idSerie, stagione, episodio) {
                         '<span class="badge badge-primary btn gold-style">Ep '+ episodio +'</span>' +
                     '</div>' +
                 '</div>';
-    return body;
-    
+    return body;    
 }
 
 // ritorna il nome della serie in base all'id della serie presente nel post
@@ -61,7 +60,8 @@ function getNomeSerie(idSerie) {
 }
 
 // genera il footer del post
-function generaFooter(numeroLike, numeroDislike, numeroCommenti) {
+function generaFooter(idSerie, numeroLike, numeroDislike, numeroCommenti) {
+    getNomeSerie(idSerie);
     let footer = '<div class="card-footer">' +
                     '<a class="card-link text-gold post" id="post_like" data-toggle="modal" href=""><span class="badge badge-primary">'+ numeroLike +'</span> <i class="fa fa-thumbs-up"></i> Mi piace</a>' +
                     '<a class="card-link text-gold post" id="post_dislike" data-toggle="modal" href=""><span class="badge badge-primary">'+ numeroDislike +'</span> <i class="fa fa-thumbs-down"></i> Non mi piace</a>' +
