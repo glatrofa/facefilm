@@ -254,7 +254,7 @@ function visualizzaPost(){
             // visualizza a schermo tutti i post
             for (i = 0; i < data.length; i++) {
                 //console.log('post '+ i +'', data[i]);
-                document.getElementById('sezione_post').innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost);
+                document.getElementById('sezione_post').innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter();
             }
         },
         error: function (data) {
