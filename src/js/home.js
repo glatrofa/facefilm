@@ -1,7 +1,6 @@
 import { logged } from './autenticazione.js';
 import { APIKEY } from './key.js';
-//import { generaHeader, generaBody, generaFooter } from './genera_post.js';
-import { generaFooter } from './genera_post.js';
+import { generaHeader, generaBody, generaFooter } from './genera_post.js';
 
 console.log(document.body.scrollTop, document.documentElement.scrollTop);
 
@@ -23,17 +22,9 @@ let modalDislikeClicked = false;
 
 // richiama funzioni non appena il documento è caricato
 $(document).ready(function() {
-    //visualizzaPost();
+    visualizzaPost();
     visualizzaClassifica();    
-    let s = "<a id='ciao' name='post_like'>" + "TEST" + "</a>";
-    document.getElementById("test1").innerHTML = s;
-    cristoNostroSalvatore();
 });
-
-function cristoNostroSalvatore() {
-    let footer = "<span class='badge badge-pill bg-awwa-primary mr-2'>12</span><a class='card-link awwa-primary post' id='190' name='post_like' data-toggle='modal' href=''><i class='fa fa-diamond'></i> Mi piace </a>";                                                       
-                document.getElementById("sezione_post").innerHTML = footer;
-}
 
 $(function aggiornaMiPiace() {
     $("a[name='post_like']").click(function (event) {
@@ -263,25 +254,30 @@ function redirectHome() {
 
 // mostra nella home i post più recenti
 function visualizzaPost(){
+    let data = ottieniDatiPost();
+    //console.log('SUCCESS '+data[0]+);
+    //console.log('post 1', data[0]);
+    //console.log('post 2', data[1]);
+    //let i;
+    //document.getElementById("sezione_post").innerHTML = "";
+    // visualizza a schermo tutti i post
+    //for (i = 0; i < data.length; i++) {
+        //console.log('post '+ i +'', data[i]);
+        //document.getElementById("sezione_post").innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);
+        //document.getElementById("sezione_post").innerHTML += generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);
+        let footer = "<span class='badge badge-pill bg-awwa-primary mr-2'>12</span><a class='card-link awwa-primary post' id='190' name='post_like' data-toggle='modal' href=''><i class='fa fa-diamond'></i> Mi piace </a>";                                                       
+        document.getElementById("sezione_post").innerHTML = footer;
+    //}
+}
+
+function ottieniDatiPost() {
     $.ajax({
         type: 'POST',
         url: './php/ottieni_post.php',
         crossOrigin: true,
         dataType: 'json',
-        success: function (data) {            
-            //console.log('SUCCESS '+data[0]+);
-            //console.log('post 1', data[0]);
-            //console.log('post 2', data[1]);
-            let i;
-            //document.getElementById("sezione_post").innerHTML = "";
-            // visualizza a schermo tutti i post
-            for (i = 0; i < data.length; i++) {
-                //console.log('post '+ i +'', data[i]);
-                //document.getElementById("sezione_post").innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);
-                //document.getElementById("sezione_post").innerHTML += generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);
-                let footer = "<span class='badge badge-pill bg-awwa-primary mr-2'>12</span><a class='card-link awwa-primary post' id='190' name='post_like' data-toggle='modal' href=''><i class='fa fa-diamond'></i> Mi piace </a>";                                                       
-                document.getElementById("sezione_post").innerHTML = footer;
-            }
+        success: function (data) {
+            return data;
         },
         error: function (data) {
             console.log('ERROR '+data);

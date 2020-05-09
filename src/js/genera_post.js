@@ -1,5 +1,5 @@
 import { APIKEY } from './key.js';
-/*
+
 // genera l'header del post
 function generaHeader(nomeUtente, idPost) {
     let header = "<div class='card shadow mb-3'><div class='card-header'>" +
@@ -64,7 +64,7 @@ function getNomeSerie(idSerie) {
             })
             .catch(err => { throw err });    
 }
-*/
+
 // genera il footer del post
 function generaFooter(idPost, idSerie, numeroLike, numeroDislike, numeroCommenti) {
     //getNomeSerie(idSerie);
@@ -74,5 +74,4 @@ function generaFooter(idPost, idSerie, numeroLike, numeroDislike, numeroCommenti
     return footer;
 }
 
-//export { generaHeader, generaBody, generaFooter };
-export { generaFooter };
+export { generaHeader, generaBody, generaFooter };
