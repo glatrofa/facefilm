@@ -24,8 +24,8 @@ let modalDislikeClicked = false;
 $(document).on('load', function() {
     visualizzaPost();
     visualizzaClassifica();
-    jQuery(function aggiornaMiPiace() {
-        jQuery("a[name='post_like']").click(function (event) {
+    $(function aggiornaMiPiace() {
+        $("a[name='post_like']").click(function (event) {
             alert(event.target.id);
         });
     });
