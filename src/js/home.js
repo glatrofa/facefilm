@@ -282,7 +282,7 @@ function ottieniDatiPost() {
             post[0] = data[0];
             let i;
             for (i = 1; i <= data[0]; i++) {            
-                post[i] = data[i];
+                post[i]["nomeUtente"] = data[i].nomeUtente;
             }
             console.log('SUCCESS ' + post);
             return post;
