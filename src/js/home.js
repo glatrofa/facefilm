@@ -247,7 +247,12 @@ function visualizzaPost(){
         dataType: 'json',
         success: function (data) {            
             //console.log('SUCCESS '+data[0]+);
-            console.log('post restituiti ', data);
+            //console.log('post 1', data[0]);
+            //console.log('post 2', data[1]);
+            var i;
+            for (i = 0; i < data.length; i++) {
+                console.log('post '+ i +'', data[i]);
+            }
         },
         error: function (data) {
             console.log('ERROR '+data);
