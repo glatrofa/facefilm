@@ -277,10 +277,11 @@ function ottieniDatiPost() {
         crossOrigin: true,
         dataType: 'json',
         success: function (data) {
+            console.log('SUCCESS ' + data);
             return data;
         },
         error: function (data) {
-            console.log('ERROR '+data);
+            console.log('ERROR ' + data);
         }
     });
 }
