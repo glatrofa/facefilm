@@ -24,9 +24,8 @@ $(function controllaMiPiace() {
             document.getElementById('post_like').style.color = colorSecondary;
             modalLikeClicked = true;
             // Get the snackbar DIV
-            let x = document.getElementById("snackbar_like");
+            document.getElementById("snackbar_like").className = "show";
             // Add the "show" class to DIV
-            x.className = "show";
             // After 3 seconds, remove the show class from DIV
             setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
         }
