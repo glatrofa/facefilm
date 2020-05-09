@@ -59,7 +59,7 @@ function getNomeSerie(idSerie) {
             .then((data) => {
                 //console.log('nome serie', data.name);
                 //nomeSerie = data.name;
-                document.getElementById('nome_serie_'+ idSerie +'').innerHTML = data.name;
+                document.getElementById("nome_serie_"+ idSerie).innerHTML = data.name;
                 //console.log('tipo ',typeof(data.name));
             })
             .catch(err => { throw err });    
