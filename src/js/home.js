@@ -27,13 +27,13 @@ $(document).ready(function() {
 });
 
 $(function aggiornaMiPiace() {
-    $("a[name='post_like']").click(function (event) {
+    $("a").click(function (event) {
         alert(event.target.id);
     });
 });
 
 $(function aggiornaNonMiPiace() {
-    alert('non mi piace');
+    //alert('non mi piace');
 });
 
 /*

@@ -30,11 +30,10 @@ function generaHeader(nomeUtente, idPost) {
 
 // genera il body del post
 function generaBody(data, titolo, testo, idSerie, stagione, episodio) {
-    //console.log('tipo data ', typeof(data));
-    console.log('vecchia data ', data);
-    data = data.substring(0, data.indexOf('.'));
-    console.log('data fomatatta', data);
-    data = new Date(data * 1000);
+    //console.log('vecchia data ', data);
+    //data = data.substring(0, data.indexOf('.'));
+    //console.log('data fomatatta', data);
+    //data = new Date(data * 1000);
     //console.log('nuova data ', data.getDay() + '/' + data.getMonth() + '/' + data.getFullYear() + ' - ' + data.getHours() + ':' + data.getMinutes() + ':' + data.getSeconds());
     let dataFormattata = data.getDay() + '/' + data.getMonth() + '/' + data.getFullYear() + ' - ' + data.getHours() + ':' + data.getMinutes() + ':' + data.getSeconds();
     let body = '<div class="card-body">' +
@@ -61,7 +60,7 @@ function getNomeSerie(idSerie) {
                 //console.log('nome serie', data.name);
                 //nomeSerie = data.name;
                 document.getElementById('nome_serie_'+ idSerie +'').innerHTML = data.name;
-                console.log('tipo ',typeof(data.name));
+                //console.log('tipo ',typeof(data.name));
             })
             .catch(err => { throw err });    
 }
