@@ -5,7 +5,7 @@ import { generaHeader, generaBody, generaFooter } from './genera_post.js';
 console.log(document.body.scrollTop, document.documentElement.scrollTop);
 
 // verifica che l'utente abbia effettuato l'accesso
-window.onload = logged();
+// window.onload = logged();
 
 // colore primario per i tasti del post
 const colorPrimary = '#e5af05';
@@ -26,6 +26,15 @@ $(document).ready(function() {
     visualizzaClassifica();
 });
 
+function aggiornaMiPiace() {
+    alert('mi piace');
+}
+
+function aggiornaNonMiPiace() {
+    alert('non mi piace');
+}
+
+/*
 // funzione per la selezione o deselezione del mi piace di un post
 $(function controllaMiPiace() {
     $('#post_like').click(function () {
@@ -73,6 +82,7 @@ $(function controllaNonMiPiace() {
         }
     });
 });
+*/
 
 // visualizza le 5 serie più popolari su tmdb
 function visualizzaClassifica() {
