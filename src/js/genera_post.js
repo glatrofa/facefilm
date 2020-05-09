@@ -70,8 +70,8 @@ function generaFooter(idPost, idSerie, numeroLike, numeroDislike, numeroCommenti
     getNomeSerie(idSerie);
     let footer = '<div class="card-footer">' +
                     '<a class="card-link text-gold post" id="'+ idPost +'-post_like" name="post_like" data-toggle="modal" href=""><span class="badge badge-primary">'+ numeroLike +'</span> <i class="fa fa-diamond"></i> Mi piace</a>' +
-                    '<a class="card-link text-gold post" id="'+ idPost +'-post_like" name="post_dislike" data-toggle="modal" href=""><span class="badge badge-primary">'+ numeroDislike +'</span> <i class="fa fa-poo"></i> Non mi piace</a>' +
-                    '<a class="card-link text-gold post" id="'+ idPost +'-post_like" name="post_comment" data-toggle="modal" href=""><span class="badge badge-primary">'+ numeroCommenti +'</span> <i class="fa fa-comment"></i> Commenta</a>' +
+                    '<a class="card-link text-gold post" id="'+ idPost +'-post_dislike" name="post_dislike" data-toggle="modal" href=""><span class="badge badge-primary">'+ numeroDislike +'</span> <i class="fa fa-poo"></i> Non mi piace</a>' +
+                    '<a class="card-link text-gold post" id="'+ idPost +'-post_comment" name="post_comment" data-toggle="modal" href=""><span class="badge badge-primary">'+ numeroCommenti +'</span> <i class="fa fa-comment"></i> Commenta</a>' +
                 '</div></div>';
     return footer;
 }
