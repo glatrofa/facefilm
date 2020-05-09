@@ -36,10 +36,10 @@
         <!-- Pagina principale -->
         <div class="container-fluid py-5">
             <!-- Riga principale -->
-            <div class="row">
+            <div class="row justify-content-around">
                 <!-- Classifica -->
                 <div class="col-md-3">
-                    <div class="card">
+                    <div class="card shadow">
                         <div class="card-body">
                             <div class="h4">Serie pi&ugrave; commentate</div>
                             <div class="h6">
@@ -48,9 +48,9 @@
                         </div>                    
                     </div>
                 </div>
-                <div class="col-md-9">                
+                <div class="col-md-8">                
                     <!-- Sezione crea post -->
-                    <div class="card mb-3">
+                    <div class="card shadow mb-3">
                         <div class="card-header">
                             <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
@@ -95,7 +95,8 @@
                     </div>     
                     <!-- Sezione POST altri utenti -->                                
                     <div >
-                        <div class="card mb-3" id="sezione_post">
+                    <div >
+                        <div class="card shadow mb-3" id="sezione_post">
                             <!--Header post: immagine profilo, nome utente e opzioni del post-->                        
                             <div class="card-header">
                                 <div class="d-flex justify-content-between align-items-center">
@@ -139,9 +140,58 @@
                             </div>
                             <!-- Footer post (azioni): like, dislike, comment -->
                             <div class="card-footer">
-                                <a class="card-link awwa-primary post" id="post_like" data-toggle="modal" href=""><span class="badge badge-pill bg-awwa-primary mr-2">12</span><i class="fa fa-thumbs-up"></i> Mi piace </a>
-                                <a class="card-link awwa-primary post" id="post_dislike" data-toggle="modal" href=""><span class="badge badge-pill bg-awwa-primary mr-2">5</span><i class="fa fa-thumbs-down"></i> Non mi piace </a>
-                                <a class="card-link awwa-primary post" id="post_comment" data-toggle="modal" href=""><span class="badge badge-pill bg-awwa-primary mr-2">0</span><i class="fa fa-comment"></i> Commenta </a>                    
+                                <span class="badge badge-pill bg-awwa-primary mr-2">12</span><a class="card-link awwa-primary post" id="post_like" data-toggle="modal" href=""><i class="fa fa-thumbs-up"></i> Mi piace </a>
+                                <span class="badge badge-pill bg-awwa-primary mr-2">5</span><a class="card-link awwa-primary post" id="post_dislike" data-toggle="modal" href=""><i class="fa fa-thumbs-down"></i> Non mi piace </a>
+                                <span class="badge badge-pill bg-awwa-primary mr-2">0</span><a class="card-link awwa-primary post" id="post_comment" data-toggle="modal" href=""><i class="fa fa-comment"></i> Commenta </a>                    
+                            </div>
+                        </div>
+                        <div class="card shadow mb-3">
+                            <!--Header post: immagine profilo, nome utente e opzioni del post-->                        
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="mr-2">
+                                            <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
+                                        </div>
+                                        <div class="ml-2">
+                                            <div class="h5 m-0">Nome utente</div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="dropdown">
+                                            <button class="btn btn-link dropdown-toggle" type="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-h"></i>
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="">
+                                                <div class="h6 dropdown-header">Opzioni</div>
+                                                <a class="dropdown-item" href="#">Segnala</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Corpo post: data pubblicazione, titolo, testo e tags -->
+                            <div class="card-body">
+                                <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> ieri alle circa meno quasi</div>
+                                <a class="card-link">
+                                    <h5 class="card-title">
+                                        Titolo
+                                    </h5>
+                                </a>
+                                <p class="card-text">
+                                    Testo del post
+                                </p>
+                                <div>
+                                    <span class="badge badge-primary btn gold-style">Narcos</span>
+                                    <span class="badge badge-primary btn gold-style">S 1</span>
+                                    <span class="badge badge-primary btn gold-style">Ep 10</span>
+                                </div>
+                            </div>
+                            <!-- Footer post (azioni): like, dislike, comment -->
+                            <div class="card-footer">
+                                <span class="badge badge-pill bg-awwa-primary mr-2">12</span><a class="card-link awwa-primary post" id="post_like" data-toggle="modal" href=""><i class="fa fa-thumbs-up"></i> Mi piace </a>
+                                <span class="badge badge-pill bg-awwa-primary mr-2">5</span><a class="card-link awwa-primary post" id="post_dislike" data-toggle="modal" href=""><i class="fa fa-thumbs-down"></i> Non mi piace </a>
+                                <span class="badge badge-pill bg-awwa-primary mr-2">0</span><a class="card-link awwa-primary post" id="post_comment" data-toggle="modal" href=""><i class="fa fa-comment"></i> Commenta </a>                    
                             </div>
                         </div>
                     </div>
@@ -157,7 +207,7 @@
             <div id="snackbar_dislike_removed" class="snackbar">Non mi piace rimosso</div>
             <div id="snackbar_post_pubblicazione_success" class="snackbar">Post pubblicato</div>
             <!-- Bottone scroll to top -->
-            <button onclick="tornaSu()" id="scroll_to_top" title="Torna su">Torna su<i class="fas fa-angle-double-up"></i></button>
+            <button id="scroll_to_top" class="rounded-circle" title="Torna su"><i class="fas fa-angle-double-up fa-lg"></i></button>
         </div>
         <!-- Fine pagina principale -->
         <!-- Modal per le azioni dei post-->        

@@ -2,6 +2,8 @@ import { logged } from './autenticazione.js';
 import { APIKEY } from './key.js';
 import { generaHeader, generaBody, generaFooter } from './genera_post.js';
 
+console.log(document.body.scrollTop, document.documentElement.scrollTop);
+
 // verifica che l'utente abbia effettuato l'accesso
 // window.onload = logged();
 
@@ -34,7 +36,7 @@ $(function controllaMiPiace() {
             // aggiunge la classe show alla snackbar
             document.getElementById("snackbar_like").classList.add("show");
             // dopo 3 secondi, rimuove la classe show dal DIV
-            setTimeout(function(){ document.getElementById("snackbar_like").classList.remove("show"); }, 3000);
+            setTimeout(function(){ document.getElementById("snackbar_like").classList.remove("show"); }, 2500);
         }
         else {
             //$('#modal_like_removed').modal('show');
@@ -43,7 +45,7 @@ $(function controllaMiPiace() {
             // aggiunge la classe show alla snackbar
             document.getElementById("snackbar_like_removed").classList.add("show");
             // dopo 3 secondi, rimuove la classe show dal DIV
-            setTimeout(function(){ document.getElementById("snackbar_like_removed").classList.remove("show"); }, 3000);
+            setTimeout(function(){ document.getElementById("snackbar_like_removed").classList.remove("show"); }, 2500);
         }
     });
 });
@@ -58,7 +60,7 @@ $(function controllaNonMiPiace() {
             // aggiunge la classe show alla snackbar
             document.getElementById("snackbar_dislike").classList.add("show");
             // dopo 3 secondi, rimuove la classe show dal DIV
-            setTimeout(function(){ document.getElementById("snackbar_dislike").classList.remove("show"); }, 3000);
+            setTimeout(function(){ document.getElementById("snackbar_dislike").classList.remove("show"); }, 2500);
         }
         else {
             //$('#modal_dislike_removed').modal('show');
@@ -67,7 +69,7 @@ $(function controllaNonMiPiace() {
             // aggiunge la classe show alla snackbar
             document.getElementById("snackbar_dislike_removed").classList.add("show");
             // dopo 3 secondi, rimuove la classe show dal DIV
-            setTimeout(function(){ document.getElementById("snackbar_dislike_removed").classList.remove("show"); }, 3000);            
+            setTimeout(function(){ document.getElementById("snackbar_dislike_removed").classList.remove("show"); }, 2500);            
         }
     });
 });
@@ -265,12 +267,16 @@ function visualizzaPost(){
 
 // comportamento del bottone "Torna su"
 var mybutton = document.getElementById("scroll_to_top");
+mybutton.addEventListener('click',function tornaSu(){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;  
+});
 
 // Quando l'utente scrolla di un certo numero di pixel, mostra il bottone "Torna su"
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() { 
-  if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50 ) {
     mybutton.style.display = "block";
   } else {
     mybutton.style.display = "none";
@@ -278,7 +284,3 @@ function scrollFunction() {
 }
 
 // Quando si preme il bottone "Torna su" viene attivata questa funzione
-function tornaSu() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
