@@ -25,7 +25,7 @@ $(document).ready(function() {
     visualizzaPost();
     visualizzaClassifica();    
     let s = "<a id='ciao' name='post_like>TEST</a>'";
-    document.getElementById("test").innerHTML = s;
+    document.getElementById("test1").innerHTML = s;
 });
 
 $(function aggiornaMiPiace() {
