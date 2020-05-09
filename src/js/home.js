@@ -1,18 +1,26 @@
 import { logged } from './autenticazione.js';
-import {APIKEY} from './key.js';
+import { APIKEY } from './key.js';
+import { generaHeader, generaBody, generaFooter } from './genera_post.js';
 
 // verifica che l'utente abbia effettuato l'accesso
-// window.onload = logged();
+window.onload = logged();
 
+// colore primario per i tasti del post
 const colorPrimary = '#e5af05';
+// colore secondario per i tasti del post
 const colorSecondary = '#00008b';
-const modalPostPubblicazioneSuccess = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Post pubblicato</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div></div>";
+// contenuto modal per post pubblicato con successo
+//const modalPostPubblicazioneSuccess = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Post pubblicato</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div><div class='modal-body'><p>Per vedere l'ultimo post pubblicato aggiorna la pagina o clicca il tasto qui sotto.</p></div><div class='modal-footer'><button type='button' class='btn btn-primary' onclick='redirectHome()'>Aggiorna home</button><button type='button' class='btn btn-secondary' data-dismiss='modal'>Chiudi</button></div></div>";
+// contenuto modal per post non pubblicato
 const modalPostPubblicazioneError = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Errore pubblicazione post</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div><div class='modal-body'><p>Ci scusiamo per il disagio.<br>Se il problema persiste utilizza il form contattaci per segnalare l'accaduto.<br>Grazie.</p></div><div class='modal-footer'><button type='button' class='btn btn-primary' onclick='redirectFormContatti()'>Vai al form contatti</button><button type='button' class='btn btn-secondary' data-dismiss='modal'>Chiudi</button></div></div>";
 let modalLikeClicked = false;
 let modalDislikeClicked = false;
+// istanzia variabile contenente i post da mostrare all'utente
+//let dataPost = null;
 
 // richiama funzioni non appena il documento è caricato
 $(document).ready(function() {
+    visualizzaPost();
     visualizzaClassifica();
 });
 
@@ -197,8 +205,12 @@ $(function login() {
         success: function (data) {            
             console.log('SUCCESS '+data);
             if(data) {
-                document.getElementById('modal_post_pubblicazione_success').innerHTML = modalPostPubblicazioneSuccess;
-                $('#modal_post_pubblicazione_success').modal('show');
+                //document.getElementById('modal_post_pubblicazione_success').innerHTML = modalPostPubblicazioneSuccess;
+                //$('#modal_post_pubblicazione_success').modal('show');
+                // aggiunge la classe show alla snackbar
+                document.getElementById("snackbar_post_pubblicazione_success").classList.add("show");
+                // dopo 3 secondi, rimuove la classe show dal DIV
+                setTimeout(function(){ document.getElementById("snackbar_post_pubblicazione_success").classList.remove("show"); }, 3000);
             }
             else {
                 document.getElementById('modal_post_pubblicazione_error').innerHTML = modalPostPubblicazioneError;
@@ -216,7 +228,30 @@ $(function login() {
 
 // reindirizza al form contatti
 function redirectFormContatti() {
-    location.href = './contattaci.html';
+    location.href = './html/contattaci.html';
+}
+
+/*
+// aggiorna la home
+function redirectHome() {
+    location.href = '.';
+}
+*/
+
+// mostra nella home i post più recenti
+function visualizzaPost(){
+    $.ajax({
+        type: 'POST',
+        url: './php/ottieni_post.php',
+        crossOrigin: true,
+        dataType: 'json',
+        success: function (data) {            
+            console.log('SUCCESS '+data);
+        },
+        error: function (data) {
+            console.log('ERROR '+data);
+        }
+    });
 }
 
 // comportamento del bottone "Torna su"
