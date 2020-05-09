@@ -35,7 +35,7 @@ function generaBody(data, titolo, testo, idSerie, stagione, episodio) {
     fetch(url)
             .then(res => res.json())
             .then((data) => {
-                console.log('dati da genera_post', data);
+                console.log('nome serie', data.name);
                 nomeSerie = data.name;
             })
             .catch(err => { throw err });
