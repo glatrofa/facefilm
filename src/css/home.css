@@ -155,15 +155,20 @@ a.post:hover {
     display: none; /* inizialmente non viene mostrato */
     position: fixed;
     bottom: 50px;
-    right: 30px;
+    right: 10px;
     /*z-index: 2000; /*in modo che non venga overlappato da altri elementi */
-    background-color: var(--awwa-secondary);
-    color: white;
+    background-color:white;
+    opacity: 0.5;
+    color: var(--awwa-secondary);
     width: 50px;
     height: 50px;
     border-style: none;
+    border: 1px solid var(--awwa-secondary);
     padding: 0;
     cursor: pointer;
-    border-radius: 4px;
+  }
+
+  button#scroll_to_top:hover{
+      opacity: 1;
   }
   
