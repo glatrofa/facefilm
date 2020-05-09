@@ -52,7 +52,7 @@ function getNomeSerie(idSerie) {
     fetch(url)
             .then(res => res.json())
             .then((data) => {
-                //console.log('nome serie', data.name);
+                console.log('nome serie', data.name);
                 //nomeSerie = data.name;
                 return data.name;
             })
