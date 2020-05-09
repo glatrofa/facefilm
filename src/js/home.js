@@ -22,8 +22,8 @@ let modalDislikeClicked = false;
 
 // richiama funzioni non appena il documento è caricato
 $(document).ready(function() {
-    visualizzaPost();
-    //ottieniDatiPost();
+    //visualizzaPost();
+    ottieniDatiPost();
     visualizzaClassifica();    
 });
 
@@ -254,13 +254,13 @@ function redirectHome() {
 */
 
 // mostra nella home i post più recenti
-function visualizzaPost(post){
+function visualizzaPost(){
     //let data = ottieniDatiPost();
     //console.log('SUCCESS '+data[0]+);
     //console.log('post 1', data[0]);
     //console.log('post 2', data[1]);
     //let i;
-    document.getElementById("sezione_post").innerHTML = "" + ottieniDatiPost();
+    //document.getElementById("sezione_post").innerHTML = "" + ottieniDatiPost();
     // visualizza a schermo tutti i post
     //for (i = 1; i <= data[0]; i++) {
         //console.log('post '+ i +'', data[i]);
@@ -295,7 +295,8 @@ function ottieniDatiPost() {
                 post += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);                
             }
             //visualizzaPost(post);
-            return post;
+            //return post;
+            document.getElementById("sezione_post").innerHTML = "" + post;
         },
         error: function (data) {
             console.log('ERROR ' + data);
