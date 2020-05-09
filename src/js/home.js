@@ -27,11 +27,7 @@ $(document).ready(function() {
     visualizzaClassifica();    
 });
 
-$(function aggiornaMiPiace() {
-    $("a[name='post_like']").click(function (event) {
-        alert(event.target.id);
-    });
-});
+
 
 $(function aggiornaNonMiPiace() {
     //alert('non mi piace');
@@ -297,6 +293,11 @@ function ottieniDatiPost() {
             //visualizzaPost(post);
             //return post;
             document.getElementById("sezione_post").innerHTML = "" + post;
+            $(function aggiornaMiPiace() {
+                $("a[name='post_like']").click(function (event) {
+                    alert(event.target.id);
+                });
+            });
         },
         error: function (data) {
             console.log('ERROR ' + data);
