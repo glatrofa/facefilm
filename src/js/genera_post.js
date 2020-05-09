@@ -31,11 +31,11 @@ function generaHeader(nomeUtente, idPost) {
 // genera il body del post
 function generaBody(data, titolo, testo, idSerie, stagione, episodio) {
     //console.log('vecchia data ', data);
-    data = data.substring(0, data.indexOf('.'));
+    data = data.substring(0, data.indexOf("."));
     //console.log('data fomatatta', data);
     data = new Date(data * 1000);
     //console.log('nuova data ', data.getDay() + '/' + data.getMonth() + '/' + data.getFullYear() + ' - ' + data.getHours() + ':' + data.getMinutes() + ':' + data.getSeconds());
-    let dataFormattata = data.getDay() + '/' + data.getMonth() + '/' + data.getFullYear() + ' - ' + data.getHours() + ':' + data.getMinutes() + ':' + data.getSeconds();
+    let dataFormattata = data.getDay() + "/" + data.getMonth() + "/" + data.getFullYear() + " - " + data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
     let body = "<div class='card-body'>" +
                     "<div class='text-muted h7 mb-2'> <i class='fa fa-clock-o'></i> "+ dataFormattata +"</div>" +
                     "<a class='card-link'>" +
