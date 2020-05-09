@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Creato il: Mag 08, 2020 alle 15:49
+-- Creato il: Mag 09, 2020 alle 09:50
 -- Versione del server: 10.3.22-MariaDB-0+deb10u1
 -- Versione PHP: 7.3.14-1~deb10u1
 
@@ -23,15 +23,15 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `commento`
+-- Struttura della tabella `commenti`
 --
 
-CREATE TABLE `commento` (
+CREATE TABLE `commenti` (
   `id` int(11) NOT NULL,
   `id_utente` varchar(50) NOT NULL,
   `id_post` int(11) NOT NULL,
   `testo` varchar(5000) NOT NULL,
-  `data` varchar(16) NOT NULL
+  `data` timestamp(5) NOT NULL DEFAULT current_timestamp(5)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -45,7 +45,8 @@ CREATE TABLE `messaggi` (
   `nome` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `oggetto` varchar(50) NOT NULL,
-  `messaggio` varchar(8000) NOT NULL
+  `messaggio` varchar(8000) NOT NULL,
+  `data` timestamp(5) NOT NULL DEFAULT current_timestamp(5)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -57,13 +58,34 @@ CREATE TABLE `messaggi` (
 CREATE TABLE `post` (
   `id` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `data` varchar(16) NOT NULL,
+  `data` timestamp(5) NOT NULL DEFAULT current_timestamp(5),
   `titolo` varchar(30) NOT NULL,
   `testo` varchar(5000) NOT NULL,
   `id_serie` varchar(8) NOT NULL,
   `numero_stagione` varchar(2) NOT NULL,
   `numero_episodio` varchar(2) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `post`
+--
+
+INSERT INTO `post` (`id`, `email`, `data`, `titolo`, `testo`, `id_serie`, `numero_stagione`, `numero_episodio`) VALUES
+(5, 'g.latrofa3@studenti.poliba.it', '2020-05-08 17:36:52.39811', 'titolo', 'testo', '18347', '5', '13'),
+(4, 'g.latrofa3@studenti.poliba.it', '2020-05-08 17:34:20.78757', 'falena titolo', 'bla bla bla', '4607', '1', '7');
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `segnalazioni`
+--
+
+CREATE TABLE `segnalazioni` (
+  `id` int(11) NOT NULL,
+  `idPost` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `data` timestamp(5) NOT NULL DEFAULT current_timestamp(5)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -86,16 +108,17 @@ CREATE TABLE `utenti` (
 --
 
 INSERT INTO `utenti` (`nome`, `cognome`, `data_nascita`, `nazione`, `email`, `nome_utente`, `password`) VALUES
-('Giuseppe', 'Latrofa', '1999-01-28', 'Italy', 'g.latrofa3@studenti.poliba.it', 'peppone', '014635095eeeda4945a6c17d0cfb6abb');
+('Giuseppe', 'Latrofa', '1999-01-28', 'Italy', 'g.latrofa3@studenti.poliba.it', 'peppone', '014635095eeeda4945a6c17d0cfb6abb'),
+('SEVERUS', 'SNAPE', '1960-01-01', 'United Kingdom of Great Britain and Northern Ireland (the)', 'severussnape1@gmail.com', 'sevsnape1', 'a7d0eeb054b7cd7ccbf3041bc441c522');
 
 --
 -- Indici per le tabelle scaricate
 --
 
 --
--- Indici per le tabelle `commento`
+-- Indici per le tabelle `commenti`
 --
-ALTER TABLE `commento`
+ALTER TABLE `commenti`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_utente` (`id_utente`),
   ADD KEY `id_post` (`id_post`);
@@ -114,6 +137,14 @@ ALTER TABLE `post`
   ADD KEY `email` (`email`);
 
 --
+-- Indici per le tabelle `segnalazioni`
+--
+ALTER TABLE `segnalazioni`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `email` (`email`),
+  ADD KEY `idPost` (`idPost`);
+
+--
 -- Indici per le tabelle `utenti`
 --
 ALTER TABLE `utenti`
@@ -125,9 +156,9 @@ ALTER TABLE `utenti`
 --
 
 --
--- AUTO_INCREMENT per la tabella `commento`
+-- AUTO_INCREMENT per la tabella `commenti`
 --
-ALTER TABLE `commento`
+ALTER TABLE `commenti`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT per la tabella `messaggi`
@@ -138,6 +169,11 @@ ALTER TABLE `messaggi`
 -- AUTO_INCREMENT per la tabella `post`
 --
 ALTER TABLE `post`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT per la tabella `segnalazioni`
+--
+ALTER TABLE `segnalazioni`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
