@@ -121,15 +121,15 @@ a.post:hover {
     visibility: hidden; /* Hidden by default. Visible on click */
     min-width: 250px; /* Set a default minimum width */
     margin-left: -125px; /* Divide value of min-width by 2 */
-    background-color: #333; /* Black background color */
+    left: 50%; /* Center the snackbar */
+    background-color: var(--awwa-secondary); /* Black background color */
     color: #fff; /* White text color */
     text-align: center; /* Centered text */
     border-radius: 2px; /* Rounded borders */
     padding: 16px; /* Padding */
     position: fixed; /* Sit on top of the screen */
-    z-index: 1; /* Add a z-index if needed */
-    left: 50%; /* Center the snackbar */
     bottom: 30px; /* 30px from the bottom */
+    z-index: 1; /* Add a z-index if needed */
 }
   
 /* Show the snackbar when clicking on a button (class added with JavaScript) */
@@ -162,3 +162,18 @@ a.post:hover {
     to {bottom: 0; opacity: 0;}
 }
 /* fine snackbar */
+
+/* Bottone scroll to top */
+#scroll_to_top {
+    display: none; /* inizialmente non viene mostrato */
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 1200; /*in modo che non venga overlappato da altri elementi */
+    background-color: var(--awwa-secondary);
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
