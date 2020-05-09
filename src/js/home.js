@@ -259,7 +259,7 @@ function visualizzaPost(){
     //console.log('post 1', data[0]);
     //console.log('post 2', data[1]);
     let i;
-    //document.getElementById("sezione_post").innerHTML = "";
+    document.getElementById("sezione_post").innerHTML = "";
     // visualizza a schermo tutti i post
     for (i = 1; i <= data[0]; i++) {
         console.log('post '+ i +'', data[i]);
@@ -278,7 +278,12 @@ function ottieniDatiPost() {
         dataType: 'json',
         success: function (data) {
             console.log('SUCCESS ' + data);
-            return data;
+            let post = [];
+            post[0] = data[0];
+            for (i = 1; i <= data[0]; i++) {            
+                post[i] = data[i];
+            }
+            return post;
         },
         error: function (data) {
             console.log('ERROR ' + data);
