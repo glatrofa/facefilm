@@ -54,11 +54,11 @@ function generaBody(data, titolo, testo, idSerie, stagione, episodio) {
 }
 
 // genera il footer del post
-function generaFooter(numeroLike, numeroDislike, nuumeroCommenti) {
+function generaFooter(numeroLike, numeroDislike, numeroCommenti) {
     let footer = '<div class="card-footer">' +
-                    '<a class="card-link text-gold post" id="post_like" data-toggle="modal" href=""><i class="fa fa-thumbs-up"></i> Mi piace <span class="badge badge-primary">'+ numeroLike +'</span></a>' +
-                    '<a class="card-link text-gold post" id="post_dislike" data-toggle="modal" href=""><i class="fa fa-thumbs-down"></i> Non mi piace <span class="badge badge-primary">'+ numeroDislike +'</span></a>' +
-                    '<a class="card-link text-gold post" id="post_comment" data-toggle="modal" href=""><i class="fa fa-comment"></i> Commenta <span class="badge badge-primary">'+ nuumeroCommenti +'</span></a>' +
+                    '<a class="card-link text-gold post" id="post_like" data-toggle="modal" href=""><span class="badge badge-primary">'+ numeroLike +'</span> <i class="fa fa-thumbs-up"></i> Mi piace</a>' +
+                    '<a class="card-link text-gold post" id="post_dislike" data-toggle="modal" href=""><span class="badge badge-primary">'+ numeroDislike +'</span> <i class="fa fa-thumbs-down"></i> Non mi piace</a>' +
+                    '<a class="card-link text-gold post" id="post_comment" data-toggle="modal" href=""><span class="badge badge-primary">'+ numeroCommenti +'</span> <i class="fa fa-comment"></i> Commenta</a>' +
                 '</div>';
     return footer;
 }
