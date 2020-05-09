@@ -246,7 +246,8 @@ function visualizzaPost(){
         crossOrigin: true,
         dataType: 'json',
         success: function (data) {            
-            console.log('SUCCESS '+data);
+            //console.log('SUCCESS '+data[0]+);
+            console.log('post restituiti ', data);
         },
         error: function (data) {
             console.log('ERROR '+data);
