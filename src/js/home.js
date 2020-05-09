@@ -280,6 +280,7 @@ function ottieniDatiPost() {
             console.log('SUCCESS ' + data);
             let post = [];
             post[0] = data[0];
+            let i;
             for (i = 1; i <= data[0]; i++) {            
                 post[i] = data[i];
             }
