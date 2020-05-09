@@ -284,7 +284,7 @@ function ottieniDatiPost() {
             for (i = 1; i <= data[0]; i++) {            
                 post[i] = data[i];
             }
-            console.log('SUCCESS ' + data);
+            console.log('SUCCESS ' + post);
             return post;
         },
         error: function (data) {
