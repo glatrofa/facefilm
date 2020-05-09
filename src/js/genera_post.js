@@ -69,7 +69,7 @@ function getNomeSerie(idSerie) {
 function generaFooter(idPost, idSerie, numeroLike, numeroDislike, numeroCommenti) {
     getNomeSerie(idSerie);
     let footer = "<div class='card-footer'>" +
-                    "<a class='card-link awwa-primary post' id='"+ idPost +"' name='post_like' data-toggle='modal' href=''><span class='badge badge-primary'>"+ numeroLike +"</span> <i class='fa fa-diamond'></i> Mi piace</a>" +
+                    "<span class='badge badge-pill bg-awwa-primary mr-2'>"+ numeroLike +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_like' data-toggle='modal' href=''><i class='fa fa-diamond'></i> Mi piace </a>" +                    
                     "<a class='card-link awwa-primary post' id='"+ idPost +"' name='post_dislike' data-toggle='modal' href=''><span class='badge badge-primary'>"+ numeroDislike +"</span> <i class='fa fa-poo'></i> Non mi piace</a>" +
                     "<a class='card-link awwa-primary post' id='"+ idPost +"' name='post_comment' data-toggle='modal' href=''><span class='badge badge-primary'>"+ numeroCommenti +"</span> <i class='fa fa-comment'></i> Commenta</a>" +
                 "</div></div>";
