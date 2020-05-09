@@ -1,4 +1,4 @@
-const { APIKEY } = require("./key");
+import { APIKEY } from './key.js';
 
 // genera l'header del post
 function generaHeader(nomeUtente, idPost) {

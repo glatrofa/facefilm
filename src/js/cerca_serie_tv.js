@@ -1,5 +1,5 @@
 import { logged } from './autenticazione.js';
-import {APIKEY} from './key.js';
+import { APIKEY } from './key.js';
 // verifica che l'utente abbia effettuato l'accesso
 // window.onload = logged();
 
