@@ -33,11 +33,11 @@ function generaBody(data, titolo, testo, idSerie, stagione, episodio) {
     let body = '<div class="card-body">' +
                     '<div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> '+ data +'</div>' +
                     '<a class="card-link">' +
-                        '<h5 class="card-title">'+ titolo + getNomeSerie(idSerie) +'</h5>' +
+                        '<h5 class="card-title">'+ titolo +'</h5>' +
                     '</a>' +
                     '<p class="card-text">'+ testo +'</p>' +
                     '<div>' +
-                        '<span class="badge badge-primary btn gold-style">'+ getNomeSerie(idSerie) +'</span>' +
+                        '<span class="badge badge-primary btn gold-style" id="nome_serie_'+ idSerie +'"></span>' +
                         '<span class="badge badge-primary btn gold-style">S '+ stagione +'</span>' +
                         '<span class="badge badge-primary btn gold-style">Ep '+ episodio +'</span>' +
                     '</div>' +
@@ -52,9 +52,9 @@ function getNomeSerie(idSerie) {
     fetch(url)
             .then(res => res.json())
             .then((data) => {
-                console.log('nome serie', data.name);
+                //console.log('nome serie', data.name);
                 //nomeSerie = data.name;
-                return data.name;
+                document.getElementById('nome_serie_'+ idSerie +'').innerHTML = data.name;
             })
             .catch(err => { throw err });    
 }
