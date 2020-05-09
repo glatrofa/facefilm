@@ -26,12 +26,6 @@ $(document).ready(function() {
     visualizzaClassifica();    
 });
 
-
-
-$(function aggiornaNonMiPiace() {
-    //alert('non mi piace');
-});
-
 /*
 // funzione per la selezione o deselezione del mi piace di un post
 $(function controllaMiPiace() {
@@ -262,9 +256,16 @@ function visualizzaPost() {
                 post += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);                
             }
             document.getElementById("sezione_post").innerHTML = "" + post;
+            // aggiorna il numero di mi piace del post
             $(function aggiornaMiPiace() {
                 $("a[name='post_like']").click(function (event) {
-                    alert(event.target.id);
+                    console.log(event.target.id);
+                });
+            });
+            // aggiorna il numero di non  mi piace del post
+            $(function aggiornaNonMiPiace() {
+                $("a[name='post_dislike']").click(function (event) {
+                    console.log(event.target.id);
                 });
             });
         },
