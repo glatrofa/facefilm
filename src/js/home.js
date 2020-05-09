@@ -22,7 +22,8 @@ let modalDislikeClicked = false;
 
 // richiama funzioni non appena il documento è caricato
 $(document).ready(function() {
-    visualizzaPost();
+    //visualizzaPost();
+    ottieniDatiPost();
     visualizzaClassifica();    
 });
 
@@ -253,8 +254,8 @@ function redirectHome() {
 */
 
 // mostra nella home i post più recenti
-function visualizzaPost(){
-    let data = ottieniDatiPost();
+function visualizzaPost(data){
+    //let data = ottieniDatiPost();
     //console.log('SUCCESS '+data[0]+);
     //console.log('post 1', data[0]);
     //console.log('post 2', data[1]);
@@ -278,7 +279,8 @@ function ottieniDatiPost() {
         dataType: 'json',
         success: function (data) {
             console.log('SUCCESS ' + data);
-            return data;
+            //return data;
+            visualizzaPost(data);
         },
         error: function (data) {
             console.log('ERROR ' + data);
