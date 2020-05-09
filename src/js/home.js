@@ -260,7 +260,7 @@ function visualizzaPost(post){
     //console.log('post 1', data[0]);
     //console.log('post 2', data[1]);
     //let i;
-    document.getElementById("sezione_post").innerHTML = "" + post;
+    document.getElementById("sezione_post").innerHTML = "" + ottieniDatiPost();
     // visualizza a schermo tutti i post
     //for (i = 1; i <= data[0]; i++) {
         //console.log('post '+ i +'', data[i]);
@@ -294,7 +294,8 @@ function ottieniDatiPost() {
             for (i = 0; i < data.length; i++) {    
                 post += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);                
             }
-            visualizzaPost(post);
+            //visualizzaPost(post);
+            return post;
         },
         error: function (data) {
             console.log('ERROR ' + data);
