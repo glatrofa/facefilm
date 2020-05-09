@@ -23,15 +23,16 @@ let modalDislikeClicked = false;
 // richiama funzioni non appena il documento è caricato
 $(document).ready(function() {
     visualizzaPost();
-    visualizzaClassifica();
-    $(function aggiornaMiPiace() {
-        $("a[name='post_like']").click(function (event) {
-            alert(event.target.id);
-        });
-    });
+    visualizzaClassifica();    
+    let s = "<a id='ciao' name='post_like>TEST</a>'";
+    document.getElementById("test").innerHTML = s;
 });
 
-
+$(function aggiornaMiPiace() {
+    $("a[name='post_like']").click(function (event) {
+        alert(event.target.id);
+    });
+});
 
 $(function aggiornaNonMiPiace() {
     //alert('non mi piace');
