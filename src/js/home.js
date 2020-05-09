@@ -21,7 +21,7 @@ let modalDislikeClicked = false;
 //let dataPost = null;
 
 // richiama funzioni non appena il documento è caricato
-$(document).on('load', function() {
+$(document).ready(function() {
     visualizzaPost();
     visualizzaClassifica();
     $(function aggiornaMiPiace() {
