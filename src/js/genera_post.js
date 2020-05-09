@@ -54,7 +54,8 @@ function getNomeSerie(idSerie) {
             .then((data) => {
                 console.log('nome serie', data.name);
                 //nomeSerie = data.name;
-                return data.name;
+                let nome = '';
+                return nome + data.name;
             })
             .catch(err => { throw err });    
 }
