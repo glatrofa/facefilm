@@ -26,8 +26,8 @@ $(document).ready(function() {
     visualizzaClassifica();
 });
 
-$(function aggiornaMiPiace() {
-    $("a[name='post_like']").click(function (event) {
+jQuery(function aggiornaMiPiace() {
+    jQuery("a[name='post_like']").click(function (event) {
         alert(event.target.id);
     });
 });
