@@ -75,4 +75,5 @@ function generaFooter(idPost, idSerie, numeroLike, numeroDislike, numeroCommenti
     return footer;
 }
 
-export { generaHeader, generaBody, generaFooter };
+//export { generaHeader, generaBody, generaFooter };
+export { generaFooter };

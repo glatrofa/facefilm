@@ -1,6 +1,7 @@
 import { logged } from './autenticazione.js';
 import { APIKEY } from './key.js';
-import { generaHeader, generaBody, generaFooter } from './genera_post.js';
+//import { generaHeader, generaBody, generaFooter } from './genera_post.js';
+import { generaFooter } from './genera_post.js';
 
 console.log(document.body.scrollTop, document.documentElement.scrollTop);
 
