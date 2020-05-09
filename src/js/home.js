@@ -20,14 +20,26 @@ $(document).ready(function() {
 $(function controllaMiPiace() {
     $('#post_like').click(function () {
         if(!modalLikeClicked) {
-            $('#modal_like').modal('show');
+            //$('#modal_like').modal('show');
             document.getElementById('post_like').style.color = colorSecondary;
             modalLikeClicked = true;
+            // Get the snackbar DIV
+            let x = document.getElementById("snackbar_like");
+            // Add the "show" class to DIV
+            x.className = "show";
+            // After 3 seconds, remove the show class from DIV
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
         }
         else {
-            $('#modal_like_removed').modal('show');
+            //$('#modal_like_removed').modal('show');
             document.getElementById('post_like').style.color = colorPrimary;
             modalLikeClicked = false;
+            // Get the snackbar DIV
+            let x = document.getElementById("snackbar_like_removed");
+            // Add the "show" class to DIV
+            x.className = "show";
+            // After 3 seconds, remove the show class from DIV
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
         }
     });
 });
@@ -36,14 +48,26 @@ $(function controllaMiPiace() {
 $(function controllaNonMiPiace() {
     $('#post_dislike').click(function () {
         if(!modalDislikeClicked) {
-            $('#modal_dislike').modal('show');
+            //$('#modal_dislike').modal('show');
             document.getElementById('post_dislike').style.color = colorSecondary;
             modalDislikeClicked = true;
+            // Get the snackbar DIV
+            let x = document.getElementById("snackbar_dislike");
+            // Add the "show" class to DIV
+            x.className = "show";
+            // After 3 seconds, remove the show class from DIV
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
         }
         else {
-            $('#modal_dislike_removed').modal('show');
+            //$('#modal_dislike_removed').modal('show');
             document.getElementById('post_dislike').style.color = colorPrimary;
             modalDislikeClicked = false;
+            // Get the snackbar DIV
+            let x = document.getElementById("snackbar_dislike_removed");
+            // Add the "show" class to DIV
+            x.className = "show";
+            // After 3 seconds, remove the show class from DIV
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
         }
     });
 });
