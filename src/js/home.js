@@ -24,13 +24,14 @@ let modalDislikeClicked = false;
 $(document).on('load', function() {
     visualizzaPost();
     visualizzaClassifica();
-});
-
-jQuery(function aggiornaMiPiace() {
-    jQuery("a[name='post_like']").click(function (event) {
-        alert(event.target.id);
+    jQuery(function aggiornaMiPiace() {
+        jQuery("a[name='post_like']").click(function (event) {
+            alert(event.target.id);
+        });
     });
 });
+
+
 
 $(function aggiornaNonMiPiace() {
     //alert('non mi piace');
