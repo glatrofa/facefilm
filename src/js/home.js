@@ -272,16 +272,31 @@ function visualizzaPost() {
                         success: function (data) {
                             console.log('SUCCESS '+ data);
                             if(data[0]){
-                                // aggiungere visualizzazione snackbar?
+                                // aggiunge il testo alla snackbar
+                                document.getElementById("snackbar_successo").innerHTML = "Mi piace aggiunto";
+                                // aggiunge la classe show alla snackbar
+                                document.getElementById("snackbar_successo").classList.add("show");
+                                // dopo un certo numero di millisecondi, rimuove la classe show dal DIV
+                                setTimeout(function(){ document.getElementById("snackbar_successo").classList.remove("show"); }, 2500);
                                 // aggiorna valore like singolo post
                                 document.getElementById(event.target.id + "-post_like_number").innerHTML = data[1];
                             } else {
-                                // aggiungere visualizzazione snackbar?
+                                // aggiunge il testo alla snackbar
+                                document.getElementById("snackbar_errore").innerHTML = "Si &egrave; verificato un errore";
+                                // aggiunge la classe show alla snackbar
+                                document.getElementById("snackbar_errore").classList.add("show");
+                                // dopo un certo numero di millisecondi, rimuove la classe show dal DIV
+                                setTimeout(function(){ document.getElementById("snackbar_successo").classList.remove("show"); }, 2500);
                             }
                         },
                         error: function (data) {
                             console.log('ERROR '+ data);
-                            // aggiungere visualizzazione snackbar?
+                            // aggiunge il testo alla snackbar
+                            document.getElementById("snackbar_errore").innerHTML = "Si &egrave; verificato un errore";
+                            // aggiunge la classe show alla snackbar
+                            document.getElementById("snackbar_errore").classList.add("show");
+                            // dopo un certo numero di millisecondi, rimuove la classe show dal DIV
+                            setTimeout(function(){ document.getElementById("snackbar_successo").classList.remove("show"); }, 2500);
                         }
                     });
                 });
@@ -302,16 +317,31 @@ function visualizzaPost() {
                         success: function (data) {
                             console.log('SUCCESS '+ data);
                             if(data[0]){
-                                // aggiungere visualizzazione snackbar?
+                                // aggiunge il testo alla snackbar
+                                document.getElementById("snackbar_successo").innerHTML = "Non mi piace aggiunto";
+                                // aggiunge la classe show alla snackbar
+                                document.getElementById("snackbar_successo").classList.add("show");
+                                // dopo un certo numero di millisecondi, rimuove la classe show dal DIV
+                                setTimeout(function(){ document.getElementById("snackbar_successo").classList.remove("show"); }, 2500);
                                 // aggiorna valore dislike singolo post
                                 document.getElementById(event.target.id + "-post_dislike_number").innerHTML = data[1];
                             } else {
-                                // aggiungere visualizzazione snackbar?
+                                // aggiunge il testo alla snackbar
+                                document.getElementById("snackbar_errore").innerHTML = "Si &egrave; verificato un errore";
+                                // aggiunge la classe show alla snackbar
+                                document.getElementById("snackbar_errore").classList.add("show");
+                                // dopo un certo numero di millisecondi, rimuove la classe show dal DIV
+                                setTimeout(function(){ document.getElementById("snackbar_successo").classList.remove("show"); }, 2500);
                             }    
                         },
                         error: function (data) {
                             console.log('ERROR '+ data);
-                            // aggiungere visualizzazione snackbar?
+                            // aggiunge il testo alla snackbar
+                            document.getElementById("snackbar_errore").innerHTML = "Si &egrave; verificato un errore";
+                            // aggiunge la classe show alla snackbar
+                            document.getElementById("snackbar_errore").classList.add("show");
+                            // dopo un certo numero di millisecondi, rimuove la classe show dal DIV
+                            setTimeout(function(){ document.getElementById("snackbar_successo").classList.remove("show"); }, 2500);
                         }
                     });
                 });
@@ -332,7 +362,7 @@ function visualizzaPost() {
                             console.log('SUCCESS '+ data);
                             if(data){
                                 // aggiunge il testo alla snackbar
-                                document.getElementById("snackbar_successo").innerHTML = "Post segnalato &egrave;";
+                                document.getElementById("snackbar_successo").innerHTML = "Post segnalato";
                                 // aggiunge la classe show alla snackbar
                                 document.getElementById("snackbar_successo").classList.add("show");
                                 // dopo un certo numero di millisecondi, rimuove la classe show dal DIV
