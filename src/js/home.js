@@ -258,7 +258,7 @@ function visualizzaPost() {
             // aggiorna il numero di mi piace del post
             $(function aggiornaMiPiace() {
                 $("a[name='post_like']").click(function (event) {
-                    console.log(substring(0, event.target.id.indexOf("-")));
+                    console.log(event.target.id.substring(0, event.target.id.indexOf("-")));
                     $.ajax({
                         type: 'POST',
                         url: './php/aggiorna_contatore_post.php',
