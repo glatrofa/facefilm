@@ -352,7 +352,7 @@ function visualizzaPost() {
                         dataType: 'json',
                         success: function (data) {
                             console.log("successo ajax " + data);
-                            if(data[0].nomeUtente != null){
+                            if(data[0] != null){
                                 //document.getElementById("modal_commenti_container").innerHTML = visualizzaModalCommento(idPost);                                
                                 let i;
                                 for (i = 0; i < data.length; i++) {    
