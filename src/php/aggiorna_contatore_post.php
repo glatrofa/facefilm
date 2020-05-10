@@ -16,9 +16,9 @@ if($obiettivo == "piace") {
     $query = "SELECT piace FROM post WHERE id = '".$idPost."'";
     $result = mysqli_query($connection, $query) or die($response[2] = mysqli_error($connection));
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    $row = $row["piace"] + 1;
+    $response[9] = $row["piace"] + 1;
     // inserimento nuovo valore
-    $query = "UPDATE post SET piace = ".$row." WHERE id = '".$idPost."'";
+    $query = "UPDATE post SET piace = ".$response[9]." WHERE id = '".$idPost."'";
     mysqli_query($connection, $query) or die($response[3] = mysqli_error($connection));
     // unlock tabelle
     $queryU = "UNLOCK TABLES";

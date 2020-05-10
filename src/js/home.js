@@ -258,7 +258,8 @@ function visualizzaPost() {
             // aggiorna il numero di mi piace del post
             $(function aggiornaMiPiace() {
                 $("a[name='post_like']").click(function (event) {
-                    console.log(event.target.id.substring(0, event.target.id.indexOf("-")));
+                    //let targetId = event.target.id.substring(0, event.target.id.indexOf("-"));
+                    //console.log(event.target.id.substring(0, event.target.id.indexOf("-")));
                     $.ajax({
                         type: 'POST',
                         url: './php/aggiorna_contatore_post.php',
@@ -268,38 +269,15 @@ function visualizzaPost() {
                             obiettivo: 'piace',
                         },
                         dataType: 'json',
-                        success: function (data) {            
+                        success: function (data) {
                             console.log('SUCCESS '+ data);
-                            //visualizzaPost();
                             if(data[0]){
                                 // aggiungere visualizzazione snackbar?
-                                // aggiorna valore singolo post
-                                $.ajax({
-                                    type: 'POST',
-                                    url: './php/aggiorna_numero_post.php',
-                                    crossOrigin: true,
-                                    data: {
-                                        idPost: event.target.id,
-                                    },
-                                    dataType: 'json',
-                                    success: function (data) {            
-                                        console.log('SUCCESS '+ data);
-                                        visualizzaPost();
-                                        if(data[0]){
-                                            // aggiungere visualizzazione snackbar?
-                                            //visualizzaPost();
-                                        } else {                                
-                                            // aggiungere visualizzazione snackbar?
-                                        }                            
-                                    },
-                                    error: function (data) {
-                                        console.log('ERROR '+ data);
-                                        // aggiungere visualizzazione snackbar?
-                                    }
-                                });
-                            } else {                                
+                                // aggiorna valore like singolo post
+                                document.getElementById(event.target.id + "-post_like_number").innerHTML = data[9];
+                            } else {
                                 // aggiungere visualizzazione snackbar?
-                            }                            
+                            }
                         },
                         error: function (data) {
                             console.log('ERROR '+ data);
