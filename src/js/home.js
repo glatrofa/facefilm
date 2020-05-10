@@ -365,7 +365,32 @@ function visualizzaPost() {
                             }
                             $('#modal_commenti').modal('show');
                             $('#modal_commenta_post').click(function (idPost) {
-                                $('#modal_aggiunti_commento').modal('show');
+                                $('#modal_aggiungi_commento').modal('show');
+                                $('#form_login').on('submit', function (e) {
+                                    e.preventDefault();
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: '../php/pubblica_commento.php',
+                                        crossOrigin: true,
+                                        data: {
+                                            idPost: idPost,
+                                            testo: document.getElementById("modal_commento_testo").value,
+                                        },
+                                        dataType: 'json',
+                                        success: function (data) {            
+                                            console.log("dati post commento " + data);
+                                            if(data == true){
+                                                // mostra cracker
+                                            } else {
+                                                // mostra cracker
+                                            }
+                                        },
+                                        error: function (data) {
+                                            //console.log('ERROR '+data[0]);
+                                            $('#modal_login_error').modal('show');
+                                        }
+                                    });
+                                });
                             });
                         },
                         error: function (data) {
