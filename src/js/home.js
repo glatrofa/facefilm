@@ -351,7 +351,7 @@ function visualizzaPost() {
                         crossOrigin: true,
                         dataType: 'json',
                         success: function (data) {
-                            console.log("successo ajax " + data);
+                            console.log("successo ajax " + data[0].testo + ' ' + data[0].nomeUtente + ' ' + data[0].data);
                             if(data[0] != null){
                                 //document.getElementById("modal_commenti_container").innerHTML = visualizzaModalCommento(idPost);                         
                                 let i;
