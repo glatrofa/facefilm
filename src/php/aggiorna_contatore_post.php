@@ -3,8 +3,10 @@
 include './connessioneDatabase.php';
 
 // definizione dell'elemento da modificare
-$obiettivo = mysqli_real_escape_string($connection, $_POST["obiettivo"]);
-$idPost = mysqli_real_escape_string($connection, $_POST["idPost"]);
+//$obiettivo = mysqli_real_escape_string($connection, $_POST["obiettivo"]);
+//$idPost = mysqli_real_escape_string($connection, $_POST["idPost"]);
+$obiettivo = "piace";
+$idPost = 7;
 $respone = true;
 
 if($obiettivo == "piace") {
