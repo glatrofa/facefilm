@@ -336,7 +336,7 @@ function visualizzaPost() {
                         }
                     });
                 });
-            });
+            });            
             // visualizza commenti di un post in un modal
             $(function visualizzaCommentiModal() {
                 $("a[name='post_comment']").click(function (event) {                    
@@ -364,9 +364,34 @@ function visualizzaPost() {
                                 document.getElementById("modal_commenti_container").innerHTML = "Nessun commento";
                             }
                             $('#modal_commenti').modal('show');
+                            $('#modal_form_commento').on('submit', function () {
+                                $.ajax({
+                                    type: 'POST',
+                                    url: '../php/pubblica_commento.php',
+                                    crossOrigin: true,
+                                    data: {
+                                        idPost: idPost,
+                                        testo: document.getElementById("modal_commento_testo").value,
+                                    },
+                                    dataType: 'json',
+                                    success: function (data) {            
+                                        console.log("dati post commento SUCCESS " + data);
+                                        if(data == true){
+                                            // mostra cracker
+                                        } else {
+                                            // mostra cracker
+                                        }
+                                    },
+                                    error: function (data) {
+                                        console.log("dati post commento ERROR " + data);
+                                        $('#modal_login_error').modal('show');
+                                    }
+                                });
+                            });
+                            /*
                             $('#modal_commenta_post').click(function (idPost) {
                                 $('#modal_aggiungi_commento').modal('show');
-                                $('#form_login').on('submit', function (e) {
+                                $('#modal_form_commento').on('submit', function (e) {
                                     e.preventDefault();
                                     $.ajax({
                                         type: 'POST',
@@ -392,6 +417,7 @@ function visualizzaPost() {
                                     });
                                 });
                             });
+                            */
                         },
                         error: function (data) {
                             console.log('ERROR ' + data);
