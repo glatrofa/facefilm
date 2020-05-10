@@ -372,7 +372,7 @@ function visualizzaPost() {
                                         crossOrigin: true,
                                         data: {
                                             idPost: idPost,
-                                            testo: $("textarea#modal_commento_testo").val(),
+                                            testo: $("textarea[name='modal_commento_testo']").val(),
                                         },
                                         dataType: 'json',
                                         success: function (data) {            
