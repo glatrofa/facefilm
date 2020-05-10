@@ -367,7 +367,7 @@ function visualizzaPost() {
                             $('#modal_form_commento').on('submit', function (idPost) {
                                 $.ajax({
                                     type: 'POST',
-                                    url: '../php/pubblica_commento.php',
+                                    url: './php/pubblica_commento.php',
                                     crossOrigin: true,
                                     data: {
                                         idPost: idPost,
