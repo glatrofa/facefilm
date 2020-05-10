@@ -364,30 +364,32 @@ function visualizzaPost() {
                                 document.getElementById("modal_commenti_container").innerHTML = "Nessun commento";
                             }
                             $('#modal_commenti').modal('show');
-                            $('#modal_form_commento').on('submit', function (idPost) {
-                                $.ajax({
-                                    type: 'POST',
-                                    url: './php/pubblica_commento.php',
-                                    crossOrigin: true,
-                                    data: {
-                                        idPost: idPost,
-                                        testo: document.getElementById("modal_commento_testo").value,
-                                    },
-                                    dataType: 'json',
-                                    success: function (data) {            
-                                        console.log("dati post commento SUCCESS " + data);
-                                        if(data == true){
-                                            // mostra cracker
-                                        } else {
-                                            // mostra cracker
+                            $(function postaCommentoModal() {
+                                $('#modal_form_commento').on('submit', function () {
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: './php/pubblica_commento.php',
+                                        crossOrigin: true,
+                                        data: {
+                                            idPost: idPost,
+                                            testo: document.getElementById("modal_commento_testo").value,
+                                        },
+                                        dataType: 'json',
+                                        success: function (data) {            
+                                            console.log("dati post commento SUCCESS " + data);
+                                            if(data == true){
+                                                // mostra cracker
+                                            } else {
+                                                // mostra cracker
+                                            }
+                                        },
+                                        error: function (data) {
+                                            console.log("dati post commento ERROR " + data);
+                                            $('#modal_login_error').modal('show');
                                         }
-                                    },
-                                    error: function (data) {
-                                        console.log("dati post commento ERROR " + data);
-                                        $('#modal_login_error').modal('show');
-                                    }
+                                    });
                                 });
-                            });
+                            })                            
                             /*
                             $('#modal_commenta_post').click(function (idPost) {
                                 $('#modal_aggiungi_commento').modal('show');
