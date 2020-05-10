@@ -341,12 +341,13 @@ function visualizzaPost() {
             $(function visualizzaCommentiModal() {
                 $("a[name='post_comment']").click(function (event) {                    
                     //let idPostCommento = event.target.id.substring(0, event.target.id.indexOf("-"))
-                    console.log("commento cliccato" + event.target.id);                    
+                    let idPost = event.target.id;
+                    console.log("commento cliccato" + idPost);                    
                     $.ajax({
                         type: 'POST',
                         url: './php/ottieni_commenti.php',
                         data: {
-                            idPost: event.target.id, 
+                            idPost: idPost, 
                         },
                         crossOrigin: true,
                         dataType: 'json',
@@ -363,6 +364,9 @@ function visualizzaPost() {
                                 document.getElementById("modal_commenti_container").innerHTML = "Nessun commento";
                             }
                             $('#modal_commenti').modal('show');
+                            $('#modal_commenta_post').click(function (idPost) {
+                                $('#modal_aggiunti_commento').modal('show');
+                            });
                         },
                         error: function (data) {
                             console.log('ERROR ' + data);

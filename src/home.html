@@ -112,14 +112,47 @@
                     <div class='modal-content'>
                         <div class='modal-header'>
                             <h5 class='modal-title'>Commenti</h5>
-                            <button type='button' class='btn btn-primary'><i class='fa fa-plus-circle'></i></button>
+                            <button type='button' class='btn btn-primary' id="modal_commenta_post"><i class='fa fa-plus-circle'></i></button>
                             <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
                             <span aria-hidden='true'>&times;</span>
                             </button>
                         </div>
                         <div class='modal-body' id='modal_commenti_container'></div>
                         <div class='modal-footer'>
-                            <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+                            <button type='button' class='btn btn-secondary' data-dismiss='modal'>Chiudi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal per aggiunta commento -->
+            <div class="modal fade" id="modal_aggiunti_commento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class='modal-content'>
+                        <div class='modal-header'>
+                            <h5 class='modal-title'>Scrivi commento</h5>
+                            <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                            <span aria-hidden='true'>&times;</span>
+                            </button>
+                        </div>
+                        <div class='modal-body'>
+                            <form>
+                                <div class="row justify-content-center">
+                                    <div class="form-group col-7 col-lg-9">
+                                        <input type="textarea" class="form-control" name="modal_commento_testo" placeholder="Cosa penso..." maxlength="5000" required>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center align-items-center mb-3">
+                                    <div class="col-auto">
+                                        <button type="submit" id="modal_commento_submit" class="btn btn-form-primary py-2 px-4"><span class="font-weight-bold">Commenta</span></button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="reset" class="btn btn-form-secondary">Cancella</button>    
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class='modal-footer'>
+                            <button type='button' class='btn btn-secondary' data-dismiss='modal'>Chiudi</button>
                         </div>
                     </div>
                 </div>
