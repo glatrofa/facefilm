@@ -9,6 +9,8 @@ $idPost = mysqli_real_escape_string($connection, $_POST["idPost"]);
 //$idPost = 7;
 $response = array();
 $response[0] = true;
+$response[9] = $obiettivo;
+$response[10] = $idPost;
 
 if($obiettivo == "piace") {
     // lock tabelle
@@ -18,7 +20,9 @@ if($obiettivo == "piace") {
     $query = "SELECT piace FROM post WHERE id = '".$idPost."'";
     $result = mysqli_query($connection, $query) or die($response[2] = mysqli_error($connection));
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    $response[1] = $row["piace"];
     $row = $row["piace"] ++;
+    $response[2] = $row;
     // inserimento nuovo valore
     $query = "UPDATE post SET piace = ".$row." WHERE id = '".$idPost."'";
     mysqli_query($connection, $query) or die($response[3] = mysqli_error($connection));
