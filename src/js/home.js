@@ -304,7 +304,8 @@ function visualizzaPost() {
                             visualizzaPost();
                             if(data){
                                 // aggiungere visualizzazione snackbar?
-                                //visualizzaPost();
+                                // aggiorna valore dislike singolo post
+                                document.getElementById(event.target.id + "-post_dislike_number").innerHTML = data[9];
                             } else {
                                 // aggiungere visualizzazione snackbar?
                             }    
