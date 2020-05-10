@@ -3,12 +3,12 @@
 include './connessioneDatabase.php';
 
 // definizione dell'elemento da modificare
-//$obiettivo = mysqli_real_escape_string($connection, $_POST["obiettivo"]);
-//$idPost = mysqli_real_escape_string($connection, $_POST["idPost"]);
-$obiettivo = "piace";
-$idPost = 7;
-$respone = array();
-$respone[0] = true;
+$obiettivo = mysqli_real_escape_string($connection, $_POST["obiettivo"]);
+$idPost = mysqli_real_escape_string($connection, $_POST["idPost"]);
+//$obiettivo = "piace";
+//$idPost = 7;
+$response = array();
+$response[0] = true;
 
 if($obiettivo == "piace") {
     // lock tabelle
@@ -41,7 +41,7 @@ if($obiettivo == "piace") {
     $queryU = "UNLOCK TABLES";
     mysqli_query($connection, $queryU) or die ($response[8] = mysqli_error($connection));
 } else {
-    $respone = "nessun obiettivo selezionato";
+    $response = "nessun obiettivo selezionato";
 }
 
 // ritorno dati al client
