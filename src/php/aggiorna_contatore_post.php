@@ -20,8 +20,8 @@ if($obiettivo == "piace") {
     $query = "SELECT piace FROM post WHERE id = '".$idPost."'";
     $result = mysqli_query($connection, $query) or die($response[2] = mysqli_error($connection));
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    $response[1] = intval($row["piace"]);
-    $row = $response[1] ++;
+    $response[1] = $row["piace"];
+    $row = $row["piace"] + 1;
     $response[2] = $row;
     // inserimento nuovo valore
     $query = "UPDATE post SET piace = ".$row." WHERE id = '".$idPost."'";
