@@ -361,7 +361,7 @@ function visualizzaPost() {
                             } else {
                                 document.getElementById("modal_commenti_container").innerHTML = "Nessun commento";
                             }
-                            //$('#myModal').modal('show').find('.modal-body').load($(this).attr('href'));
+                            $('#modal_commenti').modal('show');
                         },
                         error: function (data) {
                             console.log('ERROR ' + data);
