@@ -19,7 +19,7 @@ function generaHeader(nomeUtente, idPost) {
                                 "</button>" +
                                 "<div class='dropdown-menu dropdown-menu-right' aria-labelledby='gedf-drop1'>" +
                                     "<div class='h6 dropdown-header'>Opzioni</div>" +
-                                    "<a class='dropdown-item' href='#'>Segnala</a>" +
+                                    "<a class='dropdown-item' id='"+ idPost +"-segnala' name='segnala' href=''>Segnala</a>" +
                                 "</div>" +
                             "</div>" +
                         "</div>" +
