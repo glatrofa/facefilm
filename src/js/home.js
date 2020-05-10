@@ -191,7 +191,7 @@ $(function visualizzaEpisodi() {
 });
 
 // pubblica il post
-$(function login() {
+$(function pubblicaPost() {
     $('#form_post').on('submit', function (e) {
       e.preventDefault();
       $.ajax({
@@ -207,7 +207,7 @@ $(function login() {
         },
         dataType: 'json',
         success: function (data) {            
-            console.log('SUCCESS '+data);
+            console.log('SUCCESS '+ data);
             if(data) {
                 //document.getElementById('modal_post_pubblicazione_success').innerHTML = modalPostPubblicazioneSuccess;
                 //$('#modal_post_pubblicazione_success').modal('show');
@@ -222,7 +222,7 @@ $(function login() {
             }
         },
         error: function (data) {
-            console.log('ERROR '+data);
+            console.log('ERROR '+ data);
             document.getElementById('modal_post_pubblicazione_error').innerHTML = modalPostPubblicazioneError;
             $('#modal_post_pubblicazione_error').modal('show');
         }
@@ -250,23 +250,57 @@ function visualizzaPost() {
         crossOrigin: true,
         dataType: 'json',
         success: function (data) {
-            //let post = "";
             document.getElementById("sezione_post").innerHTML = "";
             let i;
             for (i = 0; i < data.length; i++) {    
                 document.getElementById("sezione_post").innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);                
             }
-            //document.getElementById("sezione_post").innerHTML = "" + post;
             // aggiorna il numero di mi piace del post
             $(function aggiornaMiPiace() {
                 $("a[name='post_like']").click(function (event) {
-                    console.log(event.target.id);
+                    //console.log(event.target.id);
+                    $.ajax({
+                        type: 'POST',
+                        url: './php/aggiorna_contatore_post.php',
+                        crossOrigin: true,
+                        data: {
+                            idPost: event.target.id,
+                            obiettivo: "piace"
+                        },
+                        dataType: 'json',
+                        success: function (data) {            
+                            console.log('SUCCESS '+ data);
+                            // aggiungere visualizzazione snackbar?
+                        },
+                        error: function (data) {
+                            console.log('ERROR '+ data);
+                            // aggiungere visualizzazione snackbar?
+                        }
+                    });
                 });
             });
             // aggiorna il numero di non  mi piace del post
             $(function aggiornaNonMiPiace() {
                 $("a[name='post_dislike']").click(function (event) {
-                    console.log(event.target.id);
+                    //console.log(event.target.id);
+                    $.ajax({
+                        type: 'POST',
+                        url: './php/aggiorna_contatore_post.php',
+                        crossOrigin: true,
+                        data: {
+                            idPost: event.target.id,
+                            obiettivo: "dislike"
+                        },
+                        dataType: 'json',
+                        success: function (data) {            
+                            console.log('SUCCESS '+ data);
+                            // aggiungere visualizzazione snackbar?
+                        },
+                        error: function (data) {
+                            console.log('ERROR '+ data);
+                            // aggiungere visualizzazione snackbar?
+                        }
+                    });
                 });
             });
         },
