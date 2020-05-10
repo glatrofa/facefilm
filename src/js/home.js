@@ -340,13 +340,13 @@ function visualizzaPost() {
             // visualizza commenti di un post in un modal
             $(function visualizzaCommenti() {
                 $("a[name='post_comment']").click(function (event) {                    
-                    let idPostCommento = event.target.id.substring(0, event.target.id.indexOf("-"))
-                    console.log("commento cliccato" + idPostCommento);
+                    //let idPostCommento = event.target.id.substring(0, event.target.id.indexOf("-"))
+                    console.log("commento cliccato" + event.target.id);
                     $.ajax({
                         type: 'POST',
                         url: './php/ottieni_commenti.php',
                         data: {
-                            idPost: idPostCommento, 
+                            idPost: event.target.id, 
                         },
                         crossOrigin: true,
                         dataType: 'json',
