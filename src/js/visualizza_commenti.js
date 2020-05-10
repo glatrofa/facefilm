@@ -1,3 +1,4 @@
+/*
 function visualizzaModalCommento(idPost) {
     let modal = "<div class='modal-content'>" +
                     "<div class='modal-header'>" +
@@ -14,14 +15,14 @@ function visualizzaModalCommento(idPost) {
                 "</div>";
     return modal;
 }
+*/
 
 function visualizzaCommenti(data, testo, nomeUtente) {
     data = data.substring(0, data.indexOf("."));
     data = new Date(data * 1000);
     let dataFormattata = data.getDay() + "/" + data.getMonth() + "/" + data.getFullYear() + " - " + data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
     let commento = "<div><p>"+ nomeUtente +"</p><p>"+ testo +"</p><p>"+ dataFormattata +"</p></div>";
-    console.log('commento ' + commento);
     return commento;
 }
 
-export { visualizzaModalCommento, visualizzaCommenti };
+export { visualizzaCommenti };

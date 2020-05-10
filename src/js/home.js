@@ -2,7 +2,7 @@ import { logged } from './autenticazione.js';
 import { APIKEY } from './key.js';
 import { generaHeader, generaBody, generaFooter } from './genera_post.js';
 import { snackbarSuccesso, snackbarErrore } from './visualizza_snackbar.js';
-import { visualizzaModalCommento, visualizzaCommenti } from './visualizza_commenti.js';
+import { visualizzaCommenti } from './visualizza_commenti.js';
 
 console.log(document.body.scrollTop, document.documentElement.scrollTop);
 
