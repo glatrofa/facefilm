@@ -33,7 +33,7 @@ if($obiettivo == "piace") {
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $response[1] = $row["dislike"] + 1;
     // inserimento nuovo valore
-    $query = "UPDATE post SET dislike = ".$response[0]." WHERE id = '".$idPost."'";
+    $query = "UPDATE post SET dislike = ".$response[1]." WHERE id = '".$idPost."'";
     mysqli_query($connection, $query) or die($response[0] = mysqli_error($connection));
     // unlock tabelle
     $queryU = "UNLOCK TABLES";
