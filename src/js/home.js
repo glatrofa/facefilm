@@ -351,13 +351,13 @@ function visualizzaPost() {
                         dataType: 'json',
                         success: function (data) {
                             if(data[0] != null){
-                                document.getElementById("modal_commenti_container").innerHTML = visualizzaModalCommento(idPost);
+                                //document.getElementById("modal_commenti_container").innerHTML = visualizzaModalCommento(idPost);
                                 let i;
                                 for (i = 0; i < data.length; i++) {    
-                                    document.getElementById(idPost + "-modal_commenti_container").innerHTML += visualizzaCommenti(data[i].data, data[i].testo, data[i].nomeUtente);
+                                    document.getElementById("modal_commenti_container").innerHTML += visualizzaCommenti(data[i].data, data[i].testo, data[i].nomeUtente);
                                 }
                             } else {
-                                document.getElementById(idPost + "-modal_commenti_container").innerHTML = "Nessun commento";
+                                document.getElementById("modal_commenti_container").innerHTML = "Nessun commento";
                             }
                         },
                         error: function (data) {
