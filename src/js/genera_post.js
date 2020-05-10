@@ -69,9 +69,9 @@ function getNomeSerie(idSerie) {
 function generaFooter(idPost, idSerie, numeroLike, numeroDislike, numeroCommenti) {
     getNomeSerie(idSerie);
     let footer = "<div class='card-footer'>" +
-                    "<span class='badge badge-pill bg-awwa-primary mr-2' id='"+ idPost +"-post_like_number'>"+ numeroLike +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_like' data-toggle='modal' href=''><i class='fa fa-diamond'></i> Mi piace </a>" +
-                    "<span class='badge badge-pill bg-awwa-primary mr-2' id='"+ idPost +"-post_dislike_number'>"+ numeroDislike +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_dislike' data-toggle='modal' href=''><i class='fa fa-diamond'></i> Non mi piace </a>" +
-                    "<span class='badge badge-pill bg-awwa-primary mr-2' id='"+ idPost +"-post_comment_number'>"+ numeroCommenti +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_comment' data-toggle='modal' href=''><i class='fa fa-diamond'></i> Commenta </a>" +
+                    "<span class='badge badge-pill bg-awwa-primary mr-2' id='"+ idPost +"-post_like_number'>"+ numeroLike +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_like' href=''><i class='fa fa-diamond'></i> Mi piace </a>" +
+                    "<span class='badge badge-pill bg-awwa-primary mr-2' id='"+ idPost +"-post_dislike_number'>"+ numeroDislike +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_dislike' href=''><i class='fa fa-diamond'></i> Non mi piace </a>" +
+                    "<span class='badge badge-pill bg-awwa-primary mr-2' id='"+ idPost +"-post_comment_number'>"+ numeroCommenti +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_comment' data-toggle='modal' data-target='modal_commenti_container' href=''><i class='fa fa-diamond'></i> Commenta </a>" +
                 "</div></div>";                
     return footer;
 }
