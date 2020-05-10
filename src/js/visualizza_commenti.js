@@ -23,7 +23,7 @@ function visualizzaCommenti(testo, nomeUtente) {
     data = new Date(data * 1000);
     let dataFormattata = data.getDay() + "/" + data.getMonth() + "/" + data.getFullYear() + " - " + data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
     */
-    let commento = "<div><p>"+ nomeUtente +"</p><p>"+ testo +"</p><p>"+ dataFormattata +"</p></div>";
+    let commento = "<div><p>"+ nomeUtente +"</p><p>"+ testo +"</p></div>";
     return commento;
 }
 
