@@ -364,7 +364,7 @@ function visualizzaPost() {
                                 document.getElementById("modal_commenti_container").innerHTML = "Nessun commento";
                             }
                             $('#modal_commenti').modal('show');
-                            $('#modal_form_commento').on('submit', function () {
+                            $('#modal_form_commento').on('submit', function (idPost) {
                                 $.ajax({
                                     type: 'POST',
                                     url: '../php/pubblica_commento.php',
