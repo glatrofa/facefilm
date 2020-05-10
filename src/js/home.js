@@ -370,10 +370,7 @@ function visualizzaPost() {
                                         type: 'POST',
                                         url: './php/pubblica_commento.php',
                                         crossOrigin: true,
-                                        data: {
-                                            idPost: idPost,
-                                            testo: $("textarea[name='modal_commento_testo']").val(),
-                                        },
+                                        data: $(this).serialize() + "&idPost=" + idPost,
                                         dataType: 'json',
                                         success: function (data) {            
                                             console.log("dati post commento SUCCESS " + data);
