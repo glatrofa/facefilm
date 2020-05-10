@@ -1,5 +1,5 @@
 <?php
-// non funziona l'avvio dello script sul server
+// non funziona l'avvio dello script sul server 
 $path = "/var/www/facefilm";
 
 if ($_SERVER['HTTP_X_GITHUB_EVENT'] == 'push') {
