@@ -250,12 +250,13 @@ function visualizzaPost() {
         crossOrigin: true,
         dataType: 'json',
         success: function (data) {
-            let post = "";
+            //let post = "";
+            document.getElementById("sezione_post").innerHTML = "";
             let i;
             for (i = 0; i < data.length; i++) {    
-                post += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);                
+                document.getElementById("sezione_post").innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);                
             }
-            document.getElementById("sezione_post").innerHTML = "" + post;
+            //document.getElementById("sezione_post").innerHTML = "" + post;
             // aggiorna il numero di mi piace del post
             $(function aggiornaMiPiace() {
                 $("a[name='post_like']").click(function (event) {
