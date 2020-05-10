@@ -37,6 +37,10 @@ body::-webkit-scrollbar-thumb {
     background: var(--awwa-primary);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #eeeeee;    
 }

@@ -373,22 +373,21 @@ function visualizzaPost() {
     });
 }
 
-// comportamento del bottone "Torna su"
-var mybutton = document.getElementById("scroll_to_top");
-mybutton.addEventListener('click',function tornaSu(){
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;  
-});
+var scrollButton = document.getElementById("scroll_to_top");
 
 // Quando l'utente scrolla di un certo numero di pixel, mostra il bottone "Torna su"
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() { 
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50 ) {
-    mybutton.style.display = "block";
+    scrollButton.style.display = "block";
   } else {
-    mybutton.style.display = "none";
+    scrollButton.style.display = "none";
   }
 }
 
 // Quando si preme il bottone "Torna su" viene attivata questa funzione
+scrollButton.addEventListener('click',function tornaSu(){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;  
+});
