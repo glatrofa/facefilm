@@ -14,7 +14,7 @@ if($rowsNumber != 0){
     // ritorno dei dati
     $i = 0;
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-        $response[$i] = array('idCommento' => $row["id"], 'data' => $row["data"], 'testo' => $row["testo"], 'nomeUtente' => $row["nome_utente"]);
+        $response[$i] = array('data' => $row["data"], 'testo' => $row["testo"], 'nomeUtente' => $row["nome_utente"]);
         $i ++;
     }    
 }
