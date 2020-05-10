@@ -12,7 +12,7 @@ $numeroEpisodio = mysqli_real_escape_string($connection, $_POST["numeroEpisodio"
 $testo = mysqli_real_escape_string($connection, $_POST["testo"]);
 $titolo = mysqli_real_escape_string($connection, $_POST["titolo"]);
 $email = $_SESSION["email"];
-$response = true;
+$respone = true;
 
 // lock tabelle
 $queryL = "LOCK TABLES post WRITE";
@@ -24,7 +24,6 @@ $result = mysqli_query($connection, $query) or die($response = mysqli_error($con
 $rowsNumber = mysqli_num_rows($result);
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 // unlock tabelle
-$response = array();
 $queryU = "UNLOCK TABLES";
 mysqli_query($connection, $queryU) or die ($response = mysqli_error($connection));
 
