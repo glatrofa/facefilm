@@ -270,7 +270,12 @@ function visualizzaPost() {
                         dataType: 'json',
                         success: function (data) {            
                             console.log('SUCCESS '+ data);
-                            // aggiungere visualizzazione snackbar?
+                            if(data){
+                                // aggiungere visualizzazione snackbar?
+                                visualizzaPost();
+                            } else {                                
+                                // aggiungere visualizzazione snackbar?
+                            }                            
                         },
                         error: function (data) {
                             console.log('ERROR '+ data);
@@ -294,7 +299,12 @@ function visualizzaPost() {
                         dataType: 'json',
                         success: function (data) {            
                             console.log('SUCCESS '+ data);
-                            // aggiungere visualizzazione snackbar?
+                            if(data){
+                                // aggiungere visualizzazione snackbar?
+                                visualizzaPost();
+                            } else {
+                                // aggiungere visualizzazione snackbar?
+                            }    
                         },
                         error: function (data) {
                             console.log('ERROR '+ data);
