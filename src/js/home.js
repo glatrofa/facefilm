@@ -265,14 +265,14 @@ function visualizzaPost() {
                         crossOrigin: true,
                         data: {
                             idPost: event.target.id,
-                            obiettivo: "piace",
+                            obiettivo: 'piace',
                         },
                         dataType: 'json',
                         success: function (data) {            
                             console.log('SUCCESS '+ data);
                             if(data){
                                 // aggiungere visualizzazione snackbar?
-                                visualizzaPost();
+                                //visualizzaPost();
                             } else {                                
                                 // aggiungere visualizzazione snackbar?
                             }                            
@@ -294,14 +294,14 @@ function visualizzaPost() {
                         crossOrigin: true,
                         data: {
                             idPost: event.target.id,
-                            obiettivo: "dislike",
+                            obiettivo: 'dislike',
                         },
                         dataType: 'json',
                         success: function (data) {            
                             console.log('SUCCESS '+ data);
                             if(data){
                                 // aggiungere visualizzazione snackbar?
-                                visualizzaPost();
+                                //visualizzaPost();
                             } else {
                                 // aggiungere visualizzazione snackbar?
                             }    
