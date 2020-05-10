@@ -82,7 +82,7 @@ function visualizzaClassifica() {
     fetch(url)
         .then(res => res.json())
         .then((out) => {
-            console.log('Checkout this JSON! ', out);
+            //console.log('Checkout this JSON! ', out);
             //console.log('nome1 '+out.results[0].original_name);
             let i = 0;            
             let classifica = '';
@@ -265,7 +265,7 @@ function visualizzaPost() {
                         crossOrigin: true,
                         data: {
                             idPost: event.target.id,
-                            obiettivo: "piace"
+                            obiettivo: "piace",
                         },
                         dataType: 'json',
                         success: function (data) {            
@@ -294,7 +294,7 @@ function visualizzaPost() {
                         crossOrigin: true,
                         data: {
                             idPost: event.target.id,
-                            obiettivo: "dislike"
+                            obiettivo: "dislike",
                         },
                         dataType: 'json',
                         success: function (data) {            
