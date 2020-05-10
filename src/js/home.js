@@ -1,7 +1,8 @@
 import { logged } from './autenticazione.js';
 import { APIKEY } from './key.js';
 import { generaHeader, generaBody, generaFooter } from './genera_post.js';
-import { snackbarSuccesso, snackbarErrore} from './visualizza_snackbar.js';
+import { snackbarSuccesso, snackbarErrore } from './visualizza_snackbar.js';
+import { visualizzaModalCommento, visualizzaCommenti } from './visualizza_commenti.js';
 
 console.log(document.body.scrollTop, document.documentElement.scrollTop);
 
@@ -339,7 +340,30 @@ function visualizzaPost() {
             // visualizza commenti di un post in un modal
             $(function visualizzaCommenti() {
                 $("a[name='post_comment']").click(function (event) {
-                    console.log(event.target.id);
+                    let idPost = event.target.id.substring(0, event.target.id.indexOf("-"))
+                    $.ajax({
+                        type: 'POST',
+                        url: './php/ottieni_commenti.php',
+                        data: {
+                            idPost: idPost, 
+                        },
+                        crossOrigin: true,
+                        dataType: 'json',
+                        success: function (data) {
+                            if(data[0] != null){
+                                document.getElementById("modal_commenti_container").innerHTML = visualizzaModalCommento(idPost);
+                                let i;
+                                for (i = 0; i < data.length; i++) {    
+                                    document.getElementById(idPost + "-modal_commenti_container").innerHTML += visualizzaCommenti(data[i].idCommento, data[i].data, data[i].testo, data[i].nomeUtente);
+                                }
+                            } else {
+                                document.getElementById(idPost + "-modal_commenti_container").innerHTML = "Nessun commento";
+                            }
+                        },
+                        error: function (data) {
+                            console.log('ERROR ' + data);
+                        }
+                    });
                 });
             });
         },
