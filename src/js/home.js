@@ -301,7 +301,6 @@ function visualizzaPost() {
                         dataType: 'json',
                         success: function (data) {            
                             console.log('SUCCESS '+ data);
-                            visualizzaPost();
                             if(data){
                                 // aggiungere visualizzazione snackbar?
                                 // aggiorna valore dislike singolo post
