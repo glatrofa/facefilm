@@ -353,7 +353,8 @@ function visualizzaPost() {
                         success: function (data) {
                             console.log("successo ajax " + data[0].testo + ' ' + data[0].nomeUtente + ' ' + data[0].data);
                             if(data[0] != null){
-                                //document.getElementById("modal_commenti_container").innerHTML = visualizzaModalCommento(idPost);                         
+                                //document.getElementById("modal_commenti_container").innerHTML = visualizzaModalCommento(idPost);
+                                document.getElementById("modal_commenti_container").innerHTML = "";
                                 let i;
                                 for (i = 0; i < data.length; i++) {    
                                     document.getElementById("modal_commenti_container").innerHTML += visualizzaCommenti(data[i].data, data[i].testo, data[i].nomeUtente);
