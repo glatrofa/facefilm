@@ -343,6 +343,13 @@ function visualizzaPost() {
     });
 }
 
+// visualizza commenti di un post in un modal
+$(function aggiornaMiPiace() {
+    $("a[name='post_comment']").click(function (event) {
+        console.log(event.target.id);
+    });
+});
+
 // comportamento del bottone "Torna su"
 var mybutton = document.getElementById("scroll_to_top");
 mybutton.addEventListener('click',function tornaSu(){
