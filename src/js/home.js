@@ -15,11 +15,9 @@ const colorSecondary = '#00008b';
 // contenuto modal per post pubblicato con successo
 //const modalPostPubblicazioneSuccess = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Post pubblicato</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div><div class='modal-body'><p>Per vedere l'ultimo post pubblicato aggiorna la pagina o clicca il tasto qui sotto.</p></div><div class='modal-footer'><button type='button' class='btn btn-primary' onclick='redirectHome()'>Aggiorna home</button><button type='button' class='btn btn-secondary' data-dismiss='modal'>Chiudi</button></div></div>";
 // contenuto modal per post non pubblicato
-const modalPostPubblicazioneError = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Errore pubblicazione post</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div><div class='modal-body'><p>Ci scusiamo per il disagio.<br>Se il problema persiste utilizza il form contattaci per segnalare l'accaduto.<br>Grazie.</p></div><div class='modal-footer'><button type='button' class='btn btn-primary' onclick='redirectFormContatti()'>Vai al form contatti</button><button type='button' class='btn btn-secondary' data-dismiss='modal'>Chiudi</button></div></div>";
-let modalLikeClicked = false;
-let modalDislikeClicked = false;
-// istanzia variabile contenente i post da mostrare all'utente
-//let dataPost = null;
+//const modalPostPubblicazioneError = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Errore pubblicazione post</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div><div class='modal-body'><p>Ci scusiamo per il disagio.<br>Se il problema persiste utilizza il form contattaci per segnalare l'accaduto.<br>Grazie.</p></div><div class='modal-footer'><button type='button' class='btn btn-primary' onclick='redirectFormContatti()'>Vai al form contatti</button><button type='button' class='btn btn-secondary' data-dismiss='modal'>Chiudi</button></div></div>";
+//let modalLikeClicked = false;
+//let modalDislikeClicked = false;
 
 // richiama funzioni non appena il documento è caricato
 $(document).ready(function() {
@@ -210,22 +208,17 @@ $(function pubblicaPost() {
         success: function (data) {            
             console.log('SUCCESS '+ data);
             if(data) {
-                //document.getElementById('modal_post_pubblicazione_success').innerHTML = modalPostPubblicazioneSuccess;
-                //$('#modal_post_pubblicazione_success').modal('show');
-                // aggiunge la classe show alla snackbar
-                document.getElementById("snackbar_post_pubblicazione_success").classList.add("show");
-                // dopo 3 secondi, rimuove la classe show dal DIV
-                setTimeout(function(){ document.getElementById("snackbar_post_pubblicazione_success").classList.remove("show"); }, 3000);
+                snackbarSuccesso("Post pubblicato");
             }
             else {
-                document.getElementById('modal_post_pubblicazione_error').innerHTML = modalPostPubblicazioneError;
-                $('#modal_post_pubblicazione_error').modal('show');
+                //document.getElementById('modal_post_pubblicazione_error').innerHTML = modalPostPubblicazioneError;
+                //$('#modal_post_pubblicazione_error').modal('show');
+                snackbarErrore("Si &egrave; verificato un errore");
             }
         },
         error: function (data) {
-            console.log('ERROR '+ data);
-            document.getElementById('modal_post_pubblicazione_error').innerHTML = modalPostPubblicazioneError;
-            $('#modal_post_pubblicazione_error').modal('show');
+            //console.log('ERROR '+ data);
+            snackbarErrore("Si &egrave; verificato un errore");
         }
       });
     });
@@ -259,8 +252,6 @@ function visualizzaPost() {
             // aggiorna il numero di mi piace del post
             $(function aggiornaMiPiace() {
                 $("a[name='post_like']").click(function (event) {
-                    //let targetId = event.target.id.substring(0, event.target.id.indexOf("-"));
-                    //console.log(event.target.id.substring(0, event.target.id.indexOf("-")));
                     $.ajax({
                         type: 'POST',
                         url: './php/aggiorna_contatore_post.php',
@@ -271,33 +262,18 @@ function visualizzaPost() {
                         },
                         dataType: 'json',
                         success: function (data) {
-                            console.log('SUCCESS '+ data);
+                            //console.log('SUCCESS '+ data);
                             if(data[0]){
-                                // aggiunge il testo alla snackbar
-                                document.getElementById("snackbar_successo").innerHTML = "Mi piace aggiunto";
-                                // aggiunge la classe show alla snackbar
-                                document.getElementById("snackbar_successo").classList.add("show");
-                                // dopo un certo numero di millisecondi, rimuove la classe show dal DIV
-                                setTimeout(function(){ document.getElementById("snackbar_successo").classList.remove("show"); }, 2500);
+                                snackbarSuccesso("Mi piace aggiunto");
                                 // aggiorna valore like singolo post
                                 document.getElementById(event.target.id + "-post_like_number").innerHTML = data[1];
                             } else {
-                                // aggiunge il testo alla snackbar
-                                document.getElementById("snackbar_errore").innerHTML = "Si &egrave; verificato un errore";
-                                // aggiunge la classe show alla snackbar
-                                document.getElementById("snackbar_errore").classList.add("show");
-                                // dopo un certo numero di millisecondi, rimuove la classe show dal DIV
-                                setTimeout(function(){ document.getElementById("snackbar_successo").classList.remove("show"); }, 2500);
+                                snackbarErrore("Si &egrave; verificato un errore");
                             }
                         },
                         error: function (data) {
-                            console.log('ERROR '+ data);
-                            // aggiunge il testo alla snackbar
-                            document.getElementById("snackbar_errore").innerHTML = "Si &egrave; verificato un errore";
-                            // aggiunge la classe show alla snackbar
-                            document.getElementById("snackbar_errore").classList.add("show");
-                            // dopo un certo numero di millisecondi, rimuove la classe show dal DIV
-                            setTimeout(function(){ document.getElementById("snackbar_successo").classList.remove("show"); }, 2500);
+                            //console.log('ERROR '+ data);
+                            snackbarErrore("Si &egrave; verificato un errore");
                         }
                     });
                 });
@@ -316,33 +292,18 @@ function visualizzaPost() {
                         },
                         dataType: 'json',
                         success: function (data) {
-                            console.log('SUCCESS '+ data);
+                            //console.log('SUCCESS '+ data);
                             if(data[0]){
-                                // aggiunge il testo alla snackbar
-                                document.getElementById("snackbar_successo").innerHTML = "Non mi piace aggiunto";
-                                // aggiunge la classe show alla snackbar
-                                document.getElementById("snackbar_successo").classList.add("show");
-                                // dopo un certo numero di millisecondi, rimuove la classe show dal DIV
-                                setTimeout(function(){ document.getElementById("snackbar_successo").classList.remove("show"); }, 2500);
+                                snackbarSuccesso("Non mi piace aggiunto");
                                 // aggiorna valore dislike singolo post
                                 document.getElementById(event.target.id + "-post_dislike_number").innerHTML = data[1];
                             } else {
-                                // aggiunge il testo alla snackbar
-                                document.getElementById("snackbar_errore").innerHTML = "Si &egrave; verificato un errore";
-                                // aggiunge la classe show alla snackbar
-                                document.getElementById("snackbar_errore").classList.add("show");
-                                // dopo un certo numero di millisecondi, rimuove la classe show dal DIV
-                                setTimeout(function(){ document.getElementById("snackbar_successo").classList.remove("show"); }, 2500);
+                                snackbarErrore("Si &egrave; verificato un errore");
                             }    
                         },
                         error: function (data) {
-                            console.log('ERROR '+ data);
-                            // aggiunge il testo alla snackbar
-                            document.getElementById("snackbar_errore").innerHTML = "Si &egrave; verificato un errore";
-                            // aggiunge la classe show alla snackbar
-                            document.getElementById("snackbar_errore").classList.add("show");
-                            // dopo un certo numero di millisecondi, rimuove la classe show dal DIV
-                            setTimeout(function(){ document.getElementById("snackbar_successo").classList.remove("show"); }, 2500);
+                            //console.log('ERROR '+ data);
+                            snackbarErrore("Si &egrave; verificato un errore");
                         }
                     });
                 });
@@ -360,7 +321,7 @@ function visualizzaPost() {
                         },
                         dataType: 'json',
                         success: function (data) {
-                            console.log('SUCCESS '+ data);
+                            //console.log('SUCCESS '+ data);
                             if(data){
                                 snackbarSuccesso("Post segnalato");
                             } else {
@@ -368,7 +329,7 @@ function visualizzaPost() {
                             }    
                         },
                         error: function (data) {
-                            console.log('ERROR '+ data);
+                            //console.log('ERROR '+ data);
                             snackbarErrore("Si &egrave; verificato un errore");
                         }
                     });
