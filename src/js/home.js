@@ -6,7 +6,7 @@ import { snackbarSuccesso, snackbarErrore} from './visualizza_snackbar.js';
 console.log(document.body.scrollTop, document.documentElement.scrollTop);
 
 // verifica che l'utente abbia effettuato l'accesso
-window.onload = logged();
+//window.onload = logged();
 
 // colore primario per i tasti del post
 const colorPrimary = '#e5af05';
@@ -214,6 +214,8 @@ $(function pubblicaPost() {
                 //document.getElementById('modal_post_pubblicazione_error').innerHTML = modalPostPubblicazioneError;
                 //$('#modal_post_pubblicazione_error').modal('show');
                 snackbarErrore("Si &egrave; verificato un errore");
+                // aggiorna la home dopo 3 secondi
+                setTimeout(redirectHome(), 3000);
             }
         },
         error: function (data) {
@@ -229,12 +231,11 @@ function redirectFormContatti() {
     location.href = './html/contattaci.html';
 }
 
-/*
-// aggiorna la home
+// aggiorna la home dopo la pubblicazione di un post
 function redirectHome() {
     location.href = '.';
 }
-*/
+
 
 // mostra nella home i post più recenti
 function visualizzaPost() {
