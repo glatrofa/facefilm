@@ -14,12 +14,12 @@ if($obiettivo == "piace") {
     $queryL = "LOCK TABLES post WRITE";
     mysqli_query($connection, $queryL) or die($response = mysqli_error($connection));
     // prelievo vecchio valore
-    $query = "SELECT post.piace FROM post WHERE post.id = '".$idPost."'";
+    $query = "SELECT piace FROM post WHERE id = '".$idPost."'";
     $result = mysqli_query($connection, $query) or die($response = mysqli_error($connection));
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $row = $row["piace"] ++;
     // inserimento nuovo valore
-    $query = "UPDATE post SET post.piace = ".$row." WHERE post.id = '".$idPost."'";
+    $query = "UPDATE post SET piace = ".$row." WHERE id = '".$idPost."'";
     mysqli_query($connection, $query) or die($response = mysqli_error($connection));
     // unlock tabelle
     $queryU = "UNLOCK TABLES";
@@ -29,12 +29,12 @@ if($obiettivo == "piace") {
     $queryL = "LOCK TABLES post WRITE";
     mysqli_query($connection, $queryL) or die($response = mysqli_error($connection));
     // prelievo vecchio valore
-    $query = "SELECT post.dislike FROM post WHERE post.id = '".$idPost."'";
+    $query = "SELECT dislike FROM post WHERE id = '".$idPost."'";
     $result = mysqli_query($connection, $query) or die($response = mysqli_error($connection));
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $row = $row["dislike"] ++;
     // inserimento nuovo valore
-    $query = "UPDATE post SET post.dislike = ".$row." WHERE post.id = '".$idPost."'";
+    $query = "UPDATE post SET dislike = ".$row." WHERE id = '".$idPost."'";
     mysqli_query($connection, $query) or die($response = mysqli_error($connection));
     // unlock tabelle
     $queryU = "UNLOCK TABLES";
