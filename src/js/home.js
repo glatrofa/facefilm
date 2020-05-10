@@ -269,7 +269,8 @@ function visualizzaPost() {
                         },
                         dataType: 'json',
                         success: function (data) {            
-                            console.log('SUCCESS '+ data[0] + ' ' + data[1] + ' ' + data[2] + ' ' + data[9] + ' ' + data[10]);
+                            console.log('SUCCESS '+ data);
+                            visualizzaPost();
                             if(data){
                                 // aggiungere visualizzazione snackbar?
                                 //visualizzaPost();
@@ -298,7 +299,8 @@ function visualizzaPost() {
                         },
                         dataType: 'json',
                         success: function (data) {            
-                            console.log('SUCCESS '+ data[0] + ' ' + data[1] + ' ' + data[2] + ' ' + data[9] + ' ' + data[10]);
+                            console.log('SUCCESS '+ data);
+                            visualizzaPost();
                             if(data){
                                 // aggiungere visualizzazione snackbar?
                                 //visualizzaPost();
