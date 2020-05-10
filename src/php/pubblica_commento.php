@@ -8,7 +8,7 @@ session_start();
 // definizione variabili dal post
 $idPost = mysqli_real_escape_string($connection, $_POST["idPost"]);
 $email = mysqli_real_escape_string($connection, $_SESSION["email"]);
-$testo = mysqli_real_escape_string($connection, $_SESSION["modal_commento_testo"]);
+$testo = mysqli_real_escape_string($connection, $_POST["modal_commento_testo"]);
 
 $response = true;
 
