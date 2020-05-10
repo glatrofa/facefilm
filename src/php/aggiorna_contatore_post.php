@@ -5,12 +5,8 @@ include './connessioneDatabase.php';
 // definizione dell'elemento da modificare
 $obiettivo = mysqli_real_escape_string($connection, $_POST["obiettivo"]);
 $idPost = mysqli_real_escape_string($connection, $_POST["idPost"]);
-//$obiettivo = "piace";
-//$idPost = 7;
 $response = array();
 $response[0] = true;
-$response[9] = $obiettivo;
-$response[10] = $idPost;
 
 if($obiettivo == "piace") {
     // lock tabelle
@@ -20,9 +16,7 @@ if($obiettivo == "piace") {
     $query = "SELECT piace FROM post WHERE id = '".$idPost."'";
     $result = mysqli_query($connection, $query) or die($response[2] = mysqli_error($connection));
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    $response[1] = $row["piace"];
     $row = $row["piace"] + 1;
-    $response[2] = $row;
     // inserimento nuovo valore
     $query = "UPDATE post SET piace = ".$row." WHERE id = '".$idPost."'";
     mysqli_query($connection, $query) or die($response[3] = mysqli_error($connection));
@@ -37,7 +31,7 @@ if($obiettivo == "piace") {
     $query = "SELECT dislike FROM post WHERE id = '".$idPost."'";
     $result = mysqli_query($connection, $query) or die($response[6] = mysqli_error($connection));
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    $row = $row["dislike"] ++;
+    $row = $row["dislike"] + 1;
     // inserimento nuovo valore
     $query = "UPDATE post SET dislike = ".$row." WHERE id = '".$idPost."'";
     mysqli_query($connection, $query) or die($response[7] = mysqli_error($connection));
