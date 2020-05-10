@@ -339,8 +339,9 @@ function visualizzaPost() {
             });
             // visualizza commenti di un post in un modal
             $(function visualizzaCommenti() {
-                $("a[name='post_comment']").click(function (event) {
+                $("a[name='post_comment']").click(function (event) {                    
                     let idPost = event.target.id.substring(0, event.target.id.indexOf("-"))
+                    console.log("commento cliccato" + idPost);
                     $.ajax({
                         type: 'POST',
                         url: './php/ottieni_commenti.php',
@@ -350,8 +351,9 @@ function visualizzaPost() {
                         crossOrigin: true,
                         dataType: 'json',
                         success: function (data) {
-                            if(data[0] != null){
+                            if(data[0].nomeUtente != null){
                                 //document.getElementById("modal_commenti_container").innerHTML = visualizzaModalCommento(idPost);
+                                console.log("successo ajax");
                                 let i;
                                 for (i = 0; i < data.length; i++) {    
                                     document.getElementById("modal_commenti_container").innerHTML += visualizzaCommenti(data[i].data, data[i].testo, data[i].nomeUtente);
