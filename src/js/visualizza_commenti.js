@@ -17,10 +17,12 @@ function visualizzaModalCommento(idPost) {
 }
 */
 
-function visualizzaCommenti(data, testo, nomeUtente) {
+function visualizzaCommenti(testo, nomeUtente) {
+    /*
     data = data.substring(0, data.indexOf("."));
     data = new Date(data * 1000);
     let dataFormattata = data.getDay() + "/" + data.getMonth() + "/" + data.getFullYear() + " - " + data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
+    */
     let commento = "<div><p>"+ nomeUtente +"</p><p>"+ testo +"</p><p>"+ dataFormattata +"</p></div>";
     return commento;
 }
