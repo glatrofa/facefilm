@@ -338,7 +338,7 @@ function visualizzaPost() {
                 });
             });
             // visualizza commenti di un post in un modal
-            $(function visualizzaCommenti() {
+            $(function visualizzaCommentiModal() {
                 $("a[name='post_comment']").click(function (event) {                    
                     //let idPostCommento = event.target.id.substring(0, event.target.id.indexOf("-"))
                     console.log("commento cliccato" + event.target.id);                    
@@ -352,13 +352,14 @@ function visualizzaPost() {
                         dataType: 'json',
                         success: function (data) {
                             console.log("successo ajax " + data[0].testo + ' ' + data[0].nomeUtente + ' ' + data[0].data);
-                            document.getElementById("modal_commenti_container").innerHTML = "";
-                            let i;
-                            for (i = 0; i < data.length; i++) {    
-                                document.getElementById("modal_commenti_container").innerHTML += visualizzaCommenti(data[i].data, data[i].testo, data[i].nomeUtente);
-                            }
-                            if(data[0] == null){
+                            if(data[0] != null){
                                 //document.getElementById("modal_commenti_container").innerHTML = visualizzaModalCommento(idPost);
+                                document.getElementById("modal_commenti_container").innerHTML = "";
+                                let i;
+                                for (i = 0; i < data.length; i++) {    
+                                    document.getElementById("modal_commenti_container").innerHTML += visualizzaCommenti(data[i].data, data[i].testo, data[i].nomeUtente);
+                                }
+                            } else {
                                 document.getElementById("modal_commenti_container").innerHTML = "Nessun commento";
                             }
                             $('#modal_commenti').modal('show');
