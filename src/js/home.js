@@ -1,6 +1,7 @@
 import { logged } from './autenticazione.js';
 import { APIKEY } from './key.js';
 import { generaHeader, generaBody, generaFooter } from './genera_post.js';
+import { snackbarSuccesso, snackbarErrore} from './visualizza_snackbar.js';
 
 console.log(document.body.scrollTop, document.documentElement.scrollTop);
 
@@ -361,29 +362,14 @@ function visualizzaPost() {
                         success: function (data) {
                             console.log('SUCCESS '+ data);
                             if(data){
-                                // aggiunge il testo alla snackbar
-                                document.getElementById("snackbar_successo").innerHTML = "Post segnalato";
-                                // aggiunge la classe show alla snackbar
-                                document.getElementById("snackbar_successo").classList.add("show");
-                                // dopo un certo numero di millisecondi, rimuove la classe show dal DIV
-                                setTimeout(function(){ document.getElementById("snackbar_successo").classList.remove("show"); }, 2500);
+                                snackbarSuccesso("Post segnalato");
                             } else {
-                                // aggiunge il testo alla snackbar
-                                document.getElementById("snackbar_errore").innerHTML = "Si &egrave; verificato un errore";
-                                // aggiunge la classe show alla snackbar
-                                document.getElementById("snackbar_errore").classList.add("show");
-                                // dopo un certo numero di millisecondi, rimuove la classe show dal DIV
-                                setTimeout(function(){ document.getElementById("snackbar_successo").classList.remove("show"); }, 2500);
+                                snackbarErrore("Si &egrave; verificato un errore");
                             }    
                         },
                         error: function (data) {
                             console.log('ERROR '+ data);
-                            // aggiunge il testo alla snackbar
-                            document.getElementById("snackbar_errore").innerHTML = "Si &egrave; verificato un errore";
-                            // aggiunge la classe show alla snackbar
-                            document.getElementById("snackbar_errore").classList.add("show");
-                            // dopo un certo numero di millisecondi, rimuove la classe show dal DIV
-                            setTimeout(function(){ document.getElementById("snackbar_successo").classList.remove("show"); }, 2500);
+                            snackbarErrore("Si &egrave; verificato un errore");
                         }
                     });
                 });
