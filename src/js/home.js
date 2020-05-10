@@ -373,16 +373,15 @@ function visualizzaPost() {
                                         data: $(this).serialize() + "&idPost=" + idPost,
                                         dataType: 'json',
                                         success: function (data) {            
-                                            console.log("dati post commento SUCCESS " + data);
-                                            if(data == true){
+                                            //console.log("dati post commento SUCCESS " + data);
+                                            if(data != true){
                                                 // mostra cracker
-                                            } else {
-                                                // mostra cracker
+                                                snackbarErrore("Si &egrave; verificato un errore");
                                             }
                                         },
                                         error: function (data) {
-                                            console.log("dati post commento ERROR " + data);
-                                            $('#modal_login_error').modal('show');
+                                            //console.log("dati post commento ERROR " + data);
+                                            snackbarErrore("Si &egrave; verificato un errore");
                                         }
                                     });
                                 });
@@ -419,14 +418,16 @@ function visualizzaPost() {
                             */
                         },
                         error: function (data) {
-                            console.log('ERROR ' + data);
+                            //console.log('ERROR ' + data);
+                            snackbarErrore("Si &egrave; verificato un errore");
                         }
                     });
                 });
             });
         },
         error: function (data) {
-            console.log('ERROR ' + data);
+            //console.log('ERROR ' + data);
+            snackbarErrore("Si &egrave; verificato un errore");
         }
     });
 }
