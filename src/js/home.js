@@ -355,9 +355,9 @@ function visualizzaPost() {
                             if(data[0] != null){
                                 //document.getElementById("modal_commenti_container").innerHTML = visualizzaModalCommento(idPost);
                                 document.getElementById("modal_commenti_container").innerHTML = "";
-                                let i;
-                                for (i = 0; i < data.length; i++) {    
-                                    document.getElementById("modal_commenti_container").innerHTML += visualizzaCommenti(data[i].data, data[i].testo, data[i].nomeUtente);
+                                let j;
+                                for (j = 0; j < data.length; j++) {    
+                                    document.getElementById("modal_commenti_container").innerHTML += visualizzaCommenti(data[j].data, data[j].testo, data[j].nomeUtente);
                                 }
                             } else {
                                 document.getElementById("modal_commenti_container").innerHTML = "Nessun commento";
