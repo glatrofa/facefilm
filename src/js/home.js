@@ -251,11 +251,14 @@ function visualizzaPost(pagina) {
         },
         dataType: 'json',
         success: function (data) {
-            console.log("paginazione successo " + data);
+            //console.log("paginazione successo " + data);
             //document.getElementById("sezione_post").innerHTML = "";
             let i;
-            for (i = 0; i < data.length; i++) {    
-                document.getElementById("sezione_post").innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);                
+            for (i = 0; i < data.length; i++) {
+                if(data[i].nomeUtente != null)
+                    document.getElementById("sezione_post").innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);                
+                else
+                    alert("post terminati");
             }
             // aggiorna il numero di mi piace del post
             $(function aggiornaMiPiace() {
@@ -432,7 +435,7 @@ function visualizzaPost(pagina) {
             });
         },
         error: function (data) {
-            console.log('ERROR ' + data);
+            //console.log('ERROR ' + data);
             snackbarErrore("Si &egrave; verificato un errore");
         }
     });
