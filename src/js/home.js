@@ -90,7 +90,8 @@ function visualizzaClassifica() {
             let i;
             let classifica = "";
             for(i = 0; i < data.length; i ++) {
-                classifica += '<li><a href=' + '#' + '>'+ richiediNomeSerie(data[i].idSerie) + ' ' +data[i].numero + '</a></li>';
+                classifica += "<li><a href=' + '#' + ' id='link_"+ data[i].idSerie +"'></a></li>";
+                richiediNomeSerie(data[i].idSerie,  data[i].numero);
             }
             document.getElementById('classifica_serie').innerHTML = classifica;
         },
@@ -101,7 +102,7 @@ function visualizzaClassifica() {
     });    
 }
 
-function richiediNomeSerie(idSerie) {
+function richiediNomeSerie(idSerie, numero) {
     //let url = 'https://api.themoviedb.org/3/tv/popular?api_key='+ APIKEY +'&language=it&page=1';
     let url = 'https://api.themoviedb.org/3/tv/'+ idSerie +'?api_key='+ APIKEY +'&language=it';
     let nome = fetch(url)
@@ -110,7 +111,7 @@ function richiediNomeSerie(idSerie) {
                     return out.name;
                 })
                 .catch(err => { throw err });
-    return nome;
+    document.getElementById("link_" + idSerie).innerHTML = nome + " #" + numero;
 }
 
 // ricerca nel db tutte le serie comprendenti nel nome i caratteri inseriti nel form
