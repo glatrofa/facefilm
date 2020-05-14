@@ -450,3 +450,17 @@ scrollButton.addEventListener('click',function tornaSu(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;  
 });
+
+$(function logout() {
+    $("#logout").click(function (event) {
+        $.ajax({
+            type: 'POST',
+            url: './php/logout.php',
+            crossOrigin: true,
+            dataType: 'json',
+            success: function () {
+                location.href = '.';
+            }
+        });
+    });
+});
