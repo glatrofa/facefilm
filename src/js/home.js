@@ -85,7 +85,7 @@ function visualizzaClassifica() {
         url: './php/classifica_commenti_serie.php',
         crossOrigin: true,
         dataType: 'json',
-        success: function (data) {            
+        success: function (data) {
             //console.log('SUCCESS '+ data);
             let i;
             let classifica = "";
@@ -101,16 +101,17 @@ function visualizzaClassifica() {
     });    
 }
 
-$(function richiediNomeSerie(idSerie) {
+function richiediNomeSerie(idSerie) {
     //let url = 'https://api.themoviedb.org/3/tv/popular?api_key='+ APIKEY +'&language=it&page=1';
     let url = 'https://api.themoviedb.org/3/tv/'+ idSerie +'?api_key='+ APIKEY +'&language=it';
-    fetch(url)
-        .then(res => res.json())
-        .then((out) => {
-            return out.name;            
-        })
-        .catch(err => { throw err });
-});
+    let nome = fetch(url)
+                .then(res => res.json())
+                .then((out) => {
+                    return out.name;
+                })
+                .catch(err => { throw err });
+    return nome;
+}
 
 // ricerca nel db tutte le serie comprendenti nel nome i caratteri inseriti nel form
 $(function visualizzaSerie() {
