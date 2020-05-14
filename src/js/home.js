@@ -90,7 +90,7 @@ function visualizzaClassifica() {
             let i;
             let classifica = "";
             for(i = 0; i < data.length; i ++)
-                classifica += '<li><a href=' + '#' + '>'+ richiediNomeSerie(data[i].id_serie) +'</a></li>';
+                classifica += '<li><a href=' + '#' + '>'+ richiediNomeSerie(data[i].idSerie) + ' ' +data[i].numero + '</a></li>';
             document.getElementById('classifica_serie').innerHTML = classifica;
         },
         error: function (data) {
