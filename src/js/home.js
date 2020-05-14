@@ -452,12 +452,11 @@ scrollButton.addEventListener('click',function tornaSu(){
 });
 
 $(function logout() {
-    $("#logout").click(function (event) {
+    $("#logout").click(function () {
         $.ajax({
             type: 'POST',
             url: './php/logout.php',
             crossOrigin: true,
-            dataType: 'json',
             success: function () {
                 document.cookie = "PHPSESSID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                 location.href = '.';
