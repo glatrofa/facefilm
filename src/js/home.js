@@ -19,10 +19,12 @@ const colorSecondary = '#00008b';
 //const modalPostPubblicazioneError = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Errore pubblicazione post</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div><div class='modal-body'><p>Ci scusiamo per il disagio.<br>Se il problema persiste utilizza il form contattaci per segnalare l'accaduto.<br>Grazie.</p></div><div class='modal-footer'><button type='button' class='btn btn-primary' onclick='redirectFormContatti()'>Vai al form contatti</button><button type='button' class='btn btn-secondary' data-dismiss='modal'>Chiudi</button></div></div>";
 //let modalLikeClicked = false;
 //let modalDislikeClicked = false;
+// inizializza a 0 per la gestione della visualizzaizone dei post
+let pagina = 0;
 
 // richiama funzioni non appena il documento è caricato
 $(document).ready(function() {
-    visualizzaPost();
+    visualizzaPost(pagina);
     visualizzaClassifica();    
 });
 
@@ -139,15 +141,14 @@ $(function visualizzaStagioni() {
         fetch(url)
             .then(res => res.json())
             .then((data) => {
-                console.log('result', data);
-                console.log('numero stagioni ', data.number_of_seasons);
-                console.log('stagioni ', data.seasons);
+                //console.log('result', data);
+                //console.log('numero stagioni ', data.number_of_seasons);
+                //console.log('stagioni ', data.seasons);
                 let listaStagioni = '<option value="null"> Seleziona </option>';
                 if(data.number_of_seasons != 0) {
-                    let j = 0;
-                    //if(data.seasons[0] == null)
-                        //j = 1;                          
+                    let j = 0;                         
                     while (j < data.number_of_seasons) {
+                        // crea le stringhe con le informazioni sulle stagioni
                         listaStagioni += '<option value='+data.seasons[j].season_number+'>'+data.seasons[j].name+'</option>';
                         j ++;
                     }      
@@ -156,6 +157,7 @@ $(function visualizzaStagioni() {
                 }
                 else
                     listaStagioni = '<option value='+'null'+'>Nessuna stagione</option>';
+                // stampa nel documento le stagioni
                 document.getElementById('post_stagione').innerHTML = listaStagioni;
             })
             .catch(err => { throw err });
@@ -239,11 +241,14 @@ function redirectHome() {
 
 
 // mostra nella home i post più recenti
-function visualizzaPost() {
+function visualizzaPost(pagina) {    
     $.ajax({
         type: 'POST',
         url: './php/ottieni_post.php',
         crossOrigin: true,
+        data: {
+            pagina: pagina
+        },
         dataType: 'json',
         success: function (data) {
             document.getElementById("sezione_post").innerHTML = "";
@@ -462,5 +467,12 @@ $(function logout() {
                 location.href = '.';
             }
         });
+    });
+});
+
+$(function visualizzaAltriPost() {
+    $("#carica_altri_post").click(function () {
+        pagina = pagina + 2;
+        visualizzaPost(pagina);
     });
 });
