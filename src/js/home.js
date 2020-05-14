@@ -100,9 +100,9 @@ function visualizzaClassifica() {
     });    
 }
 
-function richiediNomeSerie(id) {
+function richiediNomeSerie(idSerie) {
     //let url = 'https://api.themoviedb.org/3/tv/popular?api_key='+ APIKEY +'&language=it&page=1';
-    let url = 'https://api.themoviedb.org/3/tv/'+ id_serie +'?api_key='+ APIKEY +'&language=it';
+    let url = 'https://api.themoviedb.org/3/tv/'+ idSerie +'?api_key='+ APIKEY +'&language=it';
     fetch(url)
         .then(res => res.json())
         .then((out) => {
