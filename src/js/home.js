@@ -258,7 +258,7 @@ function visualizzaPost(pagina) {
                 if(data[i].nomeUtente != null)
                     document.getElementById("sezione_post").innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);                
                 else
-                    alert("post terminati");
+                    console.log("post terminati");
             }
             // aggiorna il numero di mi piace del post
             $(function aggiornaMiPiace() {
