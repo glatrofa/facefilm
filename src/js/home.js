@@ -256,7 +256,7 @@ function visualizzaPost(pagina) {
             let i;
             for (i = 0; i < data.length; i++) {
                 console.log("lunghezza data[i]" + data[i].length + " " + i);
-                if(data[i].status !== undefined)
+                if(data[i].length > 0)
                     document.getElementById("sezione_post").innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);                
                 else
                     alert("post terminati");
