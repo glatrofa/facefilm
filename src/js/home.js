@@ -105,13 +105,12 @@ function visualizzaClassifica() {
 function richiediNomeSerie(idSerie, numero) {
     //let url = 'https://api.themoviedb.org/3/tv/popular?api_key='+ APIKEY +'&language=it&page=1';
     let url = 'https://api.themoviedb.org/3/tv/'+ idSerie +'?api_key='+ APIKEY +'&language=it';
-    let nome = fetch(url)
-                .then(res => res.json())
-                .then((out) => {
-                    return out.name;
-                })
-                .catch(err => { throw err });
-    document.getElementById("link_" + idSerie).innerHTML = nome + " #" + numero;
+    fetch(url)
+        .then(res => res.json())
+        .then((out) => {
+            document.getElementById("link_" + idSerie).innerHTML = out.nome + " #" + numero;
+        })
+        .catch(err => { throw err });    
 }
 
 // ricerca nel db tutte le serie comprendenti nel nome i caratteri inseriti nel form
