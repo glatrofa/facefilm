@@ -251,6 +251,7 @@ function visualizzaPost(pagina) {
         },
         dataType: 'json',
         success: function (data) {
+            console.log("paginazione successo " + data);
             document.getElementById("sezione_post").innerHTML = "";
             let i;
             for (i = 0; i < data.length; i++) {    
@@ -431,7 +432,7 @@ function visualizzaPost(pagina) {
             });
         },
         error: function (data) {
-            //console.log('ERROR ' + data);
+            console.log('ERROR ' + data);
             snackbarErrore("Si &egrave; verificato un errore");
         }
     });
