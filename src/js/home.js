@@ -109,7 +109,7 @@ function richiediNomeSerie(idSerie, numero) {
         .then(res => res.json())
         .then((out) => {
             console.log(out);
-            document.getElementById("link_" + idSerie).innerHTML = out.nome + " #" + numero;
+            document.getElementById("link_" + idSerie).innerHTML = out.name + " #" + numero;
         })
         .catch(err => { throw err });    
 }
