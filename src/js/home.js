@@ -7,7 +7,7 @@ import { visualizzaCommenti } from './visualizza_commenti.js';
 console.log(document.body.scrollTop, document.documentElement.scrollTop);
 
 // verifica che l'utente abbia effettuato l'accesso
-//window.onload = logged();
+window.onload = logged();
 
 // colore primario per i tasti del post
 const colorPrimary = '#e5af05';
