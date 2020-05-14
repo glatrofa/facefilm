@@ -19,10 +19,7 @@ if($rowsNumber != 0){
     // ritorno dei dati
     $i = 0;
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-        if($row["nome_utente"] != null)
-            $response[$i] = array('nomeUtente' => $row["nome_utente"], 'idPost' => $row["idPost"], 'titolo' => $row["titolo"], 'testo' => $row["testo"], 'idSerie' => $row["id_serie"], 'stagione' => $row["numero_stagione"], 'episodio' => $row["numero_episodio"], 'numeroCommenti' => $row["numeroCommenti"], 'like' => $row["piace"], 'dislike' => $row["dislike"], 'data' => $row["data"]);
-        else
-            $response[$i] = array('nomeUtente' => "fine");
+        $response[$i] = array('nomeUtente' => $row["nome_utente"], 'idPost' => $row["idPost"], 'titolo' => $row["titolo"], 'testo' => $row["testo"], 'idSerie' => $row["id_serie"], 'stagione' => $row["numero_stagione"], 'episodio' => $row["numero_episodio"], 'numeroCommenti' => $row["numeroCommenti"], 'like' => $row["piace"], 'dislike' => $row["dislike"], 'data' => $row["data"]);
         $i ++;
     }    
 }
