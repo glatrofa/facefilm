@@ -88,12 +88,12 @@ function visualizzaClassifica() {
         success: function (data) {
             //console.log('SUCCESS '+ data);
             let i;
-            let classifica = "";
+            //let classifica = "";
             for(i = 0; i < data.length; i ++) {
-                classifica += "<li><a href=' + '#' + ' id='link_"+ data[i].idSerie +"'></a></li>";
+                document.getElementById('classifica_serie').innerHTML += "<li><a href=' + '#' + ' id='link_"+ data[i].idSerie +"'></a></li>";
                 richiediNomeSerie(data[i].idSerie,  data[i].numero);
             }
-            document.getElementById('classifica_serie').innerHTML = classifica;
+            //document.getElementById('classifica_serie').innerHTML = classifica;
         },
         error: function (data) {
             //console.log('ERROR '+ data);
