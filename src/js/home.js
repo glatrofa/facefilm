@@ -90,7 +90,7 @@ function visualizzaClassifica() {
             let i;
             //let classifica = "";
             for(i = 0; i < data.length; i ++) {
-                document.getElementById('classifica_serie').innerHTML += "<li><a href='./serie_tv.html?id="+ data[i].idSerie +"' id='link_"+ data[i].idSerie +"'></a></li>";
+                document.getElementById('classifica_serie').innerHTML += "<li><a href='./html/serie_tv.html?id="+ data[i].idSerie +"' id='link_"+ data[i].idSerie +"'></a></li>";
                 richiediNomeSerie(data[i].idSerie,  data[i].numero);
             }
             //document.getElementById('classifica_serie').innerHTML = classifica;
