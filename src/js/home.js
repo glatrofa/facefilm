@@ -108,6 +108,7 @@ function richiediNomeSerie(idSerie, numero) {
     fetch(url)
         .then(res => res.json())
         .then((out) => {
+            console.log(out);
             document.getElementById("link_" + idSerie).innerHTML = out.nome + " #" + numero;
         })
         .catch(err => { throw err });    
