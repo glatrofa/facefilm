@@ -80,31 +80,33 @@ $(function controllaNonMiPiace() {
 
 // visualizza le 5 serie più popolari su tmdb
 function visualizzaClassifica() {
-    let url = 'https://api.themoviedb.org/3/tv/popular?api_key='+ APIKEY +'&language=it&page=1';
+    $.ajax({
+        type: 'POST',
+        url: './php/classifica_commenti_serie.php',
+        crossOrigin: true,
+        dataType: 'json',
+        success: function (data) {            
+            //console.log('SUCCESS '+ data);
+            let i;
+            let classifica = "";
+            for(i = 0; i < data.length; i ++)
+                classifica += '<li><a href=' + '#' + '>'+ richiediNomeSerie(data[i].id_serie) +'</a></li>';
+            document.getElementById('classifica_serie').innerHTML = classifica;
+        },
+        error: function (data) {
+            //console.log('ERROR '+ data);
+            snackbarErrore("Si &egrave; verificato un errore");
+        }
+    });    
+}
+
+function richiediNomeSerie(id) {
+    //let url = 'https://api.themoviedb.org/3/tv/popular?api_key='+ APIKEY +'&language=it&page=1';
+    let url = 'https://api.themoviedb.org/3/tv/'+ id_serie +'?api_key='+ APIKEY +'&language=it';
     fetch(url)
         .then(res => res.json())
         .then((out) => {
-            //console.log('Checkout this JSON! ', out);
-            //console.log('nome1 '+out.results[0].original_name);
-            let i = 0;            
-            let classifica = '';
-            do{
-                classifica += '<li><a href='+'#?'+out.results[i].id+'>'+out.results[i].original_name+'</a></li>';                
-                i ++;
-            }while (i <= 9);
-            document.getElementById('classifica_serie').innerHTML = classifica;
-            /*
-            let results = [];
-            out.array.forEach(element => {
-                
-            });
-            */
-            /*
-            out.forEach(function (value, i) {
-               results[i] = {'nome':value.original_name, 'popolarita':value.popularity};
-            });
-            console.log('results: ', resuls);
-            */
+            return out.name;            
         })
         .catch(err => { throw err });
 }
