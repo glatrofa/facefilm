@@ -40,23 +40,14 @@
                 <!-- cerca serie tv -->
                 <div class="col-md-8">
                     <div class="row">
-                        <p>Cerca serie tv</p> 
+                        <p>Qui puoi cercare le serie tv che ti interessano, immettendo il loro nome o parte di esso. <br> Nel frattempo, ti mostriamo le pi&ugrave; popolari su</p>
                     </div>
-                    <div class="row justify-content-center">
-                        <i class="fas fa-search" aria-hidden="true"></i>
-                        <input class="form-control form-control-sm ml-3 w-75" type="text" id="cerca_serie" placeholder="Cerca per nome">
-                        <button id="mostra_poster"><i class="fas fa-search" aria-hidden="true"></i>Cerca</button>
+                    <div class="row justify-content-center align-items-center mb-5">
+                        <i class="fas fa-search fa-lg" aria-hidden="true"></i>
+                        <input class="form-control form-control-sm ml-3 w-75" style="line-height:2" type="text" id="cerca_serie" placeholder="Cerca per nome">
+                        <button id="mostra_poster" class="btn bg-awwa-secondary text-white ml-3">Cerca</button>
                     </div>
-                    <div class="row justify-content-center" id="risultati_ricerca">
-                        <div class="card col-5 col-lg-3 px-0 mx-3 mb-3 shadow">
-                            <img class="card-img-top" src="" alt="Poster">
-                            <div class="card-body">
-                                <div class="card-title">Titolo serie</div>
-                                <p>qui ci potrebbe stare una breve descrizione della serie, magari quella fornita dall'API ma in versione ridotta</p>
-                            </div>
-                            <div class="card-footer"><span class="text-muted">Data pubblicazione</span></div>
-                        </div>
-                    </div>
+                    <div class="row justify-content-center" id="risultati_ricerca"></div>
                 </div>                
                 <!--  -->
                 <!--  colonna con classifiche -->
@@ -71,6 +62,8 @@
                     </div>
                 </div>
             </div>
+            <button id="scroll_to_top" class="rounded-circle" title="Torna su"><i class="fas fa-angle-double-up fa-lg"></i></button>
+        </div>
     </main>
 
     <!-- Footer -->
