@@ -7,7 +7,7 @@ import { visualizzaCommenti } from './visualizza_commenti.js';
 console.log(document.body.scrollTop, document.documentElement.scrollTop);
 
 // verifica che l'utente abbia effettuato l'accesso
-//window.onload = logged();
+window.onload = logged();
 
 // colore primario per i tasti del post
 const colorPrimary = '#e5af05';
@@ -19,10 +19,12 @@ const colorSecondary = '#00008b';
 //const modalPostPubblicazioneError = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Errore pubblicazione post</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div><div class='modal-body'><p>Ci scusiamo per il disagio.<br>Se il problema persiste utilizza il form contattaci per segnalare l'accaduto.<br>Grazie.</p></div><div class='modal-footer'><button type='button' class='btn btn-primary' onclick='redirectFormContatti()'>Vai al form contatti</button><button type='button' class='btn btn-secondary' data-dismiss='modal'>Chiudi</button></div></div>";
 //let modalLikeClicked = false;
 //let modalDislikeClicked = false;
+// inizializza a 0 per la gestione della visualizzaizone dei post
+let pagina = 0;
 
 // richiama funzioni non appena il documento è caricato
 $(document).ready(function() {
-    visualizzaPost();
+    visualizzaPost(pagina);
     visualizzaClassifica();    
 });
 
@@ -78,33 +80,38 @@ $(function controllaNonMiPiace() {
 
 // visualizza le 5 serie più popolari su tmdb
 function visualizzaClassifica() {
-    let url = 'https://api.themoviedb.org/3/tv/popular?api_key='+ APIKEY +'&language=it&page=1';
+    $.ajax({
+        type: 'POST',
+        url: './php/classifica_commenti_serie.php',
+        crossOrigin: true,
+        dataType: 'json',
+        success: function (data) {
+            //console.log('SUCCESS '+ data);
+            let i;
+            //let classifica = "";
+            for(i = 0; i < data.length; i ++) {
+                document.getElementById('classifica_serie').innerHTML += "<li><a href='./html/serie_tv.html?id="+ data[i].idSerie +"' id='link_"+ data[i].idSerie +"'></a></li>";
+                richiediNomeSerie(data[i].idSerie,  data[i].numero);
+            }
+            //document.getElementById('classifica_serie').innerHTML = classifica;
+        },
+        error: function (data) {
+            //console.log('ERROR '+ data);
+            snackbarErrore("Si &egrave; verificato un errore");
+        }
+    });    
+}
+
+function richiediNomeSerie(idSerie, numero) {
+    //let url = 'https://api.themoviedb.org/3/tv/popular?api_key='+ APIKEY +'&language=it&page=1';
+    let url = 'https://api.themoviedb.org/3/tv/'+ idSerie +'?api_key='+ APIKEY +'&language=it';
     fetch(url)
         .then(res => res.json())
         .then((out) => {
-            //console.log('Checkout this JSON! ', out);
-            //console.log('nome1 '+out.results[0].original_name);
-            let i = 0;            
-            let classifica = '';
-            do{
-                classifica += '<li><a href='+'#?'+out.results[i].id+'>'+out.results[i].original_name+'</a></li>';                
-                i ++;
-            }while (i <= 9);
-            document.getElementById('classifica_serie').innerHTML = classifica;
-            /*
-            let results = [];
-            out.array.forEach(element => {
-                
-            });
-            */
-            /*
-            out.forEach(function (value, i) {
-               results[i] = {'nome':value.original_name, 'popolarita':value.popularity};
-            });
-            console.log('results: ', resuls);
-            */
+            console.log(out);
+            document.getElementById("link_" + idSerie).innerHTML = out.name + " #" + numero;
         })
-        .catch(err => { throw err });
+        .catch(err => { throw err });    
 }
 
 // ricerca nel db tutte le serie comprendenti nel nome i caratteri inseriti nel form
@@ -139,15 +146,14 @@ $(function visualizzaStagioni() {
         fetch(url)
             .then(res => res.json())
             .then((data) => {
-                console.log('result', data);
-                console.log('numero stagioni ', data.number_of_seasons);
-                console.log('stagioni ', data.seasons);
+                //console.log('result', data);
+                //console.log('numero stagioni ', data.number_of_seasons);
+                //console.log('stagioni ', data.seasons);
                 let listaStagioni = '<option value="null"> Seleziona </option>';
                 if(data.number_of_seasons != 0) {
-                    let j = 0;
-                    //if(data.seasons[0] == null)
-                        //j = 1;                          
+                    let j = 0;                         
                     while (j < data.number_of_seasons) {
+                        // crea le stringhe con le informazioni sulle stagioni
                         listaStagioni += '<option value='+data.seasons[j].season_number+'>'+data.seasons[j].name+'</option>';
                         j ++;
                     }      
@@ -156,6 +162,7 @@ $(function visualizzaStagioni() {
                 }
                 else
                     listaStagioni = '<option value='+'null'+'>Nessuna stagione</option>';
+                // stampa nel documento le stagioni
                 document.getElementById('post_stagione').innerHTML = listaStagioni;
             })
             .catch(err => { throw err });
@@ -239,17 +246,21 @@ function redirectHome() {
 
 
 // mostra nella home i post più recenti
-function visualizzaPost() {
+function visualizzaPost(pagina) {    
     $.ajax({
         type: 'POST',
         url: './php/ottieni_post.php',
         crossOrigin: true,
+        data: {
+            pagina: pagina
+        },
         dataType: 'json',
         success: function (data) {
-            document.getElementById("sezione_post").innerHTML = "";
+            //console.log("paginazione successo " + data);
+            //document.getElementById("sezione_post").innerHTML = "";
             let i;
-            for (i = 0; i < data.length; i++) {    
-                document.getElementById("sezione_post").innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);                
+            for (i = 0; i < data.length; i++) {
+                document.getElementById("sezione_post").innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);
             }
             // aggiorna il numero di mi piace del post
             $(function aggiornaMiPiace() {
@@ -449,4 +460,25 @@ function scrollFunction() {
 scrollButton.addEventListener('click',function tornaSu(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;  
+});
+
+$(function logout() {
+    $("#logout").click(function () {
+        $.ajax({
+            type: 'POST',
+            url: './php/logout.php',
+            crossOrigin: true,
+            success: function () {
+                document.cookie = "PHPSESSID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                location.href = '.';
+            }
+        });
+    });
+});
+
+$(function visualizzaAltriPost() {
+    $("#carica_altri_post").click(function () {
+        pagina = pagina + 2;
+        visualizzaPost(pagina);
+    });
 });

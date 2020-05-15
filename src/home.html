@@ -30,6 +30,7 @@
                     <a class="nav-item nav-link text-white" href="./html/cerca_serie_tv.html">Cerca serie tv</a>
                     <a class="nav-item nav-link text-white" href="#">Cerca post</a>
                     <a class="nav-item nav-link text-white" href="./html/profilo.html">Profilo</a>
+                    <a class="nav-item nav-link text-white" href="" id="logout">Logout</a>
                 </div>
             </div>
         </nav> 
@@ -41,7 +42,7 @@
                 <div class="col-md-3">
                     <div class="card shadow">
                         <div class="card-body">
-                            <div class="h4">Serie pi&ugrave; commentate</div>
+                            <div class="h4">Serie con pi&ugrave; post</div>
                             <div class="h6">
                                 <ul id="classifica_serie"></ul>
                             </div>
@@ -94,10 +95,13 @@
                         </div>                
                     </div>     
                     <!-- Sezione POST altri utenti -->                                
-                    <div >
-                    <div >
+                    <div>
                         <div id="sezione_post"></div>
-                    </div>
+                        <!-- bottone per caricare altri post -->
+                        <div>
+                            <button id="carica_altri_post" class="rounded-circle">Carica altri</button>
+                        </div>
+                    </div>                    
                     <!-- Fine sezione post -->
                 </div>     
                 <!-- Fine colonna dei post (colonna di dx) -->

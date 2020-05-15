@@ -2,10 +2,15 @@
 
 include './connessioneDatabase.php';
 
+// recupero pagina
+$pagina = mysqli_real_escape_string($connection, $_POST["pagina"]);
+// imposto il numero di post da visualizzare volta per volta
+$postPerPagina = 2;
+
 // esecuzione query
 // SELECT post.id, post.data, post.titolo, post.testo, post.id_serie, post.numero_stagione, post.numero_episodio, utenti.nome_utente, COUNT(commenti.id) AS numero_commenti FROM utenti INNER JOIN (post LEFT JOIN commenti ON post.id = commenti.id_post) ON post.email = utenti.email ORDER BY data DESC
 // SELECT idPost, data, titolo, testo, id_serie, numero_stagione, numero_episodio, utenti.nome_utente FROM utenti INNER JOIN (SELECT DISTINCT(post.id) AS idPost, COUNT(commenti.id) AS numero_commenti, post.data, post.titolo, post.testo, post.id_serie, post.numero_stagione, post.numero_episodio, post.email FROM post LEFT JOIN commenti ON post.id = commenti.id_post) AS x ON x.email = utenti.email ORDER BY data DESC
-$query = "SELECT idPost, numeroCommenti, UNIX_TIMESTAMP(data) AS data, titolo, testo, id_serie, numero_stagione, numero_episodio, piace, dislike, utenti.nome_utente FROM utenti INNER JOIN (SELECT post.id AS idPost, COUNT(commenti.id) AS numeroCommenti, post.data, post.titolo, post.testo, post.id_serie, post.numero_stagione, post.numero_episodio, post.email, post.piace, post.dislike FROM post LEFT JOIN commenti ON post.id = commenti.id_post GROUP BY idPost) AS x ON x.email = utenti.email ORDER BY data DESC";
+$query = "SELECT idPost, numeroCommenti, UNIX_TIMESTAMP(data) AS data, titolo, testo, id_serie, numero_stagione, numero_episodio, piace, dislike, utenti.nome_utente FROM utenti INNER JOIN (SELECT post.id AS idPost, COUNT(commenti.id) AS numeroCommenti, post.data, post.titolo, post.testo, post.id_serie, post.numero_stagione, post.numero_episodio, post.email, post.piace, post.dislike FROM post LEFT JOIN commenti ON post.id = commenti.id_post GROUP BY idPost) AS x ON x.email = utenti.email ORDER BY data DESC LIMIT ".$pagina.", ".$postPerPagina."";
 $response = array();
 $result = mysqli_query($connection, $query) or die($response[0] = mysqli_error($connection));
 $rowsNumber = mysqli_num_rows($result);
