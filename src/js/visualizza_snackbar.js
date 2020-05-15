@@ -18,7 +18,7 @@ function snackbarErrore(stringa) {
     // aggiunge la classe show alla snackbar
     document.getElementById("snackbar_errore").classList.add("show");
     // dopo un certo numero di millisecondi, rimuove la classe show dal DIV
-    setTimeout(function(){ document.getElementById("snackbar_successo").classList.remove("show"); }, durata);
+    setTimeout(function(){ document.getElementById("snackbar_errore").classList.remove("show"); }, durata);
 }
 
 export { snackbarSuccesso, snackbarErrore };
