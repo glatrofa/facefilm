@@ -27,12 +27,20 @@ body, .container-fluid {
     min-width: 100wh;
 }
 
+body.main {
+    background-image: url(../img/bg-pattern/pattern.jpg);
+}
+
+body.tv {
+    background-image: url(../img/Tv-vintage.jpg);
+}
+
 .container-fluid {
     /*Viene caricata un'immagine che essendo di dimensioni piuttosto inferiori a quelle
     del container permette la ripetizione automatica fino a riempire tutto il container*/
-    background-image: url(../img/Tv-vintage_resized.jpg), url(../img/Tv-vintage.jpg); 
+    /*background-image: url(../img/Tv-vintage_resized.jpg), url(../img/Tv-vintage.jpg); 
     background-position: top;
-    background-repeat: repeat;
+    background-repeat: repeat;*/
 }
 
 .form {
