@@ -1,0 +1,9 @@
+html 5
+js 1.7
+php 7.3.14
+apache 2.4.38
+css 3
+mysql 10.3.22
+phpmyadmin 4.6.6
+jquery 3.4.1
+bootstrap 4.1.3
