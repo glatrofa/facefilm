@@ -32,9 +32,10 @@ else if($nrighe_email == 0 && $nrighe_username == 0){
     // lock tabelle
     $queryL = "LOCK TABLES utenti WRITE";
     mysqli_query($connection, $queryL) or die($response[0] = mysqli_error($connection));
-    // registrazione con controllo presenza immagine
+    // ritornano null
     $response[1] = $_POST["immagine"];
     $response[2] = $_FILES["immagine"]["tmp_name"];
+    // registrazione con controllo presenza immagine
     if(!isset($_POST["immagine"])){
         $query = "INSERT INTO utenti (nome, cognome, data_nascita, nazione, email, nome_utente, password)"
             ."VALUES ('$nome', '$cognome', '$data_nascita', '$nazione', '$email', '$nome_utente', '$password_criptata')";

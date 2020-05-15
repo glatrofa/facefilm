@@ -1,12 +1,17 @@
 import { APIKEY } from './key.js';
 
 // genera l'header del post
-function generaHeader(nomeUtente, idPost) {
+function generaHeader(nomeUtente, idPost, immagine) {
+    let pathImmagine;
+    if(immagine == null)
+        pathImmagine = "/src/img/default_profile_image.png";
+    else
+        pathImmagine = "data:image;base64,'"+ immagine +"'";
     let header = "<div class='card shadow mb-3'><div class='card-header'>" +
                     "<div class='d-flex justify-content-between align-items-center'>" +
                         "<div class='d-flex justify-content-between align-items-center'>" +
                             "<div class='mr-2'>" +
-                                "<img class='rounded-circle' width='45' src='https://picsum.photos/50/50'>" +
+                                "<img class='rounded-circle' width='45' src='"+ pathImmagine +"'>" +
                             "</div>" +
                             "<div class='ml-2'>" +
                                 "<div class='h5 m-0' id='nome_utente' name='"+ idPost +"'>"+ nomeUtente +"</div>" +
