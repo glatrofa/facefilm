@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Creato il: Mag 15, 2020 alle 13:06
+-- Creato il: Mag 15, 2020 alle 15:54
 -- Versione del server: 10.3.22-MariaDB-0+deb10u1
 -- Versione PHP: 7.3.14-1~deb10u1
 
@@ -136,16 +136,17 @@ CREATE TABLE `utenti` (
   `nazione` varchar(60) NOT NULL,
   `email` varchar(50) NOT NULL,
   `nome_utente` varchar(15) NOT NULL,
-  `password` varchar(32) NOT NULL
+  `password` varchar(32) NOT NULL,
+  `immagine` longblob DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dump dei dati per la tabella `utenti`
 --
 
-INSERT INTO `utenti` (`nome`, `cognome`, `data_nascita`, `nazione`, `email`, `nome_utente`, `password`) VALUES
-('Giuseppe', 'Latrofa', '1999-01-28', 'Italy', 'g.latrofa3@studenti.poliba.it', 'peppone', '014635095eeeda4945a6c17d0cfb6abb'),
-('SEVERUS', 'SNAPE', '1960-01-01', 'United Kingdom of Great Britain and Northern Ireland (the)', 'severussnape1@gmail.com', 'sevsnape1', 'a7d0eeb054b7cd7ccbf3041bc441c522');
+INSERT INTO `utenti` (`nome`, `cognome`, `data_nascita`, `nazione`, `email`, `nome_utente`, `password`, `immagine`) VALUES
+('Giuseppe', 'Latrofa', '1999-01-28', 'Italy', 'g.latrofa3@studenti.poliba.it', 'peppone', '014635095eeeda4945a6c17d0cfb6abb', NULL),
+('SEVERUS', 'SNAPE', '1960-01-01', 'United Kingdom of Great Britain and Northern Ireland (the)', 'severussnape1@gmail.com', 'sevsnape1', 'a7d0eeb054b7cd7ccbf3041bc441c522', NULL);
 
 --
 -- Indici per le tabelle scaricate
