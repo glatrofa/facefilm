@@ -1,7 +1,7 @@
 <?php
 
 // definizione parametri
-$dbPassword = "";
+$dbPassword = "prova";
 $dbUserName = "root";
 //$dbPassword = "Dtr1m0n%ci";
 //$dbUserName = "giuseppe";
