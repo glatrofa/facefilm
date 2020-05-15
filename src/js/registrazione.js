@@ -26,7 +26,7 @@ $(function registrazione() {
           }          
         },
         error: function (data) {
-          console.log(data[0]);
+          console.log(data);
           $('#modal-registrazione-error').modal('show');
         }
       });
