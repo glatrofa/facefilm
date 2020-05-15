@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Creato il: Mag 10, 2020 alle 17:24
+-- Creato il: Mag 15, 2020 alle 13:06
 -- Versione del server: 10.3.22-MariaDB-0+deb10u1
 -- Versione PHP: 7.3.14-1~deb10u1
 
@@ -85,11 +85,12 @@ CREATE TABLE `post` (
 
 INSERT INTO `post` (`id`, `email`, `data`, `titolo`, `testo`, `id_serie`, `numero_stagione`, `numero_episodio`, `piace`, `dislike`) VALUES
 (5, 'g.latrofa3@studenti.poliba.it', '2020-05-08 17:36:52.39811', 'titolo', 'testo', '18347', '5', '13', 7, 9),
-(4, 'g.latrofa3@studenti.poliba.it', '2020-05-08 17:34:20.78757', 'falena titolo', 'bla bla bla', '4607', '1', '7', 12, 6),
+(4, 'g.latrofa3@studenti.poliba.it', '2020-05-08 17:34:20.78757', 'falena titolo', 'bla bla bla', '4607', '1', '7', 13, 7),
 (6, 'g.latrofa3@studenti.poliba.it', '2020-05-09 12:45:59.87789', 'covid', 'covid 19', '75758', '1', '6', 13, 6),
 (7, 'g.latrofa3@studenti.poliba.it', '2020-05-09 12:49:00.09076', 'ale toglie sempre il login', 'alessandro non deve togliere il login', '63054', '1', '2', 16, 17),
 (8, 'g.latrofa3@studenti.poliba.it', '2020-05-10 09:45:33.60735', 'Stagione 4', 'Non vedo l\'ora che esca la quarta stagione!', '60625', '3', '10', 2, 1),
-(9, 'g.latrofa3@studenti.poliba.it', '2020-05-10 09:52:27.15041', 'Wow che serie', 'Davvero una bellissima serie, peccato che si debba cerca una spiegazione del finale. È davvero criptico!', '4607', '5', '17', 6, 1);
+(9, 'g.latrofa3@studenti.poliba.it', '2020-05-10 09:52:27.15041', 'Wow che serie', 'Davvero una bellissima serie, peccato che si debba cerca una spiegazione del finale. È davvero criptico!', '4607', '5', '17', 6, 1),
+(10, 'g.latrofa3@studenti.poliba.it', '2020-05-14 13:13:40.37589', 'D&D', 'Ma quanto sono divertenti questi episodi su D&D?', '18347', '5', '10', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -204,7 +205,7 @@ ALTER TABLE `messaggi`
 -- AUTO_INCREMENT per la tabella `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT per la tabella `segnalazioni`
 --
