@@ -32,9 +32,17 @@ else if($nrighe_email == 0 && $nrighe_username == 0){
     // lock tabelle
     $queryL = "LOCK TABLES utenti WRITE";
     mysqli_query($connection, $queryL) or die(mysqli_error($connection));
-    // registrazione
-    $query = "INSERT INTO utenti (nome, cognome, data_nascita, nazione, email, nome_utente, password)"
-        ."VALUES ('$nome', '$cognome', '$data_nascita', '$nazione', '$email', '$nome_utente', '$password_criptata')";
+    // registrazione con controllo presenza immagine
+    if(getimagesize($_FILES["immagine"]["tmp_name"]) == false){
+        $query = "INSERT INTO utenti (nome, cognome, data_nascita, nazione, email, nome_utente, password)"
+            ."VALUES ('$nome', '$cognome', '$data_nascita', '$nazione', '$email', '$nome_utente', '$password_criptata')";
+    } else {
+        $immagine = addslashes($_FILES["immagine"]["tmp_name"]);
+        $immagine = file_get_contents($immagine);
+        $immagine = base64_encode($immagine);
+        $query = "INSERT INTO utenti (nome, cognome, data_nascita, nazione, email, nome_utente, password, immagine)"
+            ."VALUES ('$nome', '$cognome', '$data_nascita', '$nazione', '$email', '$nome_utente', '$password_criptata', '$immagine')";
+    }    
     mysqli_query($connection, $query) or die(mysqli_error($connection));
     // unlock tabelle
     $queryU = "UNLOCK TABLES";
