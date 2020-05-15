@@ -96,7 +96,7 @@ function visualizzaClassifica() {
             //document.getElementById('classifica_serie').innerHTML = classifica;
         },
         error: function (data) {
-            //console.log('ERROR '+ data);
+            console.log('ERROR '+ data);
             snackbarErrore("Si &egrave; verificato un errore");
         }
     });    
@@ -221,13 +221,14 @@ $(function pubblicaPost() {
             else {
                 //document.getElementById('modal_post_pubblicazione_error').innerHTML = modalPostPubblicazioneError;
                 //$('#modal_post_pubblicazione_error').modal('show');
+                console.log("In pubblicaPost() la response dal php è falsey");
                 snackbarErrore("Si &egrave; verificato un errore");
                 // aggiorna la home dopo 3 secondi
                 setTimeout(redirectHome(), 3000);
             }
         },
         error: function (data) {
-            //console.log('ERROR '+ data);
+            console.log('ERROR '+ data);
             snackbarErrore("Si &egrave; verificato un errore");
         }
       });
@@ -281,11 +282,12 @@ function visualizzaPost(pagina) {
                                 // aggiorna valore like singolo post
                                 document.getElementById(event.target.id + "-post_like_number").innerHTML = data[1];
                             } else {
+                                console.log("in aggiornaMiPiace data[0] è falsey");
                                 snackbarErrore("Si &egrave; verificato un errore");
                             }
                         },
                         error: function (data) {
-                            //console.log('ERROR '+ data);
+                            console.log('ERROR '+ data);
                             snackbarErrore("Si &egrave; verificato un errore");
                         }
                     });
@@ -311,11 +313,12 @@ function visualizzaPost(pagina) {
                                 // aggiorna valore dislike singolo post
                                 document.getElementById(event.target.id + "-post_dislike_number").innerHTML = data[1];
                             } else {
+                                console.log("in aggiornaNonMiPiace() data[0] è falsey");
                                 snackbarErrore("Si &egrave; verificato un errore");
                             }    
                         },
                         error: function (data) {
-                            //console.log('ERROR '+ data);
+                            console.log('ERROR '+ data);
                             snackbarErrore("Si &egrave; verificato un errore");
                         }
                     });
@@ -338,11 +341,12 @@ function visualizzaPost(pagina) {
                             if(data){
                                 snackbarSuccesso("Post segnalato");
                             } else {
+                                console.log("in segnalaPost() data è falsey");
                                 snackbarErrore("Si &egrave; verificato un errore");
                             }    
                         },
                         error: function (data) {
-                            //console.log('ERROR '+ data);
+                            console.log('ERROR '+ data);
                             snackbarErrore("Si &egrave; verificato un errore");
                         }
                     });
@@ -386,12 +390,13 @@ function visualizzaPost(pagina) {
                                         success: function (data) {            
                                             //console.log("dati post commento SUCCESS " + data);
                                             if(data != true){
-                                                // mostra cracker
+                                                // mostra snackbar
+                                                console.log("in postaCommentoModal() la response dal php è false");
                                                 snackbarErrore("Si &egrave; verificato un errore");
                                             }
                                         },
                                         error: function (data) {
-                                            //console.log("dati post commento ERROR " + data);
+                                            console.log("dati post commento ERROR " + data);
                                             snackbarErrore("Si &egrave; verificato un errore");
                                         }
                                     });
@@ -429,7 +434,7 @@ function visualizzaPost(pagina) {
                             */
                         },
                         error: function (data) {
-                            //console.log('ERROR ' + data);
+                            console.log('ERROR ' + data);
                             snackbarErrore("Si &egrave; verificato un errore");
                         }
                     });
@@ -437,7 +442,7 @@ function visualizzaPost(pagina) {
             });
         },
         error: function (data) {
-            //console.log('ERROR ' + data);
+            console.log('ERROR ' + data);
             snackbarErrore("Si &egrave; verificato un errore");
         }
     });
