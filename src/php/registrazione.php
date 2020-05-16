@@ -14,10 +14,10 @@ $password_criptata = md5($password);
 
 // controllo se l'email è già presente
 $query = "SELECT email FROM utenti WHERE email = '".$email."'";
-$result = mysqli_query($connection, $query) or die(mysqli_error($connection));
+$result = mysqli_query($connection, $query) or die($response[0] = mysqli_error($connection));
 $nrighe_email = mysqli_num_rows($result);
 $query = "SELECT nome_utente FROM utenti WHERE nome_utente = '".$nome_utente."'";
-$result = mysqli_query($connection, $query) or die(mysqli_error($connection));
+$result = mysqli_query($connection, $query) or die($response[0] = mysqli_error($connection));
 $nrighe_username = mysqli_num_rows($result);
 $response = array();
 if($nrighe_email != 0){
@@ -31,14 +31,26 @@ else if($nrighe_username != 0){
 else if($nrighe_email == 0 && $nrighe_username == 0){
     // lock tabelle
     $queryL = "LOCK TABLES utenti WRITE";
-    mysqli_query($connection, $queryL) or die(mysqli_error($connection));
-    // registrazione
-    $query = "INSERT INTO utenti (nome, cognome, data_nascita, nazione, email, nome_utente, password)"
-        ."VALUES ('$nome', '$cognome', '$data_nascita', '$nazione', '$email', '$nome_utente', '$password_criptata')";
-    mysqli_query($connection, $query) or die(mysqli_error($connection));
+    mysqli_query($connection, $queryL) or die($response[0] = mysqli_error($connection));
+    // ritornano null
+    $response[1] = $_POST["immagine"];
+    $response[2] = $_FILES["immagine"]["tmp_name"];
+    // registrazione con controllo presenza immagine
+    if(!isset($_POST["immagine"])){
+        $query = "INSERT INTO utenti (nome, cognome, data_nascita, nazione, email, nome_utente, password)"
+            ."VALUES ('$nome', '$cognome', '$data_nascita', '$nazione', '$email', '$nome_utente', '$password_criptata')";
+    } else {
+        //$immagine = addslashes($_FILES["immagine"]["tmp_name"]);
+        $immagine = addslashes($_POST["immagine"]);
+        $immagine = file_get_contents($immagine);
+        $immagine = base64_encode($immagine);
+        $query = "INSERT INTO utenti (nome, cognome, data_nascita, nazione, email, nome_utente, password, immagine)"
+            ."VALUES ('$nome', '$cognome', '$data_nascita', '$nazione', '$email', '$nome_utente', '$password_criptata', '$immagine')";
+    }    
+    mysqli_query($connection, $query) or die($response[0] = mysqli_error($connection));
     // unlock tabelle
     $queryU = "UNLOCK TABLES";
-    mysqli_query($connection, $queryU) or die (mysqli_error($connection));    
+    mysqli_query($connection, $queryU) or die ($response[0] = mysqli_error($connection));    
     $response[0] = 0;
 }
 else{

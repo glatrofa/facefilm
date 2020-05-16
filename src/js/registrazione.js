@@ -9,7 +9,7 @@ $(function registrazione() {
         data: $(this).serialize(),
         dataType: 'json',
         success: function (data) {
-          console.log(data[0]);
+          console.log(data);
           switch (data[0]) {
             case 0:
               document.getElementById('modal-registrazione-success').innerHTML = modalRegistrazioneSuccess;
@@ -26,7 +26,7 @@ $(function registrazione() {
           }          
         },
         error: function (data) {
-          console.log(data[0]);
+          console.log(data);
           $('#modal-registrazione-error').modal('show');
         }
       });
