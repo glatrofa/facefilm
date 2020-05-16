@@ -1,5 +1,6 @@
 import { logged } from './autenticazione.js';
 import { APIKEY } from './key.js';
+import { generaCard } from './genera_card.js';
 
 // verifica che l'utente abbia effettuato l'accesso
 // window.onload = logged();
@@ -10,7 +11,7 @@ $(document).ready(function() {
     mostraSeriePopolari();
 });
 
-
+const baseImageURL = 'https://image.tmdb.org/t/p/';
 
 // effettua il redirect sulla pagina della serie selezionata
 $('#cerca_serie_bottone').click(function cercaSerie() {
@@ -26,27 +27,15 @@ $('#mostra_poster').click(function cercaPoster() {
     fetch(url2)
     .then(res => res.json())
     .then((data) => {
-        console.log('Checkout this JSON! ', data);
+        //console.log('Checkout this JSON! ', data);
         document.getElementById('risultati_ricerca').innerHTML = '';
-        const baseImageURL = 'https://image.tmdb.org/t/p/';
-        console.log(baseImageURL);
+        //console.log(baseImageURL);
         let dataSorted = sortByPopularityDesc(data.results); //ordinamento decrescente per popolarità dei risultati
         //console.log(dataSorted);
         if (dataSorted.length) {
             //per ogni elemento dell'array dei risultati crea una card con poster e descrizione serie, DA FINIRE
-            for (var element of dataSorted) {
-                let card =  '<div class="card col-5 col-lg-3 px-0 mx-3 mb-3 shadow" id="' + element.id +'">' +
-                                '<img class="card-img-top" src="';
-                if (element.poster_path) {card += baseImageURL.concat('w342', element.poster_path)}
-                card +=             '" alt="Poster">' +
-                                '<div class="card-body">' +
-                                    '<div class="card-title font-weight-bold">' + element.name + '</div>' +
-                                '</div>' +
-                                '<div class="card-footer"><span class="text-muted">';
-                if(element.first_air_date) {card += element.first_air_date.substr(0,4)} 
-                card +=             '</span>'+
-                                '</div>' +
-                            '</div>';
+            for (let element of dataSorted) {
+                let card = generaCard(element,baseImageURL);
                 document.getElementById('risultati_ricerca').innerHTML += card;
             }
         }
@@ -80,22 +69,10 @@ function mostraSeriePopolari() {
         .then((data) => {
             console.log('Checkout this JSON! ', data);
             document.getElementById('risultati_ricerca').innerHTML = '';
-            const baseImageURL = 'https://image.tmdb.org/t/p/';
             if (data.results.length) {
                 //per ogni elemento dell'array dei risultati crea una card con poster e descrizione serie, DA FINIRE
                 for (var element of data.results) {
-                    let card =  '<div class="card col-5 col-lg-3 px-0 mx-3 mb-3 shadow" id="' + element.id +'">' +
-                                    '<img class="card-img-top" src="';
-                    if (element.poster_path) {card += baseImageURL.concat('w342', element.poster_path)}
-                    card +=             '" alt="Poster">' +
-                                    '<div class="card-body">' +
-                                        '<div class="card-title font-weight-bold">' + element.name + '</div>' +
-                                    '</div>' +
-                                    '<div class="card-footer"><span class="text-muted">';
-                    if(element.first_air_date) {card += element.first_air_date.substr(0,4)} 
-                    card +=             '</span>'+
-                                    '</div>' +
-                                '</div>';
+                    let card = generaCard(element,baseImageURL);
                     document.getElementById('risultati_ricerca').innerHTML += card;
                 }
             }
