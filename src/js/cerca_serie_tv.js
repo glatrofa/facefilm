@@ -19,30 +19,32 @@ $('#cerca_serie_bottone').click(function cercaSerie() {
     window.location.href = './serie_tv.html?id='+$('#mostra_nome_serie :selected').val()+'';
 });
 
-// quando viene premuto il bottone 'Cerca', mostra le serie corrispondenti alla keyword
-// in una serie di card, DA FINIRE
-$('#mostra_poster').click(function cercaPoster() {
+// quando viene premuto il bottone 'Cerca' o l'utente preme 'Invio' sulla sua tastiera, 
+//mostra le serie corrispondenti alla keyword in una serie di card
+$('#mostra_poster').click(cercaPoster);
+$('#cerca_serie').keyup(function enter(eventObject){if (eventObject.which == 13) cercaPoster();})
+function cercaPoster() {
     let url2 = 'https://api.themoviedb.org/3/search/tv?api_key=' + APIKEY + '&language=it&page=1&query=' + $('#cerca_serie').val()
     console.log(url2);
     fetch(url2)
     .then(res => res.json())
     .then((data) => {
         //console.log('Checkout this JSON! ', data);
-        document.getElementById('risultati_ricerca').innerHTML = '';
+        document.getElementById('risultati_cerca_serie_tv').innerHTML = '';
         //console.log(baseImageURL);
         let dataSorted = sortByPopularityDesc(data.results); //ordinamento decrescente per popolarità dei risultati
         //console.log(dataSorted);
         if (dataSorted.length) {
-            //per ogni elemento dell'array dei risultati crea una card con poster e descrizione serie, DA FINIRE
+            //per ogni elemento dell'array dei risultati crea una card con poster e descrizione serie
             for (let element of dataSorted) {
                 let card = generaCard(element,baseImageURL);
-                document.getElementById('risultati_ricerca').innerHTML += card;
+                document.getElementById('risultati_cerca_serie_tv').innerHTML += card;
             }
         }
     })
     .catch((err) => {console.log(err)});
     
-});
+}
 
 // visualizza le 10 serie più popolari su tmdb
 function visualizzaClassifica() {
@@ -68,12 +70,12 @@ function mostraSeriePopolari() {
         .then(res => res.json())
         .then((data) => {
             console.log('Checkout this JSON! ', data);
-            document.getElementById('risultati_ricerca').innerHTML = '';
+            document.getElementById('risultati_cerca_serie_tv').innerHTML = '';
             if (data.results.length) {
                 //per ogni elemento dell'array dei risultati crea una card con poster e descrizione serie, DA FINIRE
                 for (var element of data.results) {
                     let card = generaCard(element,baseImageURL);
-                    document.getElementById('risultati_ricerca').innerHTML += card;
+                    document.getElementById('risultati_cerca_serie_tv').innerHTML += card;
                 }
             }
         })

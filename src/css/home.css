@@ -172,7 +172,30 @@ a.post:hover {
     cursor: pointer;
   }
 
-  button#scroll_to_top:hover{
-      opacity: 1;
-  }
-  
+button#scroll_to_top:hover {
+    opacity: 1;
+}
+
+#risultati_cerca_serie_tv div.card button {
+    color: var(--awwa-secondary);
+    border: 2px solid var(--awwa-secondary);
+    border-radius: 5px;
+}
+
+#risultati_cerca_serie_tv div.card button:hover {
+    color: white;
+    background-color: var(--awwa-secondary);
+}
+
+div.navbar-nav a:last-child {
+    float: right;
+}
+
+.navbar a.nav-item:hover {
+    background-color: var(--awwa-secondary);
+}
+
+#cerca_serie:focus {
+    border-color: white;
+    box-shadow: 0 0 0 0.1rem var(--awwa-secondary);
+}

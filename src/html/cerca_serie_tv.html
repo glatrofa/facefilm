@@ -18,15 +18,15 @@
 <body>
     <main>
         <!-- Navbar -->
-        <nav class="navbar sticky-top navbar-expand-md bg-awwa-primary">
-            <a class="navbar-brand text-white">AWWA</a>
+        <nav class="navbar sticky-top navbar-expand-md bg-awwa-primary py-0 px-1" style="line-height: 2;">
+            <a href="#" class="navbar-brand text-white">AWWA</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-ellipsis-h text-white"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link text-white" href="../home.html">Home</a>
-                    <a class="nav-item nav-link text-white active" href="./cerca_serie_tv.html">Cerca serie tv</a>
+                    <a class="nav-item nav-link text-white" href="../home.html"><i class="fas fa-couch"></i>Home</a>
+                    <a class="nav-item nav-link text-white active" href="./cerca_serie_tv.html"><i class="fab fa-searchengin"></i>Cerca serie tv</a>
                     <a class="nav-item nav-link text-white" href="#">Cerca post</a>
                     <a class="nav-item nav-link text-white" href="./profilo.html">Profilo</a>
                 </div>
@@ -37,29 +37,29 @@
         <div class="container-fluid pt-3 pb-5">
             <!-- Riga principale -->
             <div class="row">
+                <!-- cerca serie tv -->
+                <div class="col-md-8">
+                    <div class="row justify-content-center">
+                        <p class="mx-3">Qui puoi cercare le serie tv che ti interessano, immettendo il loro nome o parte di esso. <br> Nel frattempo, ti mostriamo le pi&ugrave; popolari su TMDB.</p>
+                    </div>
+                    <div class="row justify-content-center align-items-center mb-5">
+                        <i class="fas fa-search fa-lg" aria-hidden="true"></i>
+                        <input class="form-control form-control-lg ml-3 w-50" style="line-height:2" type="text" id="cerca_serie" placeholder="Cerca per nome">
+                        <button id="mostra_poster" class="btn btn-lg bg-awwa-secondary text-white ml-3">Cerca</button>
+                    </div>
+                    <div class="row justify-content-center" id="risultati_cerca_serie_tv"></div>
+                </div>                
                 <!--  colonna con classifiche -->
-                <div class="col-md-4">
+                <div class="col-md-4" id="classifica_TMDB">
                     <div class="card">
-                        <div class="card-body">
-                            <div class="h4">Serie popolari</div>
+                        <div class="card-body align-items-center">
+                            <div class="h4 text-center">Serie popolari su <a href="https://www.themoviedb.org/?language=it" class="link">TMDB</a></div>
                             <div class="h6">
                                 <ol id="classifica_serie"></ol>
                             </div>
                         </div>                    
                     </div>
                 </div>  
-                <!-- cerca serie tv -->
-                <div class="col-md-8">
-                    <div class="row">
-                        <p>Qui puoi cercare le serie tv che ti interessano, immettendo il loro nome o parte di esso. <br> Nel frattempo, ti mostriamo le pi&ugrave; popolari su</p>
-                    </div>
-                    <div class="row justify-content-center align-items-center mb-5">
-                        <i class="fas fa-search fa-lg" aria-hidden="true"></i>
-                        <input class="form-control form-control-sm ml-3 w-75" style="line-height:2" type="text" id="cerca_serie" placeholder="Cerca per nome">
-                        <button id="mostra_poster" class="btn bg-awwa-secondary text-white ml-3">Cerca</button>
-                    </div>
-                    <div class="row justify-content-center" id="risultati_ricerca"></div>
-                </div>                
             </div>
             <button id="scroll_to_top" class="rounded-circle" title="Torna su"><i class="fas fa-angle-double-up fa-lg"></i></button>
         </div>
@@ -70,9 +70,9 @@
         <small class="text-white">
             <a>&copy; AWWA</a>
             <a> - </a>
-            <a class="text-white" href="#">Chi siamo</a>
+            <a class="text-white" href="./chi_siamo.html">Chi siamo</a>
             <a> - </a>
-            <a class="text-white" href="#">Contattaci</a>
+            <a class="text-white" href="./contattaci.html">Contattaci</a>
         </small>
     </footer>
     <!--  -->
