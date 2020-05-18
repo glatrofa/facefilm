@@ -1,7 +1,7 @@
 <?php
 
-//include './connessioneDatabase.php';
-$connection = mysqli_connect("localhost", "root", "", "awwa");
+include './connessioneDatabase.php';
+//$connection = mysqli_connect("localhost", "root", "", "awwa");
 if(mysqli_connect_errno()){
     exit("Database Connection Failed. Reason: ". mysqli_connect_error());
 }
