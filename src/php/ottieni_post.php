@@ -1,10 +1,10 @@
 <?php
 
 include './connessioneDatabase.php';
-//$connection = mysqli_connect("localhost", "root", "", "awwa");
+/*$connection = mysqli_connect("localhost", "root", "", "awwa");
 if(mysqli_connect_errno()){
     exit("Database Connection Failed. Reason: ". mysqli_connect_error());
-}
+} */
 
 // recupero pagina
 $pagina = mysqli_real_escape_string($connection, $_POST["pagina"]);
