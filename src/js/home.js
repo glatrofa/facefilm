@@ -108,7 +108,7 @@ function richiediNomeSerie(idSerie, numero) {
     fetch(url)
         .then(res => res.json())
         .then((out) => {
-            console.log(out);
+            //console.log(out);
             document.getElementById("link_" + idSerie).innerHTML = out.name + " #" + numero;
         })
         .catch(err => { throw err });    
@@ -257,7 +257,8 @@ function visualizzaPost(pagina) {
         },
         dataType: 'json',
         success: function (data) {
-            //console.log("paginazione successo " + data);
+            console.log("paginazione successo " + JSON.stringify(data) + "\n" + typeof data + "\n" + data.length); //data è un Object e non ha la proprietà length
+            //document.getElementById("sezione_post").innerHTML += generaHeader(data.nomeUtente, data.idPost, data.immagine)+generaBody(data.data, data.titolo, data.testo, data.idSerie, data.stagione, data.episodio)+generaFooter(data.idPost, data.idSerie, data.like, data.dislike, data.numeroCommenti);
             //document.getElementById("sezione_post").innerHTML = "";
             let i;
             for (i = 0; i < data.length; i++) {
@@ -442,7 +443,7 @@ function visualizzaPost(pagina) {
             });
         },
         error: function (data) {
-            console.log('ERROR ' + data);
+            console.log('ERROR in visualizzaPost(pagina) \n' + JSON.stringify(data,null,2));
             snackbarErrore("Si &egrave; verificato un errore");
         }
     });
