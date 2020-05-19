@@ -51,7 +51,7 @@ body.tv {
 }
 
 .form {
-    border: 3px solid var(--awwa-primary);
+    border: 2px solid var(--awwa-primary);
     border-radius: 20px;
     background-color: white;
     opacity: 1;
@@ -67,8 +67,14 @@ body.tv {
   box-shadow: 0 0 0 0.05rem var(--awwa-primary); /* h-offset v-offset blur spread color */
 }
 
+/* Feedback visivo verso l'utente, validazione lato client on fly */
 .form-control:invalid {
     color: red;
+}
+
+.input-group-prepend span {
+    background-color: white;
+    color: var(--awwa-primary);
 }
 
 /* Stile dei bottoni */
@@ -92,11 +98,17 @@ body.tv {
 
 .btn.btn-form-primary:hover {
     border-color: var(--awwa-secondary);
+}
+
+.btn.btn-form-primary:active {
     color: var(--awwa-secondary);
 }
 
 .btn.btn-form-secondary:hover {
     border-color: var(--awwa-primary);
+}
+
+.btn.btn-form-secondary:active {
     color: var(--awwa-primary);
 }
 
