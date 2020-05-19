@@ -42,5 +42,6 @@ $('#toggle_password').on('click',function(){
   $('#password').type = 'text';
   setTimeout(function nascondiNuovamente($(this)){
     $('#password').type = 'password';
-    console.log($('#password'))},1000);
-});
+    console.log($('#password'));
+  },1000);
+})
