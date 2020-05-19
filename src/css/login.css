@@ -3,6 +3,19 @@
     --awwa-secondary: rgb(23, 60, 104);
 }
 
+/* Personalizzazione scrollbar */
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--awwa-secondary);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--awwa-primary);
+}
+
 .awwa-primary {
     color: var(--awwa-primary);
 }
@@ -44,13 +57,17 @@ body.tv {
     height: 50%;
 }
 
-.footer {
-    width: 100%;
-    opacity: 0.8;
+/* Contorno agli input */
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: var(--awwa-secondary);
+  outline: 0;
+  box-shadow: 0 0 0 0.05rem var(--awwa-secondary);
 }
 
-footer:hover {
-    opacity: 1;
+.form-control:invalid {
+    color: orangered;
 }
 
 /* Stile dei bottoni */
@@ -86,28 +103,11 @@ a#signupLink:hover {
     color: var(--awwa-primary);
 }
 
-/* Contorno agli input */
-.form-control:focus {
-  color: #495057;
-  background-color: #fff;
-  border-color: var(--awwa-secondary);
-  outline: 0;
-  box-shadow: 0 0 0 0.05rem var(--awwa-secondary);
+.footer {
+    width: 100%;
+    opacity: 0.8;
 }
 
-/* forse non servono a niente
-@media (min-width: 992px) {
-    .container div {
-        width: 33%;
-    }
-    .container div:last-child {
-        width: 100%;
-    }
+footer:hover {
+    opacity: 1;
 }
-
-@media (min-width: 1200px) {
-    .container div:last-child {
-        width: 33%;
-    }
-}  
-*/
