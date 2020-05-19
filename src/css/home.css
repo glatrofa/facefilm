@@ -188,7 +188,7 @@ button#scroll_to_top:hover {
 }
 
 .navbar a.nav-item:hover {
-    background-color: var(--awwa-secondary);
+    color: var(--awwa-secondary);
 }
 
 #cerca_serie:focus {

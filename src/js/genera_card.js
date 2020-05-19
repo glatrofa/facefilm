@@ -1,7 +1,7 @@
 
 function generaCard(element, baseImageURL) {
     let card =  '<div class="card col-5 col-lg-3 px-0 mx-3 mb-3 shadow" id="' + element.id +'">' +
-                        '<a title="Vai alla pagina della serie" href="./serie_tv.html?id=' + element.id + '"><img class="card-img-top" src="';
+                        '<a data-toggle="tooltip" data-placement="top" title="Vai alla pagina della serie" href="./serie_tv.html?id=' + element.id + '"><img class="card-img-top" src="';
     if (element.poster_path) {card += baseImageURL.concat('w342', element.poster_path)}
     card +=                 '" alt="Poster"></a>' +
                         '<div class="card-body text-center">' +
