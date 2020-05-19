@@ -36,3 +36,11 @@ $(function login() {
 
 // dichiarare come stringhe i modal html
 // document.getElementById('modal-login').innerHTML = modalLoginString;
+
+$('#toggle_password').on('click',function(){
+  console.log('click ricevuto');
+  $('#password').type = 'text';
+  setTimeout(function nascondiNuovamente($(this)){
+    $('#password').type = 'password';
+    console.log($('#password'))},1000);
+});

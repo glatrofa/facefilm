@@ -72,9 +72,13 @@ body.tv {
     color: red;
 }
 
-.input-group-prepend span {
+.input-group-prepend span, .input-group-append button {
     background-color: white;
     color: var(--awwa-primary);
+}
+
+.input-group-append button {
+    border-color: #ced4da;
 }
 
 /* Stile dei bottoni */
