@@ -40,7 +40,7 @@ $(function login() {
 $('#toggle_password').on('click',function(){
   console.log('click ricevuto');
   $('#password').type = 'text';
-  setTimeout(function nascondiNuovamente($(this)){
+  setTimeout(function nascondiNuovamente(){
     $('#password').type = 'password';
     console.log($('#password'));
   },1000);
