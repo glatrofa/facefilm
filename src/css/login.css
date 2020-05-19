@@ -1,6 +1,6 @@
 :root {
     --awwa-primary: #e5af05;
-    --awwa-secondary: rgb(23, 60, 104);
+    --awwa-secondary: #00008b;
 }
 
 /* Personalizzazione scrollbar */
@@ -51,9 +51,10 @@ body.tv {
 }
 
 .form {
-    border: 5px solid var(--awwa-primary);
+    border: 3px solid var(--awwa-primary);
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* l'ultimo valore è opacità */
+    background-color: white;
+    opacity: 1;
     height: 50%;
 }
 
@@ -61,13 +62,13 @@ body.tv {
 .form-control:focus {
   color: #495057;
   background-color: #fff;
-  border-color: var(--awwa-secondary);
+  border-color: var(--awwa-primary);
   outline: 0;
-  box-shadow: 0 0 0 0.05rem var(--awwa-secondary);
+  box-shadow: 0 0 0 0.05rem var(--awwa-primary); /* h-offset v-offset blur spread color */
 }
 
 .form-control:invalid {
-    color: orangered;
+    color: red;
 }
 
 /* Stile dei bottoni */
@@ -80,7 +81,7 @@ body.tv {
 }
 
 .btn.btn-form-primary:hover, .btn.btn-form-secondary:hover {
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)!important;    
+    box-shadow: .1rem .1rem .5rem rgba(0, 0, 0, .15)!important; /* h-offset v-offset blur spread color  */ 
 }
 
 .btn.btn-form-secondary {
