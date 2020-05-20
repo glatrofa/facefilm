@@ -57,13 +57,41 @@ body.tv {
     font-size: 0.8rem; /*da togliere? */
 }
 
-/**Reset Bootstrap*/
+/**Reset Bootstrap
 .dropdown-toggle::after {
     content: none;
     display: none;
+} */
+
+.navbar-brand {
+    font-family: 'Averia Sans Libre', cursive, sans-serif;
+    font-size: 2rem;
+    color: var(--awwa-secondary);
 }
 
-/*-- Personalizzazioni --*/
+/* Al passaggio del mouse gli elementi della navbar diventano di colore blu e diventano leggermente più grandi,
+tranne quello che corrisponde alla pagina corrente */
+.navbar a.nav-item:not(.active):hover {
+    color: var(--awwa-secondary) !important;
+    animation: enlarge 200ms;
+    font-size: 1.1rem;
+}
+
+@keyframes enlarge {
+    from {font-size: 1rem;}
+    to {font-size: 1.1rem;}
+}
+
+@-webkit-keyframes enlarge {
+    from {font-size: 1rem;}
+    to {font-size: 1.1rem;}
+}
+
+/* grassetto per pagina corrente in navbar */
+.active {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
 
 footer {
     background: var(--awwa-primary);
@@ -74,25 +102,6 @@ footer {
     height: 45px;
     bottom: 0;*/
     width: 100%;
-}
-
-/* Stile per il distanziamento dei bottoni */
-.button {
-    padding: 1em;
-    text-align: center;
-}
-
-/* Stile dei bottoni */
-.btn.gold-style {
-  color: white;
-  background-color: var(--awwa-primary);
-  border-color: var(--awwa-primary);
-}
-
-/* grassetto per pagina corrente in navbar */
-.active {
-    font-weight: bold;
-    font-size: 1.1rem;
 }
 
 /* Contorno agli input */
@@ -173,9 +182,11 @@ a.post:hover {
     cursor: pointer;
   }
 
-button#scroll_to_top:hover {
+#scroll_to_top:hover {
     opacity: 1;
 }
+
+/* CSS esclusivo della pagina cerca_serie_tv */
 
 #risultati_cerca_serie_tv div.card button, #mostra_poster {
     color: var(--awwa-secondary);
@@ -186,24 +197,6 @@ button#scroll_to_top:hover {
 #risultati_cerca_serie_tv div.card button:hover, #mostra_poster:hover {
     color: white;
     background-color: var(--awwa-secondary);
-}
-
-/* Al passaggio del mouse gli elementi della navbar diventano di colore blu e diventano leggermente più grandi,
-tranne quello che corrisponde alla pagina corrente */
-.navbar a.nav-item:not(.active):hover {
-    color: var(--awwa-secondary) !important;
-    animation: enlarge 200ms;
-    font-size: 1.1rem;
-}
-
-@keyframes enlarge {
-    from {font-size: 1rem;}
-    to {font-size: 1.1rem;}
-}
-
-@-webkit-keyframes enlarge {
-    from {font-size: 1rem;}
-    to {font-size: 1.1rem;}
 }
 
 #cerca_serie:focus {

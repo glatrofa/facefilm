@@ -131,7 +131,7 @@ $(function visualizzaSerie() {
                     i ++;
                 }      
                 if (data.results.length == 0)
-                    listaSerie = '<option value='+'null'+'> --- </option>';
+                    listaSerie = '<option value='+'null'+'> Seleziona... </option>';
                 document.getElementById('post_serie').innerHTML = listaSerie;
             })
             .catch(err => { throw err });
@@ -158,7 +158,7 @@ $(function visualizzaStagioni() {
                         j ++;
                     }      
                     if (data.length == 0)
-                        listaStagioni = '<option value='+'null'+'> --- </option>';                
+                        listaStagioni = '<option value='+'null'+'> Seleziona... </option>';                
                 }
                 else
                     listaStagioni = '<option value='+'null'+'>Nessuna stagione</option>';
@@ -187,7 +187,7 @@ $(function visualizzaEpisodi() {
                         i ++;
                     }      
                     if (data.length == 0)
-                        listaEpisodi = '<option value='+'null'+'> --- </option>';
+                        listaEpisodi = '<option value='+'null'+'> Seleziona... </option>';
                 }
                 else
                     listaEpisodi = '<option value='+'null'+'>Nessun episodio</option>';

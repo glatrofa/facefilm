@@ -12,6 +12,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="./css/home.css" type="text/css">
     <!--Favicon--><link href="./img/favicon/favicon.ico" rel="shortcut icon">
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:wght@700&display=swap" rel="stylesheet">
     <title>Home</title>
 </head>
 
@@ -19,7 +20,7 @@
     <main>
         <!-- Navbar -->
         <nav class="navbar sticky-top navbar-expand-md bg-awwa-primary">
-            <a class="navbar-brand text-white">AWWA</a>
+            <a class="navbar-brand py-0">AWWA</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-ellipsis-h text-white"></i>
             </button>
@@ -28,8 +29,10 @@
                     <a class="nav-item nav-link text-white active" href="./home.html">Home</a>
                     <a class="nav-item nav-link text-white" href="./html/cerca_serie_tv.html">Cerca serie tv</a>
                     <a class="nav-item nav-link text-white" href="#">Cerca post</a>
-                    <a class="nav-item nav-link text-white" href="./html/profilo.html">Profilo</a>
-                    <a class="nav-item nav-link text-white" href="" id="logout">Logout</a>
+                    <div class="d-inline-block col-auto ml-md-auto pl-0 pl-md-2">
+                        <a class="nav-item nav-link text-white" href="./profilo.html">Profilo</a>
+                        <a class="nav-item nav-link text-white" href="" id="logout">Logout</a>
+                    </div>
                 </div>
             </div>
         </nav> 
@@ -70,23 +73,23 @@
                                                 <input class="form-control form-control-sm ml-3 w-75" type="text" id="cerca_serie" placeholder="Inserisci il nome della serie">
                                             </div>
                                             <label for="post_serie">Serie:</label>
-                                            <select id="post_serie" name="post_serie">
-                                                <option value="null"> --- </option>
+                                            <select id="post_serie" name="post_serie" class="custom-select">
+                                                <option value="null"> Seleziona... </option>
                                             </select>
                                             <label for="post_stagione">Seleziona la stagione:</label>
-                                            <select id="post_stagione" name="post_stagione">
-                                                <option value="null"> --- </option>
+                                            <select id="post_stagione" name="post_stagione" class="custom-select">
+                                                <option value="null"> Seleziona... </option>
                                             </select>
                                             <label for="post_episodio">Seleziona l'episodio:</label>
-                                            <select id="post_episodio" name="post_episodio">
-                                                <option value="null"> --- </option>
+                                            <select id="post_episodio" name="post_episodio" class="custom-select">
+                                                <option value="null"> Seleziona... </option>
                                             </select>
                                             <br>
                                             <input type="text" class="form-control" id="post_titolo" name="post_titolo" placeholder="Inserisci il titolo" required>
                                             <br>
                                             <textarea type="text" class="form-control md-textarea" id="post_testo" name="post_testo" rows="3" placeholder="Sto guardando..." maxlength="8000" required></textarea>
                                             <br>
-                                            <button type="submit" class="btn gold-style"><i class="fas fa-globe-americas"></i>Pubblica</button>
+                                            <button type="submit" class="btn text-white bg-awwa-primary"><i class="fas fa-globe-americas mr-2"></i>Pubblica</button>
                                         </form>
                                     </div>
                                 </div>                    
