@@ -37,11 +37,14 @@ $(function login() {
 // dichiarare come stringhe i modal html
 // document.getElementById('modal-login').innerHTML = modalLoginString;
 
-$('#toggle_password').on('click',function(){
-  console.log('click ricevuto');
-  $('#password').type = 'text';
-  setTimeout(function nascondiNuovamente(){
-    $('#password').type = 'password';
-    console.log($('#password'));
-  },1000);
+/* Funzione mostra password (icona eye): 
+mostra la password per 0.5 secondi */
+$('#toggle_password').on('click',function mostraPassword(){
+  //console.log($('#password').prop('type'));
+  $('#password').prop('type','text');
+  //console.log($('#password').prop('type'));
+  setTimeout(function(){
+    $('#password').prop('type','password');
+    //console.log($('#password').prop('type'));
+  },500);
 })

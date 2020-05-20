@@ -79,6 +79,7 @@ body.tv {
 
 .input-group-append button {
     border-color: #ced4da;
+    border-left: none;
 }
 
 /* Stile dei bottoni */
