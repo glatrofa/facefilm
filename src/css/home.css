@@ -1,7 +1,7 @@
 /* Definizione colori primario e secondario del sito*/
 :root {
     --awwa-primary: #e5af05;
-    --awwa-secondary: #00008b;
+    --awwa-secondary: #00006b;
 }
 
 /*DEBUGGING*/
@@ -9,19 +9,19 @@
 
 /* Definizioni classi per assegnare colori primario e secondario del sito */
 .awwa-primary {
-    color: var(--awwa-primary);
+    color: var(--awwa-primary) !important;
 }
 
 .awwa-secondary {
-    color: var(--awwa-secondary);
+    color: var(--awwa-secondary) !important;
 }
 
 .bg-awwa-primary {
-    background-color: var(--awwa-primary);
+    background-color: var(--awwa-primary) !important;
 }
 
 .bg-awwa-secondary {
-    background-color: var(--awwa-secondary);
+    background-color: var(--awwa-secondary) !important;
 }
 
 /* Personalizzazione scrollbar */
@@ -57,12 +57,6 @@ body.tv {
     font-size: 0.8rem; /*da togliere? */
 }
 
-/**Reset Bootstrap
-.dropdown-toggle::after {
-    content: none;
-    display: none;
-} */
-
 .navbar-brand {
     font-family: 'Averia Sans Libre', cursive, sans-serif;
     font-size: 2rem;
@@ -91,6 +85,11 @@ tranne quello che corrisponde alla pagina corrente */
 .active {
     font-weight: bold;
     font-size: 1.1rem;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: inherit;
+    color: var(--awwa-secondary) !important;
 }
 
 footer {

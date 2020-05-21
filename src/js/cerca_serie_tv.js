@@ -69,7 +69,7 @@ function mostraSeriePopolari() {
     fetch(url)
         .then(res => res.json())
         .then((data) => {
-            console.log('Checkout this JSON! ', data);
+            //console.log('Checkout this JSON! ', data);
             document.getElementById('risultati_cerca_serie_tv').innerHTML = '';
             if (data.results.length) {
                 //per ogni elemento dell'array dei risultati crea una card con poster e descrizione serie, DA FINIRE
@@ -112,4 +112,19 @@ function scrollFunction() {
 scrollButton.addEventListener('click',function tornaSu(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;  
+});
+
+// Gestione logout
+$(function logout() {
+    $("#logout").click(function () {
+        $.ajax({
+            type: 'POST',
+            url: '../php/logout.php',
+            crossOrigin: true,
+            success: function () {
+                document.cookie = "PHPSESSID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                location.href = './login.html';
+            }
+        });
+    });
 });

@@ -25,13 +25,18 @@
                 <i class="fa fa-ellipsis-h text-white"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
+                <div class="navbar-nav w-100">
                     <a class="nav-item nav-link text-white active" href="./home.html">Home</a>
                     <a class="nav-item nav-link text-white" href="./html/cerca_serie_tv.html">Cerca serie tv</a>
                     <a class="nav-item nav-link text-white" href="#">Cerca post</a>
                     <div class="d-inline-block col-auto ml-md-auto pl-0 pl-md-2">
-                        <a class="nav-item nav-link text-white" href="./profilo.html">Profilo</a>
-                        <a class="nav-item nav-link text-white" href="" id="logout">Logout</a>
+                        <a class="nav-item nav-link text-white dropdown-toggle" href="./profilo.html" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profilo</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Modifica dati</a>
+                        <a class="dropdown-item" href="#">Vedi profilo</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -66,32 +71,27 @@
                         <div class="card-body">
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
-                                    <div class="form-group">
-                                        <form id="form_post">
-                                            <div class="row justify-content-center">
-                                                <i class="fas fa-search" aria-hidden="true"></i>
-                                                <input class="form-control form-control-sm ml-3 w-75" type="text" id="cerca_serie" placeholder="Inserisci il nome della serie">
-                                            </div>
-                                            <label for="post_serie">Serie:</label>
-                                            <select id="post_serie" name="post_serie" class="custom-select">
-                                                <option value="null"> Seleziona... </option>
-                                            </select>
-                                            <label for="post_stagione">Seleziona la stagione:</label>
-                                            <select id="post_stagione" name="post_stagione" class="custom-select">
-                                                <option value="null"> Seleziona... </option>
-                                            </select>
-                                            <label for="post_episodio">Seleziona l'episodio:</label>
-                                            <select id="post_episodio" name="post_episodio" class="custom-select">
-                                                <option value="null"> Seleziona... </option>
-                                            </select>
-                                            <br>
-                                            <input type="text" class="form-control" id="post_titolo" name="post_titolo" placeholder="Inserisci il titolo" required>
-                                            <br>
-                                            <textarea type="text" class="form-control md-textarea" id="post_testo" name="post_testo" rows="3" placeholder="Sto guardando..." maxlength="8000" required></textarea>
-                                            <br>
-                                            <button type="submit" class="btn text-white bg-awwa-primary"><i class="fas fa-globe-americas mr-2"></i>Pubblica</button>
-                                        </form>
-                                    </div>
+                                    <form id="form_post">
+                                        <textarea type="text" class="form-control md-textarea" id="post_testo" name="post_testo" rows="3" placeholder="Sto guardando..." maxlength="8000" required></textarea>
+                                        <div class="row justify-content-center align-items-center mb-3">
+                                            <i class="fas fa-search mr-3" aria-hidden="true"></i>
+                                            <input class="form-control form-control-sm w-75" type="text" id="cerca_serie" placeholder="Inserisci il nome della serie">
+                                        </div>
+                                        <!--<label for="post_serie">Serie:</label>-->
+                                        <select id="post_serie" name="post_serie" class="custom-select mb-2">
+                                            <option value="null"> Seleziona serie... </option>
+                                        </select>
+                                        <label for="post_stagione">Seleziona la stagione:</label>
+                                        <select id="post_stagione" name="post_stagione" class="custom-select">
+                                            <option value="null"> Seleziona stagione... </option>
+                                        </select>
+                                        <label for="post_episodio">Seleziona l'episodio:</label>
+                                        <select id="post_episodio" name="post_episodio" class="custom-select">
+                                            <option value="null"> Seleziona episodio... </option>
+                                        </select>
+                                        <input type="text" class="form-control" id="post_titolo" name="post_titolo" placeholder="Inserisci il titolo" required>
+                                        <button type="submit" class="btn text-white bg-awwa-primary"><i class="fas fa-globe-americas mr-2"></i>Pubblica</button>
+                                    </form>
                                 </div>                    
                             </div>
                         </div>                

@@ -17,19 +17,19 @@ body::-webkit-scrollbar-thumb {
 }
 
 .awwa-primary {
-    color: var(--awwa-primary);
+    color: var(--awwa-primary) !important;
 }
 
 .awwa-secondary {
-    color: var(--awwa-secondary);
+    color: var(--awwa-secondary) !important;
 }
 
 .bg-awwa-primary {
-    background-color: var(--awwa-primary);
+    background-color: var(--awwa-primary) !important;
 }
 
 .bg-awwa-secondary {
-    background-color: var(--awwa-secondary);
+    background-color: var(--awwa-secondary) !important;
 }
 
 /*DEBUGGING*/
@@ -59,7 +59,7 @@ body.tv {
 }
 
 /* Contorno agli input */
-.form-control:focus {
+.form-control:focus, .custom-select:focus, #toggle_password:focus {
   color: #495057;
   background-color: #fff;
   border-color: var(--awwa-primary);
@@ -71,6 +71,12 @@ body.tv {
 .form-control:invalid {
     color: red;
 }
+
+/*.custom-select:focus {
+    border-color: var(--awwa-primary);
+    outline: 0;
+    box-shadow: 0 0 0 0.05rem var(--awwa-primary); /* h-offset v-offset blur spread color */
+/*}*/ 
 
 .input-group-prepend span, .input-group-append button {
     background-color: white;

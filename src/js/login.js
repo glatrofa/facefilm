@@ -46,5 +46,5 @@ $('#toggle_password').on('click',function mostraPassword(){
   setTimeout(function(){
     $('#password').prop('type','password');
     //console.log($('#password').prop('type'));
-  },500);
+  }, 500);
 })
