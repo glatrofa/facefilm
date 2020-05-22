@@ -2,6 +2,8 @@ import { logged } from './autenticazione.js';
 import { APIKEY } from './key.js';
 import { generaCard } from './genera_card.js';
 
+const baseImageURL = 'https://image.tmdb.org/t/p/';
+
 // verifica che l'utente abbia effettuato l'accesso
 // window.onload = logged();
 
@@ -11,13 +13,11 @@ $(document).ready(function() {
     mostraSeriePopolari();
 });
 
-const baseImageURL = 'https://image.tmdb.org/t/p/';
-
 // effettua il redirect sulla pagina della serie selezionata
-$('#cerca_serie_bottone').click(function cercaSerie() {
+/*$('#cerca_serie_bottone').click(function cercaSerie() {
     //console.log('serie selezionata '+$('#mostra_nome_serie :selected').val());
     window.location.href = './serie_tv.html?id='+$('#mostra_nome_serie :selected').val()+'';
-});
+});*/
 
 // quando viene premuto il bottone 'Cerca' o l'utente preme 'Invio' sulla sua tastiera, 
 //mostra le serie corrispondenti alla keyword in una serie di card

@@ -1,6 +1,8 @@
 import { logged } from './autenticazione.js';
 import { APIKEY } from './key.js';
 
+const baseImageURL = 'https://image.tmdb.org/t/p/';
+
 
 // verifica che l'utente abbia effettuato l'accesso
 //window.onload = logged();
@@ -19,9 +21,8 @@ function stampaInformazioniSerie() {
         .then(res => res.json())
         .then((data) => {
             console.log('Checkout this JSON! ', data);
-            let posterSize = 'w185'; //w500 per desktop, immagine più grande
-            document.getElementById('poster').src = 'http://image.tmdb.org/t/p/'+posterSize+data.poster_path;
-            document.getElementById('navbar_nome_serie').innerHTML = data.name;
+            let posterSize = 'w500'; //Formati disponibili: ["w92","w154","w185","w342","w500","w780","original"]
+            document.getElementById('poster').src = baseImageURL + posterSize + data.poster_path;
             document.getElementById('nome').innerHTML = data.name;
             // da formattare le date in formato europeo
             document.getElementById('anno_inizio').innerHTML = data.first_air_date;
@@ -33,10 +34,9 @@ function stampaInformazioniSerie() {
             // visualizza registi
             let i = 0;
             let registi = '';
-            while (i < data.created_by.length) {
-                registi += data.created_by[i].name+' ';
-                i ++;
-            }   
+            data.created_by.forEach(regista => {
+                registi += regista.name;
+            });
             document.getElementById('registi').innerHTML = registi;
             // visualizza attori
             visualizzaAttori(id, APIKEY);
@@ -82,3 +82,38 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
+
+// Gestione del bottone "Torna su"
+var scrollButton = document.getElementById("scroll_to_top");
+
+// Quando l'utente scrolla di un certo numero di pixel, mostra il bottone "Torna su"
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() { 
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50 ) {
+    scrollButton.style.display = "block";
+  } else {
+    scrollButton.style.display = "none";
+  }
+}
+
+// Quando si preme il bottone "Torna su" viene attivata questa funzione
+scrollButton.addEventListener('click',function tornaSu(){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;  
+});
+
+// Gestione logout
+$(function logout() {
+    $("#logout").click(function () {
+        $.ajax({
+            type: 'POST',
+            url: '../php/logout.php',
+            crossOrigin: true,
+            success: function () {
+                document.cookie = "PHPSESSID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                location.href = './login.html';
+            }
+        });
+    });
+});
