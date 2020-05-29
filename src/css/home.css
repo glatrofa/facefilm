@@ -185,6 +185,12 @@ a.post:hover {
     opacity: 1;
 }
 
+#scroll_to_top:focus {
+    outline: none;
+    background-color: var(--awwa-secondary);
+    color: white;
+}
+
 /* CSS esclusivo della pagina cerca_serie_tv */
 
 #risultati_cerca_serie_tv div.card button, #mostra_poster {
