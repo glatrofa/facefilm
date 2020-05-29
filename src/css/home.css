@@ -54,7 +54,7 @@ body.tv {
 }
 
 .h7 {
-    font-size: 0.8rem; /*da togliere? */
+    font-size: 0.8rem;
 }
 
 .navbar-brand {
@@ -117,20 +117,20 @@ a.post:hover {
     color: var(--awwa-secondary);
 }
 
-/* The snackbar - position it at the bottom and in the middle of the screen */
+/* La snackbar verrà mostrata in fondo e al centro dello schermo */
 .snackbar {
-    visibility: hidden; /* Hidden by default. Visible on click */
-    min-width: 250px; /* Set a default minimum width */
-    margin-left: -125px; /* Divide value of min-width by 2 */
-    left: 50%; /* Center the snackbar */
-    background-color: black; /* Black background color */
-    color: #fff; /* White text color */
-    text-align: center; /* Centered text */
-    border-radius: 10px; /* Rounded borders */
-    padding: 16px; /* Padding */
-    position: fixed; /* Sit on top of the screen */
-    bottom: 50px; /* 30px from the bottom */
-    z-index: 1; /* Add a z-index if needed */
+    visibility: hidden; /* Di default è nascosta, diverrà visibile al click (vedi classe .show) */
+    min-width: 250px;
+    margin-left: -125px; /* Valore della min-width diviso 2 */
+    left: 50%; /* Centrare la snackbar */
+    background-color: black;
+    color: #fff;
+    text-align: center; /* Il testo sarà centrato */
+    border-radius: 10px;
+    padding: 16px;
+    position: fixed;
+    bottom: 50px; /* Posizione fissa a 50px dal fondo della pagina */
+    z-index: 1; /* Per gestire l'overlapping con gli altri elementi della pagina */
 }
   
 /* Mostra la snackbar quando si clicca like/dislike (classe aggiunta con JavaScript) */
@@ -193,14 +193,13 @@ a.post:hover {
     border-radius: 5px;
 }
 
+#risultati_cerca_serie_tv div.card button:focus, #mostra_poster:focus {
+    box-shadow: 0 0 0.1rem 0.05rem var(--awwa-secondary); /* h-offset v-offset blur spread color  */ 
+}
+
 #risultati_cerca_serie_tv div.card button:hover, #mostra_poster:hover {
     color: white;
     background-color: var(--awwa-secondary);
-}
-
-#cerca_serie:focus {
-    border-color: white;
-    box-shadow: 0 0 0 0.1rem var(--awwa-secondary);
 }
 
 #classifica_TMDB a, #classifica_TMDB li {

@@ -23,7 +23,9 @@ $(document).ready(function() {
 //mostra le serie corrispondenti alla keyword in una serie di card
 $('#mostra_poster').click(cercaPoster);
 $('#cerca_serie').keyup(function enter(eventObject){if (eventObject.which == 13) cercaPoster();})
+
 function cercaPoster() {
+    document.getElementById('classifica_TMDB').classList.add('d-block');
     let url2 = 'https://api.themoviedb.org/3/search/tv?api_key=' + APIKEY + '&language=it&page=1&query=' + $('#cerca_serie').val()
     console.log(url2);
     fetch(url2)
@@ -66,11 +68,12 @@ function visualizzaClassifica() {
 
 function mostraSeriePopolari() {
     let url = 'https://api.themoviedb.org/3/discover/tv?api_key='+ APIKEY +'&language=it&sort_by=popularity.desc&page=1&timezone=Europe%2FItaly&include_null_first_air_dates=false';
+    document.getElementById('risultati_cerca_serie_tv').innerHTML = '<div class="col-12 text-center"><h5>Serie pi&ugrave; popolari su TMDB</h5></div>';
     fetch(url)
         .then(res => res.json())
         .then((data) => {
             //console.log('Checkout this JSON! ', data);
-            document.getElementById('risultati_cerca_serie_tv').innerHTML = '';
+            //document.getElementById('risultati_cerca_serie_tv').innerHTML = '';
             if (data.results.length) {
                 //per ogni elemento dell'array dei risultati crea una card con poster e descrizione serie, DA FINIRE
                 for (var element of data.results) {
