@@ -19,7 +19,7 @@ function generaHeader(nomeUtente, idPost, immagine) {
                         "</div>" +
                         "<div>" +
                             "<div class='dropdown'>" +
-                                "<button class='btn btn-link dropdown-toggle' type='button' id='gedf-drop1' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>" +
+                                "<button class='btn btn-link' type='button' id='gedf-drop1' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>" +
                                     "<i class='fa fa-ellipsis-h'></i>" +
                                 "</button>" +
                                 "<div class='dropdown-menu dropdown-menu-right' aria-labelledby='gedf-drop1'>" +
@@ -48,9 +48,9 @@ function generaBody(data, titolo, testo, idSerie, stagione, episodio) {
                     "</a>" +
                     "<p class='card-text'>"+ testo +"</p>" +
                     "<div>" +
-                        "<span class='badge badge-primary btn gold-style' id='nome_serie_"+ idSerie +"'></span>" +
-                        "<span class='badge badge-primary btn gold-style'>S "+ stagione +"</span>" +
-                        "<span class='badge badge-primary btn gold-style'>Ep "+ episodio +"</span>" +
+                        "<span class='badge text-white bg-awwa-primary mr-1' id='nome_serie_"+ idSerie +"'></span>" +
+                        "<span class='badge text-white bg-awwa-primary mr-1'>S "+ stagione +"</span>" +
+                        "<span class='badge text-white bg-awwa-primary'>Ep "+ episodio +"</span>" +
                     "</div>" +
                 "</div>";
     return body;    
@@ -74,9 +74,9 @@ function getNomeSerie(idSerie) {
 function generaFooter(idPost, idSerie, numeroLike, numeroDislike, numeroCommenti) {
     getNomeSerie(idSerie);
     let footer = "<div class='card-footer'>" +
-                    "<span class='badge badge-pill bg-awwa-primary mr-2' id='"+ idPost +"-post_like_number'>"+ numeroLike +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_like'><i class='fa fa-diamond'></i> Mi piace </a>" +
-                    "<span class='badge badge-pill bg-awwa-primary mr-2' id='"+ idPost +"-post_dislike_number'>"+ numeroDislike +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_dislike'><i class='fa fa-diamond'></i> Non mi piace </a>" +
-                    "<span class='badge badge-pill bg-awwa-primary mr-2' id='"+ idPost +"-post_comment_number'>"+ numeroCommenti +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_comment'><i class='fa fa-diamond'></i> Commenta</a>" +
+                    "<span class='badge badge-pill bg-awwa-primary mr-2' id='"+ idPost +"-post_like_number'>"+ numeroLike +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_like' style='cursor: pointer;'><i class='fa fa-diamond'></i> Mi piace </a>" +
+                    "<span class='badge badge-pill bg-awwa-primary mr-2' id='"+ idPost +"-post_dislike_number'>"+ numeroDislike +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_dislike' style='cursor: pointer;'><i class='fa fa-diamond'></i> Non mi piace </a>" +
+                    "<span class='badge badge-pill bg-awwa-primary mr-2' id='"+ idPost +"-post_comment_number'>"+ numeroCommenti +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_comment' style='cursor: pointer;'><i class='fa fa-diamond'></i> Commenta</a>" +
                 "</div></div>";                
     return footer;
 }

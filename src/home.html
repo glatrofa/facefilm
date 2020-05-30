@@ -61,10 +61,10 @@
                 <div class="col-md-8">                
                     <!-- Sezione crea post -->
                     <div class="card shadow mb-3">
-                        <div class="card-header">
+                        <div class="card-header bg-awwa-primary">
                             <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="publish-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">
+                                    <a class="nav-link active awwa-primary" id="publish-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">
                                         Pubblica un post
                                     </a>
                                 </li>
@@ -74,25 +74,34 @@
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
                                     <form id="form_post">
-                                        <textarea type="text" class="form-control md-textarea" id="post_testo" name="post_testo" rows="3" placeholder="Sto guardando..." maxlength="8000" required></textarea>
-                                        <div class="row justify-content-center align-items-center mb-3">
-                                            <i class="fas fa-search mr-3" aria-hidden="true"></i>
-                                            <input class="form-control form-control-sm w-75" type="text" id="cerca_serie" placeholder="Inserisci il nome della serie">
+                                        <div class="row mb-3">
+                                            <h4>Cosa hai visto</h4>
                                         </div>
-                                        <!--<label for="post_serie">Serie:</label>-->
+                                        <div class="row justify-content-center align-items-center mb-3">
+                                            <div class="input-group w-75">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-white awwa-secondary"><i class="fas fa-search" aria-hidden="true"></i></span>                                                 
+                                                </div>
+                                                <input class="form-control bg-white" type="text" id="cerca_serie" placeholder="Inserisci il nome della serie">
+                                            </div>
+                                        </div>
                                         <select id="post_serie" name="post_serie" class="custom-select mb-2">
                                             <option value="null"> Seleziona serie... </option>
                                         </select>
-                                        <label for="post_stagione">Seleziona la stagione:</label>
-                                        <select id="post_stagione" name="post_stagione" class="custom-select">
+                                        <select id="post_stagione" name="post_stagione" class="custom-select mb-2">
                                             <option value="null"> Seleziona stagione... </option>
                                         </select>
-                                        <label for="post_episodio">Seleziona l'episodio:</label>
                                         <select id="post_episodio" name="post_episodio" class="custom-select">
                                             <option value="null"> Seleziona episodio... </option>
                                         </select>
-                                        <input type="text" class="form-control" id="post_titolo" name="post_titolo" placeholder="Inserisci il titolo" required>
-                                        <button type="submit" class="btn text-white bg-awwa-primary"><i class="fas fa-globe-americas mr-2"></i>Pubblica</button>
+                                        <div class="row my-4">
+                                            <h4>Cosa ne pensi</h4>
+                                            <input type="text" class="form-control mt-2" id="post_titolo" name="post_titolo" placeholder="Titolo del post" required>
+                                            <textarea type="text" class="form-control md-textarea mt-2" id="post_testo" name="post_testo" rows="3" placeholder="Cosa ne penso..." maxlength="8000" required></textarea>
+                                        </div>
+                                        <div class="row">
+                                            <button type="submit" class="btn text-white bg-awwa-primary"><i class="fas fa-globe-americas mr-2"></i>Pubblica</button>
+                                       </div>
                                     </form>
                                 </div>                    
                             </div>
@@ -101,9 +110,9 @@
                     <!-- Sezione POST altri utenti -->                                
                     <div>
                         <div id="sezione_post"></div>
-                        <!-- bottone per caricare altri post -->
-                        <div>
-                            <button id="carica_altri_post" class="rounded-circle">Carica altri</button>
+                        <!-- Bottone per caricare altri post -->
+                        <div class="row mx-0">
+                            <button id="carica_altri_post" class="btn w-100"><i class="fas fa-plus mr-2"></i>Mostra pi&ugrave; post</button>
                         </div>
                     </div>                    
                     <!-- Fine sezione post -->

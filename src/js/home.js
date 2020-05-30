@@ -124,14 +124,14 @@ $(function visualizzaSerie() {
                 console.log('Checkout this JSON! ', data);
                 //console.log('dimensione '+data.results.length);
                 let i = 0;            
-                let listaSerie = '<option value="null"> Seleziona </option>';
+                let listaSerie = '<option value="null"> Scegli... </option>';
                 // ritornano al massimo 20 risultato per volta
                 while (data.results.length >= 1 && i < data.results.length) {
                     listaSerie += '<option value='+data.results[i].id+'>'+data.results[i].name+'</option>';
                     i ++;
                 }      
                 if (data.results.length == 0)
-                    listaSerie = '<option value='+'null'+'> Seleziona... </option>';
+                    listaSerie = '<option value='+'null'+'> Nessuna serie trovata </option>';
                 document.getElementById('post_serie').innerHTML = listaSerie;
             })
             .catch(err => { throw err });
@@ -149,7 +149,7 @@ $(function visualizzaStagioni() {
                 //console.log('result', data);
                 //console.log('numero stagioni ', data.number_of_seasons);
                 //console.log('stagioni ', data.seasons);
-                let listaStagioni = '<option value="null"> Seleziona </option>';
+                let listaStagioni = '<option value="null"> Scegli... </option>';
                 if(data.number_of_seasons != 0) {
                     let j = 0;                         
                     while (j < data.number_of_seasons) {
@@ -161,7 +161,7 @@ $(function visualizzaStagioni() {
                         listaStagioni = '<option value='+'null'+'> Seleziona... </option>';                
                 }
                 else
-                    listaStagioni = '<option value='+'null'+'>Nessuna stagione</option>';
+                    listaStagioni = '<option value='+'null'+'>Nessuna stagione trovata</option>';
                 // stampa nel documento le stagioni
                 document.getElementById('post_stagione').innerHTML = listaStagioni;
             })
@@ -179,7 +179,7 @@ $(function visualizzaEpisodi() {
             .then(res => res.json())
             .then((data) => {
                 console.log('episodi', data);
-                let listaEpisodi = '<option value="null"> Seleziona </option>';           
+                let listaEpisodi = '<option value="null"> Scegli... </option>';           
                 if(data.episodes.length != 0){
                     let i = 0;                 
                     while (i < data.episodes.length) {
@@ -190,7 +190,7 @@ $(function visualizzaEpisodi() {
                         listaEpisodi = '<option value='+'null'+'> Seleziona... </option>';
                 }
                 else
-                    listaEpisodi = '<option value='+'null'+'>Nessun episodio</option>';
+                    listaEpisodi = '<option value='+'null'+'>Nessun episodio trovato</option>';
                 document.getElementById('post_episodio').innerHTML = listaEpisodi;
             })
             .catch(err => { throw err });

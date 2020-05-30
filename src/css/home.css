@@ -94,13 +94,14 @@ tranne quello che corrisponde alla pagina corrente */
 
 footer {
     background: var(--awwa-primary);
-    /* height: 40px; */
     text-align: center;
     line-height: 40px;
-    /*position: fixed;
-    height: 45px;
-    bottom: 0;*/
     width: 100%;
+}
+
+#form_post .row {
+    margin-right: 0;
+    margin-left: 0;
 }
 
 /* Contorno agli input */
@@ -110,7 +111,17 @@ footer {
     border-color: var(--awwa-primary);
     outline: 0;
     box-shadow: 0 0 0 0.05rem var(--awwa-primary);
-  }
+}
+
+#form_post .btn:hover {
+    border: 1px solid var(--awwa-secondary);
+}
+
+#form_post .btn:active {
+    background-color: var(--awwa-secondary) !important;
+    color: white !important;
+    box-shadow: 0 0 0 0.05rem var(--awwa-secondary); /* h-offset v-offset blur spread color */
+}
 
 /* mouse over link */
 a.post:hover {
@@ -163,6 +174,18 @@ a.post:hover {
 }
 /* fine snackbar */
 
+/* Bottone 'Mostra più post' */
+#carica_altri_post {
+    background-color: white;
+    color: var(--awwa-secondary);
+    border: 2px solid var(--awwa-secondary);
+}
+
+#carica_altri_post:hover {
+    background-color: var(--awwa-secondary);
+    color: white;
+}
+
 /* Bottone scroll to top */
 #scroll_to_top {
     display: none; /* inizialmente non viene mostrato */
@@ -200,7 +223,7 @@ a.post:hover {
 }
 
 #risultati_cerca_serie_tv div.card button:focus, #mostra_poster:focus {
-    box-shadow: 0 0 0.1rem 0.05rem var(--awwa-secondary); /* h-offset v-offset blur spread color  */ 
+    box-shadow: 0 0 0.1rem 0.05rem var(--awwa-secondary); /* h-offset v-offset blur spread color */ 
 }
 
 #risultati_cerca_serie_tv div.card button:hover, #mostra_poster:hover {
