@@ -47,6 +47,8 @@ body {
 
 body.main {
     background-image: url(../img/bg-pattern/pattern.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 body.tv {
