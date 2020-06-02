@@ -72,7 +72,7 @@ function visualizzaClassificaTmdb() {
 
 function mostraSeriePopolari() {
     let url = 'https://api.themoviedb.org/3/discover/tv?api_key='+ APIKEY +'&language=it&sort_by=popularity.desc&page=1&timezone=Europe%2FItaly&include_null_first_air_dates=false';
-    document.getElementById('risultati_cerca_serie_tv').innerHTML = '<div class="col-12 text-center h4 font-weight-bold awwa-secondary mb-4">Serie pi&ugrave; popolari su TMDB</div>';
+    document.getElementById('risultati_cerca_serie_tv').innerHTML = '<div class="col-12 text-center h4 font-weight-bold awwa-secondary mb-5">Serie pi&ugrave; popolari su TMDB</div>';
     fetch(url)
         .then(res => res.json())
         .then((data) => {
