@@ -3,6 +3,7 @@ import { APIKEY } from './key.js';
 import { generaHeader, generaBody, generaFooter } from './genera_post.js';
 import { snackbarSuccesso, snackbarErrore } from './visualizza_snackbar.js';
 import { visualizzaCommenti } from './visualizza_commenti.js';
+import { visualizzaClassificaTmdb } from './cerca_serie_tv.js';
 
 console.log(document.body.scrollTop, document.documentElement.scrollTop);
 
@@ -25,7 +26,9 @@ let pagina = 0;
 // richiama funzioni non appena il documento è caricato
 $(document).ready(function() {
     visualizzaPost(pagina);
-    visualizzaClassifica();    
+    visualizzaClassificaAwwa();
+    visualizzaClassificaTmdb();
+    scrollHandler();    
 });
 
 /*
@@ -79,7 +82,7 @@ $(function controllaNonMiPiace() {
 */
 
 // visualizza le 5 serie più popolari su tmdb
-function visualizzaClassifica() {
+function visualizzaClassificaAwwa() {
     $.ajax({
         type: 'POST',
         url: './php/classifica_commenti_serie.php',
@@ -90,10 +93,12 @@ function visualizzaClassifica() {
             let i;
             //let classifica = "";
             for(i = 0; i < data.length; i ++) {
-                document.getElementById('classifica_serie').innerHTML += "<li><a href='./html/serie_tv.html?id="+ data[i].idSerie +"' id='link_"+ data[i].idSerie +"'></a></li>";
+                document.getElementById('classifica_serie_Awwa').innerHTML += "<li class='list-group-item px-0 px-lg-3 border-0'>" + 
+                                                                            "<a href='./html/serie_tv.html?id="+ data[i].idSerie +"' id='link_"+ data[i].idSerie +"' title='Vai alla pagina della serie' class='awwa-secondary'></a>" +
+                                                                         "</li>";
                 richiediNomeSerie(data[i].idSerie,  data[i].numero);
             }
-            //document.getElementById('classifica_serie').innerHTML = classifica;
+            //document.getElementById('classifica_serie_Awwa').innerHTML = classifica;
         },
         error: function (data) {
             console.log('ERROR '+ data);
@@ -109,7 +114,7 @@ function richiediNomeSerie(idSerie, numero) {
         .then(res => res.json())
         .then((out) => {
             //console.log(out);
-            document.getElementById("link_" + idSerie).innerHTML = out.name + " #" + numero;
+            document.getElementById("link_" + idSerie).innerHTML = '<span class="badge badge-pill mr-2 bg-awwa-secondary text-white">' + numero + '</span>'+ out.name;
         })
         .catch(err => { throw err });    
 }
@@ -449,24 +454,36 @@ function visualizzaPost(pagina) {
     });
 }
 
-var scrollButton = document.getElementById("scroll_to_top");
-
-// Quando l'utente scrolla di un certo numero di pixel, mostra il bottone "Torna su"
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() { 
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50 ) {
-    scrollButton.style.display = "block";
-  } else {
-    scrollButton.style.display = "none";
-  }
+function scrollHandler(){
+    // Quando si preme il bottone "Torna su" viene attivata questa funzione
+    document.getElementById("scroll_to_top").addEventListener('click',function tornaSu(){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    });  
+    window.onscroll = function() {
+        if (document.documentElement.scrollTop > 600 ) {
+            document.getElementById("scroll_to_top").style.display = "block";
+          } else {
+            document.getElementById("scroll_to_top").style.display = "none";
+          }
+        };
 }
 
+// Quando l'utente scrolla di un certo numero di pixel, mostra il bottone "Torna su"
+//window.onscroll = function() {scrollFunction()};
+/*function scrollFunction() { 
+  if (document.documentElement.scrollTop > 600 ) {
+    document.getElementById("scroll_to_top").style.display = "block";
+  } else {
+    document.getElementById("scroll_to_top").style.display = "none";
+  }
+}*/
+
 // Quando si preme il bottone "Torna su" viene attivata questa funzione
-scrollButton.addEventListener('click',function tornaSu(){
+/*document.getElementById("scroll_to_top").addEventListener('click',function tornaSu(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;  
-});
+});*/
 
 $(function logout() {
     $("#logout").click(function () {
@@ -488,3 +505,5 @@ $(function visualizzaAltriPost() {
         visualizzaPost(pagina);
     });
 });
+
+export { scrollHandler };

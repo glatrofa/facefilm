@@ -1,6 +1,7 @@
 import { logged } from './autenticazione.js';
 import { APIKEY } from './key.js';
 import { generaCard } from './genera_card.js';
+import { scrollHandler } from './home.js';
 
 const baseImageURL = 'https://image.tmdb.org/t/p/';
 
@@ -9,8 +10,9 @@ const baseImageURL = 'https://image.tmdb.org/t/p/';
 
 // richiama funzioni non appena il documento è caricato
 $(document).ready(function() {
-    visualizzaClassifica();
+    visualizzaClassificaTmdb();
     mostraSeriePopolari();
+    scrollHandler();
 });
 
 // effettua il redirect sulla pagina della serie selezionata
@@ -49,7 +51,7 @@ function cercaPoster() {
 }
 
 // visualizza le 10 serie più popolari su tmdb
-function visualizzaClassifica() {
+function visualizzaClassificaTmdb() {
     let url = 'https://api.themoviedb.org/3/discover/tv?api_key='+ APIKEY +'&language=it&sort_by=popularity.desc&page=1&timezone=Europe%2FItaly&include_null_first_air_dates=false';
     fetch(url)
         .then(res => res.json())
@@ -58,10 +60,12 @@ function visualizzaClassifica() {
             let i = 0;            
             let classifica = '';
             do{
-                classifica += '<li><a href="./serie_tv.html?id='+out.results[i].id+'">'+out.results[i].name+'</a></li>';                
+                classifica += '<li class="list-group-item px-0 px-lg-3 border-0">' + 
+                                '<a href="./serie_tv.html?id='+out.results[i].id+'" class="awwa-secondary">'+out.results[i].name+'</a>' +
+                              '</li>';                
                 i ++;
             }while (i <= 9);
-            document.getElementById('classifica_serie').innerHTML = classifica;
+            document.getElementById('classifica_serie_Tmdb').innerHTML = classifica;
         })
         .catch(err => { throw err });
 }
@@ -97,26 +101,6 @@ function sortByPopularityDesc(jsonSerieTv) {
     return jsonSortedDesc;
 }
 
-// Gestione del bottone "Torna su"
-var scrollButton = document.getElementById("scroll_to_top");
-
-// Quando l'utente scrolla di un certo numero di pixel, mostra il bottone "Torna su"
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() { 
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50 ) {
-    scrollButton.style.display = "block";
-  } else {
-    scrollButton.style.display = "none";
-  }
-}
-
-// Quando si preme il bottone "Torna su" viene attivata questa funzione
-scrollButton.addEventListener('click',function tornaSu(){
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;  
-});
-
 // Gestione logout
 $(function logout() {
     $("#logout").click(function () {
@@ -131,3 +115,5 @@ $(function logout() {
         });
     });
 });
+
+export {visualizzaClassificaTmdb};

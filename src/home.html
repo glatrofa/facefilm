@@ -20,7 +20,7 @@
     <main>
         <!-- Navbar -->
         <nav class="navbar sticky-top navbar-expand-md bg-awwa-primary">
-            <a class="navbar-brand py-0">AWWA</a>
+            <a class="navbar-brand py-0 awwa-secondary">AWWA</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-ellipsis-h text-white"></i>
             </button>
@@ -49,11 +49,25 @@
             <div class="row justify-content-around">
                 <!-- Classifica -->
                 <div class="col-md-3">
-                    <div class="card shadow">
+                    <div class="card shadow-sm">
+                        <div class="card-header text-center bg-awwa-secondary">
+                            <div class="h4 text-white">Serie pi&ugrave; commentate su AWWA</div>
+                        </div>
                         <div class="card-body">
-                            <div class="h4">Serie con pi&ugrave; post</div>
                             <div class="h6">
-                                <ul id="classifica_serie"></ul>
+                                <ul id="classifica_serie_Awwa" class="list-group"></ul>
+                            </div>
+                        </div>                    
+                    </div>
+                    <div class="card shadow-sm mt-5">
+                        <div class="card-header text-center bg-awwa-secondary">
+                            <div class="h4 text-white">
+                                Serie pi&ugrave; popolari su <a href="https://www.themoviedb.org/?language=it" class="link awwa-secondary">TMDB</a>
+                            </div>
+                        </div>
+                        <div class="card-body align-items-center">
+                            <div class="h6">
+                                <ol id="classifica_serie_Tmdb" class="list-group"></ol>
                             </div>
                         </div>                    
                     </div>
@@ -64,7 +78,7 @@
                         <div class="card-header bg-awwa-primary">
                             <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active awwa-primary" id="publish-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">
+                                    <a class="nav-link active awwa-secondary" id="publish-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">
                                         Pubblica un post
                                     </a>
                                 </li>
@@ -74,7 +88,7 @@
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
                                     <form id="form_post">
-                                        <div class="row mb-3">
+                                        <div class="row awwa-secondary mb-3">
                                             <h4>Cosa hai visto</h4>
                                         </div>
                                         <div class="row justify-content-center align-items-center mb-3">
@@ -85,22 +99,24 @@
                                                 <input class="form-control bg-white" type="text" id="cerca_serie" placeholder="Inserisci il nome della serie">
                                             </div>
                                         </div>
-                                        <select id="post_serie" name="post_serie" class="custom-select mb-2">
-                                            <option value="null"> Seleziona serie... </option>
-                                        </select>
-                                        <select id="post_stagione" name="post_stagione" class="custom-select mb-2">
-                                            <option value="null"> Seleziona stagione... </option>
-                                        </select>
-                                        <select id="post_episodio" name="post_episodio" class="custom-select">
-                                            <option value="null"> Seleziona episodio... </option>
-                                        </select>
-                                        <div class="row my-4">
+                                        <div class="row justify-content-around my-3">
+                                            <select id="post_serie" name="post_serie" class="custom-select col-3 mb-2">
+                                                <option value="null"> Seleziona serie... </option>
+                                            </select>
+                                            <select id="post_stagione" name="post_stagione" class="custom-select col-3 mb-2">
+                                                <option value="null"> Seleziona stagione... </option>
+                                            </select>
+                                            <select id="post_episodio" name="post_episodio" class="custom-select col-3">
+                                                <option value="null"> Seleziona episodio... </option>
+                                            </select>
+                                        </div>
+                                        <div class="row awwa-secondary my-4">
                                             <h4>Cosa ne pensi</h4>
                                             <input type="text" class="form-control mt-2" id="post_titolo" name="post_titolo" placeholder="Titolo del post" required>
                                             <textarea type="text" class="form-control md-textarea mt-2" id="post_testo" name="post_testo" rows="3" placeholder="Cosa ne penso..." maxlength="8000" required></textarea>
                                         </div>
                                         <div class="row">
-                                            <button type="submit" class="btn text-white bg-awwa-primary"><i class="fas fa-globe-americas mr-2"></i>Pubblica</button>
+                                            <button type="submit" class="btn btn-lg text-white bg-awwa-primary ml-2"><i class="fas fa-globe-americas mr-2"></i>Pubblica</button>
                                        </div>
                                     </form>
                                 </div>                    

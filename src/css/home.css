@@ -1,7 +1,8 @@
 /* Definizione colori primario e secondario del sito*/
 :root {
     --awwa-primary: #e5af05;
-    --awwa-secondary: #00006b;
+    /*--awwa-secondary: #00006b;*/
+    --awwa-secondary: #1e006b;
 }
 
 /*DEBUGGING*/
@@ -49,10 +50,6 @@ body.main {
     background-image: url(../img/bg-pattern/pattern.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-body.tv {
-    background-image: url(../img/Tv-vintage.jpg);
 }
 
 .h7 {
@@ -106,8 +103,8 @@ footer {
     margin-left: 0;
 }
 
-/* Contorno agli input */
-.form-control:focus {
+/* Contorno agli input e ai select */
+.form-control:focus, .custom-select:focus {
     color: #495057;
     background-color: #fff;
     border-color: var(--awwa-primary);

@@ -40,7 +40,7 @@ function generaBody(data, titolo, testo, idSerie, stagione, episodio) {
     //console.log('data fomatatta', data);
     data = new Date(data * 1000);
     //console.log('nuova data ', data.getDay() + '/' + data.getMonth() + '/' + data.getFullYear() + ' - ' + data.getHours() + ':' + data.getMinutes() + ':' + data.getSeconds());
-    let dataFormattata = data.getDay() + "/" + data.getMonth() + "/" + data.getFullYear() + " - " + data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
+    let dataFormattata = data.getDay() + "/" + data.getMonth() + "/" + data.getFullYear() + " - " + data.getHours() + ":" + data.getMinutes() + ":"; // + data.getSeconds();
     let body = "<div class='card-body'>" +
                     "<div class='text-muted h7 mb-2'> <i class='fa fa-clock-o'></i> "+ dataFormattata +"</div>" +
                     "<a class='card-link'>" +
@@ -48,9 +48,11 @@ function generaBody(data, titolo, testo, idSerie, stagione, episodio) {
                     "</a>" +
                     "<p class='card-text'>"+ testo +"</p>" +
                     "<div>" +
-                        "<span class='badge text-white bg-awwa-primary mr-1' id='nome_serie_"+ idSerie +"'></span>" +
-                        "<span class='badge text-white bg-awwa-primary mr-1'>S "+ stagione +"</span>" +
-                        "<span class='badge text-white bg-awwa-primary'>Ep "+ episodio +"</span>" +
+                        "<a href='./html/serie_tv.html?id="+ idSerie +"' id='link_"+ idSerie +"' title='Vai alla pagina della serie'>" + 
+                            "<span class='badge text-white bg-awwa-secondary mr-1' id='nome_serie_"+ idSerie +"'></span>" +
+                        "</a>" +
+                        "<span class='badge text-white bg-awwa-secondary mr-1'>S "+ stagione +"</span>" +
+                        "<span class='badge text-white bg-awwa-secondary'>Ep "+ episodio +"</span>" +
                     "</div>" +
                 "</div>";
     return body;    
@@ -74,9 +76,9 @@ function getNomeSerie(idSerie) {
 function generaFooter(idPost, idSerie, numeroLike, numeroDislike, numeroCommenti) {
     getNomeSerie(idSerie);
     let footer = "<div class='card-footer'>" +
-                    "<span class='badge badge-pill bg-awwa-primary mr-2' id='"+ idPost +"-post_like_number'>"+ numeroLike +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_like' style='cursor: pointer;'><i class='fa fa-diamond'></i> Mi piace </a>" +
-                    "<span class='badge badge-pill bg-awwa-primary mr-2' id='"+ idPost +"-post_dislike_number'>"+ numeroDislike +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_dislike' style='cursor: pointer;'><i class='fa fa-diamond'></i> Non mi piace </a>" +
-                    "<span class='badge badge-pill bg-awwa-primary mr-2' id='"+ idPost +"-post_comment_number'>"+ numeroCommenti +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_comment' style='cursor: pointer;'><i class='fa fa-diamond'></i> Commenta</a>" +
+                    "<span class='badge badge-pill text-white bg-awwa-primary mr-2' id='"+ idPost +"-post_like_number'>"+ numeroLike +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_like' style='cursor: pointer;'><i class='fa fa-diamond'></i> Mi piace </a>" +
+                    "<span class='badge badge-pill text-white bg-awwa-primary mr-2' id='"+ idPost +"-post_dislike_number'>"+ numeroDislike +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_dislike' style='cursor: pointer;'><i class='fa fa-diamond'></i> Non mi piace </a>" +
+                    "<span class='badge badge-pill text-white bg-awwa-primary mr-2' id='"+ idPost +"-post_comment_number'>"+ numeroCommenti +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_comment' style='cursor: pointer;'><i class='fa fa-diamond'></i> Commenta</a>" +
                 "</div></div>";                
     return footer;
 }
