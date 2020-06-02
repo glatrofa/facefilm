@@ -114,7 +114,7 @@ function richiediNomeSerie(idSerie, numero) {
         .then(res => res.json())
         .then((out) => {
             //console.log(out);
-            document.getElementById("link_" + idSerie).innerHTML = '<span class="badge badge-pill mr-2 bg-awwa-secondary text-white">' + numero + '</span>'+ out.name;
+            document.getElementById("link_" + idSerie).innerHTML = '<span class="badge badge-pill h4 mr-2 bg-awwa-secondary text-white">' + numero + '</span>'+ out.name;
         })
         .catch(err => { throw err });    
 }
