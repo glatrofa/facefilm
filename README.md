@@ -1,4 +1,4 @@
-# facefilm :movie_camera: :cinema:
+# facefilm :movie_camera:
 
 Web application made for a [university](http://www.poliba.it/ "PoliBA") exam.
 The application is accessible [here](http://awwa.sytes.net "facefilm site").
