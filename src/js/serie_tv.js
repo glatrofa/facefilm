@@ -21,7 +21,7 @@ function stampaInformazioniSerie() {
         .then(res => res.json())
         .then((data) => {
             console.log('Checkout this JSON! ', data);
-            let posterSize = 'w500'; //Formati disponibili: ["w92","w154","w185","w342","w500","w780","original"]
+            let posterSize = 'w780'; //Formati disponibili: ["w92","w154","w185","w342","w500","w780","original"]
             document.getElementById('poster').src = baseImageURL + posterSize + data.poster_path;
             document.getElementById('nome').innerHTML = data.name;
             // da formattare le date in formato europeo
