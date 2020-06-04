@@ -1,7 +1,7 @@
 import { logged } from './autenticazione.js';
 import { APIKEY } from './key.js';
 import { generaCard } from './genera_card.js';
-import { scrollHandler } from './home.js';
+import  scrollHandler  from './home.js';
 
 const baseImageURL = 'https://image.tmdb.org/t/p/';
 
@@ -9,11 +9,16 @@ const baseImageURL = 'https://image.tmdb.org/t/p/';
 // window.onload = logged();
 
 // richiama funzioni non appena il documento è caricato
-$(document).ready(function() {
+document.addEventListener("DOMContentLoaded",function(){
     visualizzaClassificaTmdb();
     mostraSeriePopolari();
     scrollHandler();
 });
+/*$(document).ready(function() {
+    visualizzaClassificaTmdb();
+    mostraSeriePopolari();
+    //scrollHandler();
+});*/
 
 // effettua il redirect sulla pagina della serie selezionata
 /*$('#cerca_serie_bottone').click(function cercaSerie() {
@@ -56,16 +61,21 @@ function visualizzaClassificaTmdb() {
     fetch(url)
         .then(res => res.json())
         .then((out) => {
-            //console.log('Checkout this JSON! ', out);
-            let i = 0;            
+            console.log('Classifica TMDB ', out);
             let classifica = '';
+            out.results.forEach(element => {
+                classifica += '<li class="list-group-item px-0 px-lg-3 border-0">' + 
+                                '<a href="./serie_tv.html?id=' + element.id + '" class="awwa-secondary">' + element.name + '</a>' +
+                              '</li>';                
+            });
+            document.getElementById('classifica_serie_Tmdb').innerHTML = classifica;
+            /* let i = 0;
             do{
                 classifica += '<li class="list-group-item px-0 px-lg-3 border-0">' + 
                                 '<a href="./serie_tv.html?id='+out.results[i].id+'" class="awwa-secondary">'+out.results[i].name+'</a>' +
                               '</li>';                
                 i ++;
-            }while (i <= 9);
-            document.getElementById('classifica_serie_Tmdb').innerHTML = classifica;
+            }while (i <= 9);*/
         })
         .catch(err => { throw err });
 }

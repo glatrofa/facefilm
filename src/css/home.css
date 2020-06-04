@@ -233,3 +233,27 @@ a.post:hover {
 #classifica_TMDB a, #classifica_TMDB li {
     color: var(--awwa-secondary);
 }
+
+/* Per la pagina serie_tv */
+
+#stelle_voto {
+    display: inline-block;
+    font-size: 3rem;
+    line-height: 1;
+}
+
+#stelle_voto::before {
+    --star-color: #fff;
+    --star-background: var(--awwa-primary);
+    --percent: calc(var(--rating) / 10 * 100%);
+    content: '★★★★★';
+    letter-spacing: 2px;
+    -webkit-text-stroke: 1px var(--awwa-secondary);
+    background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; 
+    -webkit-text-fill-color: transparent;
+}
+
+  

@@ -1,5 +1,6 @@
 import { logged } from './autenticazione.js';
 import { APIKEY } from './key.js';
+import { scrollHandler } from './home.js';
 
 const baseImageURL = 'https://image.tmdb.org/t/p/';
 
@@ -10,6 +11,7 @@ const baseImageURL = 'https://image.tmdb.org/t/p/';
 // richiama funzioni non appena il documento è caricato
 $(document).ready(function() {
     stampaInformazioniSerie();
+    scrollHandler();
 });
 
 function stampaInformazioniSerie() {
@@ -28,6 +30,8 @@ function stampaInformazioniSerie() {
             document.getElementById('anno_inizio').innerHTML = data.first_air_date;
             document.getElementById('anno_termine').innerHTML = data.last_air_date;        
             document.getElementById('media_voti').innerHTML = data.vote_average+'/10';
+            //document.getElementById('stelle_voto').style = '--rating: ' + data.vote_average;
+            createRatingStars(data.vote_average);
             document.getElementById('numero_voti').innerHTML = data.vote_count;
             document.getElementById('numero_stagioni').innerHTML = data.number_of_seasons;
             document.getElementById('numero_episodi').innerHTML = data.number_of_episodes;
@@ -83,25 +87,12 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
-// Gestione del bottone "Torna su"
-var scrollButton = document.getElementById("scroll_to_top");
-
-// Quando l'utente scrolla di un certo numero di pixel, mostra il bottone "Torna su"
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() { 
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50 ) {
-    scrollButton.style.display = "block";
-  } else {
-    scrollButton.style.display = "none";
-  }
+function createRatingStars(vote_average){
+    var span = document.createElement('SPAN');
+    span.id = 'stelle_voto';
+    span.style = '--rating: ' + vote_average; 
+    document.getElementById('voti').appendChild(span);
 }
-
-// Quando si preme il bottone "Torna su" viene attivata questa funzione
-scrollButton.addEventListener('click',function tornaSu(){
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;  
-});
 
 // Gestione logout
 $(function logout() {

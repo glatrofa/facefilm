@@ -4,7 +4,7 @@ import { APIKEY } from './key.js';
 function generaHeader(nomeUtente, idPost, immagine) {
     let pathImmagine;
     if(immagine == null)
-        pathImmagine = "/img/default_profile_image.png";
+        pathImmagine = "./img/profile_clip_art.png";
     else
         pathImmagine = "data:image;base64,'"+ immagine +"'";
     let header = "<div class='card shadow mb-3'><div class='card-header'>" +
