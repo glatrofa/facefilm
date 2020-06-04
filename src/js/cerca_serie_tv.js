@@ -32,7 +32,7 @@ $('#mostra_poster').click(cercaPoster);
 $('#cerca_serie').keyup(function enter(eventObject){if (eventObject.which == 13) cercaPoster();})
 
 function cercaPoster() {
-    document.getElementById('classifica_serie_Tmdb').classList.add('d-block'); // visualizza la classifica TMDB laterale, che è inizialmente nascosta
+    document.getElementById('classifica_laterale_Tmdb').classList.add('d-block'); // visualizza la classifica TMDB laterale, che è inizialmente nascosta
     let url2 = 'https://api.themoviedb.org/3/search/tv?api_key=' + APIKEY + '&language=it&page=1&query=' + $('#cerca_serie').val();
     console.log(url2);
     fetch(url2)
