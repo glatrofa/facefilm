@@ -32,8 +32,8 @@ $('#mostra_poster').click(cercaPoster);
 $('#cerca_serie').keyup(function enter(eventObject){if (eventObject.which == 13) cercaPoster();})
 
 function cercaPoster() {
-    document.getElementById('classifica_TMDB').classList.add('d-block');
-    let url2 = 'https://api.themoviedb.org/3/search/tv?api_key=' + APIKEY + '&language=it&page=1&query=' + $('#cerca_serie').val()
+    document.getElementById('classifica_serie_Tmdb').classList.add('d-block'); // visualizza la classifica TMDB laterale, che è inizialmente nascosta
+    let url2 = 'https://api.themoviedb.org/3/search/tv?api_key=' + APIKEY + '&language=it&page=1&query=' + $('#cerca_serie').val();
     console.log(url2);
     fetch(url2)
     .then(res => res.json())
@@ -63,9 +63,10 @@ function visualizzaClassificaTmdb() {
         .then((out) => {
             console.log('Classifica TMDB ', out);
             let classifica = '';
-            out.results.forEach(element => {
+            let topTen = out.results.slice(0,10); // prende solo le prime 10 serie delle 20 ritornate dall'API
+            topTen.forEach(serie => {
                 classifica += '<li class="list-group-item px-0 px-lg-3 border-0">' + 
-                                '<a href="./serie_tv.html?id=' + element.id + '" class="awwa-secondary">' + element.name + '</a>' +
+                                '<a href="./serie_tv.html?id=' + serie.id + '" class="awwa-secondary">' + serie.name + '</a>' +
                               '</li>';                
             });
             document.getElementById('classifica_serie_Tmdb').innerHTML = classifica;
