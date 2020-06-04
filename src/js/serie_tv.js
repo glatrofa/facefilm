@@ -1,9 +1,5 @@
 import { logged } from './autenticazione.js';
 import { APIKEY } from './key.js';
-import { scrollHandler } from './home.js';
-
-const baseImageURL = 'https://image.tmdb.org/t/p/';
-
 
 // verifica che l'utente abbia effettuato l'accesso
 //window.onload = logged();
@@ -13,6 +9,8 @@ $(document).ready(function() {
     stampaInformazioniSerie();
     scrollHandler();
 });
+
+const baseImageURL = 'https://image.tmdb.org/t/p/';
 
 function stampaInformazioniSerie() {
     // https://developers.themoviedb.org/3/tv/get-tv-details
@@ -108,3 +106,19 @@ $(function logout() {
         });
     });
 });
+
+function scrollHandler(){
+    // Quando si preme il bottone "Torna su" viene attivata questa funzione
+    document.getElementById("scroll_to_top").addEventListener('click',function tornaSu(){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    });  
+    window.onscroll = function() {
+        if (document.documentElement.scrollTop > 600 ) {
+            document.getElementById("scroll_to_top").style.display = "block";
+          } else {
+            document.getElementById("scroll_to_top").style.display = "none";
+          }
+        };
+}
+

@@ -26,7 +26,7 @@ $(document).ready(function() {
     visualizzaPost(pagina);
     visualizzaClassificaAwwa();
     visualizzaClassificaTmdb();
-    //scrollHandler();  RICORDARSI DI UN-COMMENTARE  
+    scrollHandler();
 });
 
 /*
@@ -520,5 +520,3 @@ $(function visualizzaAltriPost() {
         visualizzaPost(pagina);
     });
 });
-
-export default function() {scrollHandler()} 

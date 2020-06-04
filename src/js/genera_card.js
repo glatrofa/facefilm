@@ -6,7 +6,7 @@ function generaCard(element, baseImageURL) {
                         '<a data-toggle="tooltip" data-placement="top" title="Vai alla pagina della serie" href="./serie_tv.html?id=' + element.id + '" class="stretched-link"></a>' +
                         '<div class="h-100 text-center">' +
                             '<i class="fas fa-9x fa-exclamation-triangle awwa-secondary mt-5 d-block"></i>' +
-                            '<span class="text-muted awwa-secondary h7 d-block mt-2">Copertina non disponibile</span>' +
+                            '<span class="font-weight-bold h7 awwa-secondary d-block mt-2">Copertina non disponibile</span>' +
                         '</div>' +
                     '</div>';
     }

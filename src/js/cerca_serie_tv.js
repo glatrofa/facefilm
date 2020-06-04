@@ -1,7 +1,6 @@
 import { logged } from './autenticazione.js';
 import { APIKEY } from './key.js';
 import { generaCard } from './genera_card.js';
-import  scrollHandler  from './home.js';
 
 const baseImageURL = 'https://image.tmdb.org/t/p/';
 
@@ -63,12 +62,15 @@ function visualizzaClassificaTmdb() {
         .then((out) => {
             console.log('Classifica TMDB ', out);
             let classifica = '';
-            let topTen = out.results.slice(0,10); // prende solo le prime 10 serie delle 20 ritornate dall'API
-            topTen.forEach(serie => {
-                classifica += '<li class="list-group-item px-0 px-lg-3 border-0">' + 
+            let ranking = 1;
+            let topTen = out.results.slice(0,10); // prende solo le prime 10 serie TV tra le 20 serie fornite dall'API
+            for (let serie of topTen) {
+                classifica += '<li class="list-group-item px-0 px-lg-3 border-0 d-flex align-items-center">' + 
+                                '<span class="h3 mr-3">&#35; ' + ranking + '</span>' +
                                 '<a href="./serie_tv.html?id=' + serie.id + '" class="awwa-secondary">' + serie.name + '</a>' +
-                              '</li>';                
-            });
+                              '</li>';
+                ranking += 1;                
+            };
             document.getElementById('classifica_serie_Tmdb').innerHTML = classifica;
             /* let i = 0;
             do{
@@ -127,4 +129,17 @@ $(function logout() {
     });
 });
 
-export {visualizzaClassificaTmdb};
+function scrollHandler(){
+    // Quando si preme il bottone "Torna su" viene attivata questa funzione
+    document.getElementById("scroll_to_top").addEventListener('click',function tornaSu(){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    });  
+    window.onscroll = function() {
+        if (document.documentElement.scrollTop > 600 ) {
+            document.getElementById("scroll_to_top").style.display = "block";
+          } else {
+            document.getElementById("scroll_to_top").style.display = "none";
+          }
+        };
+}
