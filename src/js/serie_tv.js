@@ -21,25 +21,26 @@ function stampaInformazioniSerie() {
         .then(res => res.json())
         .then((data) => {
             console.log('Checkout this JSON! ', data);
+            document.getElementById('nome').innerHTML = data.name;
             let posterSize = 'w500'; //Formati disponibili: ["w92","w154","w185","w342","w500","w780","original"]
             document.getElementById('poster').src = baseImageURL + posterSize + data.poster_path;
-            document.getElementById('nome').innerHTML = data.name;
-            // da formattare le date in formato europeo
+            document.getElementById('nome_originale').innerHTML += data.original_name;
+            document.getElementById('descrizione_serie').innerHTML += data.overview;
             document.getElementById('anno_inizio').innerHTML += dataEuropea(data.first_air_date);
             document.getElementById('anno_termine').innerHTML += dataEuropea(data.last_air_date);        
+            // visualizza registi
+            let registi = '';
+            data.created_by.forEach(regista => {
+                registi += regista.name + ' , ';
+            });
+            registi = registi.substring(0,registi.length-2)
+            document.getElementById('registi').innerHTML += registi;
+            document.getElementById('numero_stagioni').innerHTML += data.number_of_seasons;
+            document.getElementById('numero_episodi').innerHTML += data.number_of_episodes;
             document.getElementById('media_voti').innerHTML = '<span class="h4 mr-2">' + data.vote_average + '</span>' +'<span>/10</span>';
             //document.getElementById('stelle_voto').style = '--rating: ' + data.vote_average;
             createRatingStars(data.vote_average);
             document.getElementById('numero_voti').innerHTML = '( ' + data.vote_count + ' voti)';
-            document.getElementById('numero_stagioni').innerHTML += data.number_of_seasons;
-            document.getElementById('numero_episodi').innerHTML += data.number_of_episodes;
-            // visualizza registi
-            let i = 0;
-            let registi = '';
-            data.created_by.forEach(regista => {
-                registi += regista.name + '<br>';
-            });
-            document.getElementById('registi').innerHTML += registi;
             creaCarouselCast(id,APIKEY);
             // visualizza gli attori
             //visualizzaAttori(id, APIKEY);
@@ -47,6 +48,56 @@ function stampaInformazioniSerie() {
             visualizzaEpisodi(id, APIKEY);
         })
         .catch(err => { throw err });
+}
+
+function creaCarouselCast(id, APIKEY) {
+    let carousel = '';
+    carousel += '<div id="carousel_cast" class="carousel slide" data-ride="carousel">' + 
+                    /*'<ol class="carousel-indicators">' + 
+                        '<li data-target="#carousel_cast" data-slide-to="0" class="active"></li>' + 
+                        '<li data-target="#carousel_cast" data-slide-to="1"></li>' + 
+                        '<li data-target="#carousel_cast" data-slide-to="2"></li>' + 
+                        '<li data-target="#carousel_cast" data-slide-to="3"></li>' + 
+                        '<li data-target="#carousel_cast" data-slide-to="4"></li>' + 
+                        '<li data-target="#carousel_cast" data-slide-to="5"></li>' + 
+                        '<li data-target="#carousel_cast" data-slide-to="6"></li>' + 
+                    '</ol>' + */
+                    '<div class="carousel-inner" id="attori2"></div>' +
+                    '<a class="carousel-control-prev" href="#carousel_cast" role="button" data-slide="prev">' + 
+                        '<span class="carousel-control-prev-icon" aria-hidden="true"></span>' + 
+                        '<span class="sr-only">Precedente</span>' + 
+                    '</a>' + 
+                    '<a class="carousel-control-next" href="#carousel_cast" role="button" data-slide="next">' + 
+                        '<span class="carousel-control-next-icon" aria-hidden="true"></span>' + 
+                        '<span class="sr-only">Successivo</span>' + 
+                    '</a>' + 
+                '</div>';
+    document.getElementById('attori').innerHTML += carousel;
+    //console.log('la struttura base del carousel è stata messa in #attori ?',document.getElementById('attori').innerHTML);
+    // https://developers.themoviedb.org/3/tv/get-tv-credits
+    let url = 'https://api.themoviedb.org/3/tv/'+id+'/credits?api_key='+APIKEY+'&language=it';
+    fetch(url)
+        .then(res => res.json())
+        .then((data) => {
+            console.log('Checkout this JSON! ', data);      
+            let posterSize = 'w342'; //Formati disponibili: ["w92","w154","w185","w342","w500","w780","original"]
+            let attori2 = '';
+            for (let attore of data.cast) {
+                attori2 +=  '<div class="carousel-item">' + 
+                                '<img src="' + baseImageURL + posterSize + attore.profile_path + '" class="d-block mx-auto" alt="Attore">' + 
+                                '<div class="d-none d-md-block text-center text-white bg-awwa-secondary">' + 
+                                    '<h5>' + attore.name + '</h5>' + 
+                                    '<span>Personaggio: ' + attore.character + '</span>' + 
+                                '</div>' + 
+                            '</div>';
+            }
+            document.getElementById('attori2').innerHTML = attori2;
+            //console.log('i vari carousel-item sono stati messi in #attori2?',document.getElementById('attori2'));
+            document.getElementById('attori2').firstChild.classList.add('active');
+            //console.log('first child di div#attori2',document.getElementById('attori2').firstChild);
+        })
+        .catch(err => { throw err });
+
 }
 
 function visualizzaAttori(id, APIKEY) {
@@ -88,56 +139,6 @@ function visualizzaAttori(id, APIKEY) {
             document.getElementById('attori').innerHTML = attori;      
         })
         .catch(err => { throw err });
-}
-
-function creaCarouselCast(id, APIKEY) {
-    let carousel = '';
-    carousel += '<div id="carousel_cast" class="carousel slide" data-ride="carousel">' + 
-                    /*'<ol class="carousel-indicators">' + 
-                        '<li data-target="#carousel_cast" data-slide-to="0" class="active"></li>' + 
-                        '<li data-target="#carousel_cast" data-slide-to="1"></li>' + 
-                        '<li data-target="#carousel_cast" data-slide-to="2"></li>' + 
-                        '<li data-target="#carousel_cast" data-slide-to="3"></li>' + 
-                        '<li data-target="#carousel_cast" data-slide-to="4"></li>' + 
-                        '<li data-target="#carousel_cast" data-slide-to="5"></li>' + 
-                        '<li data-target="#carousel_cast" data-slide-to="6"></li>' + 
-                    '</ol>' + */
-                    '<div class="carousel-inner" id="attori2"></div>' +
-                    '<a class="carousel-control-prev" href="#carousel_cast" role="button" data-slide="prev">' + 
-                        '<span class="carousel-control-prev-icon" aria-hidden="true"></span>' + 
-                        '<span class="sr-only">Precedente</span>' + 
-                    '</a>' + 
-                    '<a class="carousel-control-next" href="#carousel_cast" role="button" data-slide="next">' + 
-                        '<span class="carousel-control-next-icon" aria-hidden="true"></span>' + 
-                        '<span class="sr-only">Successivo</span>' + 
-                    '</a>' + 
-                '</div>';
-    document.getElementById('attori').innerHTML += carousel;
-    //console.log('la struttura base del carousel è stata messa in #attori ?',document.getElementById('attori').innerHTML);
-    // https://developers.themoviedb.org/3/tv/get-tv-credits
-    let url = 'https://api.themoviedb.org/3/tv/'+id+'/credits?api_key='+APIKEY+'&language=it';
-    fetch(url)
-        .then(res => res.json())
-        .then((data) => {
-            console.log('Checkout this JSON! ', data);      
-            let posterSize = 'w185';
-            let attori2 = '';
-            for (let attore of data.cast) {
-                attori2 += '<div class="carousel-item" style="border:1px solid red">' + 
-                '<img src="' + baseImageURL + posterSize + attore.profile_path + '" class="d-block" alt="Attore">' + 
-                '<div class="d-none d-md-block">' + 
-                    '<h5>' + attore.name + '</h5>' + 
-                    '<p>Personaggio: ' + attore.character + '</p>' + 
-                '</div>' + 
-                '</div>';
-            }
-            document.getElementById('attori2').innerHTML = attori2;
-            //console.log('i vari carousel-item sono stati messi in #attori2?',document.getElementById('attori2'));
-            document.getElementById('attori2').firstChild.classList.add('active');
-            //console.log('first child di div#attori2',document.getElementById('attori2').firstChild);
-        })
-        .catch(err => { throw err });
-
 }
 
 function visualizzaStagioni(id, APIKEY, numeroStagioni) {

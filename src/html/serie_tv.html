@@ -47,23 +47,83 @@
         <!-- Pagina principale -->
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="card col-10 px-0 my-4 shadow-sm">
+                <div class="card col-10 px-0 my-5 shadow-sm text-wrap">
                     <div class="card-header text-white text-center bg-awwa-secondary">
                         <span class="h4" id="nome"></span>
                     </div>
                     <div class="card-body pl-0">
                         <div class="row mx-0">
-                            <div class="col-auto"><img id="poster"/></div>
-                            <div class="col-auto pl-2">
-                                <div class="row" id="anno_inizio"><span class="text-muted h7 mr-2">Data primo episodio:</span></div>
-                                <div class="row" id="anno_termine"><span class="text-muted h7 mr-2">Data ultimo episodio:</span></div>
-                                <div class="row" id="registi"><span class="text-muted h7 mr-2">Creata da:</span></div>
-                                <div class="row" id="numero_stagioni"><span class="text-muted h7 mr-2">Numero stagioni:</span></div>
-                                <div class="row" id="numero_episodi"><span class="text-muted h7 mr-2">Totale episodi:</span></div>
+                            <div class="col-12 col-lg-5 mb-3 mb-lg-0"><img id="poster" style="width: 100%; height: auto;"/></div>
+                            <div class="col-12 col-lg-7 pl-4">
+                                <!--<div class="row mb-2">
+                                    <span class="text-muted h7 mr-2">Nome originale:</span>
+                                    <span id="nome_originale"></span>
+                                </div>
+                                <div class="row mb-2">
+                                    <span class="text-muted h7 mr-2">Descrizione:</span>
+                                    <span id="descrizione_serie"></span>
+                                </div>
+                                <div class="row mb-2">
+                                    <span class="text-muted h7 mr-2">Data primo episodio:</span>
+                                    <span id="anno_inizio"></span>
+                                </div>
+                                <div class="row mb-2">
+                                    <span class="text-muted h7 mr-2">Data ultimo episodio:</span>
+                                    <span id="anno_termine"></span>
+                                </div>
+                                <div class="row mb-2">
+                                    <span class="text-muted h7 mr-2">Creatori:</span>
+                                    <span id="registi"></span>
+                                </div>
+                                <div class="row mb-2">
+                                    <span class="text-muted h7 mr-2">Numero stagioni:</span>
+                                    <span id="numero_stagioni"></span>
+                                </div>
+                                <div class="row mb-2">
+                                    <span class="text-muted h7 mr-2">Totale episodi:</span>
+                                    <span id="numero_episodi"></span>
+                                </div>-->
+                                <!--Stessi dati ma con formattazione a tabella-->
+                                <table class="table table-striped">
+                                    <thead></thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">Nome originale</th>
+                                        <td id="nome_originale"></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Descrizione</th>
+                                        <td id="descrizione_serie"></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Data primo episodio</th>
+                                        <td id="anno_inizio"></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Data ultimo episodio</th>
+                                        <td id="anno_termine"></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Creatori</th>
+                                        <td id="registi"></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Numero stagioni</th>
+                                        <td id="numero_stagioni"></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Totale episodi</th>
+                                        <td id="numero_episodi"></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row">
+                <h4 class="awwa-secondary font-weight-bold my-4 d-block">Punteggio su <a href="https://www.themoviedb.org/?language=it">TMDB</a></h4>
             </div>
             <div class="row justify-content-center" id="stelle"></div>
             <div class="row justify-content-center align-items-center mt-2 mb-4">
@@ -71,9 +131,11 @@
                 <span id="media_voti" class="col-1 text-center"></span>
                 <span id="numero_voti" class="col-5 pl-5"></span>
             </div>
-            <div class="row">
-                <h5 class="awwa-secondary ml-3 my-3 d-block">Cast</h5>
-                <div id="attori">
+            <div class="row justify-content-center">
+                <h4 class="awwa-secondary font-weight-bold my-4 d-block">Cast</h4>
+            </div>
+            <div class="row justify-content-center mb-5">
+                <div class="col-6 px-0 bg-dark" id="attori">
                     <!--<div id="carousel_cast" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                           <li data-target="#carousel_cast" data-slide-to="0" class="active"></li>
