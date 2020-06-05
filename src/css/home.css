@@ -244,20 +244,21 @@ a.post:hover {
     display: inline-block;
     font-size: 3rem;
     line-height: 1;
-}
-
-#stelle_voto::before {
+    /* Creazione del background giallo parziale per l'intero elemento span (linear-gradient con transizione netta).
+    Ritagliando lo sfondo secondo la forma delle stelle (background-clip: text) 
+    si ottiene l'effetto voluto (stelle riempite parzialmente). */
     --star-color: #fff;
     --star-background: var(--awwa-primary);
     --percent: calc(var(--rating) / 10 * 100%);
-    content: '★★★★★';
-    letter-spacing: 2px;
-    -webkit-text-stroke: 1px var(--awwa-secondary);
     background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
     background-clip: text;
     -webkit-background-clip: text;
-    color: transparent; 
     -webkit-text-fill-color: transparent;
 }
 
-  
+#stelle_voto i {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px var(--awwa-secondary);
+}
+ 
