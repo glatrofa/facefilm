@@ -25,21 +25,21 @@ function stampaInformazioniSerie() {
             document.getElementById('poster').src = baseImageURL + posterSize + data.poster_path;
             document.getElementById('nome').innerHTML = data.name;
             // da formattare le date in formato europeo
-            document.getElementById('anno_inizio').innerHTML = dataEuropea(data.first_air_date);
-            document.getElementById('anno_termine').innerHTML = dataEuropea(data.last_air_date);        
+            document.getElementById('anno_inizio').innerHTML += dataEuropea(data.first_air_date);
+            document.getElementById('anno_termine').innerHTML += dataEuropea(data.last_air_date);        
             document.getElementById('media_voti').innerHTML = '<span class="h4 mr-2">' + data.vote_average + '</span>' +'<span>/10</span>';
             //document.getElementById('stelle_voto').style = '--rating: ' + data.vote_average;
             createRatingStars(data.vote_average);
             document.getElementById('numero_voti').innerHTML = '( ' + data.vote_count + ' voti)';
-            document.getElementById('numero_stagioni').innerHTML = data.number_of_seasons;
-            document.getElementById('numero_episodi').innerHTML = data.number_of_episodes;
+            document.getElementById('numero_stagioni').innerHTML += data.number_of_seasons;
+            document.getElementById('numero_episodi').innerHTML += data.number_of_episodes;
             // visualizza registi
             let i = 0;
             let registi = '';
             data.created_by.forEach(regista => {
-                registi += regista.name;
+                registi += regista.name + '<br>';
             });
-            document.getElementById('registi').innerHTML = registi;
+            document.getElementById('registi').innerHTML += registi;
             creaCarouselCast(id,APIKEY);
             // visualizza gli attori
             //visualizzaAttori(id, APIKEY);
@@ -93,11 +93,15 @@ function visualizzaAttori(id, APIKEY) {
 function creaCarouselCast(id, APIKEY) {
     let carousel = '';
     carousel += '<div id="carousel_cast" class="carousel slide" data-ride="carousel">' + 
-                    '<ol class="carousel-indicators">' + 
-                    '<li data-target="#carousel_cast" data-slide-to="0" class="active"></li>' + 
-                    '<li data-target="#carousel_cast" data-slide-to="1"></li>' + 
-                    '<li data-target="#carousel_cast" data-slide-to="2"></li>' + 
-                    '</ol>' +
+                    /*'<ol class="carousel-indicators">' + 
+                        '<li data-target="#carousel_cast" data-slide-to="0" class="active"></li>' + 
+                        '<li data-target="#carousel_cast" data-slide-to="1"></li>' + 
+                        '<li data-target="#carousel_cast" data-slide-to="2"></li>' + 
+                        '<li data-target="#carousel_cast" data-slide-to="3"></li>' + 
+                        '<li data-target="#carousel_cast" data-slide-to="4"></li>' + 
+                        '<li data-target="#carousel_cast" data-slide-to="5"></li>' + 
+                        '<li data-target="#carousel_cast" data-slide-to="6"></li>' + 
+                    '</ol>' + */
                     '<div class="carousel-inner" id="attori2"></div>' +
                     '<a class="carousel-control-prev" href="#carousel_cast" role="button" data-slide="prev">' + 
                         '<span class="carousel-control-prev-icon" aria-hidden="true"></span>' + 
@@ -119,9 +123,9 @@ function creaCarouselCast(id, APIKEY) {
             let posterSize = 'w185';
             let attori2 = '';
             for (let attore of data.cast) {
-                attori2 += '<div class="carousel-item">' + 
-                '<img src="' + baseImageURL + posterSize + attore.profile_path + '" class="d-block w-100" alt="Attore">' + 
-                '<div class="carousel-caption d-none d-md-block">' + 
+                attori2 += '<div class="carousel-item" style="border:1px solid red">' + 
+                '<img src="' + baseImageURL + posterSize + attore.profile_path + '" class="d-block" alt="Attore">' + 
+                '<div class="d-none d-md-block">' + 
                     '<h5>' + attore.name + '</h5>' + 
                     '<p>Personaggio: ' + attore.character + '</p>' + 
                 '</div>' + 
