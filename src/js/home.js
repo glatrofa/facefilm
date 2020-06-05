@@ -105,18 +105,23 @@ function visualizzaClassificaAwwa() {
     });    
 }
 
+// visualizza le 10 serie più popolari su tmdb
 function visualizzaClassificaTmdb() {
     let url = 'https://api.themoviedb.org/3/discover/tv?api_key='+ APIKEY +'&language=it&sort_by=popularity.desc&page=1&timezone=Europe%2FItaly&include_null_first_air_dates=false';
     fetch(url)
         .then(res => res.json())
         .then((out) => {
-            //console.log('Classifica TMDB ', out);
+            console.log('Classifica TMDB ', out);
             let classifica = '';
-            out.results.forEach(element => {
-                classifica += '<li class="list-group-item px-0 px-lg-3 border-0">' + 
-                                '<a href="./serie_tv.html?id=' + element.id + '" class="awwa-secondary">' + element.name + '</a>' +
-                              '</li>';                
-            });
+            let ranking = 1;
+            let topTen = out.results.slice(0,10); // prende solo le prime 10 serie TV tra le 20 serie fornite dall'API
+            for (let serie of topTen) {
+                classifica += '<li class="list-group-item px-0 px-lg-3 border-0 d-flex align-items-center">' + 
+                                '<span class="h3 mr-3">&#35; ' + ranking + '</span>' +
+                                '<a href="./serie_tv.html?id=' + serie.id + '" class="awwa-secondary">' + serie.name + '</a>' +
+                              '</li>';
+                ranking += 1;                
+            };
             document.getElementById('classifica_serie_Tmdb').innerHTML = classifica;
         })
         .catch(err => { throw err });
