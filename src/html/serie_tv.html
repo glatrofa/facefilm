@@ -47,29 +47,70 @@
         <!-- Pagina principale -->
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <p><img id="poster"/></p>
+                <span><img id="poster"/></span>
             </div>
             <div class="row justify-content-center">
-                <p id="nome"></p>
+                <span id="nome"></span>
             </div>
             <div class="row">
-                <p id="anno_inizio"></p>
-                <p id="anno_termine"></p>
+                <span id="anno_inizio"></span>
+                <span id="anno_termine"></span>
             </div>
-            <div class="row justify-content-center" id="voti">
-                <!--<span id="stelle_voto"></span>-->
-                <p id="media_voti"></p>
-                <p id="numero_voti"></p>
-            </div>
-            <div class="row">
-                <p id="registi"></p>
+            <div class="row justify-content-center" id="stelle"></div>
+            <div class="row justify-content-center align-items-center mt-2 mb-4">
+                <span class="col-5"></span>
+                <span id="media_voti" class="col-1 text-center"></span>
+                <span id="numero_voti" class="col-5 pl-5"></span>
             </div>
             <div class="row">
-                <p id="attori"></p>
+                <span id="registi"></span>
             </div>
             <div class="row">
-                <p id="numero_stagioni"></p>
-                <p id="numero_episodi"></p>
+                <h5 class="awwa-secondary ml-3 my-3">Cast</h5>
+                <div id="attori">
+                    <!--<div id="carousel_cast" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                          <li data-target="#carousel_cast" data-slide-to="0" class="active"></li>
+                          <li data-target="#carousel_cast" data-slide-to="1"></li>
+                          <li data-target="#carousel_cast" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" id="attori2">
+                          <div class="carousel-item active">
+                            <img src="..." class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                              <h5>First slide label</h5>
+                              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="..." class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                              <h5>Second slide label</h5>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="..." class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                              <h5>Third slide label</h5>
+                              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel_cast" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Precedente</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel_cast" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Successivo</span>
+                        </a>
+                    </div>-->
+                </div>
+            </div>
+            <div class="row">
+                <span id="numero_stagioni"></span>
+                <span id="numero_episodi"></span>
             </div>
             <button id="scroll_to_top" class="rounded-circle" title="Torna su"><i class="fas fa-angle-double-up fa-lg"></i></button>
         </div>
