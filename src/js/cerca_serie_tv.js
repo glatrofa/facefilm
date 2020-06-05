@@ -65,8 +65,8 @@ function visualizzaClassificaTmdb() {
             let ranking = 1;
             let topTen = out.results.slice(0,10); // prende solo le prime 10 serie TV tra le 20 serie fornite dall'API
             for (let serie of topTen) {
-                classifica += '<li class="list-group-item px-0 px-lg-3 border-0 d-flex align-items-center">' + 
-                                '<span class="h3 mr-3">&#35; ' + ranking + '</span>' +
+                classifica += '<li class="list-group-item px-0 px-lg-2 border-0 d-flex align-items-center">' + 
+                                '<span class="h3 mr-3 text-nowrap">&#35; ' + ranking + '</span>' +
                                 '<a href="./serie_tv.html?id=' + serie.id + '" class="awwa-secondary">' + serie.name + '</a>' +
                               '</li>';
                 ranking += 1;                
