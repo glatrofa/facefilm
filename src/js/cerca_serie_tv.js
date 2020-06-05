@@ -1,7 +1,6 @@
 import { logged } from './autenticazione.js';
 import { APIKEY } from './key.js';
 import { generaCard } from './genera_card.js';
-import { scrollHandler } from './home.js';
 
 const baseImageURL = 'https://image.tmdb.org/t/p/';
 
@@ -9,11 +8,16 @@ const baseImageURL = 'https://image.tmdb.org/t/p/';
 // window.onload = logged();
 
 // richiama funzioni non appena il documento è caricato
-$(document).ready(function() {
+document.addEventListener("DOMContentLoaded",function(){
     visualizzaClassificaTmdb();
     mostraSeriePopolari();
     scrollHandler();
 });
+/*$(document).ready(function() {
+    visualizzaClassificaTmdb();
+    mostraSeriePopolari();
+    //scrollHandler();
+});*/
 
 // effettua il redirect sulla pagina della serie selezionata
 /*$('#cerca_serie_bottone').click(function cercaSerie() {
@@ -27,8 +31,8 @@ $('#mostra_poster').click(cercaPoster);
 $('#cerca_serie').keyup(function enter(eventObject){if (eventObject.which == 13) cercaPoster();})
 
 function cercaPoster() {
-    document.getElementById('classifica_TMDB').classList.add('d-block');
-    let url2 = 'https://api.themoviedb.org/3/search/tv?api_key=' + APIKEY + '&language=it&page=1&query=' + $('#cerca_serie').val()
+    document.getElementById('classifica_laterale_Tmdb').classList.add('d-block'); // visualizza la classifica TMDB laterale, che è inizialmente nascosta
+    let url2 = 'https://api.themoviedb.org/3/search/tv?api_key=' + APIKEY + '&language=it&page=1&query=' + $('#cerca_serie').val();
     console.log(url2);
     fetch(url2)
     .then(res => res.json())
@@ -56,16 +60,25 @@ function visualizzaClassificaTmdb() {
     fetch(url)
         .then(res => res.json())
         .then((out) => {
-            //console.log('Checkout this JSON! ', out);
-            let i = 0;            
+            console.log('Classifica TMDB ', out);
             let classifica = '';
+            let ranking = 1;
+            let topTen = out.results.slice(0,10); // prende solo le prime 10 serie TV tra le 20 serie fornite dall'API
+            for (let serie of topTen) {
+                classifica += '<li class="list-group-item px-0 px-lg-3 border-0 d-flex align-items-center">' + 
+                                '<span class="h3 mr-3">&#35; ' + ranking + '</span>' +
+                                '<a href="./serie_tv.html?id=' + serie.id + '" class="awwa-secondary">' + serie.name + '</a>' +
+                              '</li>';
+                ranking += 1;                
+            };
+            document.getElementById('classifica_serie_Tmdb').innerHTML = classifica;
+            /* let i = 0;
             do{
                 classifica += '<li class="list-group-item px-0 px-lg-3 border-0">' + 
                                 '<a href="./serie_tv.html?id='+out.results[i].id+'" class="awwa-secondary">'+out.results[i].name+'</a>' +
                               '</li>';                
                 i ++;
-            }while (i <= 9);
-            document.getElementById('classifica_serie_Tmdb').innerHTML = classifica;
+            }while (i <= 9);*/
         })
         .catch(err => { throw err });
 }
@@ -116,4 +129,17 @@ $(function logout() {
     });
 });
 
-export {visualizzaClassificaTmdb};
+function scrollHandler(){
+    // Quando si preme il bottone "Torna su" viene attivata questa funzione
+    document.getElementById("scroll_to_top").addEventListener('click',function tornaSu(){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    });  
+    window.onscroll = function() {
+        if (document.documentElement.scrollTop > 600 ) {
+            document.getElementById("scroll_to_top").style.display = "block";
+          } else {
+            document.getElementById("scroll_to_top").style.display = "none";
+          }
+        };
+}

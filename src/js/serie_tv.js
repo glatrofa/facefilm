@@ -1,16 +1,16 @@
 import { logged } from './autenticazione.js';
 import { APIKEY } from './key.js';
 
-const baseImageURL = 'https://image.tmdb.org/t/p/';
-
-
 // verifica che l'utente abbia effettuato l'accesso
 //window.onload = logged();
 
 // richiama funzioni non appena il documento è caricato
 $(document).ready(function() {
     stampaInformazioniSerie();
+    scrollHandler();
 });
+
+const baseImageURL = 'https://image.tmdb.org/t/p/';
 
 function stampaInformazioniSerie() {
     // https://developers.themoviedb.org/3/tv/get-tv-details
@@ -21,13 +21,15 @@ function stampaInformazioniSerie() {
         .then(res => res.json())
         .then((data) => {
             console.log('Checkout this JSON! ', data);
-            let posterSize = 'w500'; //Formati disponibili: ["w92","w154","w185","w342","w500","w780","original"]
+            let posterSize = 'w780'; //Formati disponibili: ["w92","w154","w185","w342","w500","w780","original"]
             document.getElementById('poster').src = baseImageURL + posterSize + data.poster_path;
             document.getElementById('nome').innerHTML = data.name;
             // da formattare le date in formato europeo
             document.getElementById('anno_inizio').innerHTML = data.first_air_date;
             document.getElementById('anno_termine').innerHTML = data.last_air_date;        
             document.getElementById('media_voti').innerHTML = data.vote_average+'/10';
+            //document.getElementById('stelle_voto').style = '--rating: ' + data.vote_average;
+            createRatingStars(data.vote_average);
             document.getElementById('numero_voti').innerHTML = data.vote_count;
             document.getElementById('numero_stagioni').innerHTML = data.number_of_seasons;
             document.getElementById('numero_episodi').innerHTML = data.number_of_episodes;
@@ -83,25 +85,12 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
-// Gestione del bottone "Torna su"
-var scrollButton = document.getElementById("scroll_to_top");
-
-// Quando l'utente scrolla di un certo numero di pixel, mostra il bottone "Torna su"
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() { 
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50 ) {
-    scrollButton.style.display = "block";
-  } else {
-    scrollButton.style.display = "none";
-  }
+function createRatingStars(vote_average){
+    var span = document.createElement('SPAN');
+    span.id = 'stelle_voto';
+    span.style = '--rating: ' + vote_average; 
+    document.getElementById('voti').appendChild(span);
 }
-
-// Quando si preme il bottone "Torna su" viene attivata questa funzione
-scrollButton.addEventListener('click',function tornaSu(){
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;  
-});
 
 // Gestione logout
 $(function logout() {
@@ -117,3 +106,19 @@ $(function logout() {
         });
     });
 });
+
+function scrollHandler(){
+    // Quando si preme il bottone "Torna su" viene attivata questa funzione
+    document.getElementById("scroll_to_top").addEventListener('click',function tornaSu(){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    });  
+    window.onscroll = function() {
+        if (document.documentElement.scrollTop > 600 ) {
+            document.getElementById("scroll_to_top").style.display = "block";
+          } else {
+            document.getElementById("scroll_to_top").style.display = "none";
+          }
+        };
+}
+

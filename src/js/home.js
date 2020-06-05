@@ -3,23 +3,21 @@ import { APIKEY } from './key.js';
 import { generaHeader, generaBody, generaFooter } from './genera_post.js';
 import { snackbarSuccesso, snackbarErrore } from './visualizza_snackbar.js';
 import { visualizzaCommenti } from './visualizza_commenti.js';
-import { visualizzaClassificaTmdb } from './cerca_serie_tv.js';
-
-console.log(document.body.scrollTop, document.documentElement.scrollTop);
 
 // verifica che l'utente abbia effettuato l'accesso
-// window.onload = logged();
+//window.onload = logged();
 
 // colore primario per i tasti del post
-const colorPrimary = '#e5af05';
+//const colorPrimary = '#e5af05';
 // colore secondario per i tasti del post
-const colorSecondary = '#00008b';
+//const colorSecondary = '#00008b';
 // contenuto modal per post pubblicato con successo
 //const modalPostPubblicazioneSuccess = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Post pubblicato</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div><div class='modal-body'><p>Per vedere l'ultimo post pubblicato aggiorna la pagina o clicca il tasto qui sotto.</p></div><div class='modal-footer'><button type='button' class='btn btn-primary' onclick='redirectHome()'>Aggiorna home</button><button type='button' class='btn btn-secondary' data-dismiss='modal'>Chiudi</button></div></div>";
 // contenuto modal per post non pubblicato
 //const modalPostPubblicazioneError = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Errore pubblicazione post</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div><div class='modal-body'><p>Ci scusiamo per il disagio.<br>Se il problema persiste utilizza il form contattaci per segnalare l'accaduto.<br>Grazie.</p></div><div class='modal-footer'><button type='button' class='btn btn-primary' onclick='redirectFormContatti()'>Vai al form contatti</button><button type='button' class='btn btn-secondary' data-dismiss='modal'>Chiudi</button></div></div>";
 //let modalLikeClicked = false;
 //let modalDislikeClicked = false;
+
 // inizializza a 0 per la gestione della visualizzaizone dei post
 let pagina = 0;
 
@@ -28,7 +26,7 @@ $(document).ready(function() {
     visualizzaPost(pagina);
     visualizzaClassificaAwwa();
     visualizzaClassificaTmdb();
-    scrollHandler();    
+    scrollHandler();
 });
 
 /*
@@ -81,7 +79,7 @@ $(function controllaNonMiPiace() {
 });
 */
 
-// visualizza le 5 serie più popolari su tmdb
+// visualizza le 5 serie più commentate sul sito AWWA
 function visualizzaClassificaAwwa() {
     $.ajax({
         type: 'POST',
@@ -105,6 +103,23 @@ function visualizzaClassificaAwwa() {
             snackbarErrore("Si &egrave; verificato un errore");
         }
     });    
+}
+
+function visualizzaClassificaTmdb() {
+    let url = 'https://api.themoviedb.org/3/discover/tv?api_key='+ APIKEY +'&language=it&sort_by=popularity.desc&page=1&timezone=Europe%2FItaly&include_null_first_air_dates=false';
+    fetch(url)
+        .then(res => res.json())
+        .then((out) => {
+            //console.log('Classifica TMDB ', out);
+            let classifica = '';
+            out.results.forEach(element => {
+                classifica += '<li class="list-group-item px-0 px-lg-3 border-0">' + 
+                                '<a href="./serie_tv.html?id=' + element.id + '" class="awwa-secondary">' + element.name + '</a>' +
+                              '</li>';                
+            });
+            document.getElementById('classifica_serie_Tmdb').innerHTML = classifica;
+        })
+        .catch(err => { throw err });
 }
 
 function richiediNomeSerie(idSerie, numero) {
@@ -505,5 +520,3 @@ $(function visualizzaAltriPost() {
         visualizzaPost(pagina);
     });
 });
-
-export { scrollHandler };
