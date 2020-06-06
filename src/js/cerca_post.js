@@ -95,6 +95,7 @@ $(function visualizzaEpisodi() {
 
 $("#form_post").on('submit', function () {
     cercaPost();
+    return false;
 });
 
 // visualizza i post ricercati in base agli attributi selezionati
