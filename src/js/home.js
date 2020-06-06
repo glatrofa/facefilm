@@ -21,7 +21,7 @@ window.onload = logged();
 // inizializza a 0 la variabile pagina per la gestione della visualizzazione dei post
 let pagina = 0;
 
-// richiama funzioni non appena il documento è caricato
+// richiama le seguenti funzioni non appena il documento è caricato
 $(document).ready(function() {
     visualizzaPost(pagina);
     visualizzaClassificaAwwa();
