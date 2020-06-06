@@ -17,15 +17,13 @@ function generaHeader(nomeUtente, idPost, immagine) {
                                 "<div class='h5 m-0' id='nome_utente' name='"+ idPost +"'>"+ nomeUtente +"</div>" +
                             "</div>" +
                         "</div>" +
-                        "<div>" +
-                            "<div class='dropdown'>" +
-                                "<button class='btn btn-link' type='button' id='gedf-drop1' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>" +
-                                    "<i class='fa fa-ellipsis-h'></i>" +
-                                "</button>" +
-                                "<div class='dropdown-menu dropdown-menu-right' aria-labelledby='gedf-drop1'>" +
-                                    "<div class='h6 dropdown-header'>Opzioni</div>" +
-                                    "<a class='dropdown-item' id='"+ idPost +"-segnala' name='segnala'>Segnala</a>" +
-                                "</div>" +
+                        "<div class='dropdown'>" +
+                            "<button class='btn btn-link' type='button' id='dropdown-post' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>" +
+                                "<i class='fa fa-ellipsis-h awwa-secondary'></i>" +
+                            "</button>" +
+                            "<div class='dropdown-menu dropdown-menu-right' aria-labelledby='dropdown-post'>" +
+                                "<div class='h6 dropdown-header'>Opzioni</div>" +
+                                "<a class='dropdown-item' id='"+ idPost +"-segnala' name='segnala'>Segnala</a>" +
                             "</div>" +
                         "</div>" +
                     "</div>" +
@@ -75,10 +73,11 @@ function getNomeSerie(idSerie) {
 // genera il footer del post
 function generaFooter(idPost, idSerie, numeroLike, numeroDislike, numeroCommenti) {
     getNomeSerie(idSerie);
-    let footer = "<div class='card-footer'>" +
-                    "<span class='badge badge-pill text-white bg-awwa-primary mr-2' id='"+ idPost +"-post_like_number'>"+ numeroLike +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_like' style='cursor: pointer;'><i class='fa fa-diamond'></i> Mi piace </a>" +
-                    "<span class='badge badge-pill text-white bg-awwa-primary mr-2' id='"+ idPost +"-post_dislike_number'>"+ numeroDislike +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_dislike' style='cursor: pointer;'><i class='fa fa-diamond'></i> Non mi piace </a>" +
-                    "<span class='badge badge-pill text-white bg-awwa-primary mr-2' id='"+ idPost +"-post_comment_number'>"+ numeroCommenti +"</span><a class='card-link awwa-primary post' id='"+ idPost +"' name='post_comment' style='cursor: pointer;'><i class='fa fa-diamond'></i> Commenta</a>" +
+    let footer = "<div class='card-footer d-flex align-items-center'>" +
+                    // ricordardi di un-commentare l'attributo style dei link
+                    "<span class='badge badge-pill text-white bg-awwa-primary mr-1' id='"+ idPost +"-post_like_number'>"+ numeroLike +"</span><a class='card-link awwa-primary mr-3' id='"+ idPost +"' name='post_like'><i class='fa fa-diamond'></i> Mi piace </a>" +
+                    "<span class='badge badge-pill text-white bg-awwa-primary mr-1' id='"+ idPost +"-post_dislike_number'>"+ numeroDislike +"</span><a class='card-link awwa-primary mr-3' id='"+ idPost +"' name='post_dislike'><i class='fa fa-diamond'></i> Non mi piace </a>" +
+                    "<span class='badge badge-pill text-white bg-awwa-primary mr-1' id='"+ idPost +"-post_comment_number'>"+ numeroCommenti +"</span><a class='card-link awwa-primary mr-3' id='"+ idPost +"' name='post_comment'><i class='fa fa-diamond'></i> Commenta</a>" +
                 "</div></div>";                
     return footer;
 }

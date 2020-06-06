@@ -62,6 +62,10 @@ body.main {
     color: var(--awwa-secondary);
 }
 
+.navbar a.nav-item.active {
+    color: var(--awwa-secondary) !important;
+}
+
 /* Al passaggio del mouse gli elementi della navbar diventano di colore blu e diventano leggermente più grandi,
 tranne quello che corrisponde alla pagina corrente */
 .navbar a.nav-item:not(.active):not(#navbarDropdown):hover {
@@ -90,6 +94,11 @@ tranne quello che corrisponde alla pagina corrente */
     font-size: 1.1rem;
 }
 
+.navbar-nav .dropdown-item.active {
+    background-color: inherit;
+    color: var(--awwa-secondary) !important;
+}
+
 .navbar-nav .dropdown-item:hover {
     background-color: inherit;
     color: var(--awwa-secondary) !important;
@@ -100,6 +109,12 @@ footer {
     text-align: center;
     line-height: 40px;
     width: 100%;
+}
+
+#publish_tab {
+    border-color: var(--awwa-secondary);
+    border-bottom: none;
+    font-weight: bold;
 }
 
 #form_post .row {
@@ -126,9 +141,13 @@ footer {
     box-shadow: 0 0 0 0.05rem var(--awwa-secondary); /* h-offset v-offset blur spread color */
 }
 
-/* mouse over link */
-a.post:hover {
-    color: var(--awwa-secondary);
+#sezione_post .card-footer .card-link {
+    cursor: pointer;
+}
+
+/* mouse sui link del footer ('Mi piace','Non mi piace', 'Commenta') */
+#sezione_post .card-footer .card-link:hover {
+    color: var(--awwa-secondary) !important;
 }
 
 /* La snackbar verrà mostrata in fondo e al centro dello schermo */
@@ -197,7 +216,7 @@ a.post:hover {
     right: 10px;
     /*z-index: 2000; /*in modo che non venga overlappato da altri elementi */
     background-color:white;
-    opacity: 0.5;
+    opacity: 0.7;
     color: var(--awwa-secondary);
     width: 50px;
     height: 50px;
@@ -217,7 +236,7 @@ a.post:hover {
     color: white;
 }
 
-/* CSS esclusivo della pagina cerca_serie_tv */
+/* Pagina cerca_serie_tv.html */
 
 #risultati_cerca_serie_tv div.card button, #mostra_poster {
     color: var(--awwa-secondary);
@@ -238,7 +257,19 @@ a.post:hover {
     color: var(--awwa-secondary);
 }
 
-/* Per la pagina serie_tv */
+/* Pagina serie_tv.html */
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: white !important;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: rgba(30, 0, 107, 0.4) !important;
+}
+
+.table-striped th {
+    color: var(--awwa-secondary);
+}
 
 #stelle_voto {
     display: inline-block;
@@ -261,4 +292,36 @@ a.post:hover {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1px var(--awwa-secondary);
 }
+
+/* Pagina profilo.html */
+
+#info_profilo .card-body .row {
+    margin-bottom: 0.5rem;
+    line-height: 2;
+    padding: 0.5rem 0.25rem;
+    margin-top: 0.5rem;
+    margin-left: 0;
+    margin-right: 0;
+    align-items: center;
+}
+
+#info_profilo .card-body .row div:first-child {
+    font-weight: bold;
+    font-size: 0.875rem;
+    color: var(--awwa-secondary);
+}
+
+#info_profilo .card-body .row div:last-child {
+    font-weight: bold;
+}
+
+#info_profilo .card-body .row:nth-of-type(odd) {
+    background-color: white !important;
+}
+
+#info_profilo .card-body .row:nth-of-type(even) {
+    background-color: rgba(30, 0, 107, 0.4) !important;
+}
+
+
  
