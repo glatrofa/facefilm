@@ -93,7 +93,7 @@ $(function visualizzaEpisodi() {
     });    
 });
 
-$("#form_post").on('submit', function () {
+$("#bottone_cerca_post").on('submit', function () {
     cercaPost();
 });
 
