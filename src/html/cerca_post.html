@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>    
+    <script src="https://kit.fontawesome.com/f2d1c1774e.js" crossorigin="anonymous"></script>
+    <script src="../js/cerca_post.js" type="module"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">    
+    <link rel="stylesheet" href="../css/home.css" type="text/css">
+    <!--Favicon--><link href="../img/favicon/favicon.ico" rel="shortcut icon">
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:wght@700&display=swap" rel="stylesheet">
+    <title>Cerca commento</title>
+</head>
+
+<body>
+    <main>
+        <!-- Navbar -->
+        <nav class="navbar sticky-top navbar-expand-md bg-awwa-primary">
+            <a class="navbar-brand py-0 awwa-secondary">AWWA</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-ellipsis-h text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse align-items-center" id="navbarNavAltMarkup">
+                <div class="navbar-nav w-100">
+                    <a class="nav-item nav-link text-white mr-2" href="../home.html"><i class="fas fa-couch mr-2"></i>Home</a>
+                    <a class="nav-item nav-link text-white mr-2 active" href="./cerca_serie_tv.html"><i class="fas fa-tv mr-2"></i>Cerca serie tv</a>
+                    <a class="nav-item nav-link text-white mr-2" href="#"><i class="fas fa-newspaper mr-2"></i>Cerca post</a>
+                    <div class="d-inline-block col-auto ml-md-auto pl-0 pl-md-2">
+                        <a class="nav-item nav-link text-white dropdown-toggle" href="./profilo.html" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="../img/profile_clip_art.png" alt="Profilo" class="rounded-circle" height="30px">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right bg-awwa-primary" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-white" href="#"><i class="fas fa-user mr-2"></i>Vedi profilo</a>
+                            <a class="dropdown-item text-white" href="#"><i class="fas fa-pencil-alt mr-2"></i>Modifica dati</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-white" id="logout" href=""><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav> 
+        <!-- Pagina principale -->
+        <div class="container-fluid py-5">
+            <!-- Riga principale -->
+            <div class="row justify-content-around">                
+                <div class="col-md-8">                
+                    <!-- Sezione crea post -->
+                    <div class="card shadow mb-3">
+                        <div class="card-header bg-awwa-primary">
+                            <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active awwa-secondary" id="publish-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">
+                                        Ricerca commento
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                                    <form id="form_post">
+                                        <div class="row justify-content-center align-items-center mb-3">
+                                            <div class="input-group w-75">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-white awwa-secondary"><i class="fas fa-search" aria-hidden="true"></i></span>                                                 
+                                                </div>
+                                                <input class="form-control bg-white" type="text" id="cerca_serie" placeholder="Inserisci il nome della serie">
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-around my-3">
+                                            <select id="post_serie" name="post_serie" class="custom-select col-3 mb-2">
+                                                <option value="null"> Seleziona serie... </option>
+                                            </select>
+                                            <select id="post_stagione" name="post_stagione" class="custom-select col-3 mb-2">
+                                                <option value="null"> Seleziona stagione... </option>
+                                            </select>
+                                            <select id="post_episodio" name="post_episodio" class="custom-select col-3">
+                                                <option value="null"> Seleziona episodio... </option>
+                                            </select>
+                                        </div>                                        
+                                        <div class="row">
+                                            <button type="submit" class="btn btn-lg text-white bg-awwa-primary ml-2"><i class="fas fa-search mr-2"></i>Cerca</button>
+                                       </div>
+                                    </form>
+                                </div>                    
+                            </div>
+                        </div>                
+                    </div>     
+                    <!-- Sezione POST altri utenti -->                                
+                    <div>
+                        <div id="sezione_post"></div>
+                        <!-- Bottone per caricare altri post -->
+                        <div class="row mx-0">
+                            <button id="carica_altri_post" class="btn w-100"><i class="fas fa-plus mr-2"></i>Mostra pi&ugrave; post</button>
+                        </div>
+                    </div>                    
+                    <!-- Fine sezione post -->
+                </div>     
+                <!-- Fine colonna dei post (colonna di dx) -->
+            </div>
+            <!-- Fine riga -->
+            <!-- definizione snackbar -->
+            <div id="snackbar_successo" class="snackbar"></div>
+            <div id="snackbar_errore" class="snackbar"></div>
+            <!-- modal per commenti -->
+            <div class="modal fade" id="modal_commenti" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class='modal-content'>
+                        <div class='modal-header'>
+                            <h5 class='modal-title'>Commenti</h5>
+                            <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                            <span aria-hidden='true'>&times;</span>
+                            </button>
+                        </div>
+                        <div class='modal-body'>
+                            <form id="modal_form_commento">
+                                <div class="row justify-content-center">
+                                    <div class="form-group col-7 col-lg-9">
+                                        <input type="textarea" class="form-control" name="modal_commento_testo" placeholder="Cosa penso..." rows="3" maxlength="5000" required>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center align-items-center mb-3">
+                                    <div class="col-auto">
+                                        <button type="submit" class="btn btn-form-primary py-2 px-4"><span class="font-weight-bold">Commenta</span></button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="reset" class="btn btn-form-secondary">Cancella</button>    
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class='modal-body' id='modal_commenti_container'></div>
+                        <div class='modal-footer'>
+                            <button type='button' class='btn btn-secondary' data-dismiss='modal'>Chiudi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottone scroll to top -->
+            <button id="scroll_to_top" class="rounded-circle" title="Torna su"><i class="fas fa-angle-double-up fa-lg"></i></button>
+        </div>
+        <!-- Fine pagina principale -->        
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <small class="text-white">
+            <a>&copy; AWWA</a>
+            <a> - </a>
+            <a class="text-white" href="./chi_siamo.html">Chi siamo</a>
+            <a> - </a>
+            <a class="text-white" href="./contattaci.html">Contattaci</a>
+        </small>
+    </footer>
+</body>
+
+</html>
