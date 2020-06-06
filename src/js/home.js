@@ -118,7 +118,7 @@ function visualizzaClassificaTmdb() {
             for (let serie of topTen) {
                 classifica += '<li class="list-group-item px-0 px-lg-2 border-0 d-flex align-items-center">' + 
                                 '<span class="h3 mr-3 text-nowrap">&#35; ' + ranking + '</span>' +
-                                '<a href="./serie_tv.html?id=' + serie.id + '" class="awwa-secondary">' + serie.name + '</a>' +
+                                '<a href="./html/serie_tv.html?id=' + serie.id + '" class="awwa-secondary">' + serie.name + '</a>' +
                               '</li>';
                 ranking += 1;                
             };

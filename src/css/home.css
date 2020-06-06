@@ -141,9 +141,13 @@ footer {
     box-shadow: 0 0 0 0.05rem var(--awwa-secondary); /* h-offset v-offset blur spread color */
 }
 
-/* mouse over link */
-a.post:hover {
-    color: var(--awwa-secondary);
+#sezione_post .card-footer .card-link {
+    cursor: pointer;
+}
+
+/* mouse sui link del footer ('Mi piace','Non mi piace', 'Commenta') */
+#sezione_post .card-footer .card-link:hover {
+    color: var(--awwa-secondary) !important;
 }
 
 /* La snackbar verrà mostrata in fondo e al centro dello schermo */

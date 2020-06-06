@@ -42,8 +42,6 @@ function stampaInformazioniSerie() {
             createRatingStars(data.vote_average);
             document.getElementById('numero_voti').innerHTML = '( ' + data.vote_count + ' voti)';
             creaCarouselCast(id,APIKEY);
-            // visualizza gli attori
-            //visualizzaAttori(id, APIKEY);
             visualizzaStagioni(id, APIKEY, data.number_of_seasons);
             visualizzaEpisodi(id, APIKEY);
         })
@@ -74,7 +72,6 @@ function creaCarouselCast(id, APIKEY) {
                 '</div>';
     document.getElementById('attori').innerHTML += carousel;
     //console.log('la struttura base del carousel è stata messa in #attori ?',document.getElementById('attori').innerHTML);
-    // https://developers.themoviedb.org/3/tv/get-tv-credits
     let url = 'https://api.themoviedb.org/3/tv/'+id+'/credits?api_key='+APIKEY+'&language=it';
     fetch(url)
         .then(res => res.json())
@@ -85,7 +82,7 @@ function creaCarouselCast(id, APIKEY) {
             for (let attore of data.cast) {
                 attori2 +=  '<div class="carousel-item">' + 
                                 '<img src="' + baseImageURL + posterSize + attore.profile_path + '" class="d-block mx-auto" alt="Attore">' + 
-                                '<div class="d-none d-md-block text-center text-white bg-awwa-secondary">' + 
+                                '<div class="text-center text-white bg-awwa-secondary">' + 
                                     '<h5>' + attore.name + '</h5>' + 
                                     '<span>Personaggio: ' + attore.character + '</span>' + 
                                 '</div>' + 
