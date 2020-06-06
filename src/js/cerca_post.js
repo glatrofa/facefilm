@@ -94,11 +94,11 @@ $(function visualizzaEpisodi() {
 });
 
 // funzione per la visualizzaizone di altri post nel feed principale
-$(function visualizzaPost(pagina) {
+function visualizzaPost(pagina) {
     $("#cerca_post").click(function () {
         cercaPost(pagina);
     });
-});
+}
 
 // visualizza i post ricercati in base agli attributi selezionati
 function cercaPost(pagina) {    
