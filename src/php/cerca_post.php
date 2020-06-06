@@ -44,7 +44,6 @@ if($rowsNumber != 0){
 else{
     $response[0] = null;
 }
-$respone[0] = $numeroStagione;
 
 // ritorno dati al client
 $jsonData = json_encode($response);
