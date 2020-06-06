@@ -92,8 +92,8 @@ function visualizzaClassificaAwwa() {
             //let classifica = "";
             for(i = 0; i < data.length; i ++) {
                 document.getElementById('classifica_serie_Awwa').innerHTML += "<li class='list-group-item px-0 px-lg-3 border-0'>" + 
-                                                                            "<a href='./html/serie_tv.html?id="+ data[i].idSerie +"' id='link_"+ data[i].idSerie +"' title='Vai alla pagina della serie' class='awwa-secondary'></a>" +
-                                                                         "</li>";
+                                                                                "<a href='./html/serie_tv.html?id="+ data[i].idSerie +"' id='link_"+ data[i].idSerie +"' title='Vai alla pagina della serie' class='awwa-secondary'></a>" +
+                                                                              "</li>";
                 richiediNomeSerie(data[i].idSerie,  data[i].numero);
             }
             //document.getElementById('classifica_serie_Awwa').innerHTML = classifica;
