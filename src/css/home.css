@@ -248,6 +248,10 @@ a.post:hover {
     background-color: rgba(30, 0, 107, 0.4) !important;
 }
 
+.table-striped th {
+    color: var(--awwa-secondary);
+}
+
 #stelle_voto {
     display: inline-block;
     font-size: 3rem;
