@@ -94,8 +94,8 @@ $(function visualizzaEpisodi() {
 });
 
 // visualizza i post ricercati in base agli attributi selezionati
-$(function cercaPost() {
-    $("#form_login").on('submit', function (e) {
+function cercaPost() {
+    $("#bottone_cerca_post").click(function (e) {
         e.preventDefault();
         $.ajax({
             type: 'POST',
@@ -268,7 +268,7 @@ $(function cercaPost() {
             }
         });
     });
-});
+}
 
 // Quando si preme il bottone "Torna su" viene attivata questa funzione
 function scrollHandler(){
@@ -304,6 +304,6 @@ $(function logout() {
 $(function visualizzaAltriPost() {
     $("#carica_altri_post").click(function () {
         pagina = pagina + 2;
-        visualizzaPost(pagina);
+        cercaPost();
     });
 });
