@@ -113,8 +113,10 @@ function cercaPost() {
         dataType: 'json',
         success: function (data) {
             console.log("paginazione successo " + JSON.stringify(data) + "\n" + typeof data + "\n" + data.length); //data è un Object e non ha la proprietà length
-            if(data[0] == null)
-                snackbarErrore("Non ci sono commenti");
+            if(data[0] == null){
+                snackbarErrore("Non ci sono post");
+                return false;
+            }
             let i;
             for (i = 0; i < data.length; i++) {
                 document.getElementById("sezione_post").innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost, data[i].immagine)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);
