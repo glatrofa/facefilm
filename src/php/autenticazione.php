@@ -30,7 +30,7 @@ function confrontaToken($email, $token){
 
 function creaCookie($email) {
     $token = creaToken();
-    // crea un cookie della durata di 1 giorno (86400 * 30) o 1 ora (3600)
+    // crea un cookie della durata di 1 giorno (86400) o 1 ora (3600)
     setcookie($email, $token, time() + 3600, "/");
     return $token;
 }

@@ -62,6 +62,10 @@ body.main {
     color: var(--awwa-secondary);
 }
 
+.navbar a.nav-item.active {
+    color: var(--awwa-secondary) !important;
+}
+
 /* Al passaggio del mouse gli elementi della navbar diventano di colore blu e diventano leggermente più grandi,
 tranne quello che corrisponde alla pagina corrente */
 .navbar a.nav-item:not(.active):not(#navbarDropdown):hover {
@@ -88,6 +92,11 @@ tranne quello che corrisponde alla pagina corrente */
 .active {
     font-weight: bold;
     font-size: 1.1rem;
+}
+
+.navbar-nav .dropdown-item.active {
+    background-color: inherit;
+    color: var(--awwa-secondary) !important;
 }
 
 .navbar-nav .dropdown-item:hover {

@@ -9,7 +9,12 @@ $(document).ready(function() {
     //visualizzaClassificaTmdb();
     //mostraSeriePopolari();
     scrollHandler();
+    mostraPostUtente();
 });
+
+function mostraPostUtente() {
+    
+}
 
 function scrollHandler(){
     // Quando si preme il bottone "Torna su" viene attivata questa funzione
