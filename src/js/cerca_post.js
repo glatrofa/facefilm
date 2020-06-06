@@ -95,10 +95,12 @@ $(function visualizzaEpisodi() {
 
 $("#form_post").on('submit', function () {
     cercaPost();
+    return false; // impedisce il refresh della pagina perché il submit viene effettuato con jquery
 });
 
 // visualizza i post ricercati in base agli attributi selezionati
-function cercaPost() {        
+function cercaPost() {
+    console.log("serie "+document.getElementById('post_serie').value+" stagione "+document.getElementById('post_stagione').value+" episodio "+document.getElementById('post_episodio').value);
     $.ajax({
         type: 'POST',
         url: '../php/cerca_post.php',
@@ -112,6 +114,10 @@ function cercaPost() {
         dataType: 'json',
         success: function (data) {
             console.log("paginazione successo " + JSON.stringify(data) + "\n" + typeof data + "\n" + data.length); //data è un Object e non ha la proprietà length
+            if(data[0] == null && pagina == 0){
+                snackbarErrore("Non ci sono post");
+                return false;
+            }
             let i;
             for (i = 0; i < data.length; i++) {
                 document.getElementById("sezione_post").innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost, data[i].immagine)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);
