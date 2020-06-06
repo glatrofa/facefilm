@@ -1,6 +1,7 @@
 :root {
     --awwa-primary: #e5af05;
-    --awwa-secondary: #00008b;
+    /*--awwa-secondary: #00008b; */
+    --awwa-secondary: #1e006b;
 }
 
 /* Personalizzazione scrollbar */
