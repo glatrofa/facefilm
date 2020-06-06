@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded",function(){
     mostraSeriePopolari();
     scrollHandler();
 });
+
 /*$(document).ready(function() {
     visualizzaClassificaTmdb();
     mostraSeriePopolari();
