@@ -95,7 +95,7 @@ $(function visualizzaEpisodi() {
 
 $("#form_post").on('submit', function () {
     cercaPost();
-    return false;
+    return false; // impedisce il refresh della pagina perché il submit viene effettuato con jquery
 });
 
 // visualizza i post ricercati in base agli attributi selezionati
@@ -113,7 +113,7 @@ function cercaPost() {
         dataType: 'json',
         success: function (data) {
             console.log("paginazione successo " + JSON.stringify(data) + "\n" + typeof data + "\n" + data.length); //data è un Object e non ha la proprietà length
-            if(data.length == 0)
+            if(data[0] == null)
                 snackbarErrore("Non ci sono commenti");
             let i;
             for (i = 0; i < data.length; i++) {
