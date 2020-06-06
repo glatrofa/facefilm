@@ -94,7 +94,7 @@ $(function visualizzaEpisodi() {
 });
 
 // visualizza i post ricercati in base agli attributi selezionati
-function cercaPost() {
+$(function cercaPost() {
     $("#bottone_cerca_post").click(function (e) {
         e.preventDefault();
         $.ajax({
@@ -268,7 +268,7 @@ function cercaPost() {
             }
         });
     });
-}
+});
 
 // Quando si preme il bottone "Torna su" viene attivata questa funzione
 function scrollHandler(){
