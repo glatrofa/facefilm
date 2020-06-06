@@ -59,7 +59,7 @@
                             </div>
                         </div>                    
                     </div>
-                    <div class="card shadow-sm mt-5 mb-3">
+                    <div class="card shadow-sm mt-4 mb-5">
                         <div class="card-header text-center bg-awwa-secondary">
                             <div class="h4 text-white">
                                 Serie pi&ugrave; popolari su <a href="https://www.themoviedb.org/?language=it" class="link text-white">TMDB</a>
@@ -78,7 +78,7 @@
                         <div class="card-header bg-awwa-primary">
                             <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active awwa-secondary" id="publish-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">
+                                    <a class="nav-link active awwa-secondary" id="publish_tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">
                                         Pubblica un post
                                     </a>
                                 </li>
@@ -88,7 +88,7 @@
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
                                     <form id="form_post">
-                                        <div class="row awwa-secondary mb-3">
+                                        <div class="row awwa-primary mb-3 font-weight-bold">
                                             <h4>Cosa hai visto</h4>
                                         </div>
                                         <div class="row justify-content-center align-items-center mb-3">
@@ -110,12 +110,14 @@
                                                 <option value="null"> Seleziona episodio... </option>
                                             </select>
                                         </div>
-                                        <div class="row awwa-secondary my-4">
+                                        <div class="row awwa-primary my-3 font-weight-bold">
                                             <h4>Cosa ne pensi</h4>
+                                        </div>
+                                        <div class="row my-3">
                                             <input type="text" class="form-control mt-2" id="post_titolo" name="post_titolo" placeholder="Titolo del post" required>
                                             <textarea type="text" class="form-control md-textarea mt-2" id="post_testo" name="post_testo" rows="3" placeholder="Cosa ne penso..." maxlength="8000" required></textarea>
                                         </div>
-                                        <div class="row">
+                                        <div class="row my-2">
                                             <button type="submit" class="btn btn-lg text-white bg-awwa-primary ml-2"><i class="fas fa-globe-americas mr-2"></i>Pubblica</button>
                                        </div>
                                     </form>

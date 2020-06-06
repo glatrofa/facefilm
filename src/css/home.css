@@ -102,6 +102,12 @@ footer {
     width: 100%;
 }
 
+#publish_tab {
+    border-color: var(--awwa-secondary);
+    border-bottom: none;
+    font-weight: bold;
+}
+
 #form_post .row {
     margin-right: 0;
     margin-left: 0;
