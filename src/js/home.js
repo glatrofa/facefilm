@@ -18,7 +18,7 @@ window.onload = logged();
 //let modalLikeClicked = false;
 //let modalDislikeClicked = false;
 
-// inizializza a 0 per la gestione della visualizzaizone dei post
+// inizializza a 0 la variabile pagina per la gestione della visualizzazione dei post
 let pagina = 0;
 
 // richiama funzioni non appena il documento è caricato
