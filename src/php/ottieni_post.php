@@ -14,14 +14,7 @@ $postPerPagina = 2;
 // esecuzione query
 // SELECT post.id, post.data, post.titolo, post.testo, post.id_serie, post.numero_stagione, post.numero_episodio, utenti.nome_utente, COUNT(commenti.id) AS numero_commenti FROM utenti INNER JOIN (post LEFT JOIN commenti ON post.id = commenti.id_post) ON post.email = utenti.email ORDER BY data DESC
 // SELECT idPost, data, titolo, testo, id_serie, numero_stagione, numero_episodio, utenti.nome_utente FROM utenti INNER JOIN (SELECT DISTINCT(post.id) AS idPost, COUNT(commenti.id) AS numero_commenti, post.data, post.titolo, post.testo, post.id_serie, post.numero_stagione, post.numero_episodio, post.email FROM post LEFT JOIN commenti ON post.id = commenti.id_post) AS x ON x.email = utenti.email ORDER BY data DESC
-$query =   "SELECT idPost, numeroCommenti, UNIX_TIMESTAMP(data) AS data, titolo, testo, id_serie, numero_stagione, numero_episodio, piace, dislike, utenti.nome_utente, immagine 
-            FROM utenti INNER JOIN (SELECT post.id AS idPost, COUNT(commenti.id) AS numeroCommenti, post.data, post.titolo, post.testo, post.id_serie, post.numero_stagione, post.numero_episodio, post.email, post.piace, post.dislike 
-                                    FROM post LEFT JOIN commenti 
-                                    ON post.id = commenti.id_post 
-                                    GROUP BY idPost) AS x 
-            ON x.email = utenti.email 
-            ORDER BY data DESC 
-            LIMIT ".$pagina.", ".$postPerPagina."";
+$query =   "SELECT idPost, numeroCommenti, UNIX_TIMESTAMP(data) AS data, titolo, testo, id_serie, numero_stagione, numero_episodio, piace, dislike, utenti.nome_utente, immagine FROM utenti INNER JOIN (SELECT post.id AS idPost, COUNT(commenti.id) AS numeroCommenti, post.data, post.titolo, post.testo, post.id_serie, post.numero_stagione, post.numero_episodio, post.email, post.piace, post.dislike FROM post LEFT JOIN commenti ON post.id = commenti.id_post GROUP BY idPost) AS x ON x.email = utenti.email ORDER BY data DESC LIMIT ".$pagina.", ".$postPerPagina."";
 $query_escaped = mysqli_real_escape_string($connection, $query) ;
 $response = array();
 //$response = array('nomeUtente' => "pep", 'idPost' => "22", 'titolo' => "Belo", 'testo' => "superbelo", 'idSerie' => "10721", 'stagione' => "2", 'episodio' => "2", 'numeroCommenti' => "3", 'like' => "4", 'dislike' => "5", 'data' => "1589462020.37589", 'immagine' => "null");
@@ -50,7 +43,7 @@ if($rowsNumber != 0){
     }    
 }
 else{
-    $response[0] = null;
+    $response[1] = null;
 }
 
 // ritorno dati al client

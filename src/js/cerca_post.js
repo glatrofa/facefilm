@@ -93,8 +93,12 @@ $(function visualizzaEpisodi() {
     });    
 });
 
+$("#form_post").on('submit', function () {
+    cercaPost();
+});
+
 // visualizza i post ricercati in base agli attributi selezionati
-$("#cerca_post").click(function cercaPost() {    
+function cercaPost() {        
     $.ajax({
         type: 'POST',
         url: '../php/cerca_post.php',
@@ -265,7 +269,7 @@ $("#cerca_post").click(function cercaPost() {
             snackbarErrore("Si &egrave; verificato un errore");
         }
     });
-});
+}
 
 // Quando si preme il bottone "Torna su" viene attivata questa funzione
 function scrollHandler(){
@@ -301,6 +305,6 @@ $(function logout() {
 $(function visualizzaAltriPost() {
     $("#carica_altri_post").click(function () {
         pagina = pagina + 2;
-        visualizzaPost(pagina);
+        cercaPost();
     });
 });
