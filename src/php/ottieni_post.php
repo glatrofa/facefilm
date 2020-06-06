@@ -50,7 +50,7 @@ if($rowsNumber != 0){
     }    
 }
 else{
-    $response[0] = null;
+    $response[1] = null;
 }
 
 // ritorno dati al client
