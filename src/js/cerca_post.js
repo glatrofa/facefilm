@@ -114,7 +114,7 @@ function cercaPost() {
         dataType: 'json',
         success: function (data) {
             console.log("paginazione successo " + JSON.stringify(data) + "\n" + typeof data + "\n" + data.length); //data è un Object e non ha la proprietà length
-            if(data[0] == null){
+            if(data[0] == null && pagina == 0){
                 snackbarErrore("Non ci sono post");
                 return false;
             }
