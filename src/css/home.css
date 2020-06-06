@@ -236,7 +236,7 @@ footer {
     color: white;
 }
 
-/* CSS esclusivo della pagina cerca_serie_tv */
+/* Pagina cerca_serie_tv.html */
 
 #risultati_cerca_serie_tv div.card button, #mostra_poster {
     color: var(--awwa-secondary);
@@ -257,7 +257,7 @@ footer {
     color: var(--awwa-secondary);
 }
 
-/* Per la pagina serie_tv */
+/* Pagina serie_tv.html */
 
 .table-striped tbody tr:nth-of-type(odd) {
     background-color: white !important;
@@ -292,4 +292,36 @@ footer {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1px var(--awwa-secondary);
 }
+
+/* Pagina profilo.html */
+
+#info_profilo .card-body .row {
+    margin-bottom: 0.5rem;
+    line-height: 2;
+    padding: 0.5rem 0.25rem;
+    margin-top: 0.5rem;
+    margin-left: 0;
+    margin-right: 0;
+    align-items: center;
+}
+
+#info_profilo .card-body .row div:first-child {
+    font-weight: bold;
+    font-size: 0.875rem;
+    color: var(--awwa-secondary);
+}
+
+#info_profilo .card-body .row div:last-child {
+    font-weight: bold;
+}
+
+#info_profilo .card-body .row:nth-of-type(odd) {
+    background-color: white !important;
+}
+
+#info_profilo .card-body .row:nth-of-type(even) {
+    background-color: rgba(30, 0, 107, 0.4) !important;
+}
+
+
  
