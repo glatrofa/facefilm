@@ -5,7 +5,7 @@ import { snackbarSuccesso, snackbarErrore } from './visualizza_snackbar.js';
 import { visualizzaCommenti } from './visualizza_commenti.js';
 
 // verifica che l'utente abbia effettuato l'accesso
-//window.onload = logged();
+window.onload = logged();
 
 // colore primario per i tasti del post
 //const colorPrimary = '#e5af05';
