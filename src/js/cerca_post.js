@@ -93,15 +93,8 @@ $(function visualizzaEpisodi() {
     });    
 });
 
-// funzione per la visualizzaizone di altri post nel feed principale
-function visualizzaPost(pagina) {
-    $("#cerca_post").click(function () {
-        cercaPost(pagina);
-    });
-}
-
 // visualizza i post ricercati in base agli attributi selezionati
-function cercaPost(pagina) {    
+$("#cerca_post").click(function cercaPost() {    
     $.ajax({
         type: 'POST',
         url: '../php/cerca_post.php',
@@ -272,7 +265,7 @@ function cercaPost(pagina) {
             snackbarErrore("Si &egrave; verificato un errore");
         }
     });
-}
+});
 
 // Quando si preme il bottone "Torna su" viene attivata questa funzione
 function scrollHandler(){
