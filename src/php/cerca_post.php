@@ -11,6 +11,7 @@ $numeroEpisodio = mysqli_real_escape_string($connection, $_POST["numeroEpisodio"
 $postPerPagina = 2;
 
 // esecuzione query
+<<<<<<< HEAD
 $query =   "SELECT idPost, numeroCommenti, UNIX_TIMESTAMP(data) AS data, titolo, testo, id_serie, numero_stagione, numero_episodio, piace, dislike, utenti.nome_utente, immagine 
             FROM utenti INNER JOIN (SELECT post.id AS idPost, COUNT(commenti.id) AS numeroCommenti, post.data, post.titolo, post.testo, post.id_serie, post.numero_stagione, post.numero_episodio, post.email, post.piace, post.dislike 
                                     FROM post LEFT JOIN commenti 
@@ -20,13 +21,33 @@ $query =   "SELECT idPost, numeroCommenti, UNIX_TIMESTAMP(data) AS data, titolo,
             ON x.email = utenti.email 
             ORDER BY data DESC 
             LIMIT ".$pagina.", ".$postPerPagina."";
+=======
+if($idSerie != null && $numeroStagione != null && $numeroEpisodio != null)
+    $query =   "SELECT idPost, numeroCommenti, UNIX_TIMESTAMP(data) AS data, titolo, testo, id_serie, numero_stagione, numero_episodio, piace, dislike, utenti.nome_utente, immagine 
+                FROM utenti INNER JOIN (SELECT post.id AS idPost, COUNT(commenti.id) AS numeroCommenti, post.data, post.titolo, post.testo, post.id_serie, post.numero_stagione, post.numero_episodio, post.email, post.piace, post.dislike 
+                                        FROM post LEFT JOIN commenti ON post.id = commenti.id_post WHERE post.id_serie = ".$idSerie." AND post.numero_stagione = ".$numeroStagione." AND post.numero_episodio = ".$numeroEpisodio." GROUP BY idPost) AS x 
+                ON x.email = utenti.email 
+                ORDER BY data DESC 
+                LIMIT ".$pagina.", ".$postPerPagina."";
+else if($idSerie != null && $numeroStagione != null)
+    $query =   "SELECT idPost, numeroCommenti, UNIX_TIMESTAMP(data) AS data, titolo, testo, id_serie, numero_stagione, numero_episodio, piace, dislike, utenti.nome_utente, immagine 
+                FROM utenti INNER JOIN (SELECT post.id AS idPost, COUNT(commenti.id) AS numeroCommenti, post.data, post.titolo, post.testo, post.id_serie, post.numero_stagione, post.numero_episodio, post.email, post.piace, post.dislike 
+                                        FROM post LEFT JOIN commenti ON post.id = commenti.id_post WHERE post.id_serie = ".$idSerie." AND post.numero_stagione = ".$numeroStagione." GROUP BY idPost) AS x 
+                ON x.email = utenti.email 
+                ORDER BY data DESC 
+                LIMIT ".$pagina.", ".$postPerPagina."";
+else if($idSerie != null)
+    $query =   "SELECT idPost, numeroCommenti, UNIX_TIMESTAMP(data) AS data, titolo, testo, id_serie, numero_stagione, numero_episodio, piace, dislike, utenti.nome_utente, immagine 
+                FROM utenti INNER JOIN (SELECT post.id AS idPost, COUNT(commenti.id) AS numeroCommenti, post.data, post.titolo, post.testo, post.id_serie, post.numero_stagione, post.numero_episodio, post.email, post.piace, post.dislike 
+                                        FROM post LEFT JOIN commenti ON post.id = commenti.id_post WHERE post.id_serie = ".$idSerie." GROUP BY idPost) AS x 
+                ON x.email = utenti.email 
+                ORDER BY data DESC 
+                LIMIT ".$pagina.", ".$postPerPagina."";
+>>>>>>> 923c6027a29a3759c501265044803b6aae0ca245
 $query_escaped = mysqli_real_escape_string($connection, "SELECT idPost, numeroCommenti, UNIX_TIMESTAMP(data) AS data, titolo, testo, id_serie, numero_stagione, numero_episodio, piace, dislike, utenti.nome_utente, immagine FROM utenti INNER JOIN (SELECT post.id AS idPost, COUNT(commenti.id) AS numeroCommenti, post.data, post.titolo, post.testo, post.id_serie, post.numero_stagione, post.numero_episodio, post.email, post.piace, post.dislike FROM post LEFT JOIN commenti ON post.id = commenti.id_post GROUP BY idPost) AS x ON x.email = utenti.email ORDER BY data DESC LIMIT ".$pagina.", ".$postPerPagina."") ;
 $response = array();
-//$response = array('nomeUtente' => "pep", 'idPost' => "22", 'titolo' => "Belo", 'testo' => "superbelo", 'idSerie' => "10721", 'stagione' => "2", 'episodio' => "2", 'numeroCommenti' => "3", 'like' => "4", 'dislike' => "5", 'data' => "1589462020.37589", 'immagine' => "null");
-
 $result = mysqli_query($connection, $query_escaped) or die($response[0] = mysqli_error($connection));
 $rowsNumber = mysqli_num_rows($result);
-//$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 if($rowsNumber != 0){
     // ritorno dei dati
     $i = 0;
@@ -48,7 +69,7 @@ if($rowsNumber != 0){
     }    
 }
 else{
-    $response[0] = null;
+    $response[1] = null;
 }
 
 // ritorno dati al client
