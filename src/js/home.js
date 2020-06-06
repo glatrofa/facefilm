@@ -475,8 +475,8 @@ function visualizzaPost(pagina) {
     });
 }
 
+// Quando si preme il bottone "Torna su" viene attivata questa funzione
 function scrollHandler(){
-    // Quando si preme il bottone "Torna su" viene attivata questa funzione
     document.getElementById("scroll_to_top").addEventListener('click',function tornaSu(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -506,6 +506,7 @@ function scrollHandler(){
     document.documentElement.scrollTop = 0;  
 });*/
 
+// funziona per la disconnessione dell'utente
 $(function logout() {
     $("#logout").click(function () {
         $.ajax({
@@ -520,6 +521,7 @@ $(function logout() {
     });
 });
 
+// funzione per la visualizzaizone di altri post nel feed principale
 $(function visualizzaAltriPost() {
     $("#carica_altri_post").click(function () {
         pagina = pagina + 2;
