@@ -43,7 +43,7 @@ if($rowsNumber != 0){
     }    
 }
 else{
-    $response[1] = null;
+    $response[0] = null;
 }
 
 // ritorno dati al client
