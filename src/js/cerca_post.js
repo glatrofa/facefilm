@@ -99,7 +99,8 @@ $("#form_post").on('submit', function () {
 });
 
 // visualizza i post ricercati in base agli attributi selezionati
-function cercaPost() {        
+function cercaPost() {
+    console.log("serie "+document.getElementById('post_serie').value+" stagione "+document.getElementById('post_stagione').value+" episodio "+document.getElementById('post_episodio').value);
     $.ajax({
         type: 'POST',
         url: '../php/cerca_post.php',
