@@ -18,10 +18,10 @@ window.onload = logged();
 //let modalLikeClicked = false;
 //let modalDislikeClicked = false;
 
-// inizializza a 0 per la gestione della visualizzaizone dei post
+// inizializza a 0 la variabile pagina per la gestione della visualizzazione dei post
 let pagina = 0;
 
-// richiama funzioni non appena il documento è caricato
+// richiama le seguenti funzioni non appena il documento è caricato
 $(document).ready(function() {
     visualizzaPost(pagina);
     visualizzaClassificaAwwa();
@@ -475,8 +475,8 @@ function visualizzaPost(pagina) {
     });
 }
 
+// Quando si preme il bottone "Torna su" viene attivata questa funzione
 function scrollHandler(){
-    // Quando si preme il bottone "Torna su" viene attivata questa funzione
     document.getElementById("scroll_to_top").addEventListener('click',function tornaSu(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -506,6 +506,7 @@ function scrollHandler(){
     document.documentElement.scrollTop = 0;  
 });*/
 
+// funziona per la disconnessione dell'utente
 $(function logout() {
     $("#logout").click(function () {
         $.ajax({
@@ -520,6 +521,7 @@ $(function logout() {
     });
 });
 
+// funzione per la visualizzaizone di altri post nel feed principale
 $(function visualizzaAltriPost() {
     $("#carica_altri_post").click(function () {
         pagina = pagina + 2;
