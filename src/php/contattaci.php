@@ -12,15 +12,7 @@ $email = mysqli_real_escape_string($connection, $_POST["email"]);
 $headers = "MIME-Version: 1.0" . "\r\n"
 . "Content-type:text/html;charset=UTF-8" . "\r\n"
 . "From: <". $email ."> ". "\r\n";
-//$oggetto = "Benvenuto su Money Keeper!";
-/*
-$message = "Grazie per esserti registrato!\n ".
-"Goditi al meglio la tua esperienza d'uso di questo semplice ed efficace registro contabile personale!\n".
-"Crea, modifica ed elimina fondi, entrate, spese e categorie facilmente\n".
-"ed esporta facilmente i tuoi dati in .pdf per condividerli o salvarli ovunque!";
-*/
 echo mail("g.latrofa3@studenti.poliba.it", $oggetto, $messaggio, $headers) or die(mysqli_error($connection));
-//echo true;
 
 /*
 // lock tabella
