@@ -16,18 +16,19 @@ if($profilo){
     $query =   "SELECT idPost, numeroCommenti, UNIX_TIMESTAMP(data) AS data, titolo, testo, id_serie, numero_stagione, numero_episodio, piace, dislike, utenti.nome_utente, immagine ". 
                 "FROM utenti INNER JOIN (SELECT post.id AS idPost, COUNT(commenti.id) AS numeroCommenti, post.data, post.titolo, post.testo, post.id_serie, post.numero_stagione, post.numero_episodio, post.email, post.piace, post.dislike ".
                                         "FROM post LEFT JOIN commenti ON post.id = commenti.id_post ".
-                                        "GROUP BY idPost) AS x ON x.email = utenti.email ".
-                "WHERE email = " . $email . " ".
+                                        "GROUP BY idPost) AS x ".
+                                        "ON x.email = utenti.email ".
+                "WHERE email = " . $email .
                 "ORDER BY data DESC ".
                 "LIMIT " . $pagina . ", " . $postPerPagina;
 }
 else
     // query per la visualizzazione dei post più recenti pubblicati
     $query =   "SELECT idPost, numeroCommenti, UNIX_TIMESTAMP(data) AS data, titolo, testo, id_serie, numero_stagione, numero_episodio, piace, dislike, utenti.nome_utente, immagine ".
-                "FROM utenti INNER JOIN ".
-                "(SELECT post.id AS idPost, COUNT(commenti.id) AS numeroCommenti, post.data, post.titolo, post.testo, post.id_serie, post.numero_stagione, post.numero_episodio, post.email, post.piace, post.dislike ".
-                "FROM post LEFT JOIN commenti ON post.id = commenti.id_post GROUP BY idPost) AS x ".
-                "ON x.email = utenti.email ".
+                "FROM utenti INNER JOIN (SELECT post.id AS idPost, COUNT(commenti.id) AS numeroCommenti, post.data, post.titolo, post.testo, post.id_serie, post.numero_stagione, post.numero_episodio, post.email, post.piace, post.dislike ".
+                                        "FROM post LEFT JOIN commenti ON post.id = commenti.id_post ".
+                                        "GROUP BY idPost) AS x ".
+                                        "ON x.email = utenti.email ".
                 "ORDER BY data DESC LIMIT ".$pagina.", ".$postPerPagina;
 /*
     SELECT idPost, numeroCommenti, UNIX_TIMESTAMP(data) AS data, titolo, testo, id_serie, numero_stagione, numero_episodio, piace, dislike, utenti.nome_utente, immagine 
