@@ -16,10 +16,7 @@ $(function contattaci() {
             console.log('SUCCESS \n'+ JSON.stringify(data,null,2));
             if (data) {
                 document.getElementById('modal-contattaci-success').innerHTML = modalContattaciSuccess;
-                $('#modal-contattaci-success').modal('show');
-                ("#redirectContattaciSuccess").click(function (){
-                  location.href='../home.html';
-                });
+                $('#modal-contattaci-success').modal('show');              
             }
             else {
                 document.getElementById('modal-contattaci-error').innerHTML = modalContattaciError;
@@ -33,4 +30,8 @@ $(function contattaci() {
         }
       });
     });
+});
+
+$("#redirectContattaciSuccess").click(function (){
+  location.href='../home.html';
 });
