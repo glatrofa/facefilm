@@ -27,7 +27,7 @@ $queryUtenteEscaped = mysqli_real_escape_string($connection, $queryUtente);
 $response = array();
 // esecuzione query utente
 $resultUtente = mysqli_query($connection, $queryUtenteEscaped) or die($response[0] = mysqli_error($connection));
-$rowUtente = mysqli_fetch_array($result, MYSQLI_ASSOC);
+$rowUtente = mysqli_fetch_array($resultUtente, MYSQLI_ASSOC);
 $response[0] = array(   'nomeUtente' => $row["nome_utente"],
                         'nome' => $row["nome"],
                         'cognome' => $row["cognome"],
