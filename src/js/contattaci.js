@@ -4,7 +4,7 @@ const modalContattaciError = "<div class='modal-dialog modal-dialog-centered mod
 
 // funzione per la memorizzazione del messaggio
 $(function contattaci() {
-    $('#form-contattaci').on('submit', function (e) {
+    $('#form_contattaci').on('submit', function (e) {
       e.preventDefault();
       $.ajax({
         type: 'POST',
@@ -13,7 +13,7 @@ $(function contattaci() {
         data: $(this).serialize(),
         dataType: 'json',
         success: function (data) {
-            console.log(data);
+            console.log('SUCCESS \n'+ JSON.stringify(data,null,2));
             if (data) {
                 document.getElementById('modal-contattaci-success').innerHTML = modalContattaciSuccess;
                 $('#modal-contattaci-success').modal('show');             
@@ -21,10 +21,10 @@ $(function contattaci() {
             else {
                 document.getElementById('modal-contattaci-error').innerHTML = modalContattaciError;
                 $('#modal-contattaci-error').modal('show');
-            }         
+            }        
         },
         error: function (data) {
-            console.log(data);
+            console.log('ERROR \n'+ JSON.stringify(data,null,2));
             document.getElementById('modal-contattaci-error').innerHTML = modalContattaciError;
             $('#modal-contattaci-error').modal('show');
         }
