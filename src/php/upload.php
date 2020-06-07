@@ -1,5 +1,4 @@
-<php 
-$image_src = "/img/users_image/Carlino con tastiera e mouse.png";
-
-?>
-<img src='<?php echo $image_src;  ?>' >
+<form method="post" action="./image.php" enctype='multipart/form-data'>
+  <input type='file' name='file' />
+  <input type='submit' value='Save name' name='but_upload'>
+</form>
