@@ -100,16 +100,34 @@ $("#form_post").on('submit', function () {
 
 // visualizza i post ricercati in base agli attributi selezionati
 function cercaPost() {
-    console.log("serie "+document.getElementById('post_serie').value+" stagione "+document.getElementById('post_stagione').value+" episodio "+document.getElementById('post_episodio').value);
+    //console.log("serie "+document.getElementById('post_serie').value+" stagione "+document.getElementById('post_stagione').value+" episodio "+document.getElementById('post_episodio').value);
+    if (document.getElementById('post_serie').value != null)
+        let postIdSerie = document.getElementById('post_serie').value
+    else
+        let postIdSerie = "null";
+    if (document.getElementById('post_stagione').value != null)
+        let postNumeroStagione = document.getElementById('post_stagione').value
+    else
+        let postNumeroStagione = "null";
+    if (document.getElementById('post_episodio').value != null)
+        let postNumeroEpisodio = document.getElementById('post_episodio').value
+    else
+        let postNumeroEpisodio = "null";
     $.ajax({
         type: 'POST',
         url: '../php/cerca_post.php',
         crossOrigin: true,
         data: {
+            /*
             idSerie: document.getElementById('post_serie').value,
             numeroStagione: document.getElementById('post_stagione').value,
             numeroEpisodio: document.getElementById('post_episodio').value,
             pagina: pagina,
+            */
+           pagina: pagina,
+           idSerie: postIdSerie,
+           numeroStagione: postNumeroStagione,
+           numeroEpisodio: postNumeroEpisodio
         },
         dataType: 'json',
         success: function (data) {
