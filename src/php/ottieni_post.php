@@ -18,8 +18,8 @@ if($profilo){
                                         "FROM post LEFT JOIN commenti ON post.id = commenti.id_post ".
                                         "GROUP BY idPost) AS x ".
                                         "ON x.email = utenti.email ".
-                "WHERE email = '". $email ."' ".
-                "ORDER BY data DESC LIMIT " . $pagina . ", " . $postPerPagina;
+                "WHERE email = 'g.latrofa3@studenti.poliba.it' ".
+                "ORDER BY data DESC LIMIT ". $pagina .", ". $postPerPagina;
 }
 else
     // query per la visualizzazione dei post più recenti pubblicati
