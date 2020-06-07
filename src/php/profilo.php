@@ -9,9 +9,9 @@ $email = mysqli_real_escape_string($connection, $_SESSION["email"]);
 $query = "SELECT nome, cognome, data_nascita, nazione, nome_utente, immagine FROM utenti WHERE email = ". $email;
 // definizione query sicure
 //$queryPostEscaped = mysqli_real_escape_string($connection, $queryPost);
-$queryEscaped = mysqli_real_escape_string($connection, $query);
+//$queryEscaped = mysqli_real_escape_string($connection, $query);
 // esecuzione query
-$result = mysqli_query($connection, $queryEscaped) or die($response = mysqli_error($connection));
+$result = mysqli_query($connection, $query) or die($response = mysqli_error($connection));
 // ritorno dei dati
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 $response = array(  'nomeUtente' => $row["nome_utente"],
