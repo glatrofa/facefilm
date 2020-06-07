@@ -1,5 +1,6 @@
 import { logged } from './autenticazione.js';
 import { APIKEY } from './key.js';
+import { snackbarSuccesso, snackbarErrore } from './visualizza_snackbar.js';
 import { generaHeader, generaBody, generaFooter } from './genera_post.js';
 
 // verifica che l'utente abbia effettuato l'accesso
