@@ -2,9 +2,13 @@
 
 include './connessione_database.php';
 
+$profilo = false;
+
 // recupero pagina
 $pagina = mysqli_real_escape_string($connection, $_POST["pagina"]);
-$profilo = mysqli_real_escape_string($connection, $_POST["profilo"]);
+if (isset($_POST["profilo"])) {
+    $profilo = mysqli_real_escape_string($connection, $_POST["profilo"]);
+}
 // imposto il numero di post da visualizzare volta per volta
 $postPerPagina = 2;
 

@@ -5,7 +5,7 @@ import { generaCard } from './genera_card.js';
 const baseImageURL = 'https://image.tmdb.org/t/p/';
 
 // verifica che l'utente abbia effettuato l'accesso
-// window.onload = logged();
+window.onload = logged();
 
 // richiama funzioni non appena il documento è caricato
 document.addEventListener("DOMContentLoaded",function(){
