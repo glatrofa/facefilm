@@ -24,12 +24,12 @@ function mostraDatiUtente() {
     success: function (data) {
       console.log('SUCCESS \n'+ JSON.stringify(data,null,2));
       $("#nome_utente").text(data["nomeUtente"]);
-      $("#nome").text(data["nome"]);
-      $("#cognome").text(data["cognome"]);
+      $("#nome").text(data["nome"].toLowerCase());
+      $("#cognome").text(data["cognome"].toLowerCase());
       $("#data_nascita").text(data["data_nascita"]);
       $("#nazione").text(data["nazione"]);
       $("#email").text(data["email"]);
-      $("#saluto").text("Ciao "+ data["nome"] +"!");
+      $("#saluto").text("Ciao "+ data["nome"].toLowerCase() +" !");
     },
     error: function (data) {
       console.log('ERROR '+ data);
