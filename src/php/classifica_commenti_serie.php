@@ -1,5 +1,5 @@
 <?php
-
+// importa variabile $connection per la connessione al db
 include './connessione_database.php';
 
 // esecuzione query

@@ -1,7 +1,7 @@
 <?php
-
+// importa variabile $connection per la connessione al db
 include './connessione_database.php';
-
+// inizalizza la varibaile profilo a false
 $profilo = false;
 
 // recupero pagina

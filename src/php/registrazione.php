@@ -1,5 +1,5 @@
 <?php
-
+// importa variabile $connection per la connessione al db
 include './connessione_database.php';
 
 // definizione variabili dal post
@@ -52,7 +52,7 @@ else if($nrighe_email == 0 && $nrighe_username == 0){
     $queryU = "UNLOCK TABLES";
     mysqli_query($connection, $queryU) or die ($response[0] = mysqli_error($connection));    
     $response[0] = 0;
-    //Invio mail
+    //Invio mail di benvenuto
     $headers = "MIME-Version: 1.0" . "\r\n"
     . "Content-type:text/html;charset=UTF-8" . "\r\n"
     . "From: <info@awwa.com> ". "\r\n";
