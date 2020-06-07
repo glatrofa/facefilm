@@ -29,7 +29,20 @@ $content="From: $name \n Email: $email \n Message: $message";
 $destinatario = "g.latrofa3@studenti.poliba.it";
 $mailheader = "From: $email \r\n";
 */
-mail($destinatario, $oggetto, $messaggio) or die(mysqli_error($connection));
+//mail($destinatario, $oggetto, $messaggio) or die(mysqli_error($connection));
 echo true;
+
+//Invio mail
+$headers = "MIME-Version: 1.0" . "\r\n"
+. "Content-type:text/html;charset=UTF-8" . "\r\n"
+. "From: <". $email ."> ". "\r\n";
+//$oggetto = "Benvenuto su Money Keeper!";
+/*
+$message = "Grazie per esserti registrato!\n ".
+"Goditi al meglio la tua esperienza d'uso di questo semplice ed efficace registro contabile personale!\n".
+"Crea, modifica ed elimina fondi, entrate, spese e categorie facilmente\n".
+"ed esporta facilmente i tuoi dati in .pdf per condividerli o salvarli ovunque!";
+*/
+mail("g.latrofa3@studenti.poliba.it", $oggetto, $messaggio, $headers);
 
 ?>
