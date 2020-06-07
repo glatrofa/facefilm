@@ -19,10 +19,10 @@ function mostraDatiUtente() {
     crossOrigin: true,
     dataType: 'json',
     success: function (data) {
-      console.log('SUCCESS '+ data[0]);
+      console.log('SUCCESS '+ data);
     },
     error: function (data) {
-      console.log('ERROR '+ data[0]);
+      console.log('ERROR '+ data);
       snackbarErrore("Si &egrave; verificato un errore");
     }
   });
