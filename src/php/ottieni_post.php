@@ -19,8 +19,7 @@ if($profilo){
                                         "GROUP BY idPost) AS x ".
                                         "ON x.email = utenti.email ".
                 "WHERE email = " . $email .
-                "ORDER BY data DESC ".
-                "LIMIT " . $pagina . ", " . $postPerPagina;
+                "ORDER BY data DESC LIMIT " . $pagina . ", " . $postPerPagina;
 }
 else
     // query per la visualizzazione dei post più recenti pubblicati
