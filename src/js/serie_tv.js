@@ -198,6 +198,7 @@ function scrollHandler(){
         };
 }
 
+// Funzione che formatta le date in formato europeo
 function dataEuropea(data) {
     let giorno = data.substring(8);
     let mese = data.substring(5,7);
