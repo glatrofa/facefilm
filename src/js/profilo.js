@@ -26,7 +26,7 @@ function mostraDatiUtente() {
       $("#nome_utente").text(data["nomeUtente"]);
       $("#nome").text(data["nome"].toLowerCase());
       $("#cognome").text(data["cognome"].toLowerCase());
-      $("#data_nascita").text(data["data_nascita"]);
+      $("#data_nascita").text(dataEuropea(data["data_nascita"]));
       $("#nazione").text(data["nazione"]);
       $("#email").text(data["email"]);
       $("#saluto").text("Ciao "+ data["nome"].toLowerCase() +" !");
@@ -234,3 +234,11 @@ $(function visualizzaAltriPost() {
       mostraPostUtente();
   });
 });
+
+// Funzione che formatta le date in formato europeo
+function dataEuropea(data) {
+    let giorno = data.substring(8);
+    let mese = data.substring(5,7);
+    let anno = data.substring(0,4);
+    return data = giorno + ' / ' + mese + ' / ' + anno;
+}
