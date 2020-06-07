@@ -39,11 +39,11 @@ else
     ORDER BY data DESC 
     LIMIT ".$pagina.", ".$postPerPagina."";
 */
-//$queryEscaped = mysqli_real_escape_string($connection, $query) ;
+$queryEscaped = mysqli_real_escape_string($connection, $query) ;
 $response = array();
 //$response = array('nomeUtente' => "pep", 'idPost' => "22", 'titolo' => "Belo", 'testo' => "superbelo", 'idSerie' => "10721", 'stagione' => "2", 'episodio' => "2", 'numeroCommenti' => "3", 'like' => "4", 'dislike' => "5", 'data' => "1589462020.37589", 'immagine' => "null");
 
-$result = mysqli_query($connection, $query) or die($response[0] = mysqli_error($connection));
+$result = mysqli_query($connection, $queryEscaped) or die($response[0] = mysqli_error($connection));
 $rowsNumber = mysqli_num_rows($result);
 //$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 if($rowsNumber != 0){
