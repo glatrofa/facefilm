@@ -18,7 +18,7 @@ if($profilo){
                                         "FROM post LEFT JOIN commenti ON post.id = commenti.id_post ".
                                         "GROUP BY idPost) AS x ".
                                         "ON x.email = utenti.email ".
-                "WHERE email = " . $email .
+                "WHERE email = '". $email ."'".
                 "ORDER BY data DESC LIMIT " . $pagina . ", " . $postPerPagina;
 }
 else
