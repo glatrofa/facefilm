@@ -1,6 +1,6 @@
 <?php
 
-include './connessioneDatabase.php';
+include './connessione_database.php';
 
 // esecuzione query
 $query = "SELECT id_serie, COUNT(id) AS numero FROM post GROUP BY id_serie ORDER BY numero DESC LIMIT 10";

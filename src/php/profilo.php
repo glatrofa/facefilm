@@ -1,6 +1,6 @@
 <?php
 
-include './connessioneDatabase.php';
+include './connessione_database.php';
 // recupero identificativo dell'utente loggato
 $email = mysqli_real_escape_string($connection, $_SESSION["email"]);
 // recupero pagina

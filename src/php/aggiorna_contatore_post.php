@@ -1,6 +1,6 @@
 <?php
 
-include './connessioneDatabase.php';
+include './connessione_database.php';
 
 // definizione dell'elemento da modificare
 $obiettivo = mysqli_real_escape_string($connection, $_POST["obiettivo"]);

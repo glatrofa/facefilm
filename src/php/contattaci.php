@@ -1,6 +1,6 @@
 <?php
 
-include './connessioneDatabase.php';
+include './connessione_database.php';
 
 // definizione variabili dal post
 $nome = mysqli_real_escape_string($connection, $_POST["nome"]);
