@@ -3,14 +3,29 @@ import { APIKEY } from './key.js';
 import { generaHeader, generaBody, generaFooter } from './genera_post.js';
 
 // verifica che l'utente abbia effettuato l'accesso
-// window.onload = logged();
+ window.onload = logged();
 
 $(document).ready(function() {
-    //visualizzaClassificaTmdb();
-    //mostraSeriePopolari();
-    scrollHandler();
-    mostraPostUtente();
+  mostraDatiUtente();
+  mostraPostUtente();
+  scrollHandler();
 });
+
+function mostraDatiUtente() {
+  $.ajax({
+    type: 'POST',
+    url: '../php/profilo.php',
+    crossOrigin: true,
+    dataType: 'json',
+    success: function (data) {
+      console.log('SUCCESS '+ data);
+    },
+    error: function (data) {
+      console.log('ERROR '+ data);
+      snackbarErrore("Si &egrave; verificato un errore");
+    }
+  });
+}
 
 function mostraPostUtente() {
     
