@@ -1,6 +1,8 @@
 <?php
 
 include './connessione_database.php';
+// avvio sessione
+session_start();
 // recupero identificativo dell'utente loggato
 $email = mysqli_real_escape_string($connection, $_SESSION["email"]);
 // definizione query recupero informazioni utente        
