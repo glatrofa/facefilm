@@ -19,7 +19,7 @@ function mostraDatiUtente() {
     crossOrigin: true,
     dataType: 'json',
     success: function (data) {
-      console.log('SUCCESS '+ data);
+      console.log('SUCCESS '+ data['email']);
     },
     error: function (data) {
       console.log('ERROR '+ data);

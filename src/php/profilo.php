@@ -15,11 +15,12 @@ $result = mysqli_query($connection, $query) or die($response = mysqli_error($con
 // ritorno dei dati
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 $response = array(  'nomeUtente' => $row["nome_utente"],
-                'nome' => $row["nome"],
-                'cognome' => $row["cognome"],
-                'data_nascita' => $row["data_nascita"],
-                'nazione' => $row["nazione"],
-                'immagine' => $row["immagine"]
+                    'nome' => $row["nome"],
+                    'cognome' => $row["cognome"],
+                    'data_nascita' => $row["data_nascita"],
+                    'nazione' => $row["nazione"],
+                    'immagine' => $row["immagine"],
+                    'email' => $email
             );
 
 // recupero pagina
