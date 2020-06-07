@@ -21,13 +21,11 @@ function mostraDatiUtente() {
     success: function (data) {
       console.log('SUCCESS '+ data);
       $("#nome_utente").text(data["nomeUtente"]);
-      document.getElementById("nome_utente").value = data["nomeUtente"];
-      document.getElementById("nome").innerHtml = data["nome"];
-      document.getElementById("cognome").innerHtml = data["cognome"];
-      document.getElementById("data_nascita").innerHtml = data["data_nascita"];
-      document.getElementById("nazione").innerHtml = data["nazione"];
-      //document.getElementById("immagine").innerHtml = data["immagine"];
-      document.getElementById("email").innerHtml = data["email"];
+      $("#nome").text(data["nome"]);
+      $("#cognome").text(data["cognome"]);
+      $("#data_nascita").text(data["data_nascita"]);
+      $("#nazione").text(data["nazione"]);
+      $("#email").text(data["email"]);
     },
     error: function (data) {
       console.log('ERROR '+ data);
