@@ -40,6 +40,7 @@ echo '<pre>';
 echo 'Here is some more debugging info:';
 print_r($_FILES);
 print "</pre>";
+phpinfo();
 ?>
 
 <form enctype="multipart/form-data" action="upload.php" method="POST">
