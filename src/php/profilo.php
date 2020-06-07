@@ -6,7 +6,7 @@ session_start();
 // recupero identificativo dell'utente loggato
 $email = mysqli_real_escape_string($connection, $_SESSION["email"]);
 // definizione query recupero informazioni utente        
-$query = "SELECT nome, cognome, data_nascita, nazione, nome_utente, immagine FROM utenti WHERE email = ". $email;
+$query = "SELECT * FROM utenti WHERE email = '". $email ."'";
 // definizione query sicure
 //$queryPostEscaped = mysqli_real_escape_string($connection, $queryPost);
 //$queryEscaped = mysqli_real_escape_string($connection, $query);
