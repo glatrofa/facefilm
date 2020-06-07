@@ -19,8 +19,8 @@ $message = "Grazie per esserti registrato!\n ".
 "Crea, modifica ed elimina fondi, entrate, spese e categorie facilmente\n".
 "ed esporta facilmente i tuoi dati in .pdf per condividerli o salvarli ovunque!";
 */
-mail("g.latrofa3@studenti.poliba.it", $oggetto, $messaggio, $headers) or die(mysqli_error($connection));
-echo true;
+echo mail("g.latrofa3@studenti.poliba.it", $oggetto, $messaggio, $headers) or die(mysqli_error($connection));
+//echo true;
 
 /*
 // lock tabella
