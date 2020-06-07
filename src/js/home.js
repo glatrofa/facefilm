@@ -461,7 +461,7 @@ function visualizzaPost(pagina) {
                             */
                         },
                         error: function (data) {
-                            console.log('ERROR ' + data);
+                            console.log('ERROR ' + JSON.stringify(data));
                             snackbarErrore("Si &egrave; verificato un errore");
                         }
                     });
