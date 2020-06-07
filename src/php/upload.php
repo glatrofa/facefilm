@@ -1,4 +1,12 @@
-<form method="post" action="./image.php" enctype='multipart/form-data'>
-  <input type='file' name='file' />
-  <input type='submit' value='Save name' name='but_upload'>
+<!DOCTYPE html>
+<html>
+<body>
+
+<form action="image.php" method="post" enctype="multipart/form-data">
+  Select image to upload:
+  <input type="file" name="fileToUpload" id="fileToUpload">
+  <input type="submit" value="Upload Image" name="submit">
 </form>
+
+</body>
+</html>
