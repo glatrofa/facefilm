@@ -20,6 +20,7 @@ function mostraDatiUtente() {
     dataType: 'json',
     success: function (data) {
       console.log('SUCCESS '+ data);
+      $("#nome_utente").text(data["nomeUtente"]);
       document.getElementById("nome_utente").value = data["nomeUtente"];
       document.getElementById("nome").innerHtml = data["nome"];
       document.getElementById("cognome").innerHtml = data["cognome"];
