@@ -27,10 +27,11 @@ document.addEventListener("DOMContentLoaded",function(){
 });*/
 
 // quando viene premuto il bottone 'Cerca' o l'utente preme 'Invio' sulla sua tastiera, 
-//mostra le serie corrispondenti alla keyword in una serie di card
+// mostra le serie corrispondenti alla keyword in una serie di card
 $('#mostra_poster').click(cercaPoster);
 $('#cerca_serie').keyup(function enter(eventObject){if (eventObject.which == 13) cercaPoster();})
 
+// ricerca i poster delle serie tv
 function cercaPoster() {
     document.getElementById('classifica_laterale_Tmdb').classList.add('d-block'); // visualizza la classifica TMDB laterale, che è inizialmente nascosta
     let url2 = 'https://api.themoviedb.org/3/search/tv?api_key=' + APIKEY + '&language=it&page=1&query=' + $('#cerca_serie').val();
@@ -84,6 +85,7 @@ function visualizzaClassificaTmdb() {
         .catch(err => { throw err });
 }
 
+// ricerca le serie popolari
 function mostraSeriePopolari() {
     let url = 'https://api.themoviedb.org/3/discover/tv?api_key='+ APIKEY +'&language=it&sort_by=popularity.desc&page=1&timezone=Europe%2FItaly&include_null_first_air_dates=false';
     document.getElementById('risultati_cerca_serie_tv').innerHTML = '<div class="col-12 text-center h4 font-weight-bold awwa-secondary mb-5">Serie pi&ugrave; popolari su TMDB</div>';
@@ -103,6 +105,7 @@ function mostraSeriePopolari() {
         .catch(err => { throw err });
 }
 
+// ordina le serie trovare in ordine decrescente di popolarità
 function sortByPopularityDesc(jsonSerieTv) {
     var jsonSortedCres = jsonSerieTv.slice(0); //espediente per copiare il contenuto del'array senza referenziarlo
     jsonSortedCres.sort(function(a,b) {
@@ -130,8 +133,8 @@ $(function logout() {
     });
 });
 
+// Quando si preme il bottone "Torna su" viene attivata questa funzione
 function scrollHandler(){
-    // Quando si preme il bottone "Torna su" viene attivata questa funzione
     document.getElementById("scroll_to_top").addEventListener('click',function tornaSu(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;

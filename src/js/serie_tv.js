@@ -97,6 +97,7 @@ function creaCarouselCast(id, APIKEY) {
 
 }
 
+// visualizza gli attori di una specifica serire tv
 function visualizzaAttori(id, APIKEY) {
     // https://developers.themoviedb.org/3/tv/get-tv-credits
     let url = 'https://api.themoviedb.org/3/tv/'+id+'/credits?api_key='+APIKEY+'&language=it';
@@ -107,28 +108,6 @@ function visualizzaAttori(id, APIKEY) {
             let i = 0;
             let posterSize = 'w185';
             let attori = '';
-            /*let attori2 = '';
-            for (let attore of data.cast) {
-                attori2 += '<div class="carousel-item">' + 
-                '<img src="' + baseImageURL + posterSize + attore.profile_path + '" class="d-block w-100" alt="Attore">' + 
-                '<div class="carousel-caption d-none d-md-block">' + 
-                  '<h5>' + attore.name + '</h5>' + 
-                  '<p>Personaggio: ' + attore.character + '</p>' + 
-                '</div>' + 
-                '</div>';
-            }
-            data.cast.forEach(attore => {
-                attori2 += '<div class="carousel-item">' + 
-                '<img src="' + baseImageURL + posterSize + attore.profile_path + '" class="d-block w-100" alt="Attore">' + 
-                '<div class="carousel-caption d-none d-md-block">' + 
-                  '<h5>' + attore.name + '</h5>' + 
-                  '<p>Personaggio: ' + attore.character + '</p>' + 
-                '</div>' + 
-                '</div>';
-            })
-            document.getElementById('attori2').innerHTML = attori2;
-            document.getElementById('attori2').firstChild.classList.add('active');
-            document.getElementById('attori2').firstChild.classList.add('show'); */
             while (i < data.cast.length) {
                 attori += '<p>Nome: '+data.cast[i].name+' Personaggio: '+data.cast[i].character+'<img src='+baseImageURL+posterSize+data.cast[i].profile_path+' /></p>';
                 i ++;
@@ -146,6 +125,7 @@ function visualizzaEpisodi(id, APIKEY) {
     // https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-details
 }
 
+// preleva un parametro dall'url del documento
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, '\\$&');
@@ -183,8 +163,8 @@ $(function logout() {
     });
 });
 
-function scrollHandler(){
-    // Quando si preme il bottone "Torna su" viene attivata questa funzione
+// Quando si preme il bottone "Torna su" viene attivata questa funzione
+function scrollHandler(){    
     document.getElementById("scroll_to_top").addEventListener('click',function tornaSu(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;

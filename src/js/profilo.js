@@ -9,12 +9,14 @@ window.onload = logged();
 // inizializza a 0 la variabile pagina per la gestione della visualizzazione dei post
 let pagina = 0;
 
+// richiama le seguenti funzioni non appena il documento è caricato
 $(document).ready(function() {
   mostraDatiUtente();
   mostraPostUtente();
   scrollHandler();
 });
 
+// visualizza nella pagina le informazioni dell'utente
 function mostraDatiUtente() {
   $.ajax({
     type: 'POST',
@@ -212,8 +214,8 @@ function mostraPostUtente() {
   });
 }
 
-function scrollHandler(){
-    // Quando si preme il bottone "Torna su" viene attivata questa funzione
+// Quando si preme il bottone "Torna su" viene attivata questa funzione
+function scrollHandler(){    
     document.getElementById("scroll_to_top").addEventListener('click',function tornaSu(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;

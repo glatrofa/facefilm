@@ -1,5 +1,6 @@
 // controlla id parametro con l'id del cookie PHPSESSID
 function checkID(id) {
+    // controlla l'esistenza del cookie
     if(document.cookie.split(';').some((item) => item.includes('PHPSESSID='+id+'')))
         return true;
     else{

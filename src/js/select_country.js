@@ -1,3 +1,4 @@
+// definisce un vettore contenente il nome di tutti gli stati
 window.onload = function(){
     var countryList = [
 	"Afghanistan",
@@ -251,7 +252,7 @@ window.onload = function(){
 	"Åland Islands"]; 
 
 var options = '';
-
+// definisce le opzioni nel form
 for (var i = 0; i < countryList.length; i++) {
    options += '<option value="' + countryList[i] + '"';
    if(countryList[i]=="Italy"){
@@ -259,5 +260,6 @@ for (var i = 0; i < countryList.length; i++) {
    }
    options += '>' + countryList[i] + '</option>';
 }
+// carica le opzioni con le nazioni nel documento
 document.getElementById("nazione").innerHTML += options;
 }

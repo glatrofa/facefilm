@@ -33,6 +33,7 @@ $(function registrazione() {
     });
 });
 
+// funzione per il redirect alla pagina del login a seguito di una registrazione effettuata con successo
 function redirectRegistrazioneSuccess() {
   location.href = './login.html';
 }

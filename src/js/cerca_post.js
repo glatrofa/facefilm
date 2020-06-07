@@ -120,6 +120,7 @@ function cercaPost() {
             }
             let i;
             for (i = 0; i < data.length; i++) {
+                // genera dinamicamente i post da visualizzare
                 document.getElementById("sezione_post").innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost, data[i].immagine)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);
             }
             // aggiorna il numero di mi piace del post
@@ -152,7 +153,7 @@ function cercaPost() {
                     });
                 });
             });
-            // aggiorna il numero di non  mi piace del post
+            // aggiorna il numero di non mi piace del post
             $(function aggiornaNonMiPiace() {
                 $("a[name='post_dislike']").click(function (event) {
                     //console.log(event.target.id);

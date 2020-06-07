@@ -17,6 +17,7 @@ function visualizzaModalCommento(idPost) {
 }
 */
 
+// funzione per la generazione dei commenti nel modal
 function visualizzaCommenti(testo, nomeUtente) {
     /*
     data = data.substring(0, data.indexOf("."));

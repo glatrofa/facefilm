@@ -1,5 +1,6 @@
 import { checkID } from './autenticazione.js';
 
+// verifica le credenziali di accesso dell'utente
 $(function login() {
     $('#form_login').on('submit', function (e) {
       e.preventDefault();
@@ -33,9 +34,6 @@ $(function login() {
       });
     });
 });
-
-// dichiarare come stringhe i modal html
-// document.getElementById('modal-login').innerHTML = modalLoginString;
 
 /* Funzione mostra password (icona eye): 
 mostra la password per 0.5 secondi */

@@ -7,16 +7,6 @@ import { visualizzaCommenti } from './visualizza_commenti.js';
 // verifica che l'utente abbia effettuato l'accesso
 window.onload = logged();
 
-// colore primario per i tasti del post
-//const colorPrimary = '#e5af05';
-// colore secondario per i tasti del post
-//const colorSecondary = '#00008b';
-// contenuto modal per post pubblicato con successo
-//const modalPostPubblicazioneSuccess = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Post pubblicato</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div><div class='modal-body'><p>Per vedere l'ultimo post pubblicato aggiorna la pagina o clicca il tasto qui sotto.</p></div><div class='modal-footer'><button type='button' class='btn btn-primary' onclick='redirectHome()'>Aggiorna home</button><button type='button' class='btn btn-secondary' data-dismiss='modal'>Chiudi</button></div></div>";
-// contenuto modal per post non pubblicato
-//const modalPostPubblicazioneError = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Errore pubblicazione post</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div><div class='modal-body'><p>Ci scusiamo per il disagio.<br>Se il problema persiste utilizza il form contattaci per segnalare l'accaduto.<br>Grazie.</p></div><div class='modal-footer'><button type='button' class='btn btn-primary' onclick='redirectFormContatti()'>Vai al form contatti</button><button type='button' class='btn btn-secondary' data-dismiss='modal'>Chiudi</button></div></div>";
-//let modalLikeClicked = false;
-//let modalDislikeClicked = false;
 
 // inizializza a 0 la variabile pagina per la gestione della visualizzazione dei post
 let pagina = 0;
@@ -29,56 +19,6 @@ $(document).ready(function() {
     scrollHandler();
 });
 
-/*
-// funzione per la selezione o deselezione del mi piace di un post
-$(function controllaMiPiace() {
-    $('#post_like').click(function () {
-        if(!modalLikeClicked) {
-            //$('#modal_like').modal('show');
-            document.getElementById('post_like').style.color = colorSecondary;
-            modalLikeClicked = true;
-            // aggiunge la classe show alla snackbar
-            document.getElementById("snackbar_like").classList.add("show");
-            // dopo 3 secondi, rimuove la classe show dal DIV
-            setTimeout(function(){ document.getElementById("snackbar_like").classList.remove("show"); }, 2500);
-        }
-        else {
-            //$('#modal_like_removed').modal('show');
-            document.getElementById('post_like').style.color = colorPrimary;
-            modalLikeClicked = false;
-            // aggiunge la classe show alla snackbar
-            document.getElementById("snackbar_like_removed").classList.add("show");
-            // dopo 3 secondi, rimuove la classe show dal DIV
-            setTimeout(function(){ document.getElementById("snackbar_like_removed").classList.remove("show"); }, 2500);
-        }
-    });
-});
-
-// funzione per la selezione o deselezione del non mi piace di un post
-$(function controllaNonMiPiace() {
-    $('#post_dislike').click(function () {
-        if(!modalDislikeClicked) {
-            //$('#modal_dislike').modal('show');
-            document.getElementById('post_dislike').style.color = colorSecondary;
-            modalDislikeClicked = true;
-            // aggiunge la classe show alla snackbar
-            document.getElementById("snackbar_dislike").classList.add("show");
-            // dopo 3 secondi, rimuove la classe show dal DIV
-            setTimeout(function(){ document.getElementById("snackbar_dislike").classList.remove("show"); }, 2500);
-        }
-        else {
-            //$('#modal_dislike_removed').modal('show');
-            document.getElementById('post_dislike').style.color = colorPrimary;
-            modalDislikeClicked = false;
-            // aggiunge la classe show alla snackbar
-            document.getElementById("snackbar_dislike_removed").classList.add("show");
-            // dopo 3 secondi, rimuove la classe show dal DIV
-            setTimeout(function(){ document.getElementById("snackbar_dislike_removed").classList.remove("show"); }, 2500);            
-        }
-    });
-});
-*/
-
 // visualizza le 5 serie più commentate sul sito AWWA
 function visualizzaClassificaAwwa() {
     $.ajax({
@@ -89,14 +29,12 @@ function visualizzaClassificaAwwa() {
         success: function (data) {
             //console.log('SUCCESS '+ data);
             let i;
-            //let classifica = "";
             for(i = 0; i < data.length; i ++) {
                 document.getElementById('classifica_serie_Awwa').innerHTML += "<li class='list-group-item px-0 px-lg-3 border-0'>" + 
                                                                                 "<a href='./html/serie_tv.html?id="+ data[i].idSerie +"' id='link_"+ data[i].idSerie +"' title='Vai alla pagina della serie' class='awwa-secondary'></a>" +
                                                                               "</li>";
                 richiediNomeSerie(data[i].idSerie,  data[i].numero);
             }
-            //document.getElementById('classifica_serie_Awwa').innerHTML = classifica;
         },
         error: function (data) {
             console.log('ERROR '+ data);
@@ -127,6 +65,7 @@ function visualizzaClassificaTmdb() {
         .catch(err => { throw err });
 }
 
+// ritorna il nome della serie per la visualizzazione della classifica
 function richiediNomeSerie(idSerie, numero) {
     //let url = 'https://api.themoviedb.org/3/tv/popular?api_key='+ APIKEY +'&language=it&page=1';
     let url = 'https://api.themoviedb.org/3/tv/'+ idSerie +'?api_key='+ APIKEY +'&language=it';
@@ -173,8 +112,6 @@ $(function visualizzaStagioni() {
             .then(res => res.json())
             .then((data) => {
                 //console.log('result', data);
-                //console.log('numero stagioni ', data.number_of_seasons);
-                //console.log('stagioni ', data.seasons);
                 let listaStagioni = '<option value="null"> Scegli... </option>';
                 if(data.number_of_seasons != 0) {
                     let j = 0;                         
@@ -209,6 +146,7 @@ $(function visualizzaEpisodi() {
                 if(data.episodes.length != 0){
                     let i = 0;                 
                     while (i < data.episodes.length) {
+                        // crea le stringhe con le informazioni sugli episodi
                         listaEpisodi += '<option value='+data.episodes[i].episode_number+'>'+data.episodes[i].name+'</option>';
                         i ++;
                     }      
@@ -217,6 +155,7 @@ $(function visualizzaEpisodi() {
                 }
                 else
                     listaEpisodi = '<option value='+'null'+'>Nessun episodio trovato</option>';
+                // stampa nel documento gli episodi
                 document.getElementById('post_episodio').innerHTML = listaEpisodi;
             })
             .catch(err => { throw err });
@@ -245,8 +184,6 @@ $(function pubblicaPost() {
                 snackbarSuccesso("Post pubblicato");
             }
             else {
-                //document.getElementById('modal_post_pubblicazione_error').innerHTML = modalPostPubblicazioneError;
-                //$('#modal_post_pubblicazione_error').modal('show');
                 console.log("In pubblicaPost() la response dal php è falsey");
                 snackbarErrore("Si &egrave; verificato un errore");
                 // aggiorna la home dopo 3 secondi
@@ -284,8 +221,6 @@ function visualizzaPost(pagina) {
         dataType: 'json',
         success: function (data) {
             console.log("paginazione successo " + JSON.stringify(data) + "\n" + typeof data + "\n" + data.length); //data è un Object e non ha la proprietà length
-            //document.getElementById("sezione_post").innerHTML += generaHeader(data.nomeUtente, data.idPost, data.immagine)+generaBody(data.data, data.titolo, data.testo, data.idSerie, data.stagione, data.episodio)+generaFooter(data.idPost, data.idSerie, data.like, data.dislike, data.numeroCommenti);
-            //document.getElementById("sezione_post").innerHTML = "";
             let i;
             for (i = 0; i < data.length; i++) {
                 document.getElementById("sezione_post").innerHTML += generaHeader(data[i].nomeUtente, data[i].idPost, data[i].immagine)+generaBody(data[i].data, data[i].titolo, data[i].testo, data[i].idSerie, data[i].stagione, data[i].episodio)+generaFooter(data[i].idPost, data[i].idSerie, data[i].like, data[i].dislike, data[i].numeroCommenti);
@@ -379,7 +314,7 @@ function visualizzaPost(pagina) {
                     });
                 });
             });            
-            // visualizza commenti di un post in un modal
+            // visualizza i commenti di un post in un modal
             $(function visualizzaCommentiModal() {
                 $("a[name='post_comment']").click(function (event) {                    
                     //let idPostCommento = event.target.id.substring(0, event.target.id.indexOf("-"))
@@ -428,37 +363,7 @@ function visualizzaPost(pagina) {
                                         }
                                     });
                                 });
-                            })                            
-                            /*
-                            $('#modal_commenta_post').click(function (idPost) {
-                                $('#modal_aggiungi_commento').modal('show');
-                                $('#modal_form_commento').on('submit', function (e) {
-                                    e.preventDefault();
-                                    $.ajax({
-                                        type: 'POST',
-                                        url: '../php/pubblica_commento.php',
-                                        crossOrigin: true,
-                                        data: {
-                                            idPost: idPost,
-                                            testo: document.getElementById("modal_commento_testo").value,
-                                        },
-                                        dataType: 'json',
-                                        success: function (data) {            
-                                            console.log("dati post commento " + data);
-                                            if(data == true){
-                                                // mostra cracker
-                                            } else {
-                                                // mostra cracker
-                                            }
-                                        },
-                                        error: function (data) {
-                                            //console.log('ERROR '+data[0]);
-                                            $('#modal_login_error').modal('show');
-                                        }
-                                    });
-                                });
-                            });
-                            */
+                            })                                                    
                         },
                         error: function (data) {
                             console.log('ERROR ' + JSON.stringify(data));

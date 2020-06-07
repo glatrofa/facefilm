@@ -1,4 +1,4 @@
-
+// genera le anteprime con copertina delle serie tv
 function generaCard(element, baseImageURL) {
     let card =  '<div class="card col-5 col-lg-3 px-0 mx-3 mb-3 shadow" id="' + element.id +'">';
     if (!element.poster_path) {
