@@ -94,6 +94,7 @@ $(function visualizzaEpisodi() {
 });
 
 $("#form_post").on('submit', function () {
+    document.getElementById("sezione_post").innerHTML = "";
     cercaPost();
     return false; // impedisce il refresh della pagina perché il submit viene effettuato con jquery
 });
