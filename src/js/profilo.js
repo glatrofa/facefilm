@@ -4,7 +4,7 @@ import { snackbarSuccesso, snackbarErrore } from './visualizza_snackbar.js';
 import { generaHeader, generaBody, generaFooter } from './genera_post.js';
 
 // verifica che l'utente abbia effettuato l'accesso
- window.onload = logged();
+window.onload = logged();
 
 $(document).ready(function() {
   mostraDatiUtente();
@@ -46,4 +46,3 @@ function scrollHandler(){
           }
         };
 }
-
