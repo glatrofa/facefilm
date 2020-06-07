@@ -62,7 +62,7 @@ function mostraPostUtente() {
               $("a[name='post_like']").click(function (event) {
                   $.ajax({
                       type: 'POST',
-                      url: './php/aggiorna_contatore_post.php',
+                      url: '../php/aggiorna_contatore_post.php',
                       crossOrigin: true,
                       data: {
                           idPost: event.target.id,
@@ -93,7 +93,7 @@ function mostraPostUtente() {
                   //console.log(event.target.id);
                   $.ajax({
                       type: 'POST',
-                      url: './php/aggiorna_contatore_post.php',
+                      url: '../php/aggiorna_contatore_post.php',
                       crossOrigin: true,
                       data: {
                           idPost: event.target.id,
@@ -124,7 +124,7 @@ function mostraPostUtente() {
                   //console.log(event.target.id);
                   $.ajax({
                       type: 'POST',
-                      url: './php/segnala_post.php',
+                      url: '../php/segnala_post.php',
                       crossOrigin: true,
                       data: {
                           idPost: event.target.id.substring(0, event.target.id.indexOf("-")),
@@ -154,7 +154,7 @@ function mostraPostUtente() {
                   console.log("commento cliccato" + idPost);                    
                   $.ajax({
                       type: 'POST',
-                      url: './php/ottieni_commenti.php',
+                      url: '../php/ottieni_commenti.php',
                       data: {
                           idPost: idPost, 
                       },
@@ -177,7 +177,7 @@ function mostraPostUtente() {
                               $('#modal_form_commento').on('submit', function () {
                                   $.ajax({
                                       type: 'POST',
-                                      url: './php/pubblica_commento.php',
+                                      url: '../php/pubblica_commento.php',
                                       crossOrigin: true,
                                       data: $(this).serialize() + "&idPost=" + idPost,
                                       dataType: 'json',
