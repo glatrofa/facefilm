@@ -19,7 +19,14 @@ function mostraDatiUtente() {
     crossOrigin: true,
     dataType: 'json',
     success: function (data) {
-      console.log('SUCCESS '+ data['email']);
+      console.log('SUCCESS '+ data);
+      document.getElementById("nome_utente").innerHtml = data["nomeUtente"];
+      document.getElementById("nome").innerHtml = data["nome"];
+      document.getElementById("cognome").innerHtml = data["cognome"];
+      document.getElementById("data_nascita").innerHtml = data["data_nascita"];
+      document.getElementById("nazione").innerHtml = data["nazione"];
+      document.getElementById("immagine").innerHtml = data["immagine"];
+      document.getElementById("email").innerHtml = data["email"];
     },
     error: function (data) {
       console.log('ERROR '+ data);
