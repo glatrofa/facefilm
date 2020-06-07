@@ -19,7 +19,7 @@ function mostraDatiUtente() {
     crossOrigin: true,
     dataType: 'json',
     success: function (data) {
-      console.log('SUCCESS '+ data);
+      console.log('SUCCESS '+ data.toSource());
       document.getElementById("nome_utente").innerHtml = data["nomeUtente"];
       document.getElementById("nome").innerHtml = data["nome"];
       document.getElementById("cognome").innerHtml = data["cognome"];
