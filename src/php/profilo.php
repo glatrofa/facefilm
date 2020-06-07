@@ -18,9 +18,7 @@ $queryPost = "SELECT idPost, numeroCommenti, UNIX_TIMESTAMP(data) AS data, titol
             "LIMIT " . $pagina . ", " . $postPerPagina;
             */
 // definizione query recupero informazioni utente        
-$queryUtente = "SELECT nome, cognome, data_nascita, nazione, nome_utente, immagine ".
-                "FROM utenti ".
-                "WHERE email = '".$email."'";
+$queryUtente = "SELECT nome, cognome, data_nascita, nazione, nome_utente, immagine FROM utenti WHERE email = '".$email."'";
 // definizione query sicure
 //$queryPostEscaped = mysqli_real_escape_string($connection, $queryPost);
 $queryUtenteEscaped = mysqli_real_escape_string($connection, $queryUtente);
