@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+/*include("config.php");
 
 if(isset($_POST['but_upload'])){
  
@@ -23,10 +23,27 @@ if(isset($_POST['but_upload'])){
  
   $image_src = "/img/users_image/Carlino con tastiera e mouse.png";
 }
+*/
+$uploaddir = '/img/users_image/';
+$uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
+
+echo "<p>";
+
+if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+  echo "File is valid, and was successfully uploaded.\n";
+} else {
+   echo "Upload failed";
+}
+
+echo "</p>";
+echo '<pre>';
+echo 'Here is some more debugging info:';
+print_r($_FILES);
+print "</pre>";
 ?>
 
-<form method="post" action="" enctype='multipart/form-data'>
-  <input type='file' name='file' />
-  <input type='submit' value='Save name' name='but_upload'>
+<form enctype="multipart/form-data" action="upload.php" method="POST">
+    <input type="hidden" name="MAX_FILE_SIZE" value="512000" />
+    Send this file: <input name="userfile" type="file" />
+    <input type="submit" value="Send File" />
 </form>
-<img src='<?php echo $image_src;  ?>' >
