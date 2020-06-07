@@ -25,7 +25,7 @@ function mostraDatiUtente() {
       document.getElementById("cognome").innerHtml = data["cognome"];
       document.getElementById("data_nascita").innerHtml = data["data_nascita"];
       document.getElementById("nazione").innerHtml = data["nazione"];
-      document.getElementById("immagine").innerHtml = data["immagine"];
+      //document.getElementById("immagine").innerHtml = data["immagine"];
       document.getElementById("email").innerHtml = data["email"];
     },
     error: function (data) {
