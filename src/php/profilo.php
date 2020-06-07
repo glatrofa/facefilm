@@ -8,27 +8,21 @@ $email = mysqli_real_escape_string($connection, $_SESSION["email"]);
 // definizione query recupero informazioni utente        
 $query = "SELECT nome, cognome, data_nascita, nazione, nome_utente, immagine ".
                 "FROM utenti ".
-                "WHERE email = '".$email."'";
+                "WHERE email = ". $email;
 // definizione query sicure
 //$queryPostEscaped = mysqli_real_escape_string($connection, $queryPost);
 $queryEscaped = mysqli_real_escape_string($connection, $query);
 // esecuzione query
 $result = mysqli_query($connection, $queryEscaped) or die($response = mysqli_error($connection));
-$rowsNumber = mysqli_num_rows($result);
-if($rowsNumber != 0){
-    // ritorno dei dati
-    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    $response = array(  'nomeUtente' => $row["nome_utente"],
-                    'nome' => $row["nome"],
-                    'cognome' => $row["cognome"],
-                    'data_nascita' => $row["data_nascita"],
-                    'nazione' => $row["nazione"],
-                    'immagine' => $row["immagine"]
-                );
-}
-else{
-    $response = "no rows";
-}
+// ritorno dei dati
+$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+$response = array(  'nomeUtente' => $row["nome_utente"],
+                'nome' => $row["nome"],
+                'cognome' => $row["cognome"],
+                'data_nascita' => $row["data_nascita"],
+                'nazione' => $row["nazione"],
+                'immagine' => $row["immagine"]
+            );
 
 // recupero pagina
 //$pagina = mysqli_real_escape_string($connection, $_POST["pagina"]);
