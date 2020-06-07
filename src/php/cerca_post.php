@@ -21,7 +21,7 @@ if($idSerie != null && $numeroStagione != null && $numeroEpisodio != null)
              "ON x.email = utenti.email ".
              "ORDER BY data DESC ".
              "LIMIT ".$pagina.", ".$postPerPagina."";
-else if($idSerie != null && $numeroStagione != null)
+if($idSerie != null && $numeroStagione != null && $numeroEpisodio == null)
     $query = "SELECT idPost, numeroCommenti, UNIX_TIMESTAMP(data) AS data, titolo, testo, id_serie, numero_stagione, numero_episodio, piace, dislike, utenti.nome_utente, immagine ".
              "FROM utenti INNER JOIN (SELECT post.id AS idPost, COUNT(commenti.id) AS numeroCommenti, post.data, post.titolo, post.testo, post.id_serie, post.numero_stagione, post.numero_episodio, post.email, post.piace, post.dislike ".
                 "FROM post LEFT JOIN commenti ".
@@ -31,7 +31,7 @@ else if($idSerie != null && $numeroStagione != null)
              "ON x.email = utenti.email ".
              "ORDER BY data DESC ".
              "LIMIT ".$pagina.", ".$postPerPagina."";
-else if($idSerie != null)
+if($idSerie != null && $numeroStagione == null && $numeroEpisodio == null)
     $query = "SELECT idPost, numeroCommenti, UNIX_TIMESTAMP(data) AS data, titolo, testo, id_serie, numero_stagione, numero_episodio, piace, dislike, utenti.nome_utente, immagine ".
              "FROM utenti INNER JOIN (SELECT post.id AS idPost, COUNT(commenti.id) AS numeroCommenti, post.data, post.titolo, post.testo, post.id_serie, post.numero_stagione, post.numero_episodio, post.email, post.piace, post.dislike ".
                 "FROM post LEFT JOIN commenti ON post.id = commenti.id_post ".
