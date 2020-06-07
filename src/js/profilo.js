@@ -19,8 +19,8 @@ function mostraDatiUtente() {
     crossOrigin: true,
     dataType: 'json',
     success: function (data) {
-      console.log('SUCCESS '+ data.responseText+' '+data['email']);
-      document.getElementById("nome_utente").innerHtml = data["nomeUtente"];
+      console.log('SUCCESS '+ data);
+      document.getElementById("nome_utente").value = data["nomeUtente"];
       document.getElementById("nome").innerHtml = data["nome"];
       document.getElementById("cognome").innerHtml = data["cognome"];
       document.getElementById("data_nascita").innerHtml = data["data_nascita"];
