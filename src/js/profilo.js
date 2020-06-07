@@ -22,7 +22,7 @@ function mostraDatiUtente() {
     crossOrigin: true,
     dataType: 'json',
     success: function (data) {
-      console.log('SUCCESS '+ JSON.stringify(data,null,2));
+      console.log('SUCCESS \n'+ JSON.stringify(data,null,2));
       $("#nome_utente").text(data["nomeUtente"]);
       $("#nome").text(data["nome"]);
       $("#cognome").text(data["cognome"]);
