@@ -141,7 +141,7 @@ footer {
     box-shadow: 0 0 0 0.05rem var(--awwa-secondary); /* h-offset v-offset blur spread color */
 }
 
-#sezione_post .card-footer .card-link {
+#sezione_post .card-footer .card-link, #sezione_post .card-header .dropdown-item[name="segnala"] {
     cursor: pointer;
 }
 
