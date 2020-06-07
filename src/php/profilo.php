@@ -22,8 +22,8 @@ $queryUtente = "SELECT nome, cognome, data_nascita, nazione, nome_utente, immagi
                 "FROM utenti ".
                 "WHERE email = ". $email;
 // definizione query sicure
-$queryPostEscaped = mysqli_real_escape_string($connection, $queryPost);
-//$queryUtenteEscaped = mysqli_real_escape_string($connection, $queryUtente);
+//$queryPostEscaped = mysqli_real_escape_string($connection, $queryPost);
+$queryUtenteEscaped = mysqli_real_escape_string($connection, $queryUtente);
 $response = array();
 // esecuzione query utente
 $resultUtente = mysqli_query($connection, $queryUtenteEscaped) or die($response[0] = mysqli_error($connection));
