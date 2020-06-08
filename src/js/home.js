@@ -351,6 +351,9 @@ function visualizzaPost(pagina) {
                                                 console.log("in postaCommentoModal() la response dal php è false");
                                                 snackbarErrore("Si &egrave; verificato un errore");
                                             }
+                                            snackbarSuccesso("Commento pubblicato");
+                                            // aggiorna la home dopo 3 secondi
+                                            setTimeout(location.reload(), 3000);
                                         },
                                         error: function (data) {
                                             console.log("dati post commento ERROR " + data);
