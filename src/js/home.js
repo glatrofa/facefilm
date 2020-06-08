@@ -335,7 +335,7 @@ function visualizzaPost(pagina) {
                                 document.getElementById("modal_commenti_container").innerHTML = "";
                                 let i;
                                 for (i = 0; i < data.length; i++) {    
-                                    document.getElementById("modal_commenti_container").innerHTML += visualizzaCommenti(data[i].testo, data[i].nomeUtente);
+                                    document.getElementById("modal_commenti_container").innerHTML += visualizzaCommenti(data[i].testo, data[i].nomeUtente,data[i].data);
                                 }
                             } else {
                                 document.getElementById("modal_commenti_container").innerHTML = "Nessun commento";
