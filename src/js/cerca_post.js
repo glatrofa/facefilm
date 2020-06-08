@@ -12,6 +12,7 @@ let pagina = 0;
 // richiama le seguenti funzioni non appena il documento è caricato
 $(document).ready(function() {
     scrollHandler();
+    mostraSaluto();
 });
 
 // ricerca nel db tutte le serie comprendenti nel nome i caratteri inseriti nel form
@@ -331,3 +332,21 @@ $(function visualizzaAltriPost() {
         cercaPost();
     });
 });
+
+// visualizza nella pagina le informazioni dell'utente
+function mostraSaluto() {
+    $.ajax({
+      type: 'POST',
+      url: '../php/profilo.php',
+      crossOrigin: true,
+      dataType: 'json',
+      success: function (data) {
+        //console.log('SUCCESS \n'+ JSON.stringify(data,null,2));
+        $("#saluto").text("Ciao "+ data["nome"].toLowerCase() +" !");
+      },
+      error: function (data) {
+        console.log('ERROR '+ JSON.stringify(data));
+        snackbarErrore("Si &egrave; verificato un errore");
+      }
+    });
+  }

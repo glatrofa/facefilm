@@ -8,6 +8,7 @@ import { APIKEY } from './key.js';
 $(document).ready(function() {
     stampaInformazioniSerie();
     scrollHandler();
+    mostraSaluto();
 });
 
 const baseImageURL = 'https://image.tmdb.org/t/p/';
@@ -185,3 +186,21 @@ function dataEuropea(data) {
     let anno = data.substring(0,4);
     return data = giorno + '/' + mese + '/' + anno;
 }
+
+// visualizza nella pagina le informazioni dell'utente
+function mostraSaluto() {
+    $.ajax({
+      type: 'POST',
+      url: '../php/profilo.php',
+      crossOrigin: true,
+      dataType: 'json',
+      success: function (data) {
+        //console.log('SUCCESS \n'+ JSON.stringify(data,null,2));
+        $("#saluto").text("Ciao "+ data["nome"].toLowerCase() +" !");
+      },
+      error: function (data) {
+        console.log('ERROR '+ JSON.stringify(data));
+        snackbarErrore("Si &egrave; verificato un errore");
+      }
+    });
+  }
