@@ -18,14 +18,24 @@ function visualizzaModalCommento(idPost) {
 */
 
 // funzione per la generazione dei commenti nel modal
-function visualizzaCommenti(testo, nomeUtente) {
-    /*
-    data = data.substring(0, data.indexOf("."));
-    data = new Date(data * 1000);
-    let dataFormattata = data.getDay() + "/" + data.getMonth() + "/" + data.getFullYear() + " - " + data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
-    */
-    let commento = "<div><p>"+ nomeUtente +"</p><p>"+ testo +"</p></div>";
+function visualizzaCommenti(testo, nomeUtente, data) {
+    // Formato data nel db: 2020-05-09 12:17:13.00000
+    data = data.substring(0, data.indexOf(".")); // Formato data in questo momento: 2020-05-09 12:17:13
+    let annoMeseGiorno = data.substring(0, data.indexOf(" ")); // Formato annoMeseGiorno: AAAA-MM-GG
+    let oreMinutiSecondi = data.substring(data.indexOf(" ") + 1, data.length); // Formato oreMinutiSecondi: hh:mm:ss
+    //data = new Date(data * 1000);
+    //let dataFormattata = data.getDay() + "/" + data.getMonth() + "/" + data.getFullYear() + " - " + data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
+    let commento = "<div><p>"+ nomeUtente +"</p><p>"+ testo +"</p><p>" + dataEuropea(annoMeseGiorno) + "&nbsp;" + oreMinutiSecondi + "</p></div>";
     return commento;
 }
+
+// Funzione che formatta le date in formato europeo
+function dataEuropea(data) {
+    let giorno = data.substring(8);
+    let mese = data.substring(5,7);
+    let anno = data.substring(0,4);
+    return data = giorno + ' / ' + mese + ' / ' + anno;
+}
+
 
 export { visualizzaCommenti };
