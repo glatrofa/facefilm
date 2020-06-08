@@ -15,6 +15,7 @@ $(document).ready(function() {
     visualizzaPost(pagina);
     visualizzaClassificaAwwa();
     visualizzaClassificaTmdb();
+    mostraDatiUtente();
     scrollHandler();
 });
 
@@ -379,6 +380,24 @@ function visualizzaPost(pagina) {
     });
 }
 
+// visualizza nella pagina le informazioni dell'utente
+function mostraDatiUtente() {
+    $.ajax({
+      type: 'POST',
+      url: '../php/profilo.php',
+      crossOrigin: true,
+      dataType: 'json',
+      success: function (data) {
+        //console.log('SUCCESS \n'+ JSON.stringify(data,null,2));
+        $("#saluto").text("Ciao "+ data["nome"].toLowerCase() +" !");
+      },
+      error: function (data) {
+        console.log('ERROR '+ JSON.stringify(data));
+        snackbarErrore("Si &egrave; verificato un errore");
+      }
+    });
+  }
+  
 // Quando si preme il bottone "Torna su" viene attivata questa funzione
 function scrollHandler(){
     document.getElementById("scroll_to_top").addEventListener('click',function tornaSu(){
