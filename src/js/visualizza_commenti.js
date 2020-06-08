@@ -25,7 +25,7 @@ function visualizzaCommenti(testo, nomeUtente, data) {
     let oreMinutiSecondi = data.substring(data.indexOf(" ") + 1, data.length); // Formato oreMinutiSecondi: hh:mm:ss
     //data = new Date(data * 1000);
     //let dataFormattata = data.getDay() + "/" + data.getMonth() + "/" + data.getFullYear() + " - " + data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
-    let commento = "<div><p>"+ nomeUtente +"</p><p>"+ testo +"</p><p>" + dataEuropea(annoMeseGiorno) + "&nbsp;" + oreMinutiSecondi + "</p></div>";
+    let commento = '<div><p>'+ nomeUtente +'</p><p>'+ testo +'</p><p>' + dataEuropea(annoMeseGiorno) + '&nbsp;-&nbsp;' + oreMinutiSecondi + '</p></div>';
     return commento;
 }
 
@@ -34,7 +34,7 @@ function dataEuropea(data) {
     let giorno = data.substring(8);
     let mese = data.substring(5,7);
     let anno = data.substring(0,4);
-    return data = giorno + ' / ' + mese + ' / ' + anno;
+    return data = giorno + '/' + mese + '/' + anno;
 }
 
 
