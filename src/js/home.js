@@ -304,7 +304,7 @@ function visualizzaPost(pagina) {
                             }    
                         },
                         error: function (data) {
-                            console.log('ERROR '+ data);
+                            console.log('ERROR '+ JSON.stringify(data));
                             snackbarErrore("Si &egrave; verificato un errore");
                         }
                     });
@@ -337,7 +337,32 @@ function visualizzaPost(pagina) {
                                 document.getElementById("modal_commenti_container").innerHTML = "Nessun commento";
                             }
                             $('#modal_commenti').modal('show');
-                            $(function postaCommentoModal() {
+                            $("a[name='segnala_commento']").click(function (event) {
+                                console.log('ho cliccato il segnala per il commento con id ', event.target.id);
+                                $.ajax({
+                                    type: 'POST',
+                                    url: './php/segnala_commento.php',
+                                    crossOrigin: true,
+                                    data: {
+                                        idCommento: event.target.id.substring(0, event.target.id.indexOf("-")),
+                                    },
+                                    dataType: 'json',
+                                    success: function (data) {
+                                        //console.log('SUCCESS '+ data);
+                                        if(data){
+                                            snackbarSuccesso("Commento segnalato");
+                                        } else {
+                                            console.log("nella segnalazione del commento, 'data' di ritorno dal php è falsey");
+                                            snackbarErrore("Si &egrave; verificato un errore");
+                                        }    
+                                    },
+                                    error: function (data) {
+                                        console.log('ERROR '+ JSON.stringify(data));
+                                        snackbarErrore("Si &egrave; verificato un errore");
+                                    }
+                                });
+                            });                    
+                                $(function postaCommentoModal() {
                                 $('#modal_form_commento').on('submit', function () {
                                     $.ajax({
                                         type: 'POST',
