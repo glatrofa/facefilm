@@ -7,7 +7,6 @@ import { visualizzaCommenti } from './visualizza_commenti.js';
 // verifica che l'utente abbia effettuato l'accesso
 window.onload = logged();
 
-
 // inizializza a 0 la variabile pagina per la gestione della visualizzazione dei post
 let pagina = 0;
 
@@ -182,6 +181,7 @@ $(function pubblicaPost() {
             console.log('SUCCESS '+ data);
             if(data) {
                 snackbarSuccesso("Post pubblicato");
+                setTimeout(redirectHome(), 3000);
             }
             else {
                 console.log("In pubblicaPost() la response dal php è falsey");
@@ -207,7 +207,6 @@ function redirectFormContatti() {
 function redirectHome() {
     location.href = '.';
 }
-
 
 // mostra nella home i post più recenti
 function visualizzaPost(pagina) {    
