@@ -46,55 +46,63 @@
       </div>
   </nav> 
   <main role="main">
-    <div class="container chi_siamo"> 
-      <h1 class="font-weight-bold awwa-secondary my-4" id="titolo_pagina">Chi siamo</h1>
+    <div class="container chi_siamo my-5"> 
+      <h1 class="font-weight-bold awwa-secondary mb-4" id="titolo_pagina">Chi siamo</h1>
       <p class="text-justify">
         Siamo un gruppo di ragazzi a cui piace il mondo del cinema e siamo appassionati di serie tv!
         Un giorno abbiamo avuto la necessità di una piattaforma per confrontarci e sentire pareri diretti di persone che 
         le hanno viste, data la vasta scelta ormai disponibile.
         Sul nostro social sarà possibile vedere anche le serie tv che hanno ricevuto pi&ugrave; commenti dagli utenti, 
-        ordinate in una classifica visualizzabile alla pagina <a href="../home.html">Home</a>.
+        ordinate in una classifica visualizzabile alla pagina <a href="../home.html" class="awwa-secondary">Home</a>.
         Questi siamo noi:
       </p>
-      <div class="row text-center my-4">
-        <div class="col-md-6 col-lg-3">
-          <img src="../img/chi_siamo/cb.jpg" alt="Claudio Barberio" width="140" height="140">
-          <h2>Responsabile Documentazione</h2>
-          <p>Claudio Barberio</p>
-          <p><a class="btn btn-secondary" href="#cb" role="button">View details &raquo;</a></p>
+      <div class="row justify-content-around text-center my-5 mx-n5" id="panoramica">
+        <div class="card col-auto mb-3">
+          <div class="card-body">
+            <img src="../img/chi_siamo/cb.jpg" alt="Claudio Barberio" class="rounded-circle" style="width: 150px; height: 150px;">
+            <h5 class="card-title my-2">Claudio Barberio</h5>
+            <p class="card-subtitle my-2">Responsabile <br>Documentazione</p>
+            <a href="#cb" class="btn bg-awwa-secondary text-white my-3" role="button">Scopri di pi&ugrave;</a>
+          </div>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <img src="../img/chi_siamo/ad.jpg" alt="Alessandro Difonzo" width="140" height="140">   
-          <h2>Front End Developer</h2>
-          <p>Alessandro Difonzo</p>
-          <p><a class="btn btn-secondary" href="#ad" role="button">View details &raquo;</a></p>
+        <div class="card col-auto mb-3 px-0">
+          <div class="card-body">
+            <img src="../img/chi_siamo/ad_2.jpg" alt="Alessandro Difonzo" class="rounded-circle" style="width: 150px; height: 150px;">
+            <h5 class="card-title my-2">Alessandro Difonzo</h5>
+            <p class="card-subtitle my-2">Front-end <br>Developer</p>
+            <a href="#ad" class="btn bg-awwa-secondary text-white my-3" role="button">Scopri di pi&ugrave;</a>
+          </div>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <img src="../img/chi_siamo/vd_1.jpg" alt="Vito Difonzo" width="140" height="140">
-          <h2>Responsabile Database</h2>
-          <p>Vito Difonzo</p>
-          <p><a class="btn btn-secondary" href="#vd" role="button">View details &raquo;</a></p>
+        <div class="card col-auto mb-3">
+          <div class="card-body">
+            <img src="../img/chi_siamo/vd_1.jpg" alt="Vito Difonzo" class="rounded-circle" style="width: 150px; height: 150px;">
+            <h5 class="card-title my-2">Vito Difonzo</h5>
+            <p class="card-subtitle my-2">Responsabile <br>Database</p>
+            <a href="#vd" class="btn bg-awwa-secondary text-white my-3" role="button">Scopri di pi&ugrave;</a>
+          </div>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <img src="../img/chi_siamo/gl_1.jpg" alt="Giuseppe Latrofa" width="140" height="140">
-          <h2>Full Stack Developer</h2>
-          <p>Giuseppe Latrofa</p>
-          <p><a class="btn btn-secondary" href="#gl" role="button">View details &raquo;</a></p>
+        <div class="card col-auto mb-3">
+          <div class="card-body">
+            <img src="../img/chi_siamo/gl_1.jpg" alt="Giuseppe Latrofa" class="rounded-circle" style="width: 150px; height: 150px;">
+            <h5 class="card-title my-2">Giuseppe Latrofa</h5>
+            <p class="card-subtitle my-2">Full Stack Developer</p>
+            <a href="#gl" class="btn bg-awwa-secondary text-white my-3" role="button">Scopri di pi&ugrave;</a>
+          </div>
         </div>
       </div>
     
-      <hr class="featurette-divider">
+      <hr class="featurette-divider" id="cb">
 
-      <div class="row featurette" id="cb">
+      <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">Claudio Barberio</h2>
           <p class="lead">
-            Responsabile dei test e della documentazione.
+            Responsabile dei test e della documentazione.<br>
             Serie preferite : Scrubs , Lost e Breaking Bad.
           </p>
         </div>
         <div class="col-md-5">
-          <img src="../img/chi_siamo/cb.jpg" alt="Claudio Barberio" width="400" height="400">
+          <img src="../img/chi_siamo/cb.jpg" alt="Claudio Barberio" style="width: 100%; height: auto;">
         </div>
       </div>
 
@@ -105,17 +113,17 @@
           <h2 class="featurette-heading">Alessandro Difonzo</h2>
           <p class="lead">
             Front-end developer.<br>
-            Serie preferite: Friends, How I Met Your Mother
+            Serie preferite: Friends, How I Met Your Mother.
           </p>
         </div>
         <div class="col-md-5 order-md-1">
-          <img src="../img/chi_siamo/ad.jpg" alt="Alessandro Difonzo" width="400" height="400">
+          <img src="../img/chi_siamo/ad_2.jpg" alt="Alessandro Difonzo" style="width: 100%; height: auto;">
         </div>
       </div>
 
-      <hr class="featurette-divider">
+      <hr class="featurette-divider" id="vd">
 
-      <div class="row featurette" id="vd">
+      <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">Vito Difonzo</h2>
           <p class="lead">
@@ -124,12 +132,14 @@
           </p>
         </div>
         <div class="col-md-5">
-          <img src="../img/chi_siamo/vd_2.jpg" alt="Vito Difonzo" width="400" height="400">
+          <img src="../img/chi_siamo/vd_2.jpg" alt="Vito Difonzo" style="width: 100%; height: auto;">
         </div>
       </div>
-      <hr class="featurette-divider">
+
+      <hr class="featurette-divider" id="gl">
+
       <div class="row featurette">
-        <div class="col-md-7 order-md-2" id="gl">
+        <div class="col-md-7 order-md-2">
           <h2 class="featurette-heading">Giuseppe Latrofa</h2>
           <p class="lead">
             Capo progetto e Full Stack Developer dell'applicazione.<br>
@@ -137,7 +147,7 @@
           </p>
         </div>
         <div class="col-md-5 order-md-1">
-          <img src="../img/chi_siamo/gl_2.jpg" alt="Giuseppe Latrofa" width="400" height="400">
+          <img src="../img/chi_siamo/gl_2.jpg" alt="Giuseppe Latrofa" style="width: 100%; height: auto;">
         </div>
         <hr class="featurette-divider">
         <!-- /Fine delle featurettes -->

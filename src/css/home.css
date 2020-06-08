@@ -371,9 +371,11 @@ footer {
 
 /* Pagina chi_siamo.html */
 
-.chi_siamo #titolo_pagina {
+.chi_siamo #titolo_pagina, .chi_siamo #panoramica .card-title,
+.chi_siamo .row.featurette .featurette-heading {
     font-family: 'Averia Sans Libre', cursive, sans-serif;
 }
 
-
- 
+.chi_siamo .row.featurette {
+    color: var(--awwa-secondary);
+}
