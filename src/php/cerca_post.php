@@ -8,7 +8,7 @@ $idSerie = mysqli_real_escape_string($connection, $_POST["idSerie"]);
 $numeroStagione = mysqli_real_escape_string($connection, $_POST["numeroStagione"]);
 $numeroEpisodio = mysqli_real_escape_string($connection, $_POST["numeroEpisodio"]);
 // imposto il numero di post da visualizzare volta per volta
-$postPerPagina = 2;
+$postPerPagina = 4;
 
 // esecuzione query
 if($idSerie != "null" && $numeroStagione != "null" && $numeroEpisodio != "null")
