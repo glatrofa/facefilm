@@ -26,15 +26,15 @@ function visualizzaCommenti(testo, nomeUtente, data) {
     //data = new Date(data * 1000);
     //let dataFormattata = data.getDay() + "/" + data.getMonth() + "/" + data.getFullYear() + " - " + data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
     let commento =  '<div class="row">' + 
-                        '<div class="col-2">' + 
+                        '<div class="col-3 justify-content-center">' + 
                             '<img src="https://picsum.photos/40/40" alt="Utente" class="rounded-circle" width="40px">' + 
                             '<h6>' + nomeUtente + '</h6>' + 
                         '</div>' + 
-                        '<div class="col-10">' +
+                        '<div class="col-9">' +
                             '<div class="row commenti">' + 
                             testo +                          
                             '</div>' + 
-                            '<div class="row data">' + 
+                            '<div class="row data text-muted h7">' + 
                                 dataEuropea(annoMeseGiorno) + '&nbsp;-&nbsp;' + oreMinutiSecondi + 
                             '</div>' + 
                         '</div>' + 

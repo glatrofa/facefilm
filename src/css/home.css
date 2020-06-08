@@ -185,6 +185,10 @@ footer {
     color: var(--awwa-secondary) !important;
 }
 
+#modal_commenti_container .commenti {
+    background-color: #d5d5d5;
+}
+
 /* La snackbar verrà mostrata in fondo e al centro dello schermo */
 .snackbar {
     visibility: hidden; /* Di default è nascosta, diverrà visibile al click (vedi classe .show) */
