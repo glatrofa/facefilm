@@ -176,7 +176,8 @@ footer {
     color: var(--awwa-primary);
 }
   
-#sezione_post .card-footer .card-link, #sezione_post .card-header .dropdown-item[name="segnala"] {
+#sezione_post .card-footer .card-link, #sezione_post .card-header .dropdown-item[name="segnala"],
+#modal_commenti_container .dropdown-menu a {
     cursor: pointer;
 }
 
@@ -186,7 +187,11 @@ footer {
 }
 
 #modal_commenti_container .commenti {
-    background-color: #d5d5d5;
+    background-color: rgba(30, 0, 107, 0.1); /* l'opacità va impostata così e non a parte altrimenti viene ereditata dai nodi children della row */
+    margin-right: 0;
+    /*border: 1px solid var(--awwa-secondary);*/
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.75rem; /* il primo numero indica top e bottom, il secondo left e right */
 }
 
 /* La snackbar verrà mostrata in fondo e al centro dello schermo */

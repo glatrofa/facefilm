@@ -22,8 +22,7 @@ function generaHeader(nomeUtente, idPost, immagine) {
                                 "<i class='fa fa-ellipsis-h awwa-secondary'></i>" +
                             "</button>" +
                             "<div class='dropdown-menu dropdown-menu-right' aria-labelledby='dropdown-post'>" +
-                                "<div class='h6 dropdown-header'>Opzioni</div>" +
-                                "<a class='dropdown-item' id='"+ idPost +"-segnala' name='segnala'>Segnala</a>" +
+                                "<a class='dropdown-item' id='"+ idPost +"-segnala' name='segnala'><i class='fas fa-frown mr-2 awwa-primary'></i>Segnala</a>" +
                             "</div>" +
                         "</div>" +
                     "</div>" +
