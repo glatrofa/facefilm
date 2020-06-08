@@ -6,17 +6,17 @@ include './connessione_database.php';
 session_start();
 
 // definizione variabili
-$idPost = mysqli_real_escape_string($connection, $_POST["idPost"]);
+$idCommento = mysqli_real_escape_string($connection, $_POST["idCommento"]);
 $email = $_SESSION["email"];
 
 $response = true;
 
 // lock tabella
-$queryL = "LOCK TABLES segnalazioni_post WRITE";
+$queryL = "LOCK TABLES segnalazioni_commenti WRITE";
 mysqli_query($connection, $queryL) or die($response = mysqli_error($connection));
 // esecuzione query
-$query = "INSERT INTO segnalazioni_post (idPost, email) "
-    ."VALUES ('$idPost','$email')";
+$query = "INSERT INTO segnalazioni_commenti (email, idCommento) "
+    ."VALUES ('$email','$idCommento')";
 $result = mysqli_query($connection, $query) or die($response = mysqli_error($connection));
 // unlock tabelle
 $queryU = "UNLOCK TABLES";
