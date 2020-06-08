@@ -40,7 +40,7 @@ function visualizzaCommenti(idCommento, testo, nomeUtente, data) {
                                         "<i class='fa fa-ellipsis-h fa-sm awwa-secondary'></i>" +
                                     "</button>" +
                                     "<div class='dropdown-menu dropdown-menu-right' aria-labelledby='dropdown-commento'>" +
-                                        "<a class='dropdown-item' id='"+ idCommento +"-segnala' name='segnala'>" + 
+                                        "<a class='dropdown-item' id='"+ idCommento +"-segnala' name='segnala_commento'>" + 
                                             "<i class='fas fa-frown mr-2 awwa-primary'></i>" + 
                                             "Segnala" + 
                                         "</a>" +

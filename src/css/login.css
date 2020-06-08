@@ -129,12 +129,3 @@ body.tv {
 a#signupLink:hover {
     color: var(--awwa-primary);
 }
-
-.footer {
-    width: 100%;
-    opacity: 0.8;
-}
-
-footer:hover {
-    opacity: 1;
-}
