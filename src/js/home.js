@@ -15,7 +15,7 @@ $(document).ready(function() {
     visualizzaPost(pagina);
     visualizzaClassificaAwwa();
     visualizzaClassificaTmdb();
-    mostraDatiUtente();
+    mostraSaluto();
     scrollHandler();
 });
 
@@ -380,10 +380,10 @@ function visualizzaPost(pagina) {
 }
 
 // visualizza nella pagina le informazioni dell'utente
-function mostraDatiUtente() {
+function mostraSaluto() {
     $.ajax({
       type: 'POST',
-      url: '../php/profilo.php',
+      url: './php/profilo.php',
       crossOrigin: true,
       dataType: 'json',
       success: function (data) {
