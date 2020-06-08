@@ -379,3 +379,21 @@ footer {
 .chi_siamo .row.featurette {
     color: var(--awwa-secondary);
 }
+
+.chi_siamo .featurette-divider {
+    margin: 5rem 0; /* il tag <hr> ha molto più margine verticale */
+  }
+  
+  /* css responsive per la dimensione del carattere e 
+  il margine superiore dei titoli nelle featurettes*/
+  @media (min-width: 40em) {
+    .chi_siamo .featurette-heading {
+      font-size: 50px;
+    }
+  }
+  
+  @media (min-width: 62em) {
+    .chi_siamo .featurette-heading {
+      margin-top: 7rem;
+    }
+  }
