@@ -471,7 +471,7 @@ $(function logout() {
 // funzione per la visualizzaizone di altri post nel feed principale
 $(function visualizzaAltriPost() {
     $("#carica_altri_post").click(function () {
-        pagina = pagina + 2;
+        pagina = pagina + 4;
         visualizzaPost(pagina);
     });
 });
