@@ -25,7 +25,20 @@ function visualizzaCommenti(testo, nomeUtente, data) {
     let oreMinutiSecondi = data.substring(data.indexOf(" ") + 1, data.length); // Formato oreMinutiSecondi: hh:mm:ss
     //data = new Date(data * 1000);
     //let dataFormattata = data.getDay() + "/" + data.getMonth() + "/" + data.getFullYear() + " - " + data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
-    let commento = '<div><p>'+ nomeUtente +'</p><p>'+ testo +'</p><p>' + dataEuropea(annoMeseGiorno) + '&nbsp;-&nbsp;' + oreMinutiSecondi + '</p></div>';
+    let commento =  '<div class="row">' + 
+                        '<div class="col-2">' + 
+                            '<img src="https://picsum.photos/40/40" alt="Utente" class="rounded-circle" width="40px">' + 
+                            '<h6>' + nomeUtente + '</h6>' + 
+                        '</div>' + 
+                        '<div class="col-10">' +
+                            '<div class="row commenti">' + 
+                            testo +                          
+                            '</div>' + 
+                            '<div class="row data">' + 
+                                dataEuropea(annoMeseGiorno) + '&nbsp;-&nbsp;' + oreMinutiSecondi + 
+                            '</div>' + 
+                        '</div>' + 
+                    '</div>';
     return commento;
 }
 
