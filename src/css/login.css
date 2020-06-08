@@ -91,7 +91,7 @@ body.tv {
     border-left: none;
 }
 
-/* Stile dei bottoni */
+/* Stile dei bottoni del form */
 .btn.btn-form-primary {
   color: white;
   background-color: var(--awwa-primary);
@@ -100,14 +100,14 @@ body.tv {
   font-size: 1.3rem;
 }
 
-.btn.btn-form-primary:hover, .btn.btn-form-secondary:hover {
-    box-shadow: .1rem .1rem .5rem rgba(0, 0, 0, .15)!important; /* h-offset v-offset blur spread color  */ 
-}
-
 .btn.btn-form-secondary {
     color: var(--awwa-secondary);
     background-color: white;
     border-color: var(--awwa-secondary);
+}
+
+.btn.btn-form-primary:hover, .btn.btn-form-secondary:hover {
+    box-shadow: .1rem .1rem .5rem rgba(0, 0, 0, .15)!important; /* h-offset v-offset blur spread color  */ 
 }
 
 .btn.btn-form-primary:hover {

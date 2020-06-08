@@ -141,7 +141,42 @@ footer {
     box-shadow: 0 0 0 0.05rem var(--awwa-secondary); /* h-offset v-offset blur spread color */
 }
 
-#sezione_post .card-footer .card-link {
+/* Stile dei bottoni del form */
+.btn.btn-form-primary {
+    color: white;
+    background-color: var(--awwa-primary);
+    border-color: white;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+  
+.btn.btn-form-secondary {
+    color: var(--awwa-secondary);
+    background-color: white;
+    border-color: var(--awwa-secondary);
+}
+
+.btn.btn-form-primary:hover, .btn.btn-form-secondary:hover {
+    box-shadow: .1rem .1rem .5rem rgba(0, 0, 0, .15)!important; /* h-offset v-offset blur spread color  */ 
+}
+
+.btn.btn-form-primary:hover {
+    border-color: var(--awwa-secondary);
+}
+
+.btn.btn-form-primary:active {
+    color: var(--awwa-secondary);
+}
+
+.btn.btn-form-secondary:hover {
+    border-color: var(--awwa-primary);
+}
+
+.btn.btn-form-secondary:active {
+    color: var(--awwa-primary);
+}
+  
+#sezione_post .card-footer .card-link, #sezione_post .card-header .dropdown-item[name="segnala"] {
     cursor: pointer;
 }
 
