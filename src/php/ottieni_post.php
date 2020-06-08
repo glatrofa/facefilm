@@ -34,7 +34,7 @@ else
                 "ORDER BY data DESC ".
                 "LIMIT ".$pagina.", ".$postPerPagina;
 
-$queryEscaped = mysqli_real_escape_string($connection, $query) ;
+//$queryEscaped = mysqli_real_escape_string($connection, $query) ;
 $response = array();
 
 $result = mysqli_query($connection, $query) or die($response[0] = mysqli_error($connection));
