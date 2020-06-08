@@ -1,56 +1,156 @@
-<!DOCTYPE html>
-<html lang="it">
-    
-<head>
-    <meta charset="utf-8">
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>    
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>        
     <script src="https://kit.fontawesome.com/f2d1c1774e.js" crossorigin="anonymous"></script>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">        
+    <script src="../js/profilo.js" type="module"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">    
-    <link rel="stylesheet" href="../css/login.css" type="text/css">
-    <!--Favicon--><link href="./img/favicon/favicon.ico" rel="shortcut icon">
-    <title>About</title>
-</head>
+    <link rel="stylesheet" href="../css/home.css" type="text/css">
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+    <!--Favicon--><link href="../img/favicon/favicon.ico" rel="shortcut icon">
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:wght@700&display=swap" rel="stylesheet">    
+  </head>
 
-<body class="main">
-    <main>
-        <div class="container-fluid">
-            <div class="row no-gutters justify-content-around align-items-center">
-                <div class="col-xs-12 col-lg-6 mt-lg-0 mb-5 mb-lg-0 text-center align-self-center justify-content-center">
-                    <div class="form w-75 mx-auto pt-5 pb-1">
-                        <h2 class="font-weight-bold awwa-primary mb-3">Chi siamo</h2><br>
-        
+  
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar sticky-top navbar-expand-md bg-awwa-primary" style="line-height: 2rem;">
+      <a class="navbar-brand awwa-secondary">AWWA</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-ellipsis-h text-white"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav w-100 d-flex justify-content-between">
+              <div class="d-md-flex">
+                  <a class="nav-item nav-link text-white mr-2" href="../home.html"><i class="fas fa-couch mr-2"></i>Home</a>
+                  <a class="nav-item nav-link text-white mr-2" href="./cerca_serie_tv.html"><i class="fas fa-tv mr-2"></i>Cerca serie tv</a>
+                  <a class="nav-item nav-link text-white mr-2" href="./cerca_post.html"><i class="fas fa-newspaper mr-2"></i>Cerca post</a>
+              </div>
+              <div class="d-md-flex">
+                  <span class="d-none d-md-inline-block text-capitalize text-white p-2" id="saluto"></span>
+                  <a class="nav-item nav-link text-white dropdown-toggle" href="" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <img src="../img/profile_clip_art.png" alt="Profilo" class="rounded-circle" height="30px">
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right bg-awwa-primary" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item text-white" href="./profilo.html"><i class="fas fa-user mr-2"></i>Vedi profilo</a>
+                      <!-- <a class="dropdown-item text-white" href="#"><i class="fas fa-pencil-alt mr-2"></i>Modifica dati</a> -->
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item text-white" id="logout" href=""><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </nav> 
+<main role="main">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    </div>
-                </div>
-            </div>
-            <footer class="footer bg-awwa-primary fixed-bottom mt-xs-5 mt-lg-0">
-                <div class="row no-gutters text-center py-1">
-                    <div class="col-6 text-right pr-5"><a class="font-weight-bold text-white" href="./chi_siamo.html">Chi siamo</a></div>
-                    <div class="col-6 text-left pl-5"><a class="font-weight-bold text-white" href="./contattaci.html" >Contattaci</a></div>                    
-                    <div class="col-12"><small class="font-weight-bold text-white">&copy; AWWA</small></div>
-                </div>
-            </footer>
-        </div>
-    </main>
  
-</body>
 
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+    
+    <h2 class="h1-responsive font-weight-bold text-center my-4">Chi siamo?</h2>
+    <h3>Siamo un gruppo di ragazzi a cui piace il mondo del cinema e siamo appasionati di serie tv!
+        Un giorno abbiamo avuto la necessità di una piattaforma per confrontarci e sentire pareri diretti di persone che 
+        le hanno viste, data la vasta scelta ormai disponibile.
+        Sul nostro social sarà possibile vedere anche gli user che creano contenuti di miglior qualità, in base ad una classifica riferita alle serie tv più commentate.
+        Questi siamo noi:
+    </h3>
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-3">
+        <img src="../img/chi_siamo/cb.jpg" alt="Claudio Barberio" width="140" height="140">
+        <h2>Responsabile Documentazione</h2>
+        <p>Claudio Barberio</p>
+        <p><a class="btn btn-secondary" href="#cb" role="button">View details &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-3">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Alessandro Difonzo</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+        <h2>Front End Developer</h2>
+        <p>Alessandro Difonzo</p>
+        <p><a class="btn btn-secondary" href="#ad" role="button">View details &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-3">
+        <img src="../img/chi_siamo/vd_1.jpg" alt="Vito Difonzo" width="140" height="140">
+        <h2>Responsabile Database</h2>
+        <p>Vito Difonzo</p>
+        <p><a class="btn btn-secondary" href="#vd" role="button">View details &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-3">
+        <img src="../img/chi_siamo/gl_1.jpg" alt="Giuseppe Latrofa" width="140" height="140">
+        <h2>Full Stack Developer</h2>
+        <p>Giuseppe Latrofa</p>
+        <p><a class="btn btn-secondary" href="#gl" role="button">View details &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+  
+    <hr class="featurette-divider">
+
+    <div class="row featurette" id="cb">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+      <div class="col-md-5">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="400" height="400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider" id="ad">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="400" height="400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette" id="vd">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Vito Difonzo</h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+      <div class="col-md-5">
+        <img src="../img/chi_siamo/vd_2.jpg" alt="Vito Difonzo" width="400" height="400">
+      </div>
+    </div>
+ <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2" id="gl">
+        <h2 class="featurette-heading">Giuseppe Latrofa</h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="../img/chi_siamo/gl_2.jpg" alt="Giuseppe Latrofa" width="400" height="400">
+      </div>
+    </div>
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+  <!-- FOOTER -->
+  <footer>
+    <small class="text-white">
+        <a>&copy; AWWA</a>
+        <a> - </a>
+        <a class="text-white" href="#">Chi siamo</a>
+        <a> - </a>
+        <a class="text-white" href="#">Contattaci</a>
+    </small>
+</footer>
+</body>
 </html>
