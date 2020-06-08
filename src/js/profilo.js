@@ -242,7 +242,7 @@ function dataEuropea(data) {
     let giorno = data.substring(8);
     let mese = data.substring(5,7);
     let anno = data.substring(0,4);
-    return data = giorno + ' / ' + mese + ' / ' + anno;
+    return data = giorno + '/' + mese + '/' + anno;
 }
 
 // Gestione logout
