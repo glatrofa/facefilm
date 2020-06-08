@@ -107,6 +107,7 @@ tranne quello che corrisponde alla pagina corrente */
 footer {
     background: var(--awwa-primary);
     color: white;
+    font-weight: bold;
     text-align: center;
     line-height: 40px;
     width: 100%;
