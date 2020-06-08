@@ -5,7 +5,7 @@ import { snackbarSuccesso, snackbarErrore } from './visualizza_snackbar.js';
 import { visualizzaCommenti } from './visualizza_commenti.js';
 
 // verifica che l'utente abbia effettuato l'accesso
-//window.onload = logged();
+window.onload = logged();
 
 
 // inizializza a 0 la variabile pagina per la gestione della visualizzazione dei post
