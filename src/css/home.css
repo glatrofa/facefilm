@@ -369,5 +369,11 @@ footer {
     background-color: rgba(30, 0, 107, 0.4) !important;
 }
 
+/* Pagina chi_siamo.html */
+
+.chi_siamo #titolo_pagina {
+    font-family: 'Averia Sans Libre', cursive, sans-serif;
+}
+
 
  

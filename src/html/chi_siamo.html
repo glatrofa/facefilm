@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">    
     <link rel="stylesheet" href="../css/home.css" type="text/css">
     <!-- Custom styles for this template -->
-    <link href="carousel.css" rel="stylesheet">
+    <link href="../css/carousel.css" rel="stylesheet">
     <!--Favicon--><link href="../img/favicon/favicon.ico" rel="shortcut icon">
     <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:wght@700&display=swap" rel="stylesheet">    
   </head>
@@ -46,9 +46,9 @@
       </div>
   </nav> 
   <main role="main">
-    <div class="container marketing"> 
-      <h2 class="h1-responsive font-weight-bold text-center my-4">Chi siamo</h2>
-      <p>
+    <div class="container chi_siamo"> 
+      <h1 class="font-weight-bold awwa-secondary my-4" id="titolo_pagina">Chi siamo</h1>
+      <p class="text-justify">
         Siamo un gruppo di ragazzi a cui piace il mondo del cinema e siamo appassionati di serie tv!
         Un giorno abbiamo avuto la necessità di una piattaforma per confrontarci e sentire pareri diretti di persone che 
         le hanno viste, data la vasta scelta ormai disponibile.
@@ -56,26 +56,26 @@
         ordinate in una classifica visualizzabile alla pagina <a href="../home.html">Home</a>.
         Questi siamo noi:
       </p>
-      <div class="row">
-        <div class="col-lg-3">
+      <div class="row text-center my-4">
+        <div class="col-md-6 col-lg-3">
           <img src="../img/chi_siamo/cb.jpg" alt="Claudio Barberio" width="140" height="140">
           <h2>Responsabile Documentazione</h2>
           <p>Claudio Barberio</p>
           <p><a class="btn btn-secondary" href="#cb" role="button">View details &raquo;</a></p>
         </div>
-        <div class="col-lg-3">
-          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Alessandro Difonzo</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+        <div class="col-md-6 col-lg-3">
+          <img src="../img/chi_siamo/ad.jpg" alt="Alessandro Difonzo" width="140" height="140">   
           <h2>Front End Developer</h2>
           <p>Alessandro Difonzo</p>
           <p><a class="btn btn-secondary" href="#ad" role="button">View details &raquo;</a></p>
         </div>
-        <div class="col-lg-3">
+        <div class="col-md-6 col-lg-3">
           <img src="../img/chi_siamo/vd_1.jpg" alt="Vito Difonzo" width="140" height="140">
           <h2>Responsabile Database</h2>
           <p>Vito Difonzo</p>
           <p><a class="btn btn-secondary" href="#vd" role="button">View details &raquo;</a></p>
         </div>
-        <div class="col-lg-3">
+        <div class="col-md-6 col-lg-3">
           <img src="../img/chi_siamo/gl_1.jpg" alt="Giuseppe Latrofa" width="140" height="140">
           <h2>Full Stack Developer</h2>
           <p>Giuseppe Latrofa</p>
@@ -109,58 +109,55 @@
           </p>
         </div>
         <div class="col-md-5 order-md-1">
-          <img src="" alt="">
+          <img src="../img/chi_siamo/ad.jpg" alt="Alessandro Difonzo" width="400" height="400">
         </div>
       </div>
 
       <hr class="featurette-divider">
 
-    <div class="row featurette" id="vd">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">Vito Difonzo</h2>
-        <p class="lead">
-          Responsabile database.<br>
-          La mia serie preferita è Prison Break, serie avvincente che ti lascia col fiato sospeso.
-        </p>
-      </div>
-      <div class="col-md-5">
-        <img src="../img/chi_siamo/vd_2.jpg" alt="Vito Difonzo" width="400" height="400">
-      </div>
-      <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2" id="gl">
-        <h2 class="featurette-heading">Giuseppe Latrofa</h2>
-        <p class="lead">
-          Capo progetto e Full Stack Developer dell'applicazione.<br>
-          Serie preferite: Suits, Community e Modern Family.
-        </p>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <img src="../img/chi_siamo/gl_2.jpg" alt="Giuseppe Latrofa" width="400" height="400">
+      <div class="row featurette" id="vd">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Vito Difonzo</h2>
+          <p class="lead">
+            Responsabile database.<br>
+            La mia serie preferita è Prison Break, serie avvincente che ti lascia col fiato sospeso.
+          </p>
+        </div>
+        <div class="col-md-5">
+          <img src="../img/chi_siamo/vd_2.jpg" alt="Vito Difonzo" width="400" height="400">
+        </div>
       </div>
       <hr class="featurette-divider">
-
-      <!-- /Fine delle featurettes -->
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2" id="gl">
+          <h2 class="featurette-heading">Giuseppe Latrofa</h2>
+          <p class="lead">
+            Capo progetto e Full Stack Developer dell'applicazione.<br>
+            Serie preferite: Suits, Community e Modern Family.
+          </p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img src="../img/chi_siamo/gl_2.jpg" alt="Giuseppe Latrofa" width="400" height="400">
+        </div>
+        <hr class="featurette-divider">
+        <!-- /Fine delle featurettes -->
       <!-- Bottone scroll to top -->
       <button id="scroll_to_top" class="rounded-circle" title="Torna su"><i class="fas fa-angle-double-up fa-lg"></i></button>
     </div>
   </main>
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-3 text-center">
-                <a class="link text-white" href="../home.html">&copy; AWWA</a>
-            </div>
-            <div class="col-3 text-center">
-                <a class="link text-white" href="./chi_siamo.html">Chi siamo</a>
-            </div>
-            <div class="col-3 text-center">
-                <a class="link text-white" href="./contattaci.html">Contattaci</a>
-            </div>
+    <div class="row justify-content-center mx-0">
+        <div class="col-3 text-center">
+            <a class="link text-white" href="../home.html">&copy; AWWA</a>
+        </div>
+        <div class="col-3 text-center">
+            <a class="link text-white" href="./chi_siamo.html">Chi siamo</a>
+        </div>
+        <div class="col-3 text-center">
+            <a class="link text-white" href="./contattaci.html">Contattaci</a>
         </div>
     </div>
-  </footer>
+</footer>
 </body>
 </html>
