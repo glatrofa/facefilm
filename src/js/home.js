@@ -181,13 +181,14 @@ $(function pubblicaPost() {
             console.log('SUCCESS '+ data);
             if(data) {
                 snackbarSuccesso("Post pubblicato");
-                setTimeout(redirectHome(), 3000);
+                // aggiorna la home dopo 3 secondi
+                setTimeout(location.reload(), 3000);
             }
             else {
                 console.log("In pubblicaPost() la response dal php è falsey");
                 snackbarErrore("Si &egrave; verificato un errore");
                 // aggiorna la home dopo 3 secondi
-                setTimeout(redirectHome(), 3000);
+                setTimeout(location.reload(), 3000);
             }
         },
         error: function (data) {
@@ -201,11 +202,6 @@ $(function pubblicaPost() {
 // reindirizza al form contatti
 function redirectFormContatti() {
     location.href = './html/contattaci.html';
-}
-
-// aggiorna la home dopo la pubblicazione di un post
-function redirectHome() {
-    location.href = '.';
 }
 
 // mostra nella home i post più recenti
