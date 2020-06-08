@@ -75,7 +75,7 @@ function generaFooter(idPost, idSerie, numeroLike, numeroDislike, numeroCommenti
     getNomeSerie(idSerie);
     let footer = "<div class='card-footer d-flex align-items-center'>" +
                     // ricordardi di un-commentare l'attributo style dei link
-                    "<span class='badge badge-pill text-white bg-awwa-primary mr-1' id='"+ idPost +"-post_like_number'>"+ numeroLike +"</span><a class='card-link awwa-primary mr-3' id='"+ idPost +"' name='post_like'><i class='far fa-diamond'></i> Mi piace </a>" +
+                    "<span class='badge badge-pill text-white bg-awwa-primary mr-1' id='"+ idPost +"-post_like_number'>"+ numeroLike +"</span><a class='card-link awwa-primary mr-3' id='"+ idPost +"' name='post_like'><i class='far fa-gem'></i> Mi piace </a>" +
                     "<span class='badge badge-pill text-white bg-awwa-primary mr-1' id='"+ idPost +"-post_dislike_number'>"+ numeroDislike +"</span><a class='card-link awwa-primary mr-3' id='"+ idPost +"' name='post_dislike'><i class='fas fa-poo'></i> Non mi piace </a>" +
                     "<span class='badge badge-pill text-white bg-awwa-primary mr-1' id='"+ idPost +"-post_comment_number'>"+ numeroCommenti +"</span><a class='card-link awwa-primary mr-3' id='"+ idPost +"' name='post_comment'><i class='fas fa-comments'></i> Commenta</a>" +
                 "</div></div>";                
