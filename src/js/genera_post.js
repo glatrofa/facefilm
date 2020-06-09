@@ -4,7 +4,8 @@ import { APIKEY } from './key.js';
 function generaHeader(nomeUtente, idPost, immagine) {
     let pathImmagine;
     if(immagine == null)
-        pathImmagine = "./img/profile_clip_art.png";
+        pathImmagine = "http://awwa.sytes.net/img/profile_clip_art.png";
+        //pathImmagine = "http://127.0.0.1:8080/edsa-AWWA/src/img/profile_clip_art.png"; // per la prova in locale
     else
         pathImmagine = "data:image;base64,'"+ immagine +"'";
     let header = "<div class='card shadow mb-3'><div class='card-header'>" +
