@@ -380,6 +380,13 @@ footer {
     color: var(--awwa-secondary);
 }
 
+.chi_siamo .row.featurette img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: .125rem .125rem .25rem rgba(0,0,0,.2);
+}
+
 .chi_siamo .featurette-divider {
     margin: 5rem 0; /* il tag <hr> ha molto più margine verticale */
   }
