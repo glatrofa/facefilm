@@ -337,6 +337,7 @@ function visualizzaPost(pagina) {
                                 document.getElementById("modal_commenti_container").innerHTML = "Nessun commento";
                             }
                             $('#modal_commenti').modal('show');
+                            // funzione che segnala il commento
                             $("a[name='segnala_commento']").click(function (event) {
                                 console.log('ho cliccato il segnala per il commento con id ', event.target.id);
                                 $.ajax({
@@ -361,8 +362,9 @@ function visualizzaPost(pagina) {
                                         snackbarErrore("Si &egrave; verificato un errore");
                                     }
                                 });
-                            });                    
-                                $(function postaCommentoModal() {
+                            });
+                            // funzione per postare un commento al post
+                            $(function postaCommentoModal() {
                                 $('#modal_form_commento').on('submit', function () {
                                     $.ajax({
                                         type: 'POST',
