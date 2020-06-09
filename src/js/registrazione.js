@@ -40,7 +40,7 @@ function redirectRegistrazioneSuccess() {
 
 // dichiarazione stringhe modal
 let modalRegistrazioneSuccess = "<div class='modal-dialog modal-dialog-centered modal-sm' role='document'>" +
-                                  "<div class='modal-content'>" + 
+                                  "<div class='modal-content border-0'>" + 
                                     "<div class='modal-header bg-awwa-secondary text-white'>" + 
                                       "<h5 class='modal-title'>Registrazione effettuata</h5>" + 
                                       "<button type='button' class='close text-white' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>" + 
