@@ -2,6 +2,9 @@
 // importa variabile $connection per la connessione al db
 include './connessione_database.php';
 
+// avvio sessione
+session_start();
+
 // definizione dell'elemento da modificare
 $obiettivo = mysqli_real_escape_string($connection, $_POST["obiettivo"]);
 $idPost = mysqli_real_escape_string($connection, $_POST["idPost"]);
