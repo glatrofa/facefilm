@@ -1,6 +1,10 @@
 <?php
 // importa variabile $connection per la connessione al db
 include './connessione_database.php';
+
+// avvio sessione
+session_start();
+
 // inizalizza la varibaile profilo a false
 $profilo = false;
 

@@ -2,6 +2,9 @@
 // importa variabile $connection per la connessione al db
 include './connessione_database.php';
 
+// avvio sessione
+session_start();
+
 // esecuzione query
 $query = "SELECT id_serie, COUNT(id) AS numero FROM post GROUP BY id_serie ORDER BY numero DESC LIMIT 10";
 $response = array();

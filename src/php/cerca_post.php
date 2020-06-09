@@ -2,6 +2,9 @@
 // importa variabile $connection per la connessione al db
 include './connessione_database.php';
 
+// avvio sessione
+session_start();
+
 // recupero pagina e informazioni relative alla serie
 $pagina = mysqli_real_escape_string($connection, $_POST["pagina"]);
 $idSerie = mysqli_real_escape_string($connection, $_POST["idSerie"]);
