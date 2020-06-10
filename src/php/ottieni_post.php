@@ -5,7 +5,7 @@ include './connessione_database.php';
 // avvio sessione
 session_start();
 
-// inizalizza la varibaile profilo a false
+// inizializza la variabile profilo a 'false'
 $profilo = false;
 
 // recupero pagina
